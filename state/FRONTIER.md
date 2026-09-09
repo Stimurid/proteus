@@ -1,5 +1,8 @@
 # FRONTIER
 
-Exact next step: run `CLEAN_REENTRY_PROMPT.md` in a **new** Cursor Agent chat on `C:\Projects\Proteus` with no RUN-001 transcript.
+Exact next step: T02 — prove user-level Cursor hooks survive and actually fire across a real Cursor quit/reopen boundary.
 
-After that: prove user hooks fire after Cursor reload/restart; only then consider Drive observatory transport.
+Do not rerun T01. Do not claim T02 PASS until after the physical restart and post-restart comparison against `T02_BASELINE.json`.
+
+Human action and post-restart prompt: `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T02_POST_RESTART_PROMPT.md`.
+Drive observatory transport remains later; it is not this frontier.

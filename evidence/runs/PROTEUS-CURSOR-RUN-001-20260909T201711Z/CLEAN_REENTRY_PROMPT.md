@@ -1,5 +1,7 @@
 # CLEAN_REENTRY_PROMPT
 
+**CLOSED.** T01 is PASS (externally witnessed). Do not rerun this prompt. Next: `T02_POST_RESTART_PROMPT.md`.
+
 Use in a **new** Cursor Agent chat on workspace `C:\Projects\Proteus`. Do not paste RUN-001 transcript.
 
 ```

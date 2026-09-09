@@ -56,8 +56,8 @@ Created `~/.cursor/hooks.json` and `~/.cursor/hooks/proteus_hook.cmd`. Generated
 | Install files exist | PASS | installer JSON + AGENTS.md |
 | Idempotent reinstall hooks.json hash | PASS | cycle3 hash equal |
 | Second-cycle DECISIONS in installed events.py | PASS | Select-String |
-| T01 fresh session reentry | NOT_RUN | prompt in CLEAN_REENTRY_PROMPT.md |
-| T02 full Cursor restart | NOT_RUN | |
+| T01 fresh session reentry | PASS | `T01_CLEAN_REENTRY.md`; external witness; contamination absence not internally provable |
+| T02 full Cursor restart | NOT_RUN | prepared in `T02_PRE_RESTART.md`; must not be marked PASS before physical quit/reopen |
 | T03 compaction | NOT_RUN | |
 | T04 correction later session | NOT_RUN | capture skill installed only |
 | T05 project isolation | NOT_RUN | |
@@ -92,11 +92,12 @@ See `ROLLBACK.md`. Uninstall path exists. Rollback of user hooks **not destructi
 
 ## 14. NEXT FRONTIER
 
-Open a new Cursor Agent session on `C:\Projects\Proteus` using `CLEAN_REENTRY_PROMPT.md` (no transcript). Optionally enable Drive MCP or a synced observatory path, then retry flush.
+T02: full Cursor quit/reopen, then new Agent chat with `T02_POST_RESTART_PROMPT.md`. Compare live spool to `T02_BASELINE.json`. Drive observatory flush remains later (FAILED_TRANSPORT).
 
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (installed + unit/install evidence; GUI/restart unproven)
+FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; GUI restart unproven)
 OBSERVABILITY = PARTIAL (local PASS, Drive FAIL)
 EXTERNAL_CONTROL = PARTIAL (queue PASS, live stop/CLI FAIL or NOT_RUN)
-CLEAN_REENTRY = NOT_RUN
+CLEAN_REENTRY = PASS (externally witnessed; see T01_CLEAN_REENTRY.md)
+T02_HOOKS_RESTART = NOT_RUN
 GATE_1 = NOT_YET
