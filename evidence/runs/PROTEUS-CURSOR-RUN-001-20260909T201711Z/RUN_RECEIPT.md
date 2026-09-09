@@ -58,8 +58,8 @@ Created `~/.cursor/hooks.json` and `~/.cursor/hooks/proteus_hook.cmd`. Generated
 | Second-cycle DECISIONS in installed events.py | PASS | Select-String |
 | T01 fresh session reentry | PASS | `T01_CLEAN_REENTRY.md`; external witness; contamination absence not internally provable |
 | T02 full Cursor restart | PARTIAL | `T02_RESULT.md`; do not upgrade; diagnosis `T02_DIAGNOSIS.md` |
-| T02b named-hook restart after argv identity | NOT_RUN | prepared `T02b_PRE_RESTART.md` / `T02b_BASELINE.json`; wait physical quit |
-| T03 compaction | NOT_RUN | |
+| T02b named-hook restart after argv identity | PASS | `T02b_RESULT.md` vs `T02b_BASELINE.json`; named argv `sessionStart`/`workspaceOpen`; OS quit UNKNOWN |
+| T03 compaction | NOT_RUN | prepared `T03_PRE_COMPACTION.md` / `T03_BASELINE.json` / `T03_POST_COMPACTION_PROMPT.md`; stop before `/summarize` |
 | T04 correction later session | NOT_RUN | capture skill installed only |
 | T05 project isolation | NOT_RUN | |
 | T11 organ preservation (behavioral) | PARTIAL | anti-reduction rule present in `.cursor/rules`; no independent organ task executed |
@@ -95,13 +95,14 @@ See `ROLLBACK.md`. Uninstall path exists. Rollback of user hooks **not destructi
 
 ## 14. NEXT FRONTIER
 
-T02 remains PARTIAL. T02b: full Cursor quit/reopen, then new Agent chat with `T02b_POST_RESTART_PROMPT.md`. T03 not started. Drive observatory flush remains later (FAILED_TRANSPORT).
+T02 remains PARTIAL. T02b PASS (`T02b_RESULT.md`). T03 PREPARED / NOT_RUN: same-chat `/summarize` then `T03_POST_COMPACTION_PROMPT.md`. Drive observatory flush remains later (FAILED_TRANSPORT).
 
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b NOT_RUN)
+FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b PASS; T03 PREPARED)
 OBSERVABILITY = PARTIAL (local PASS, Drive FAIL)
 EXTERNAL_CONTROL = PARTIAL (queue PASS, live stop/CLI FAIL or NOT_RUN)
 CLEAN_REENTRY = PASS (externally witnessed; see T01_CLEAN_REENTRY.md)
 T02_HOOKS_RESTART = PARTIAL
-T02B_NAMED_HOOK_RESTART = NOT_RUN
+T02B_NAMED_HOOK_RESTART = PASS
+T03_COMPACTION = NOT_RUN
 GATE_1 = NOT_YET

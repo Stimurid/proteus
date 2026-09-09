@@ -14,4 +14,4 @@
 ## D-003 — Hook event identity when stdin is empty
 - Decision: each Cursor `hooks.json` command string includes `--hook-event <slot>`; `proteus.hook` keeps stdin JSON when valid; `event_name_source` is `stdin` | `argv` | `stdin+argv` | `none` | `conflict`. Conflicting stdin vs argv is recorded and does not pick a winner. Timing is not used to name events.
 - Provenance: T02 PARTIAL (empty-stdin live spool) + Cursor hooks docs allowing extra argv on `command` + isolated `.cmd` pipe diagnostic (`T02_DIAGNOSIS.md`).
-- Status: accepted for T02b; T02 remains PARTIAL until a real post-repair restart.
+- Status: accepted. T02b PASS confirmed argv naming on live `sessionStart`/`workspaceOpen`. T02 remains PARTIAL (empty-stdin original). OS quit still UNKNOWN.

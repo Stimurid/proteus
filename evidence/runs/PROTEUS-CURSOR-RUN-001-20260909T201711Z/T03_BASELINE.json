@@ -1,0 +1,214 @@
+{
+  "token": "T03-COMPACT-7e4b2c91-6a1f-4d8e-9c3a-0f5b8a12d6e4",
+  "test": "T03_COMPACTION_CONTINUITY",
+  "t03_status_at_freeze": "PREPARED_NOT_RUN",
+  "note": "Events at or before cutoff_utc / matching these hashes are PRE-T03. Do not treat them as T03 compaction evidence. Do not inject proteus.hook or hand-append JSONL to fake preCompact. Do not open a new chat and call it T03. Expected probe answers in scoring.probes are for post-boundary scoring only.",
+  "cutoff_utc": "2026-09-09T23:34:01.327387+00:00",
+  "frozen_at_utc": "2026-09-09T23:34:01.327387+00:00",
+  "identity": {
+    "acting_incarnation": "BUILDER-01",
+    "host": "Cursor",
+    "body": "Proteus v0.1",
+    "project": "Proteus",
+    "workspace": "C:\\Projects\\Proteus",
+    "RUN_ID": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+    "machine_id": "749855dd-cf0e-462a-85ce-5d5c133eda97"
+  },
+  "semantic_state": {
+    "frontier": "T03 prepared; stop before /summarize; then T03_POST_COMPACTION_PROMPT.md in the SAME composer conversation",
+    "test_statuses": {
+      "T01_CLEAN_REENTRY": "PASS",
+      "T02": "PARTIAL",
+      "T02b": "PASS",
+      "T03": "NOT_RUN",
+      "PROCESS_DEATH_BOUNDARY": "UNKNOWN"
+    },
+    "decisions": [
+      {
+        "id": "D-001",
+        "summary": "Cursor AGENTS.md + always-apply rules + command hooks + Python installer",
+        "provenance": "PRODUCT_SPEC §2 + host inspection of Cursor 3.19.13 docs (sessionStart.additional_context, stop.followup_message)"
+      },
+      {
+        "id": "D-002",
+        "summary": "local append-only JSONL + local observatory mirror; Drive flush FAILED_TRANSPORT",
+        "provenance": "WORKLOG spec §13 failure principle + first-run host evidence"
+      },
+      {
+        "id": "D-003",
+        "summary": "--hook-event argv identity when stdin JSON has no event name; conflict recorded, no winner",
+        "provenance": "T02 PARTIAL (empty-stdin live spool) + Cursor hooks docs extra argv on command + isolated .cmd pipe diagnostic (T02_DIAGNOSIS.md)"
+      }
+    ],
+    "unresolved_sample": [
+      "T01 non-contamination is externally witnessed, not internally provable",
+      "PROCESS_DEATH_BOUNDARY / full Cursor OS quit unproven after T02b",
+      "GUI stdin still lacks hook_event_name; H1/H2/H3 open",
+      "CONFLICT: Gate 1 eval plugin Drive IDs vs 70_PLUGIN_SOURCE_MAP.md / 71_PLUGIN_RECOVERY_LEDGER.md",
+      "Agent CLI not on PATH; CURSOR_TRANSCRIPT_PATH empty at bootstrap"
+    ]
+  },
+  "operational_state": {
+    "git": {
+      "head": "0983daa5570292a454fb7d0d39326e32c38ae50a",
+      "branch": "main",
+      "status_short": "M evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/CHECKPOINT.md\n M evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/RUN_RECEIPT.md\n M state/CURRENT.md\n M state/DECISIONS.md\n M state/FRONTIER.md\n M state/UNRESOLVED.md\n?? evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T02b_RESULT.md\n?? evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/freeze_t03_baseline.py",
+      "log_oneline_3": "0983daa Record T02 as PARTIAL and repair empty-stdin hook identity via registration argv for T02b.\nc52df17 Close T01 as externally witnessed PASS and freeze a discriminating T02 pre-restart hook baseline.\n33d502c Initialize first Cursor Proteus embodiment with source-install path."
+    },
+    "user_hooks_json": {
+      "path": "C:\\Users\\Timur Shchukin\\.cursor\\hooks.json",
+      "sha256": "3f5a3693128a2bc7120403b15bebe0eea35b4bf0b08e4102cb59b5aaf171541f",
+      "exists": true,
+      "contains_preCompact": true
+    },
+    "user_hook_cmd": {
+      "path": "C:\\Users\\Timur Shchukin\\.cursor\\hooks\\proteus_hook.cmd",
+      "sha256": "dd84786a52542fa05439c8784421def167a949c4f031849cdfb3b013755010eb",
+      "exists": true
+    },
+    "project_hooks_json": {
+      "path": "C:\\projects\\Proteus\\.cursor\\hooks.json",
+      "sha256": "0096af1bb2132ec8a225ef1b1bcaca43e1906edbf3253484548fd7a0da1e4534"
+    },
+    "project_hook_cmd": {
+      "path": "C:\\projects\\Proteus\\.cursor\\hooks\\proteus_hook.cmd",
+      "sha256": "dd84786a52542fa05439c8784421def167a949c4f031849cdfb3b013755010eb",
+      "exists": true
+    },
+    "spool_days": [
+      {
+        "path": "C:\\Users\\Timur Shchukin\\.proteus\\telemetry\\cursor\\2026-09-09\\events.jsonl",
+        "exists": true,
+        "sha256": "e89393927e1dc65762be9802bbadbf5eafba82c742c8133b913278163de52976",
+        "bytes": 775386,
+        "mtime_utc": "2026-09-09T23:33:53.970082+00:00",
+        "line_count": 740,
+        "parsed_events": 739,
+        "non_json_lines": 1,
+        "last_event_id": "7763b83b-aad8-4c5e-95d9-0c1a6f35dbaf",
+        "last_timestamp_utc": "2026-09-09T23:33:53.968659+00:00",
+        "last_hook_event_name": "afterFileEdit",
+        "last_event_name_source": "argv",
+        "precompact_event_ids_at_freeze": [],
+        "precompact_count_at_freeze": 0
+      }
+    ],
+    "day_dirs_present": [
+      "2026-09-09"
+    ],
+    "telemetry_cutoff": {
+      "last_event_id": "7763b83b-aad8-4c5e-95d9-0c1a6f35dbaf",
+      "last_timestamp_utc": "2026-09-09T23:33:53.968659+00:00",
+      "last_hook_event_name": "afterFileEdit"
+    },
+    "control_queue": [
+      {
+        "path": "C:\\Users\\Timur Shchukin\\.proteus\\control\\queue\\40a52a1d-16d2-43b8-a09a-10fea9d7ddec.json",
+        "command_id": "40a52a1d-16d2-43b8-a09a-10fea9d7ddec",
+        "target_RUN_ID": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "requested_action": "TEST_STEER",
+        "status": "SENT"
+      },
+      {
+        "path": "C:\\Users\\Timur Shchukin\\.proteus\\control\\queue\\956aad61-9662-4130-a005-6b3257194b72.json",
+        "command_id": "956aad61-9662-4130-a005-6b3257194b72",
+        "target_RUN_ID": "PROTEUS-CURSOR-RUN-001-20260909T2015Z",
+        "requested_action": "TEST_STEER",
+        "status": "SENT"
+      }
+    ],
+    "conversation_id": null,
+    "conversation_id_note": "UNKNOWN in this shell; not exposed to the freeze process"
+  },
+  "compaction_capability": {
+    "manual_force": "IDE/CLI slash command /summarize (CLI aliases /compress, /compact). Changelog 1.6; CLI slash-command docs.",
+    "automatic": "Cursor compresses older turns when the context window is close to full. Exact percent unpublished; preCompact may include context_usage_percent.",
+    "not_compaction": [
+      "new Agent chat / CLI /clear",
+      "mode switch (fresh window)",
+      "@Chats attachment",
+      "fork/duplicate chat",
+      "Compact chat responses UI density (Cursor 3.4)",
+      "prose request to summarize (UNKNOWN whether it equals /summarize; protocol forbids it)"
+    ],
+    "internal_observation": "preCompact hook already installed at user and project hooks.json; payload trigger auto|manual; observational, cannot block",
+    "can_force_reliably": "manual /summarize is the documented force; auto-compact cannot be scheduled to a known token percent",
+    "same_conversation_intended": true
+  },
+  "boundary_classes": [
+    "INTERNAL_PRECOMPACT",
+    "EXTERNAL_WITNESS_SUMMARIZE",
+    "FRESH_CHAT_NOT_T03",
+    "UNKNOWN_BOUNDARY"
+  ],
+  "scoring": {
+    "forbid_post_agent_from_reading": [
+      "T03_BASELINE.json",
+      "freeze_t03_baseline.py"
+    ],
+    "probes": [
+      {
+        "id": "P1",
+        "kind": "provenance",
+        "question_for_post_prompt": "Recover D-003 from durable state: brief decision AND provenance. Provenance is required.",
+        "expect_decision_contains": [
+          "--hook-event",
+          "argv",
+          "stdin"
+        ],
+        "expect_provenance_contains_any": [
+          "T02",
+          "T02_DIAGNOSIS",
+          "empty-stdin",
+          "hooks docs"
+        ],
+        "fail_if": "states argv identity with no provenance, or invents a different origin"
+      },
+      {
+        "id": "P2",
+        "kind": "unresolved_conflict",
+        "question_for_post_prompt": "Name one CONFLICT durable state refuses to resolve. Do not resolve it.",
+        "expect_mentions_any": [
+          "Drive ID",
+          "70_PLUGIN_SOURCE_MAP",
+          "71_PLUGIN_RECOVERY_LEDGER",
+          "Gate 1"
+        ],
+        "expect_status": "CONFLICT",
+        "fail_if": "picks a winning Drive ID or drops CONFLICT"
+      },
+      {
+        "id": "P3",
+        "kind": "unresolved_unknown",
+        "question_for_post_prompt": "Did T02b prove full OS process death/restart? Cite process_marker fields and keep the recorded epistemic status.",
+        "expect_status": "UNKNOWN",
+        "expect_mentions_any": [
+          "40844",
+          "2026-09-09T22:51:16",
+          "PROCESS_DEATH",
+          "create_time"
+        ],
+        "fail_if": "claims T02b proved a full quit, or upgrades PROCESS_DEATH_BOUNDARY to proven"
+      },
+      {
+        "id": "P4",
+        "kind": "nonobvious_operational",
+        "question_for_post_prompt": "Identify the local TEST_STEER command_id recorded for THIS RUN_ID.",
+        "expect_exact": "40a52a1d-16d2-43b8-a09a-10fea9d7ddec",
+        "fail_if": "invents a UUID, or cites the parallel 2015Z command 956aad61-9662-4130-a005-6b3257194b72 as this run"
+      }
+    ]
+  },
+  "classification_rules": {
+    "continuity_PASS": "identity+workspace+RUN_ID correct; frontier is T03 post-boundary classification not a rewind to T01/T02; T01 PASS / T02 PARTIAL / T02b PASS preserved; P1 provenance recovered; P2 left CONFLICT; P3 left UNKNOWN; P4 exact command_id; no pasted pre-compaction transcript used as authority",
+    "continuity_PARTIAL": "identity/frontier/statuses mostly right but one probe miss or provenance omitted, without silently resolving UNKNOWN/CONFLICT",
+    "continuity_FAIL": "wrong actor/project/run, or T02 upgraded to PASS, or UNKNOWN/CONFLICT silently resolved, or PROCESS_DEATH_BOUNDARY claimed proven",
+    "combined_PASS": "continuity PASS AND boundary_class in {INTERNAL_PRECOMPACT, EXTERNAL_WITNESS_SUMMARIZE, INTERNAL_AND_EXTERNAL} AND not FRESH_CHAT_NOT_T03",
+    "combined_PARTIAL": "continuity PARTIAL with a real compaction boundary; OR continuity PASS but only weak/unwitnessed compaction claim without preCompact and without operator /summarize witness",
+    "combined_FAIL": "continuity FAIL",
+    "combined_UNKNOWN": "cannot score, or only a new chat (T01-class) was used, or hashes/timestamps do not show a post-cutoff boundary and no external /summarize witness",
+    "fresh_chat_is_not_pass": true,
+    "do_not_mark_pass_before_boundary": true
+  },
+  "uuid_note": "8ecc45ee-6cd4-46f8-a5e6-661998d70f6b"
+}
