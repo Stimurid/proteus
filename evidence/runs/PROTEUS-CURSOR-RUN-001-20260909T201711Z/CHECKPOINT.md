@@ -1,31 +1,32 @@
-# CHECKPOINT 2026-09-09T21:56Z
+# CHECKPOINT
 
-RUN_ID: PROTEUS-CURSOR-RUN-001-20260909T201711Z
+RUN_ID: `PROTEUS-CURSOR-RUN-001-20260909T201711Z`
+When: T02 diagnostic + argv identity repair; T02b prepared; stop before physical quit
 
 ## Done
 
-- T01 CLEAN_REENTRY closed as PASS (externally witnessed). Prompt-only fresh chat; RUN-001 transcript not used. Contamination absence is not internally provable (`T01_CLEAN_REENTRY.md`).
-- FRONTIER no longer asks for clean reentry.
-- T02 prepared: `T02_PRE_RESTART.md`, `T02_BASELINE.json`, `T02_POST_RESTART_PROMPT.md`. T02 remains NOT_RUN.
+- Diagnosed empty stdin (cmd forwards pipes; live GUI payloads empty).
+- Implemented D-003: `--hook-event` on each registered command; stdin preserved; conflicts visible.
+- Tests: `tests/test_smoke.py`, `tests/test_hook_event_identity.py`.
+- Installed via `python -m proteus.install_cursor`.
+- Froze `T02b_BASELINE.json`. T02 still PARTIAL. T03 not started.
 
 ## Changed
 
-- `state/CURRENT.md`, `state/FRONTIER.md`, `state/UNRESOLVED.md`
-- `RUN_RECEIPT.md` test matrix + CLEAN_REENTRY = PASS
-- `CLEAN_REENTRY_PROMPT.md` marked CLOSED
+Source under `src/proteus/*`, `hosts/cursor/templates/hooks.json`, tests, `state/*`, evidence T02/T02b files, generated host hooks via installer.
 
 ## Decisions
 
-None new. D-001 / D-002 unchanged.
+D-003 (see `state/DECISIONS.md`).
 
 ## Unresolved
 
-See `state/UNRESOLVED.md`. T02 hooks-after-restart still UNKNOWN. Drive transport still FAILED_TRANSPORT.
+Empty GUI stdin root cause UNKNOWN. OS-quit still not independently proven. T02b not executed.
 
 ## Next frontier
 
-T02: human quits/reopens Cursor; new chat runs `T02_POST_RESTART_PROMPT.md`. Do not claim T02 PASS before that.
+Physical quit/reopen + `T02b_POST_RESTART_PROMPT.md`.
 
-## Tests
+## Git / tests
 
-T01 PASS (external). T02 NOT_RUN. Unit smokes not re-run this checkpoint.
+See commit on `main`. Tests PASS as recorded in this repair pass.

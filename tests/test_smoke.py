@@ -63,7 +63,7 @@ def test_hook_session_start_stdout() -> None:
         old = sys.stdout
         sys.stdout = buf
         try:
-            rc = hook_main()
+            rc = hook_main(argv=[])
         finally:
             sys.stdout = old
         assert_true(rc == 0, "hook rc")

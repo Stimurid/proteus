@@ -10,3 +10,8 @@
 - Decision: local append-only JSONL + local observatory mirror; Drive flush marked FAILED_TRANSPORT until a real synced path or working Drive MCP exists.
 - Provenance: WORKLOG spec §13 failure principle + first-run host evidence.
 - Status: accepted.
+
+## D-003 — Hook event identity when stdin is empty
+- Decision: each Cursor `hooks.json` command string includes `--hook-event <slot>`; `proteus.hook` keeps stdin JSON when valid; `event_name_source` is `stdin` | `argv` | `stdin+argv` | `none` | `conflict`. Conflicting stdin vs argv is recorded and does not pick a winner. Timing is not used to name events.
+- Provenance: T02 PARTIAL (empty-stdin live spool) + Cursor hooks docs allowing extra argv on `command` + isolated `.cmd` pipe diagnostic (`T02_DIAGNOSIS.md`).
+- Status: accepted for T02b; T02 remains PARTIAL until a real post-repair restart.

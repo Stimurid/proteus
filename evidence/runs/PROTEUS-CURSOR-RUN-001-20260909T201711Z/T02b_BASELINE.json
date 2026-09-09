@@ -1,0 +1,270 @@
+{
+  "token": "T02B-HOOKFIRE-ca8c800d-6c58-4acb-89cd-992145ebbbe9",
+  "cutoff_utc": "2026-09-09T23:06:25.983249+00:00",
+  "frozen_at_utc": "2026-09-09T23:06:25.983249+00:00",
+  "note": "Events at or before cutoff_utc / matching these hashes are PRE-T02b. Do not treat them as T02b named restart fire. Do not inject proteus.hook to fake PASS. Original T02 stays PARTIAL.",
+  "t02_status_must_remain": "PARTIAL",
+  "expected_named_events": [
+    "sessionStart",
+    "workspaceOpen"
+  ],
+  "expected_event_name_source": [
+    "argv",
+    "stdin",
+    "stdin+argv"
+  ],
+  "exclusion_rules": [
+    "timestamp_utc <= cutoff_utc",
+    "event_id == last_event_id",
+    "ids in simulated_named_ids_must_not_count or excluded_event_ids",
+    "session_id == sim-001",
+    "evidence_class in {test, simulated}",
+    "hook_event_name not in {sessionStart, workspaceOpen}",
+    "event_name_source in {none, conflict} or event_name_conflict true",
+    "rows created by python -m proteus.hook or hand-appended JSONL",
+    "same-session afterFileEdit/stop after freeze (including git commit) is not T02b PASS"
+  ],
+  "simulated_named_ids_must_not_count": [
+    "26bd7500-6353-4cf3-b1a1-dead1b0c3584",
+    "24660483-6ca8-4480-bf9f-ee424801e621",
+    "083b41df-d2c6-4817-af51-7cee46fcc13a"
+  ],
+  "excluded_event_ids": [
+    "6c8b09dd-c4a0-414f-8d58-45aa608f0e16"
+  ],
+  "user_hooks_json": {
+    "path": "C:\\Users\\Timur Shchukin\\.cursor\\hooks.json",
+    "sha256": "3f5a3693128a2bc7120403b15bebe0eea35b4bf0b08e4102cb59b5aaf171541f",
+    "bytes": 1025,
+    "exists": true,
+    "contains_proteus_hook": true,
+    "commands_include_hook_event_argv": true
+  },
+  "user_hook_cmd": {
+    "path": "C:\\Users\\Timur Shchukin\\.cursor\\hooks\\proteus_hook.cmd",
+    "sha256": "dd84786a52542fa05439c8784421def167a949c4f031849cdfb3b013755010eb",
+    "exists": true,
+    "forwards_argv": true
+  },
+  "spool_days": [
+    {
+      "path": "C:\\Users\\Timur Shchukin\\.proteus\\telemetry\\cursor\\2026-09-09\\events.jsonl",
+      "sha256": "b6ae822fd1a2ca3795ecf094dacfbfc300f66e87800ac7ec59c9f6b92dad65f7",
+      "bytes": 432541,
+      "mtime_utc": "2026-09-09T23:06:21.179301+00:00",
+      "line_count": 524,
+      "parsed_events": 523,
+      "non_json_lines": 1,
+      "last_event_id": "2ec1dee3-acc1-4b1e-8ffa-8cc4d9462ced",
+      "last_timestamp_utc": "2026-09-09T23:06:21.179120+00:00",
+      "last_hook_event_name": "afterFileEdit",
+      "last_event_name_source": "argv",
+      "named_events": [
+        {
+          "event_id": "9ec48eb7-b945-4f7a-8ae3-e088f6c810e4",
+          "hook_event_name": "external_command_sent",
+          "timestamp_utc": null,
+          "session_id": null,
+          "event_name_source": null,
+          "evidence_class": null
+        },
+        {
+          "event_id": "26bd7500-6353-4cf3-b1a1-dead1b0c3584",
+          "hook_event_name": "sessionStart",
+          "timestamp_utc": "2026-09-09T20:23:32.551686+00:00",
+          "session_id": "sim-001",
+          "event_name_source": null,
+          "evidence_class": null
+        },
+        {
+          "event_id": "083b41df-d2c6-4817-af51-7cee46fcc13a",
+          "hook_event_name": "stop",
+          "timestamp_utc": "2026-09-09T20:23:32.851968+00:00",
+          "session_id": null,
+          "event_name_source": null,
+          "evidence_class": null
+        },
+        {
+          "event_id": "b3f0838c-06b2-4440-bae9-a939676c35be",
+          "hook_event_name": "external_command_sent",
+          "timestamp_utc": null,
+          "session_id": null,
+          "event_name_source": null,
+          "evidence_class": null
+        },
+        {
+          "event_id": "24660483-6ca8-4480-bf9f-ee424801e621",
+          "hook_event_name": "workspaceOpen",
+          "timestamp_utc": "2026-09-09T20:23:50.251285+00:00",
+          "session_id": null,
+          "event_name_source": null,
+          "evidence_class": null
+        },
+        {
+          "event_id": "5ce3adb7-c026-4ed9-b5c9-f270f9aa220c",
+          "hook_event_name": "postToolUseFailure",
+          "timestamp_utc": "2026-09-09T23:05:40.601941+00:00",
+          "session_id": null,
+          "event_name_source": "argv",
+          "evidence_class": null
+        },
+        {
+          "event_id": "c577b3b0-a944-475b-9758-a60bd6815755",
+          "hook_event_name": "postToolUseFailure",
+          "timestamp_utc": "2026-09-09T23:05:47.305988+00:00",
+          "session_id": null,
+          "event_name_source": "argv",
+          "evidence_class": null
+        },
+        {
+          "event_id": "1f3ccbc0-fe1a-4630-8538-d7eff80b51ec",
+          "hook_event_name": "afterFileEdit",
+          "timestamp_utc": "2026-09-09T23:05:48.248481+00:00",
+          "session_id": null,
+          "event_name_source": "argv",
+          "evidence_class": null
+        },
+        {
+          "event_id": "a3ac807a-6095-4a7e-8ee0-08db92036f49",
+          "hook_event_name": "postToolUseFailure",
+          "timestamp_utc": "2026-09-09T23:05:57.237290+00:00",
+          "session_id": null,
+          "event_name_source": "argv",
+          "evidence_class": null
+        },
+        {
+          "event_id": "a1ef95e6-505a-4158-be9c-ad4b2be7dfe5",
+          "hook_event_name": "afterFileEdit",
+          "timestamp_utc": "2026-09-09T23:06:06.059184+00:00",
+          "session_id": null,
+          "event_name_source": "argv",
+          "evidence_class": null
+        },
+        {
+          "event_id": "34a363e0-a010-4d42-995f-97b35fc045b5",
+          "hook_event_name": "postToolUseFailure",
+          "timestamp_utc": "2026-09-09T23:06:20.276156+00:00",
+          "session_id": null,
+          "event_name_source": "argv",
+          "evidence_class": null
+        },
+        {
+          "event_id": "2ec1dee3-acc1-4b1e-8ffa-8cc4d9462ced",
+          "hook_event_name": "afterFileEdit",
+          "timestamp_utc": "2026-09-09T23:06:21.179120+00:00",
+          "session_id": null,
+          "event_name_source": "argv",
+          "evidence_class": null
+        }
+      ],
+      "last_process_marker": {
+        "hook_pid": 23892,
+        "parent_pid": 38520,
+        "cursor_pid": 40844,
+        "cursor_image": "Cursor.exe",
+        "cursor_create_time_utc": "2026-09-09T22:51:16.147627+00:00",
+        "ancestor_images": [
+          {
+            "pid": 23892,
+            "image": "python.exe"
+          },
+          {
+            "pid": 38520,
+            "image": "cmd.exe"
+          },
+          {
+            "pid": 39984,
+            "image": "powershell.exe"
+          },
+          {
+            "pid": 40844,
+            "image": "Cursor.exe"
+          },
+          {
+            "pid": 24488,
+            "image": "Cursor.exe"
+          },
+          {
+            "pid": 12268,
+            "image": "explorer.exe"
+          },
+          {
+            "pid": 12168,
+            "image": null
+          }
+        ],
+        "marker_status": "identified",
+        "marker_note": "best-effort Toolhelp ancestor whose image name contains 'cursor'; a later change of cursor_create_time_utc is compatible with a process restart but is not by itself a quit witness"
+      },
+      "seen_cursor_create_time_utc": [
+        "2026-09-09T22:49:05.661350+00:00",
+        "2026-09-09T22:49:20.657000+00:00",
+        "2026-09-09T22:51:16.147627+00:00"
+      ]
+    }
+  ],
+  "observatory_days": [
+    {
+      "path": "C:\\Users\\Timur Shchukin\\.proteus\\observatory\\10_CURSOR\\2026-09-09\\events.jsonl",
+      "sha256": "970445921f63547fed7f9148cf99ab6a75cb3b4f513144867034c2b7e4d63709",
+      "bytes": 18421,
+      "mtime_utc": "2026-09-09T20:26:07.780116+00:00",
+      "line_count": 25,
+      "parsed_events": 25,
+      "non_json_lines": 0,
+      "last_event_id": "fc000449-2f39-40f5-b4b6-6ed259f77504",
+      "last_timestamp_utc": "2026-09-09T20:26:07.759956+00:00",
+      "last_hook_event_name": "unknown",
+      "last_event_name_source": null,
+      "named_events": [
+        {
+          "event_id": "9ec48eb7-b945-4f7a-8ae3-e088f6c810e4",
+          "hook_event_name": "external_command_sent",
+          "timestamp_utc": null,
+          "session_id": null,
+          "event_name_source": null,
+          "evidence_class": null
+        },
+        {
+          "event_id": "26bd7500-6353-4cf3-b1a1-dead1b0c3584",
+          "hook_event_name": "sessionStart",
+          "timestamp_utc": "2026-09-09T20:23:32.551686+00:00",
+          "session_id": "sim-001",
+          "event_name_source": null,
+          "evidence_class": null
+        },
+        {
+          "event_id": "083b41df-d2c6-4817-af51-7cee46fcc13a",
+          "hook_event_name": "stop",
+          "timestamp_utc": "2026-09-09T20:23:32.851968+00:00",
+          "session_id": null,
+          "event_name_source": null,
+          "evidence_class": null
+        },
+        {
+          "event_id": "b3f0838c-06b2-4440-bae9-a939676c35be",
+          "hook_event_name": "external_command_sent",
+          "timestamp_utc": null,
+          "session_id": null,
+          "event_name_source": null,
+          "evidence_class": null
+        },
+        {
+          "event_id": "24660483-6ca8-4480-bf9f-ee424801e621",
+          "hook_event_name": "workspaceOpen",
+          "timestamp_utc": "2026-09-09T20:23:50.251285+00:00",
+          "session_id": null,
+          "event_name_source": null,
+          "evidence_class": null
+        }
+      ],
+      "last_process_marker": null,
+      "seen_cursor_create_time_utc": []
+    }
+  ],
+  "cursor_create_time_utc_at_freeze": "2026-09-09T22:51:16.147627+00:00",
+  "cursor_create_time_note": "Best-effort Toolhelp marker from spool process_marker fields; UNKNOWN if null. A change after reopen is compatible with a process boundary, not proof of a full quit.",
+  "day_dirs_present": [
+    "2026-09-09"
+  ]
+}

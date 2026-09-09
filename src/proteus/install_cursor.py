@@ -16,6 +16,43 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 TEMPLATES = REPO_ROOT / "hosts" / "cursor" / "templates"
 PYTHON = sys.executable
 
+USER_HOOK_TIMEOUTS = {
+    "workspaceOpen": 15,
+    "sessionStart": 15,
+    "sessionEnd": 15,
+    "preCompact": 15,
+    "stop": 15,
+    "afterFileEdit": 10,
+    "postToolUseFailure": 10,
+}
+
+
+def hook_command(event_name: str, *, project: bool = False) -> str:
+    prefix = ".cursor\\hooks\\proteus_hook.cmd" if project else "hooks\\proteus_hook.cmd"
+    return f"{prefix} --hook-event {event_name}"
+
+
+def user_hook_entries() -> dict:
+    entries: dict = {}
+    for name, timeout in USER_HOOK_TIMEOUTS.items():
+        item = {"command": hook_command(name), "timeout": timeout}
+        if name == "stop":
+            item["loop_limit"] = 2
+        entries[name] = [item]
+    return entries
+
+
+def proteus_hook_cmd_text(*, python: str, pythonpath: str) -> str:
+    return "\r\n".join(
+        [
+            "@echo off",
+            "set PYTHONIOENCODING=utf-8",
+            f"set PYTHONPATH={pythonpath}",
+            f'"{python}" -m proteus.hook %*',
+            "",
+        ]
+    )
+
 
 def _sha(path: Path) -> str:
     if not path.exists():
@@ -67,15 +104,7 @@ def install(project_root: Path, *, run_id: str, backup_dir: Path) -> dict:
     cmd = host_install_dir() / "proteus_hook.cmd"
     _write(
         cmd,
-        "\r\n".join(
-            [
-                "@echo off",
-                "set PYTHONIOENCODING=utf-8",
-                "set PYTHONPATH=" + str(host_install_dir() / "src"),
-                f'"{PYTHON}" -m proteus.hook',
-                "",
-            ]
-        ),
+        proteus_hook_cmd_text(python=PYTHON, pythonpath=str(host_install_dir() / "src")),
     )
     installed.append(str(cmd))
 
@@ -84,18 +113,7 @@ def install(project_root: Path, *, run_id: str, backup_dir: Path) -> dict:
     shutil.copy2(cmd, user_hook_cmd)
     installed.append(str(user_hook_cmd))
 
-    hooks_json = {
-        "version": 1,
-        "hooks": {
-            "workspaceOpen": [{"command": "hooks\\proteus_hook.cmd", "timeout": 15}],
-            "sessionStart": [{"command": "hooks\\proteus_hook.cmd", "timeout": 15}],
-            "sessionEnd": [{"command": "hooks\\proteus_hook.cmd", "timeout": 15}],
-            "preCompact": [{"command": "hooks\\proteus_hook.cmd", "timeout": 15}],
-            "stop": [{"command": "hooks\\proteus_hook.cmd", "timeout": 15, "loop_limit": 2}],
-            "afterFileEdit": [{"command": "hooks\\proteus_hook.cmd", "timeout": 10}],
-            "postToolUseFailure": [{"command": "hooks\\proteus_hook.cmd", "timeout": 10}],
-        },
-    }
+    hooks_json = {"version": 1, "hooks": user_hook_entries()}
     existing = cursor_user_dir() / "hooks.json"
     if existing.exists():
         try:
@@ -139,15 +157,7 @@ def install(project_root: Path, *, run_id: str, backup_dir: Path) -> dict:
     project_hook = project_root / ".cursor" / "hooks" / "proteus_hook.cmd"
     _write(
         project_hook,
-        "\r\n".join(
-            [
-                "@echo off",
-                "set PYTHONIOENCODING=utf-8",
-                f"set PYTHONPATH={host_install_dir() / 'src'}",
-                f'"{PYTHON}" -m proteus.hook',
-                "",
-            ]
-        ),
+        proteus_hook_cmd_text(python=PYTHON, pythonpath=str(host_install_dir() / "src")),
     )
     installed.append(str(project_hook))
 

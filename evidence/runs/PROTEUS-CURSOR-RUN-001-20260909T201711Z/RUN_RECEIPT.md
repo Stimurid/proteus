@@ -57,7 +57,8 @@ Created `~/.cursor/hooks.json` and `~/.cursor/hooks/proteus_hook.cmd`. Generated
 | Idempotent reinstall hooks.json hash | PASS | cycle3 hash equal |
 | Second-cycle DECISIONS in installed events.py | PASS | Select-String |
 | T01 fresh session reentry | PASS | `T01_CLEAN_REENTRY.md`; external witness; contamination absence not internally provable |
-| T02 full Cursor restart | NOT_RUN | prepared in `T02_PRE_RESTART.md`; must not be marked PASS before physical quit/reopen |
+| T02 full Cursor restart | PARTIAL | `T02_RESULT.md`; do not upgrade; diagnosis `T02_DIAGNOSIS.md` |
+| T02b named-hook restart after argv identity | NOT_RUN | prepared `T02b_PRE_RESTART.md` / `T02b_BASELINE.json`; wait physical quit |
 | T03 compaction | NOT_RUN | |
 | T04 correction later session | NOT_RUN | capture skill installed only |
 | T05 project isolation | NOT_RUN | |
@@ -74,6 +75,8 @@ Deficit: decisions missing from sessionStart orientation.
 Source: `events.py` includes `DECISIONS.md`.
 Second install: cycle2/cycle3 receipts.
 Tests: `test_orientation_loads_state`.
+
+T02 empty-stdin repair (third source→install cycle this run): `hook_identity.py` + `--hook-event` in installer `hooks.json`; tests `tests/test_hook_event_identity.py`; host files via `python -m proteus.install_cursor`.
 
 ## 11. FAILURES / UNKNOWN / CONFLICT
 
@@ -92,12 +95,13 @@ See `ROLLBACK.md`. Uninstall path exists. Rollback of user hooks **not destructi
 
 ## 14. NEXT FRONTIER
 
-T02: full Cursor quit/reopen, then new Agent chat with `T02_POST_RESTART_PROMPT.md`. Compare live spool to `T02_BASELINE.json`. Drive observatory flush remains later (FAILED_TRANSPORT).
+T02 remains PARTIAL. T02b: full Cursor quit/reopen, then new Agent chat with `T02b_POST_RESTART_PROMPT.md`. T03 not started. Drive observatory flush remains later (FAILED_TRANSPORT).
 
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; GUI restart unproven)
+FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b NOT_RUN)
 OBSERVABILITY = PARTIAL (local PASS, Drive FAIL)
 EXTERNAL_CONTROL = PARTIAL (queue PASS, live stop/CLI FAIL or NOT_RUN)
 CLEAN_REENTRY = PASS (externally witnessed; see T01_CLEAN_REENTRY.md)
-T02_HOOKS_RESTART = NOT_RUN
+T02_HOOKS_RESTART = PARTIAL
+T02B_NAMED_HOOK_RESTART = NOT_RUN
 GATE_1 = NOT_YET
