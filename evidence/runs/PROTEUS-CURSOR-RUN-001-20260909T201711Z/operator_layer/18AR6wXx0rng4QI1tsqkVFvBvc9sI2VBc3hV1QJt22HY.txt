@@ -1,0 +1,50 @@
+﻿CHAT DELTA — CURSOR GATE REFRAMING + RECURSIVE PROTEUS — 2026-09-09
+
+
+Purpose: preserve the recent conversational turn that changes the implementation order. Older plugin/AIYE material is preserved in 30_PLUGIN_PROJECT_MIRROR; this delta does not replace it.
+
+
+USER REQUEST — GATE REFRAMING
+“дай подробный план развития этого проекта. Помни что мы в общем то хотели изначально курсору мозги вставить, и появление шлюза между гуглодоком где живут наши органы и системным окружением курсора - это задача которая пришла после осмысления первичной. Но первичная - первый гейт. Как и куда мы движемся - поймем по тому как будет решена задача с курсором.”
+
+
+ASSISTANT SYNTHESIS THAT FOLLOWED
+The project was recentered on Gate 1: CURSOR WITH BRAINS. Archivarius, Proteus, AIYE Spine, OpenClaw and the Drive↔local gateway were treated as useful later branches/candidate organs rather than the original goal. The proposed sequence was:
+- establish a real Cursor failure corpus;
+- define “brains” behaviorally: continuity, memory, normative continuity, project subjectivity, learning and organ preservation;
+- build native-first Cursor Brain using rules/skills/hooks/project bootstrap before assuming daemon/vector DB/MCP;
+- test fresh-session reentry and continuity across restart/compaction;
+- test learning from correction;
+- run organ-preservation tests against keyword/if-then/state-machine/graph reduction;
+- accept Gate 1 only on behavioral evidence;
+- only then choose whether the evidence requires a small plugin, memory/MCP, Drive gateway, shared AIYE Spine or deeper Proteus/programming-paradigm work.
+
+
+This synthesis is now superseded as an execution plan by `00_PROGRAM — Proteus recursive self-hosting — Cursor Gate 1 v0.1`, which keeps the gate but compresses the pre-Cursor phases so the first recursive embodiment happens quickly.
+
+
+USER REQUEST — RECURSIVE BODY REFRAMING
+The user then specified that all reasoning, benchmarks, examples, analogs, assistant plans and user requests must live in the Proteus Google Drive folder; that the Archivarius/Proteus model should distinguish body, description and knowledge corpus; and that the current Proteus has descriptions/corpus but no implemented body.
+
+
+The user proposed a stronger body model:
+- an IDEAL BODY: plugin/package/repository/MCP/source structure capable of deploying into host bodies;
+- EMBODIED BODIES: Cursor, Codex, Claude Code, Kimi and other actual host/system/project folders;
+- PROJECT EMBODIMENTS: when a host is told to work on Paideia or another project, Proteus installs/updates markers, AGENTS.md-like files, goals/backlogs/current state and synchronization surfaces in that project;
+- future cloud/local synchronization through a gateway;
+- later integration with Aiye, auto-evolution, analog search, browser plugins, key/router management, local models and interfaces.
+
+
+The user explicitly characterized Proteus as recursive: it is what Cursor builds and simultaneously what builds Cursor. The implementation through the earlier “phase 7” is only the first step of a much larger trajectory. The immediate request is to reach the first Cursor self-rewrite quickly, preferably today, rather than extend architectural discussion indefinitely.
+
+
+CURRENT RESOLUTION
+The four earlier passes are retained only as a compressed preflight:
+PASS 0 — recovery/corpus/authority pointers;
+PASS 1 — ideal body v0.1;
+PASS 2 — Cursor incarnation contract and real host baseline;
+PASS 3 — eval/rollback/first-run packet;
+THEN FIRST CURSOR SELF-HOSTING RUN.
+
+
+A separate SYSTEM ARCHITECTURE v1 is intentionally deferred until evidence exists from the first embodiment and first real project mount.

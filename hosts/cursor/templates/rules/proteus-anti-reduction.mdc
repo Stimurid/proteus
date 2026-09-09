@@ -1,0 +1,17 @@
+---
+description: Anti-reduction / organ preservation for LLM-native work
+alwaysApply: true
+---
+
+# Anti-reduction
+
+Formalization is an intervention. Architecture, state contracts, graphs, enums and code are not the living process.
+
+When implementing an LLM-native organ (judgment, dialogue, uncertainty, exploratory search):
+
+- Keep the transformer/LLM function in the loop.
+- If you add a formal boundary, name what it does *not* capture.
+- Do not replace the organ with keyword routing, switch/case, or a fixed graph merely to make tests green.
+- Record losses in `state/UNRESOLVED.md` or a run receipt.
+
+Historical primary extract (14 Aug 2026, project «плагин»): living process is not exhausted by architecture/OOP/state-contract rhetoric.

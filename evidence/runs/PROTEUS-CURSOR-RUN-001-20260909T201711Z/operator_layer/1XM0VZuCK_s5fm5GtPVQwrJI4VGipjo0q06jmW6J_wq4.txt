@@ -1,0 +1,153 @@
+﻿PROTEUS — OPERATIONAL PLAN: BOOT, AUTHORITY AND SYNCHRONIZATION CYCLES v0.1
+
+
+STATUS
+Current operational plan for the first Cursor embodiment. This document preserves the concrete use case that governs the bootstrap packet and the first self-hosting run.
+
+
+1. THE SIMPLE MODEL
+A normal coding project gives Cursor two different inputs: who the working agent is, and what product/project it must build. Proteus must start the same way. The experiment intentionally keeps these inputs separate even though later evidence may show a deeper relation between them.
+
+
+INPUT A — SELF / AGENT
+A durable description of the working agent: identity, operating commitments, continuity, learning discipline, treatment of uncertainty, anti-reduction principles, authority discipline, project mounting behavior, checkpointing, and safe self-modification.
+
+
+INPUT B — PRODUCT
+A durable description of the product to build: required capabilities, use cases, ideal-body properties, Cursor incarnation requirements, project-mount behavior, backlog, unresolved questions, tests, and boundaries.
+
+
+INPUT C — CORPUS
+Historical and evidential material explaining why these requirements exist: project «плагин», GENEROUS programming line, Proteus genealogy, Agentum/Ouroboros donor line, prior plans, user requests, examples, analogues, benchmarks, failure cases, negative corpus, old chats and architectural dead ends.
+
+
+Working rule:
+SELF = persistent orientation.
+PRODUCT = current construction target.
+CORPUS = evidence/retrieval, not permanent prompt stuffing.
+
+
+2. WHERE THINGS LIVE BEFORE A REAL GATEWAY EXISTS
+The first experiment must not be blocked by building the Google Drive↔local gateway first. Google Drive remains the developmental/evidence home. A bounded bootstrap packet is mirrored into the local Proteus project so Cursor can begin immediately.
+
+
+Cloud side:
+- Proteus descriptions and development program;
+- primary sources and donor corpus;
+- benchmarks/evals;
+- ideal-body and incarnation descriptions;
+- provenance and genealogy.
+
+
+Local side at first launch:
+C:\Projects\Proteus\
+- bootstrap packet mirror;
+- local Git repository created or adopted by Cursor;
+- source of the first executable/portable body;
+- host adapter for Cursor;
+- runtime/checkpoint/receipt material created by the run.
+
+
+No assumption of live bidirectional sync in run 1. Local bootstrap copies must carry source IDs and authority notes. Local edits do not silently overwrite cloud developmental truth. The first run may discover that a gateway is necessary; that becomes evidence for the next architecture.
+
+
+3. THREE DIFFERENT CANONICALITIES
+DEVELOPMENTAL / SEMANTIC AUTHORITY
+Google Drive currently carries the authoritative descriptions, genealogy, user requirements, source corpus and unresolved design reasoning.
+
+
+EXECUTABLE IDEAL BODY
+After the first successful run, the local Proteus Git repository becomes the authoritative executable source for what can be installed into a host. It is versioned, testable, diffable and rollback-capable.
+
+
+INCARNATION
+The actual Cursor filesystem/config/project surfaces are an embodiment produced from the ideal body. They are not the source of truth for future development. Manual drift in the incarnation must be either promoted back into the ideal body with evidence or reverted.
+
+
+4. STARTUP USE CASE
+The user opens a new Cursor project rooted at C:\Projects\Proteus. The local directory initially contains only the bootstrap packet or enough pointers to obtain it.
+
+
+Cursor must:
+1. read SELF, PRODUCT, CORPUS MAP, FIRST RUN and Gate 1 evaluation material;
+2. inspect its actual Cursor environment before modifying it;
+3. record version, configuration surfaces, project state, Git state, rules/skills/hooks/MCP/plugin capabilities actually present;
+4. establish a rollback checkpoint;
+5. propose and implement the smallest first Proteus body that satisfies the product requirements;
+6. install that body into permitted Cursor/project surfaces;
+7. verify the incarnation;
+8. open a clean continuation/reentry path through the newly installed capabilities;
+9. use the installed body to improve one bounded part of the Proteus product/source;
+10. create a full receipt and leave the next frontier explicit.
+
+
+The run is successful only when the new installed capabilities participate in a subsequent Proteus development action. Merely creating configuration files is insufficient.
+
+
+5. WHAT MUST EXIST BEFORE CURSOR STARTS
+The preparation boundary is intentionally small. Before the first Cursor run we need:
+- a full AGENT description;
+- a full PRODUCT description;
+- a CORPUS MAP with roles and stable Drive references;
+- a CONTROL/READ-FIRST document defining authority and reading order;
+- a LOCAL LAYOUT + SYNC document;
+- a FIRST RUN prompt/brief;
+- Gate 1 eval criteria and receipt discipline.
+
+
+We do NOT need before launch:
+- final system architecture;
+- vector database;
+- production MCP server;
+- full Drive gateway;
+- multi-host synchronization;
+- complete Agentum organogenesis;
+- local-model routing;
+- UI/cockpit;
+- finished plugin packaging.
+These are candidate organs that must earn their place through evidence.
+
+
+6. SYNCHRONIZATION CYCLES AFTER BIRTH
+CYCLE A — DEVELOPMENTAL DESCRIPTION ↔ LOCAL PRODUCT STATE
+Google Drive descriptions/goals/backlog/evidence inform local development. Local results, decisions and unresolved findings are checkpointed back into developmental records. Until a gateway exists this can be a deliberate checkpoint/export operation.
+
+
+CYCLE B — IDEAL BODY → CURSOR INCARNATION
+Source change → tests → install/update → verify → receipt. This cycle should become automated immediately. The Cursor incarnation should not be maintained primarily by manual edits.
+
+
+CYCLE C — INCARNATION EXPERIENCE → IDEAL BODY
+Real work exposes failures, missing capabilities and useful adaptations. Evidence is captured, evaluated, and—when warranted—implemented in the ideal body, then reinstalled and retested. This is the core growth loop.
+
+
+CYCLE D — PROJECT MOUNT
+When Proteus-Cursor is asked to work with Paideia, Hermes, Tinkuy or another project, it identifies authoritative carriers, inspects local state, installs or updates project-scoped rules/markers/goals/backlog/current-state pointers, works, checkpoints decisions and code, and reconciles appropriate state back toward cloud/project authority. A project mount is a local embodiment of a relationship, not a new independent subject.
+
+
+7. AUTHORITY RULES
+- Folder placement alone does not grant semantic authority.
+- A copied local file is a bootstrap carrier, not automatically the new canon.
+- Runtime/config state is evidence of embodiment, not definition of the product.
+- UNKNOWN and conflicting claims survive until resolved with evidence.
+- A semantic claim from the historical corpus is not promoted merely because it is convenient to implement.
+- Changes to self/host configuration require before/after evidence and rollback.
+
+
+8. WHEN SYSTEM ARCHITECTURE v1 BECOMES LEGITIMATE
+Architecture v1 is written after:
+BOOTSTRAP → FIRST INCARNATION → CLEAN REENTRY → BOUNDED SELF-HOSTED IMPROVEMENT → at least one REAL PROJECT MOUNT or equivalent real-work case → evidence review.
+
+
+Before that point, architecture is provisional scaffolding. The first incarnation must teach us whether native Cursor surfaces are enough, whether semantic memory/MCP is needed, whether cloud/local transport is the bottleneck, whether a shared multi-host spine is necessary, and whether coding-agent reduction remains the dominant failure.
+
+
+9. OBSERVABILITY AND EXTERNAL CONTROL — NOW PART OF GATE 1
+The first Cursor embodiment must install a global worklog/telemetry contour that operates across all Cursor workspaces and writes local append-only evidence plus Drive-visible active-run status. The goal is to eliminate manual chat copying and make work externally observable: host, project, RUN, model/session, stage, meaningful actions, test state, blocker and next frontier. A semantic analyzer may periodically classify stage/drift from bounded log deltas while preserving raw evidence.
+
+
+The first embodiment must also test an external command ingress. Verified Cursor surfaces include global hooks, a stop-hook followup_message path, Cursor Agent CLI/headless execution and ACP JSON-RPC; cloud agents additionally expose a public Cloud Agents API. The design must not assume that arbitrary idle local editor threads are externally resumable unless host testing proves it. A Drive-backed command queue plus local controller is the provisional cross-agent command surface.
+
+
+10. CURRENT FRONTIER
+Finish the foldered bootstrap packet including observability/control, mirror it locally, launch the first Cursor run, obtain the first global worklog + externally steerable bounded run, and stop doing abstract system design until first-incarnation evidence exists.

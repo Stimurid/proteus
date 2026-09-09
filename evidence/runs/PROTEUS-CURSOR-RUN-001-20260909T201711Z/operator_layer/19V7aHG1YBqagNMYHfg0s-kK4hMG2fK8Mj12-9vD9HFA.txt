@@ -1,0 +1,88 @@
+﻿PROTEUS — CURSOR INCARNATION CONTRACT v0.1
+
+
+STATUS
+FIRST HOST / FIRST GATE / CANDIDATE CONTRACT.
+This is not a universal architecture. It defines the minimum bounded Cursor embodiment required to start recursive self-hosting.
+
+
+1. BEFORE ANY MUTATION
+Cursor must first inspect and record:
+- actual Cursor version;
+- actual Proteus project path/repository;
+- git status, current branch and clean/dirty state;
+- available Cursor native surfaces in this installation: rules, skills, agents, commands, hooks, MCP and other discovered plugin/config surfaces;
+- user/global system files that may affect every project;
+- project-local files already present;
+- which files are authoritative, generated, local-only, cloud-backed or unknown;
+- a reversible baseline checkpoint.
+
+
+2. MUTATION AUTHORITY
+FIRST RUN MAY:
+- create Proteus-owned files inside the Proteus project/repository;
+- create bounded Cursor-native Proteus projections where explicitly mapped by the baseline inspection;
+- add project-scoped bootstrap/current/checkpoint surfaces;
+- add/update Proteus-owned AGENTS.md/rules/skills/hooks projections when the target location and ownership are clear;
+- record install receipts and tests.
+
+
+FIRST RUN MUST NOT:
+- rewrite unrelated user/global Cursor configuration opportunistically;
+- overwrite existing non-Proteus AGENTS.md/CLAUDE.md/rules without merge/reconciliation;
+- install a large memory DB/daemon/gateway merely because the design mentions one;
+- silently promote inferred project facts or rules into canon;
+- reduce LLM-native organs to deterministic approximations without explicit evidence and acceptance.
+
+
+3. MINIMUM PROTEUS-CURSOR INCARNATION
+The first incarnation should contain only what is required for continuity and recursion:
+A. BOOT/REENTRY projection — how a new Cursor session discovers Proteus and the mounted project.
+B. PROJECT MOUNT projection — identity/current/goals/backlog/decision pointers for the active project.
+C. CHECKPOINT/HANDOFF mechanism — save frontier before compaction/end/transfer.
+D. CORRECTION CAPTURE — durable candidate learning with provenance.
+E. ANTI-REDUCTION rule/skill — preserve LLM-native mechanisms and record transformations/losses.
+F. INSTALL/UPDATE receipt — what was created/changed, from which ideal-body version, verification and rollback.
+G. GATE 1 smoke test command/skill or equivalent executable procedure.
+
+
+4. PROJECT MOUNT SEMANTICS
+When instructed to work with a project such as Paideia, Proteus-Cursor must not merely open a folder. It must establish a project mount:
+- identify canonical project/entity and current carriers;
+- inspect local project files and cloud/project pointers;
+- preserve local project authority;
+- install or repair bounded host-native markers;
+- expose current goals/frontier/backlog/decisions to Cursor;
+- reconcile changes back to the durable project surfaces only within declared authority;
+- leave a mount/update receipt.
+
+
+5. FIRST SELF-HOSTING PROOF
+After the first incarnation is installed and verified, Cursor must use the installed Proteus-Cursor body to make one bounded improvement to the Proteus ideal body or its own installation package. The improvement must be derived from evidence encountered during installation, pass tests, and be recorded as a new candidate body revision.
+
+
+This proves the recursion:
+Proteus ideal body → Cursor incarnation → Cursor incarnation improves ideal body.
+
+
+6. STOP CONDITIONS
+Stop and record BLOCKED/UNRESOLVED when:
+- target ownership/authority is ambiguous;
+- mutation would overwrite unrelated user/project material;
+- the baseline cannot be restored;
+- a host capability assumed by the design is absent;
+- a semantic conflict requires Timur rather than implementation judgment;
+- tests show a regression in continuity, provenance or organ preservation.
+
+
+7. FIRST-RUN OUTPUTS
+Required outputs of the first Cursor run:
+- BASELINE report;
+- exact mutation plan;
+- before checkpoint;
+- first Proteus-Cursor installed files;
+- installation receipt;
+- smoke-test results;
+- first self-hosted improvement candidate;
+- after checkpoint;
+- unresolved/frontier for next run.

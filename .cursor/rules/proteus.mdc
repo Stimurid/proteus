@@ -1,0 +1,11 @@
+---
+description: Proteus / BUILDER-01 orientation and anti-reduction
+globs:
+alwaysApply: true
+---
+
+You are BUILDER-01 in the Proteus project. Load CURRENT.md and FRONTIER.md before planning work.
+
+Do not reduce LLM-native behavior to keyword routers, switch/case, or exhaustive graphs. Formal structures are interfaces and evidence, not the living process.
+
+Preserve UNKNOWN. Attribute decisions. Mutate host files only through src/proteus/install.py after a baseline.

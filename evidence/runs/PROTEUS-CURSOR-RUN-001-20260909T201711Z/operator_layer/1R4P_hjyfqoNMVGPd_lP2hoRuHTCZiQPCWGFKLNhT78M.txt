@@ -1,0 +1,107 @@
+﻿PROTEUS — IDEAL BODY MANIFEST v0.1
+
+
+STATUS
+CANDIDATE BODY MODEL / NOT YET IMPLEMENTED.
+This document describes the portable generative body that can create, update and repair concrete Proteus incarnations in Cursor, Claude Code, Codex, Kimi, OpenClaw and future hosts.
+
+
+1. BODY DISTINCTIONS
+IDEAL BODY = portable model/source/package/repository/plugin/MCP and installation logic.
+INCARNATION = one concrete installed body in one host environment.
+PROJECT MOUNT = project-scoped installation/state through which an incarnation works with Paideia, Tinkuy, Hermes or another project.
+KNOWLEDGE CORPUS = evidence, sources, benchmarks, donor lines, genealogy and examples; not runtime body.
+DESCRIPTION/DEVELOPMENT = current understanding of Proteus, design program, unresolved questions and decisions.
+
+
+2. MINIMUM PORTABLE CAPABILITIES
+A Proteus ideal body must eventually be able to:
+- identify its own version, lineage and authoritative sources;
+- inspect a target host before mutation;
+- install/update host-native rules, skills, hooks, commands and MCP adapters where supported;
+- install project-scoped markers, rules, goals/current/backlog/state adapters;
+- reenter an existing project without manual chat-copy from Timur;
+- checkpoint/handoff before compaction/session end;
+- capture corrections and candidate learnings with provenance;
+- preserve UNKNOWN and conflicts;
+- protect LLM-native organs from silent reduction to deterministic heuristics;
+- reconcile local/project/cloud carriers without confusing physical placement with semantic identity;
+- record every installation/update as an incarnation receipt;
+- rollback a failed or degraded incarnation;
+- run acceptance tests after installation;
+- use an installed incarnation to continue changing the ideal body itself.
+
+
+3. CANDIDATE INTERNAL ORGAN SET — v0.1
+BOOT / REENTRY ORGAN
+Loads host identity, Proteus version, project mount, current frontier, relevant rules and unresolved conflicts.
+
+
+PROJECT BOOTSTRAP / MOUNT ORGAN
+Creates or repairs the minimal durable project surfaces needed by the host; synchronizes only what is justified by scope and authority.
+
+
+MEMORY / CONTINUITY ORGAN
+Initially file/native-host-first. External semantic memory or vector systems are added only if Gate 1 proves they are needed.
+
+
+RULE / SKILL COMPILER
+Translates Proteus-level durable norms and practices into host-native forms such as Cursor rules, AGENTS.md, CLAUDE.md, skills, hooks or commands without assuming those projections are the ontology of Proteus.
+
+
+CHECKPOINT / HANDOFF ORGAN
+Persists current frontier, decisions and unresolved state before compaction/session end and when transferring work to another body.
+
+
+CORRECTION / LEARNING ORGAN
+Captures significant human correction as evidence; distinguishes episode, project rule, reusable skill and candidate global norm; does not automatically promote every correction to canon.
+
+
+ANTI-REDUCTION / TRANSDUCTION ORGAN
+Checks what is lost when conversation/meaning/organ becomes specification, architecture or code; rejects silent substitution of a living LLM-native mechanism by keyword/if-then/state-machine/graph approximations unless explicitly justified.
+
+
+HOST ADAPTERS
+Cursor first; later Claude Code, Codex, Kimi/OpenClaw/local bodies. Each adapter maps ideal-body functions onto real host surfaces.
+
+
+PROJECT ADAPTERS
+Project mounts for Paideia/Tinkuy/Hermes/etc. They reconcile project-local files, goals, backlog/current state and cloud carriers.
+
+
+GATEWAY / SYNC
+Candidate infrastructure organ for Drive/local/repository transport and reconciliation. Deferred until Cursor Gate 1 determines the minimum necessary form.
+
+
+EVAL / IMMUNE ORGAN
+Runs continuity, provenance, unknown-preservation, project-isolation, correction-learning, organ-preservation and self-hosting tests after mutation.
+
+
+4. SOURCE-OF-TRUTH PRINCIPLE
+No single generated file is Proteus. Rules/AGENTS.md/hooks/plugin manifests are host-specific projections. The ideal body must preserve provenance from Proteus-level source to each projection and allow reconstruction/replacement of projections.
+
+
+5. SELF-HOSTING PRINCIPLE
+Proteus is recursively self-constructing:
+Ideal body → instantiate Proteus-Cursor → Proteus-Cursor edits ideal body → tests → promote new ideal body → update incarnation.
+
+
+The recursive loop is accepted only when every iteration has baseline, bounded mutation, verification, provenance, rollback and acceptance evidence. The tests are immune functions, not a claim that Proteus itself is a finite state machine.
+
+
+6. FIRST IMPLEMENTATION SCOPE
+The first build must target Cursor only and stay intentionally small. Required before first run:
+- repository/project skeleton;
+- body manifest;
+- Cursor adapter/installation contract;
+- minimal rules/skills/hooks set;
+- baseline + rollback procedure;
+- Gate 1 smoke tests;
+- first self-hosting run brief.
+
+
+Explicitly deferred unless demanded by evidence: full vector DB, full AIYE Spine, full Agentum registry/governance, permanent local daemon, broad Google Drive gateway, browser ecosystem, key/router manager, local-model synthesis, universal UI/cockpit.
+
+
+7. ACCEPTANCE OF THE IDEAL BODY v0.1
+v0.1 is not accepted because this document exists. It is accepted only when a clean Cursor environment can use the body sources to instantiate a bounded Proteus-Cursor incarnation, pass the smoke tests, and then use that incarnation to perform one verified improvement to the ideal body itself.

@@ -1,0 +1,16 @@
+---
+description: Baseline, bounded mutation, receipt, rollback for host/source changes
+alwaysApply: true
+---
+
+# Mutation protocol
+
+Before changing Cursor user/project config:
+
+1. Snapshot (installer does this for host files).
+2. State intended behavioral effect.
+3. Stay inside `MUTATION_SCOPE.md` for the active run.
+4. Verify by behavior, not file existence alone.
+5. Write a receipt. Rollback on failed postcondition.
+
+Prefer: source change → tests → `install_cursor.py` → verify.

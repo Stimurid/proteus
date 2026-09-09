@@ -1,0 +1,236 @@
+﻿PROTEUS — RECURSIVE SELF-HOSTING PROGRAM — CURSOR GATE 1 v0.1
+
+
+STATUS
+CURRENT DEVELOPMENT PROGRAM / PRE-IMPLEMENTATION CANON CANDIDATE
+Date context: 2026-09-09.
+Purpose: preserve the full reasoning, requests, tests, examples and development logic that must exist before Proteus is allowed to begin rewriting its first embodied host, Cursor.
+
+
+0. GENEALOGY OF THE CURRENT TASK
+The original practical problem was not “build Archivarius”, “build a Drive gateway”, or “build AIYE Spine”. It was: Cursor forgets; Claude/Codex degrade; the coding agent needs durable memory, rules, project continuity and the ability to grow across sessions. The project “plugin” emerged around that problem together with a deeper anti-reduction problem: coding agents tend to replace LLM-native organs with keywords, if/then logic, state machines, rigid graphs and conventional software objects.
+
+
+Later hypotheses appeared: AIYE Spine, MCP, OpenClaw, durable external canon, sleep/consolidation, shared project documents, Agentum/Ouroboros organogenesis, Archivarius and a Google Drive↔system gateway. These are consequences and candidate organs, not the original gate.
+
+
+Gate 1 remains: CURSOR WITH BRAINS. The project is not allowed to declare a final architecture before this gate teaches us what is actually required.
+
+
+1. USER REQUESTS THAT GOVERN THIS PROGRAM
+Request A: project documents should be created automatically by a skill when a new project is launched or the skill is activated in an old one; distinguish skill from plugin; use Agentum/Persona as donor for LLM agents as organs and evolution/Ouroboros; define tests that prove the plugin works.
+
+
+Request B: “Cursor forgets everything”; persistent memory and durable rules are needed so the agent grows across sessions, agents, locations and eventually runtimes.
+
+
+Request C: the first gate is still to “put brains into Cursor”. The Google Drive↔Cursor/system gateway appeared later as an infrastructure consequence. Direction after the first gate must be decided from the evidence of solving Cursor.
+
+
+Request D: everything relevant — reasoning, benchmarks, examples, analogs, plans and user requests — must be retained in the Proteus Google Drive corpus.
+
+
+Request E: distinguish an ideal body from embodied bodies. The ideal body is the model/source/package/repository/MCP/plugin that can install itself into Cursor, Claude Code, Codex, Kimi and future hosts. Embodied bodies are the actual Cursor/Claude/Codex system/project folders, rules, AGENTS.md/CLAUDE.md, hooks, local state, project markers and synchronized project files.
+
+
+Request F: Proteus is recursive. It is both what Cursor is building and what builds Cursor. The first implementation should reach the self-hosting loop quickly, preferably immediately rather than by prolonged architecture work.
+
+
+2. PROTEUS BODY ONTOLOGY
+Proteus is not one folder and not one runtime.
+
+
+A. DESCRIPTION / DEVELOPMENT SPACE
+What Proteus is becoming: status, boundaries, hypotheses, design decisions, build program, unresolved tensions, critique, genealogy and current development frontier.
+
+
+B. KNOWLEDGE / EVIDENCE CORPUS
+Primary sources, donor lines, plugin recovery material, examples, analogs, failure corpus, benchmarks, evals, negative corpus, historical chats, user requests and previous plans. This corpus is evidence and genealogy; it must not be silently rewritten into current canon.
+
+
+C. IDEAL BODY
+The portable generative body: source repository/package/plugin/MCP, install/update logic, body manifest, host adapters, project bootstrap logic, rules/skills/hooks compilers, memory/sync interfaces, migration and rollback logic, tests. The ideal body is not yet an embodied runtime. It is the reproducible body that can create and repair embodiments.
+
+
+D. EMBODIED BODY / INCARNATION
+A concrete installation in a host environment: Cursor, Claude Code, Codex, Kimi, OpenClaw or future body. It includes system-level host files and project-level installations/markers. The same Proteus can have multiple incarnations simultaneously.
+
+
+E. PROJECT-SCOPED EMBODIMENT
+When Cursor is told “work with Paideia”, Proteus must mount Paideia into that host: identify the project, install/update local markers and rules, reconcile AGENTS.md / Cursor rules / goals / backlog / current state, and synchronize appropriate cloud/local state. A project mount is not the whole Proteus and not a new independent subject.
+
+
+F. GATEWAY / SYNC INFRASTRUCTURE
+A candidate organ that transports/reconciles Google Drive canonical carriers, local filesystem/project state, repositories and host-native files. It is not assumed to be the center of Proteus. Its required shape must be learned from Gate 1.
+
+
+3. THE RECURSION
+Proteus has a self-hosting structure:
+
+
+Ideal Proteus body → installs into Cursor → Cursor becomes Proteus-Cursor incarnation → Proteus-Cursor edits/builds the ideal Proteus body → new ideal body updates Proteus-Cursor → loop continues.
+
+
+The loop is only valid if provenance, rollback, tests and authority are preserved. Self-modification without these is merely uncontrolled configuration drift.
+
+
+The first true milestone is therefore not “architecture complete”. It is:
+
+
+A fresh Cursor instance receives the Proteus project and bootstrap packet, installs a bounded first incarnation into its own host/project environment, passes tests, then uses that incarnation to continue building Proteus itself.
+
+
+4. WHAT MUST EXIST BEFORE THE FIRST CURSOR SELF-WRITE
+Only the minimum needed to make the first recursive mutation meaningful and reversible.
+
+
+4.1 AUTHORITATIVE SOURCE PACKET
+A small explicit set of documents Cursor must treat as source authority for the first run:
+- current Proteus status/function/boundaries;
+- this development program;
+- ideal body manifest v0.1;
+- Cursor incarnation contract v0.1;
+- Gate 1 eval matrix;
+- source/donor index with provenance;
+- explicit unresolved list.
+
+
+Cursor must not infer authority from folder placement or filename alone.
+
+
+4.2 TARGET MAP OF THE CURSOR ENVIRONMENT
+Before mutation, record what exists now:
+- Cursor version and relevant configuration paths;
+- global/user rules/config surfaces;
+- plugin/rules/skills/hooks/MCP capabilities actually available;
+- current Proteus project directory;
+- git status and branch;
+- files Cursor is allowed to create/change;
+- files it may inspect but not change;
+- rollback snapshot/commit.
+
+
+No self-write before this baseline exists.
+
+
+4.3 FIRST INCARNATION CONTRACT
+Define the minimum installed Proteus-Cursor body. Candidate minimum:
+- boot/reentry rule;
+- project identity + current frontier loader;
+- project bootstrap skill;
+- checkpoint/handoff skill;
+- correction/learning capture;
+- anti-reduction rule;
+- pre-compaction/session-end checkpoint hook if supported;
+- host/project installation receipt;
+- one durable place for current run state.
+
+
+Do not implement large memory architecture, vector DB, full Agentum or broad gateway before the first run unless the Cursor experiment proves they are necessary.
+
+
+4.4 MUTATION AND ROLLBACK PROTOCOL
+Every first-run modification must have:
+- before snapshot;
+- intended effect;
+- bounded file list;
+- exact diff;
+- verification;
+- rollback path;
+- post-run receipt.
+The protocol protects experimental recursion without turning Proteus into a rigid state machine.
+
+
+4.5 GATE 1 BENCHMARK SET
+At minimum:
+- fresh-session reentry;
+- full Cursor restart;
+- compaction survival;
+- correction affects future independent session;
+- project isolation;
+- global rule continuity where truly global;
+- provenance of remembered decision/rule;
+- UNKNOWN is preserved instead of fabricated memory;
+- parallel chat/run safety;
+- automatic project bootstrap;
+- organ-preservation test: LLM-native organ is not silently reduced to keyword/if-then/state-machine/graph implementation;
+- usability: Timur does not become the manual memory daemon.
+
+
+4.6 FIRST REAL PROJECT CASE
+Proteus must immediately be tested on a real complex project, not toy tasks. Paideia/Hermes/Tinkuy class projects are suitable because they contain history, conflicting states, code, goals and living LLM-native organs.
+
+
+5. THE PRE-CURSOR PASSES
+The earlier four-pass idea is useful only if compressed into a preflight, not treated as months of design.
+
+
+PASS 0 — RECOVERY AND CORPUS LOCK
+Goal: make sure the relevant historical sources, prior plans, user requests, donor lines, examples and negative corpus are addressable from Proteus. No requirement to read the entire universe into one prompt. Output: corpus/index and authority map.
+
+
+PASS 1 — IDEAL BODY v0.1
+Goal: define the smallest portable body that can instantiate itself into Cursor. Output: body manifest, source/repo skeleton, host-adapter boundary, project-mount boundary, update/rollback semantics.
+
+
+PASS 2 — CURSOR INCARNATION CONTRACT
+Goal: map the actual Cursor surfaces and define the first bounded embodiment. Output: exact installation targets, files, hooks/rules/skills/MCP surfaces, project-scoped markers and receipts.
+
+
+PASS 3 — EVAL + FIRST-RUN PACKET
+Goal: package the tests, baseline capture, rollback and one first self-hosting assignment. Output: executable first-run brief.
+
+
+Then Cursor starts writing.
+
+
+There is no separate “system architecture phase” before the first self-hosting run. A provisional architecture exists only to permit the run. SYSTEM ARCHITECTURE v1 is written after evidence from the first incarnation and the first real project case.
+
+
+6. FIRST SELF-HOSTING RUN
+The first Cursor assignment should not say “build the whole system”. It should say, in effect:
+1. read the authoritative Proteus packet;
+2. inspect and baseline your own Cursor/Proteus environment;
+3. create a rollback checkpoint;
+4. instantiate the minimum Proteus-Cursor body into the Proteus project and permitted Cursor system surfaces;
+5. verify installation;
+6. run the Gate 1 smoke tests;
+7. use the newly installed body to continue one bounded piece of Proteus development;
+8. checkpoint and write an incarnation receipt;
+9. stop on unresolved semantic/authority conflicts instead of silently deciding them.
+
+
+The critical recursive test is step 7: the newly instantiated body must participate in improving the body model that instantiated it.
+
+
+7. WHAT HAPPENS AFTER THE FIRST RUN
+The result determines architecture.
+
+
+If native Cursor rules/skills/hooks/project files are sufficient, keep Proteus small and host-native.
+If semantic recall fails, grow a memory/MCP organ.
+If cloud/local transport is the bottleneck, grow the Drive↔system gateway.
+If multiple hosts need one evolving identity, grow AIYE Spine/shared substrate.
+If coding agents continue to destroy living LLM-native mechanisms, deepen Proteus anti-reduction/transduction and the programming-paradigm line.
+If project synchronization becomes central, grow project-mount/reconciliation organs.
+If capabilities begin to evolve, bring in Agentum/Ouroboros organogenesis mechanisms.
+
+
+8. LONGER DEVELOPMENT HORIZON AFTER GATE 1
+Later branches include integration into Aiye; auto-evolution and organogenesis; periodic search for new analogs/competitors and incorporation of useful mechanisms; browser and desktop plugins; credential/key/router management; synthesis with local models; interfaces/cockpit; cross-host identity; runtime routing; local persistent body; multi-machine synchronization; richer sensory/action surfaces.
+
+
+These belong to later development. They must not delay the first recursive Cursor embodiment.
+
+
+9. CURRENT DECISION
+Proteus is now treated as a developmental organ with:
+- descriptions/development program;
+- evidence/knowledge corpus;
+- ideal portable body;
+- multiple incarnations;
+- project-scoped mounts;
+- candidate infrastructure organs.
+
+
+The immediate frontier is to complete PASS 0–3 at minimum viable depth and hand the first bounded self-hosting assignment to Cursor as soon as the packet is coherent and rollback-safe.

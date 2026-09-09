@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "hooks": {
+    "workspaceOpen": [
+      {
+        "command": "hooks\\proteus_hook.cmd",
+        "timeout": 15
+      }
+    ],
+    "sessionStart": [
+      {
+        "command": "hooks\\proteus_hook.cmd",
+        "timeout": 15
+      }
+    ],
+    "sessionEnd": [
+      {
+        "command": "hooks\\proteus_hook.cmd",
+        "timeout": 15
+      }
+    ],
+    "preCompact": [
+      {
+        "command": "hooks\\proteus_hook.cmd",
+        "timeout": 15
+      }
+    ],
+    "stop": [
+      {
+        "command": "hooks\\proteus_hook.cmd",
+        "timeout": 15,
+        "loop_limit": 2
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "hooks\\proteus_hook.cmd",
+        "timeout": 10
+      }
+    ],
+    "postToolUseFailure": [
+      {
+        "command": "hooks\\proteus_hook.cmd",
+        "timeout": 10
+      }
+    ]
+  }
+}

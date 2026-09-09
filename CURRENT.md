@@ -1,0 +1,15 @@
+# CURRENT
+
+Project: Proteus
+Host: Cursor 3.19.13
+RUN_ID: PROTEUS-CURSOR-RUN-001-20260909T2015Z
+Stage: first Cursor incarnation (Gate 1 in progress)
+
+## Now
+
+First embodiment source+install path is the working object. Blind operator documents remain closed until `BLIND_OBSERVATION.md` is written after smoke evidence.
+
+## Last accepted
+
+- Blind packet obtained and unpacked.
+- Git repository initialized at `C:\Projects\Proteus`.

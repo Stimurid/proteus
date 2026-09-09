@@ -1,0 +1,15 @@
+{
+  "at": "2026-09-09T20:27:08.205848+00:00",
+  "files": {
+    "user_hooks_json": {
+      "path": "C:\\Users\\Timur Shchukin\\.cursor\\hooks.json",
+      "exists": true,
+      "sha256_16": "b9cb2958bd8f9bd3"
+    },
+    "user_hooks_dir": {
+      "path": "C:\\Users\\Timur Shchukin\\.cursor\\hooks",
+      "exists": true,
+      "sha256_16": null
+    }
+  }
+}

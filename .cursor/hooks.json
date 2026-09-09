@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [{ "command": ".cursor\\hooks\\proteus_hook.cmd", "timeout": 15 }],
+    "stop": [{ "command": ".cursor\\hooks\\proteus_hook.cmd", "timeout": 15, "loop_limit": 2 }],
+    "preCompact": [{ "command": ".cursor\\hooks\\proteus_hook.cmd", "timeout": 15 }]
+  }
+}
