@@ -1,0 +1,34 @@
+## Completion report
+
+**Acting role / jurisdiction:** BUILDER-01 on Cursor; RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; product work was Cursor **project mount** (PRODUCT_SPEC form C), not Gate 1 / organ test.
+
+**Command:** `python -m proteus.activate --project <path> [--dry-run] [--remove] [--run-id …]`  
+(also `python -m proteus activate …`)
+
+**Added/changed:** `src/proteus/activate.py`, `cli.py` subcommand, `hosts/cursor/templates/activate/**`, `tests/test_activate.py`, README, D-006 + state/frontier/evidence.
+
+**Activation behavior:** Inspects target → resolves Proteus source (`PROTEUS_SOURCE_ROOT` / module tree) and hook runtime (`~/.proteus/host/cursor/src` else source `src`) → preflight-validates `hooks.json` → writes mount surfaces + `.proteus/activation.json` + `.proteus/ENTRY.md`.
+
+**Pre-existing instructions (D-006):** Never overwrite existing `AGENTS.md` / `CLAUDE.md` / non-`proteus-*` rules / existing `state/*`. Merge only `proteus_hook` into project hooks. Absent carriers get mount-oriented templates (not ideal-body BUILDER-01 AGENTS).
+
+**Dry-run:** Plans actions; writes nothing; still validates hooks when present.
+
+**Re-run:** Stable `activation_id`; refreshes Proteus-owned rules/skills/hooks; preserves AGENTS/CLAUDE/state once present.
+
+**Removal:** Only `owned_paths` from manifest; strips `proteus_hook`; refuses without manifest; leaves unrelated files.
+
+**Fixtures/tests:** `python tests/test_activate.py` PASS (empty, existing AGENTS, existing rules/hooks, re-run, remove, BOM hooks, invalid-hooks preflight). Live trees under `activation_fixtures/`. Related smokes PASS.
+
+**Limitations / unresolved:** Dual AGENTS authority when foreign AGENTS is preserved; no auto history import; activate does not install user-global hooks; portable zip not yet repacked (source is in tree for next pack); UTF-8 BOM on hooks was a real failure mode (fixed with `utf-8-sig` + preflight).
+
+**Establishes:** Bounded one-command Cursor mount for an existing project with inspect/dry-run/provenance/reversal.
+
+**Does not establish:** Gate 1, full product acceptance, PROCESS_DEATH continuity, multi-host activation, organ behavior.
+
+**Evidence:** `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/PRODUCT_ACTIVATION.md`
+
+**State:** D-006 accepted; CURRENT/FRONTIER/UNRESOLVED updated; PRODUCT_ACTIVATION = PASS in RUN_RECEIPT.
+
+**Commit:** `0c6414375b3abbff0c39f02c9349217e26f9a2ae`
+
+**Next action:** Provide one real external project path to activate and record a mount receipt (human-chosen; not a fixture).

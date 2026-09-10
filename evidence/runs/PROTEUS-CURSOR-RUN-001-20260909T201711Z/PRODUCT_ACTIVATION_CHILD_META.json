@@ -1,0 +1,31 @@
+{
+  "started_utc": "2026-09-10T16:29:10.245522+00:00",
+  "ended_utc": "2026-09-10T16:39:56.430441+00:00",
+  "elapsed_sec": 646.195,
+  "exit_code": 0,
+  "timed_out": false,
+  "pid": 27804,
+  "node": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\node.exe",
+  "index": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\index.js",
+  "workspace": "C:\\Projects\\Proteus",
+  "argv_without_prompt": [
+    "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\node.exe",
+    "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\index.js",
+    "-p",
+    "--output-format",
+    "text",
+    "--trust",
+    "--workspace",
+    "C:\\Projects\\Proteus",
+    "--force"
+  ],
+  "prompt_len": 4051,
+  "prompt_sha256": "33d7651da571078d1999f3042080946abde3c821cc149363d4ab12736b59fd06",
+  "prompt_sha256_prefix": "33d7651da571078d",
+  "prompt_source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\PRODUCT_ACTIVATION_CHILD_PROMPT.txt",
+  "used_continue": false,
+  "used_resume": false,
+  "auth": "CURSOR_AUTH_TOKEN from IDE cursorAuth/accessToken (value not recorded)",
+  "stdout_bytes": 2585,
+  "stderr_bytes": 0
+}
