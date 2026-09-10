@@ -11,6 +11,7 @@ This file is generated from Proteus ideal-body templates. Do not treat it as a s
 3. Read the latest file under `evidence/runs/` if you need episodic context.
 4. Preserve UNKNOWN and CONFLICT. Do not invent memories.
 5. Continue from FRONTIER.
+6. If `HANDOFF.md` or `state/RECONSTRUCTION.md` exists, this tree was reconstructed from a portable handoff. Read those files. Reconstruction is not PROCESS_DEATH continuity of the originating process.
 
 Current bootstrap RUN_ID hint: `PROTEUS-CURSOR-RUN-001-20260909T201711Z`
 Source root: `C:\projects\Proteus`

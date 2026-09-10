@@ -1,5 +1,7 @@
 # CURRENT
 
+**SUPERSEDED as current status carrier.** Canonical live CURRENT lives in `state/CURRENT.md`. This root file is a first-embodiment dump and must not be read as the reconstructed workspace's live status.
+
 Project: Proteus
 Host: Cursor 3.19.13
 RUN_ID: PROTEUS-CURSOR-RUN-001-20260909T2015Z

@@ -21,3 +21,9 @@
 - Not claimed: that the de-equation text causes ordinary-work loss-naming without an explicit audit.
 - Provenance: F01 self-transduction (`evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F01_SELF_TRANSDUCTION.md`) against pre-repair `state/IDENTITY.md` / `AGENTS.md` versus `_BOOTSTRAP/BLIND_START/60_CURRENT_PROTEUS_STATUS.md` CORE FUNCTION and `72_PRIMARY_SOURCE_PLUGIN_LAUNCH.md`.
 - Status: accepted for this incarnation; reversible via IDENTITY/templates + reinstall.
+
+## D-005 — Portable handoff is classified payload + reconstruct, not a live-host clone
+- Decision: the user-carried artifact is `distribution/proteus-portable-handoff.zip` (classified payload of ideal-body source, templates, durable `state/*`, tests, `_BOOTSTRAP`, evidence, and superseded root residue) plus `bootstrap.cmd` that copies the payload and runs source → tests → `install_cursor` on the destination. Generated host files (`AGENTS.md`, `.cursor/rules|skills|hooks`, `state/INCARNATION.md`) are omitted from the payload and recreated. User-global `~/.cursor` hooks and `%USERPROFILE%\.proteus` are installation actions (`bootstrap.cmd --machine-host`), not static package contents. Isolated reconstruct is the default and the clean-room path. Drive observatory and Agent CLI remain non-portable (FAILED_TRANSPORT / unproved). Root `CURRENT.md` / `FRONTIER.md` / `DECISIONS.md` / `UNKNOWN.md` / `DESIGN_v0.1.md` travel as superseded residue, not live carriers.
+- Not claimed: PROCESS_DEATH continuity; Gate 1; that an isolated reconstruct equals a live Cursor session; that Python is inside the zip.
+- Provenance: portable-handoff episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; product spec §3 form A (ideal/portable body) vs B (host incarnation).
+- Status: accepted for this incarnation; reversible by removing `src/proteus/handoff.py` / `distribution/`.

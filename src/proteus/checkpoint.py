@@ -17,7 +17,10 @@ def main():
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     dest = ROOT / "evidence" / "checkpoints" / f"CHECKPOINT-{ts}.md"
     dest.parent.mkdir(parents=True, exist_ok=True)
-    current = (ROOT / "CURRENT.md").read_text(encoding="utf-8") if (ROOT / "CURRENT.md").exists() else ""
+    current_path = ROOT / "state" / "CURRENT.md"
+    if not current_path.exists():
+        current_path = ROOT / "CURRENT.md"
+    current = current_path.read_text(encoding="utf-8") if current_path.exists() else ""
     body = f"""# CHECKPOINT {ts}
 
 DONE:

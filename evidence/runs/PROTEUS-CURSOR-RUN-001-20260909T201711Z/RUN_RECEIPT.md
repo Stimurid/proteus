@@ -61,6 +61,7 @@ Created `~/.cursor/hooks.json` and `~/.cursor/hooks/proteus_hook.cmd`. Generated
 | T02b named-hook restart after argv identity | PASS | `T02b_RESULT.md` vs `T02b_BASELINE.json`; named argv `sessionStart`/`workspaceOpen`; OS quit UNKNOWN |
 | T03 compaction | PASS | `T03_RESULT.md`; continuity PASS; boundary INTERNAL_PRECOMPACT (argv `preCompact` on this transcript after freeze); `/summarize` vs auto UNKNOWN; no operator witness this scoring turn |
 | F01 self-transduction | RECORDED (not a Gate 1 upgrade) | `F01_SELF_TRANSDUCTION.md`; D-004 installed; T11 still PARTIAL |
+| Portable handoff / clean-room reconstruct | PASS | `PORTABLE_HANDOFF.md`; zip-only temp reconstruct; not a Gate 1 upgrade |
 | T04 correction later session | NOT_RUN | capture skill installed only; not started because previously planned |
 | T05 project isolation | NOT_RUN | |
 | T11 organ preservation (behavioral) | PARTIAL | anti-reduction rule present in `.cursor/rules`; no independent organ task executed |
@@ -98,10 +99,10 @@ See `ROLLBACK.md`. Uninstall path exists. Rollback of user hooks **not destructi
 
 ## 14. NEXT FRONTIER
 
-F01 SELF-TRANSDUCTION recorded. D-004 identity de-equation installed. T02 remains PARTIAL. T02b PASS. T03 PASS (`T03_RESULT.md`, INTERNAL_PRECOMPACT). Do not start T04/T05/T02c as inherited next tests. Drive observatory flush remains FAILED_TRANSPORT. PROCESS_DEATH_BOUNDARY remains UNKNOWN.
+F01 SELF-TRANSDUCTION recorded. D-004 identity de-equation installed. D-005 portable handoff accepted (`PORTABLE_HANDOFF.md`). T02 remains PARTIAL. T02b PASS. T03 PASS. Do not start T04/T05/T02c as inherited next tests. Drive observatory flush remains FAILED_TRANSPORT. PROCESS_DEATH_BOUNDARY remains UNKNOWN. Portable reconstruct is not a process-death witness.
 
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b PASS; T03 PASS; F01 RECORDED; T04 NOT_STARTED)
+FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b PASS; T03 PASS; F01 RECORDED; D-005 PORTABLE_HANDOFF PASS; T04 NOT_STARTED)
 OBSERVABILITY = PARTIAL (local PASS, Drive FAIL)
 EXTERNAL_CONTROL = PARTIAL (queue PASS, live stop/CLI FAIL or NOT_RUN)
 CLEAN_REENTRY = PASS (externally witnessed; see T01_CLEAN_REENTRY.md)
@@ -109,4 +110,5 @@ T02_HOOKS_RESTART = PARTIAL
 T02B_NAMED_HOOK_RESTART = PASS
 T03_COMPACTION = PASS
 F01_SELF_TRANSDUCTION = RECORDED
+PORTABLE_HANDOFF = PASS (clean-room zip-only reconstruct; not a Gate 1 upgrade)
 GATE_1 = NOT_YET

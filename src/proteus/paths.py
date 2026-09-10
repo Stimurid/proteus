@@ -13,6 +13,9 @@ def proteus_home() -> Path:
 
 
 def cursor_user_dir() -> Path:
+    override = os.environ.get("PROTEUS_CURSOR_USER_DIR")
+    if override:
+        return Path(override)
     return home() / ".cursor"
 
 

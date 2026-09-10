@@ -12,8 +12,14 @@ from pathlib import Path
 from .paths import cursor_user_dir, host_install_dir, proteus_home
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-TEMPLATES = REPO_ROOT / "hosts" / "cursor" / "templates"
+def source_root() -> Path:
+    env = os.environ.get("PROTEUS_SOURCE_ROOT")
+    if env:
+        return Path(env).resolve()
+    return Path(__file__).resolve().parents[2]
+
+
+REPO_ROOT = source_root()
 PYTHON = sys.executable
 
 USER_HOOK_TIMEOUTS = {
@@ -88,13 +94,26 @@ def _write(path: Path, text: str) -> None:
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
+def templates_dir(project_root: Path) -> Path:
+    candidate = project_root / "hosts" / "cursor" / "templates"
+    if candidate.is_dir():
+        return candidate
+    fallback = source_root() / "hosts" / "cursor" / "templates"
+    if fallback.is_dir():
+        return fallback
+    raise FileNotFoundError(f"Cursor templates not found under {project_root} or {source_root()}")
+
+
 def install(project_root: Path, *, run_id: str, backup_dir: Path) -> dict:
     project_root = project_root.resolve()
+    templates = templates_dir(project_root)
     snap = snapshot_host(backup_dir)
     installed = []
 
-    # copy hook runtime
-    hook_src = REPO_ROOT / "src" / "proteus"
+    # copy hook runtime from the tree being installed, not from the importing module's path
+    hook_src = project_root / "src" / "proteus"
+    if not hook_src.is_dir():
+        hook_src = source_root() / "src" / "proteus"
     hook_dst = host_install_dir() / "src" / "proteus"
     if hook_dst.exists():
         shutil.rmtree(hook_dst)
@@ -144,13 +163,14 @@ def install(project_root: Path, *, run_id: str, backup_dir: Path) -> dict:
         "skills/proteus-checkpoint/SKILL.md": project_root / ".cursor" / "skills" / "proteus-checkpoint" / "SKILL.md",
         "skills/proteus-correction/SKILL.md": project_root / ".cursor" / "skills" / "proteus-correction" / "SKILL.md",
         "skills/proteus-reentry/SKILL.md": project_root / ".cursor" / "skills" / "proteus-reentry" / "SKILL.md",
+        "commands/proteus-checkpoint.md": project_root / ".cursor" / "commands" / "proteus-checkpoint.md",
         "hooks.json": project_root / ".cursor" / "hooks.json",
     }
     for rel, dest in mapping.items():
-        src = TEMPLATES / rel
+        src = templates / rel
         text = src.read_text(encoding="utf-8")
         text = text.replace("{{RUN_ID}}", run_id)
-        text = text.replace("{{SOURCE_ROOT}}", str(REPO_ROOT))
+        text = text.replace("{{SOURCE_ROOT}}", str(project_root))
         _write(dest, text)
         installed.append(str(dest))
 
@@ -168,7 +188,7 @@ def install(project_root: Path, *, run_id: str, backup_dir: Path) -> dict:
             f"# Proteus Cursor incarnation\n\n"
             f"- RUN_ID: `{run_id}`\n"
             f"- installed_at: `{datetime.now(timezone.utc).isoformat()}`\n"
-            f"- source_root: `{REPO_ROOT}`\n"
+            f"- source_root: `{project_root}`\n"
             f"- host: Cursor\n"
             f"- generated_from: `hosts/cursor/templates` + `src/proteus/install_cursor.py`\n"
             f"- backup: `{backup_dir}`\n"
@@ -180,7 +200,7 @@ def install(project_root: Path, *, run_id: str, backup_dir: Path) -> dict:
         "receipt_id": f"INSTALL-{run_id}",
         "run_id": run_id,
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "source_root": str(REPO_ROOT),
+        "source_root": str(project_root),
         "project_root": str(project_root),
         "python": PYTHON,
         "files_installed": installed,

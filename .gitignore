@@ -5,4 +5,8 @@ __pycache__/
 *.egg-info/
 host-backups/
 .proteus-runtime/
+.cursor-user-isolated/
 evidence/runs/*/tmp/
+evidence/reconstructions/
+distribution/*.zip
+distribution/*.manifest.json
