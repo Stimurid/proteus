@@ -1,0 +1,21 @@
+﻿workspace.json:
+{
+  "folder": "file:///c%3A/Projects/Proteus-FRESH-001/Proteus"
+}
+
+project dir listing:
+canvases
+mcps
+
+agent.cmd exists: True
+agent about (truncated):
+About Cursor CLI
+
+CLI Version         2026.09.08-6caf4ff
+Latest              2026.09.08-6caf4ff (up to date)
+Model               Auto
+Subscription Tier   Unknown
+OS                  win32 (x64)
+Terminal            unknown
+Shell               cmd
+User Email          Not logged in
