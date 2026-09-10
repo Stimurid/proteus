@@ -1,0 +1,16 @@
+---
+description: Baseline, bounded mutation, receipt, rollback for host/project surface changes
+alwaysApply: true
+---
+
+# Mutation protocol
+
+Before changing Cursor user/project config or Proteus-owned mount files:
+
+1. Snapshot when touching host/user config.
+2. State intended behavioral effect.
+3. Prefer changing only Proteus-owned paths (see `.proteus/activation.json`).
+4. Verify by behavior, not file existence alone.
+5. Write a receipt. Rollback on failed postcondition.
+
+Do not silently overwrite pre-existing project `AGENTS.md` or non-`proteus-*` Cursor rules. Ideal-body source changes happen in the Proteus repository via its installer — not by treating this mount as source of truth.

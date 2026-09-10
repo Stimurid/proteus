@@ -20,3 +20,13 @@ Artifact: `distribution/proteus-portable-handoff.zip`. Usage is inside the zip (
 
 Blind-start packet (read-only carrier): `_BOOTSTRAP/BLIND_START/`.
 Canonical live status: `state/CURRENT.md` / `state/FRONTIER.md`. Root `CURRENT.md` / `FRONTIER.md` / `DECISIONS.md` / `UNKNOWN.md` are superseded residue.
+
+Project mount (activate Proteus on an existing Cursor coding-agent project):
+
+```
+python -m proteus.activate --project <path-to-existing-project>
+python -m proteus.activate --project <path> --dry-run
+python -m proteus.activate --project <path> --remove
+```
+
+(`PYTHONPATH=src` if needed.) Writes Proteus-owned surfaces and `.proteus/ENTRY.md`; does not overwrite an existing `AGENTS.md` or non-`proteus-*` Cursor rules. Not Gate 1.

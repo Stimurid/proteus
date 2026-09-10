@@ -1,0 +1,1 @@
+Write a Proteus checkpoint using `python -m proteus.checkpoint` (or `python src/proteus/checkpoint.py`) and update `state/CURRENT.md` / `state/FRONTIER.md`. Do not treat root `CURRENT.md` / `FRONTIER.md` as live carriers.

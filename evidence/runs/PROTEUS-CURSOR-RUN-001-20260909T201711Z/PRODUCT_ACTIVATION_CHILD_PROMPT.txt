@@ -1,0 +1,84 @@
+Continue work in this repository from its own durable current state.
+
+The product task is to build the first usable **one-command Proteus activation path for an existing coding-agent project**.
+
+Target use case:
+
+A developer already has an arbitrary project/repository. It may already contain its own `AGENTS.md`, Cursor rules, project instructions, source tree and conventions.
+
+They should be able to invoke one bounded Proteus activation command against that project and obtain a usable Proteus-enabled project environment without manually copying a collection of files.
+
+This is a candidate product capability. Do not declare the entire Proteus product accepted merely because this capability works.
+
+Recover current repository authority, decisions, unresolved items and implementation conventions before designing it.
+
+Implement the narrowest coherent first version that is actually usable.
+
+The activation capability should, where technically appropriate:
+
+* accept an explicit target project path;
+* inspect the target before making changes;
+* avoid destructive replacement of unrelated existing project material;
+* install or generate the Proteus-facing surfaces needed for supported coding-agent use;
+* distinguish project-local generated material from Proteus source;
+* avoid hard-coded dependency on the development checkout when a portable representation is available;
+* provide a dry-run or equivalent inspect-before-write path;
+* preserve enough installation provenance to know what Proteus created;
+* support a bounded reversal/removal path for material it owns, without deleting unrelated target-project content;
+* behave deterministically enough to test;
+* fail visibly when it cannot safely determine what to do.
+
+Start with the currently supported host/carrier rather than pretending universal host support.
+
+Do not build broad abstractions for unimplemented carriers.
+
+Do not silently overwrite an existing `AGENTS.md` or existing Cursor rules merely because Proteus has its own templates.
+
+When coexistence with existing target-project instructions requires a concrete policy, derive the smallest defensible behavior from current repository authority and make uncertainty visible rather than inventing a universal merge law.
+
+Do not rewrite constitutional/source materials merely to make the implementation easier.
+
+Create automated tests using disposable target-project fixtures.
+
+The fixture campaign must include at least:
+
+1. an essentially empty target project;
+2. a project that already has its own `AGENTS.md`;
+3. a project that already has Cursor rules/project instructions;
+4. a re-run against an already activated project;
+5. removal/reversal after activation.
+
+Add other cases if implementation evidence requires them.
+
+Execute the real activation against disposable fixtures, inspect the resulting trees, run relevant tests, repair causal defects, and repeat until the bounded capability is stable or a genuine boundary is reached.
+
+Produce clear target-project entry instructions as part of the activation result.
+
+Do not use the human as a shell runner.
+
+Record implementation evidence according to current repository conventions.
+
+Update durable state/decisions/frontier only for actual deltas established by this work.
+
+Commit legitimate repository changes.
+
+At completion report:
+
+* recovered acting role and current jurisdiction;
+* command/interface implemented;
+* files/components added or changed;
+* exact activation behavior;
+* treatment of pre-existing project instructions;
+* dry-run behavior;
+* re-run/idempotence behavior;
+* reversal/removal behavior;
+* fixture/test results;
+* limitations and unresolved cases discovered during implementation;
+* what this capability establishes;
+* what it does not establish;
+* evidence path;
+* relevant state/status changes;
+* commit hash;
+* exactly one next action only if a genuine external/human boundary remains.
+
+Continue autonomously through all bounded design, implementation, fixture execution, inspection, repair, testing, evidence and commit actions you own.

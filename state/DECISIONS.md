@@ -27,3 +27,9 @@
 - Not claimed: PROCESS_DEATH continuity; Gate 1; that an isolated reconstruct equals a live Cursor session; that Python is inside the zip.
 - Provenance: portable-handoff episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; product spec §3 form A (ideal/portable body) vs B (host incarnation).
 - Status: accepted for this incarnation; reversible by removing `src/proteus/handoff.py` / `distribution/`.
+
+## D-006 — Project activation coexistence (Cursor mount)
+- Decision: `python -m proteus.activate --project <path>` performs PRODUCT_SPEC form C project mount on Cursor only. It never overwrites an existing target `AGENTS.md` or `CLAUDE.md`, never overwrites non-`proteus-*` Cursor rules, merges only `proteus_hook` entries into project `.cursor/hooks.json`, creates `state/*` carriers only when absent, records ownership in `.proteus/activation.json`, and removes only owned paths on `--remove`. Mount templates live under `hosts/cursor/templates/activate/` and must not claim the target tree is the Proteus ideal body. Ideal-body incarnation remains `install_cursor` on a Proteus source tree.
+- Not claimed: Gate 1; multi-host activation; automatic history import; that activation alone proves organ behavior; that activate installs user-global hooks.
+- Provenance: product activation episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; PRODUCT_SPEC §3C / §4.3; evidence `PRODUCT_ACTIVATION.md`.
+- Status: accepted for this incarnation; reversible by removing `src/proteus/activate.py` and activate templates.

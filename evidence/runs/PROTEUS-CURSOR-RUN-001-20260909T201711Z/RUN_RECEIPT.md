@@ -105,10 +105,18 @@ See `ROLLBACK.md`. Uninstall path exists. Rollback of user hooks **not destructi
 
 ## 14. NEXT FRONTIER
 
-F01 SELF-TRANSDUCTION recorded. D-004 identity de-equation installed. D-005 portable handoff accepted (`PORTABLE_HANDOFF.md`). Fresh workspace PREPARED at `C:\Projects\Proteus-FRESH-001\Proteus` (`FRESH_WORKSPACE_PREP.md`); future Agent execution NOT_RUN. T02 remains PARTIAL. T02b PASS. T03 PASS. Do not start T04/T05/T02c as inherited next tests. Drive observatory flush remains FAILED_TRANSPORT. PROCESS_DEATH_BOUNDARY remains UNKNOWN. Portable reconstruct is not a process-death witness.
+F01 SELF-TRANSDUCTION recorded. D-004 identity de-equation installed. D-005 portable handoff accepted (`PORTABLE_HANDOFF.md`). Fresh incarnation experiment CLOSED (`FRESH_INCARNATION_CLOSURE.md`). D-006 product activation (Cursor project mount) implemented (`PRODUCT_ACTIVATION.md`). T02 remains PARTIAL. T02b PASS. T03 PASS. Do not start T04/T05/T02c as inherited next tests. Drive observatory flush remains FAILED_TRANSPORT. PROCESS_DEATH_BOUNDARY remains UNKNOWN. Activation is not a Gate 1 upgrade.
+
+## 15. PRODUCT ACTIVATION (project mount)
+
+Source: `src/proteus/activate.py`, `hosts/cursor/templates/activate/**`, `tests/test_activate.py`, CLI `activate` subcommand.
+Tests: `python tests\test_activate.py` PASS (incl. BOM hooks + invalid-hooks preflight). Related smokes PASS.
+Live fixtures: `activation_fixtures/01_empty`, `02_existing_agents`, `03_existing_rules`, `05_remove`.
+Causal repair: UTF-8 BOM on existing `hooks.json` → `utf-8-sig` + preflight before writes.
+Decision: D-006. Evidence: `PRODUCT_ACTIVATION.md`. Not Gate 1.
 
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b PASS; T03 PASS; F01 RECORDED; D-005 PORTABLE_HANDOFF PASS; T04 NOT_STARTED)
+FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b PASS; T03 PASS; F01 RECORDED; D-005 PORTABLE_HANDOFF PASS; D-006 PRODUCT_ACTIVATION PASS; T04 NOT_STARTED)
 OBSERVABILITY = PARTIAL (local PASS, Drive FAIL)
 EXTERNAL_CONTROL = PARTIAL (queue PASS, live stop/CLI FAIL or NOT_RUN)
 CLEAN_REENTRY = PASS (externally witnessed; see T01_CLEAN_REENTRY.md)
@@ -118,5 +126,6 @@ T03_COMPACTION = PASS
 F01_SELF_TRANSDUCTION = RECORDED
 PORTABLE_HANDOFF = PASS (clean-room zip-only reconstruct; not a Gate 1 upgrade)
 FRESH_WORKSPACE_PREP = PASS (isolated reconstruct at Proteus-FRESH-001; not a Gate 1 upgrade)
-FRESH_AGENT_TASK = NOT_RUN
+FRESH_INCARNATION = CLOSED (prep/CLI/brief PASS; process continuity NOT CLAIMED; organ behavior NOT TESTED)
+PRODUCT_ACTIVATION = PASS (Cursor mount command + fixtures; not Gate 1)
 GATE_1 = NOT_YET

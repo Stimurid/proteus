@@ -54,7 +54,12 @@ def scrub(text: str) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--workspace", required=True)
-    parser.add_argument("--prompt", required=True)
+    parser.add_argument("--prompt", default=None, help="prompt text (avoid for long multiline)")
+    parser.add_argument(
+        "--prompt-file",
+        default=None,
+        help="read prompt from UTF-8 file (preferred for long prompts)",
+    )
     parser.add_argument("--out", required=True, help="stdout capture path")
     parser.add_argument("--err", required=True, help="stderr capture path")
     parser.add_argument("--meta", required=True, help="json metadata path")
@@ -65,13 +70,27 @@ def main() -> int:
         help="pass --force to allow commands unless denied",
     )
     args = parser.parse_args()
+    if bool(args.prompt) == bool(args.prompt_file):
+        raise SystemExit("Provide exactly one of --prompt or --prompt-file")
+    if args.prompt_file:
+        prompt = Path(args.prompt_file).read_text(encoding="utf-8")
+    else:
+        prompt = args.prompt
 
     localapp = Path(os.environ["LOCALAPPDATA"])
-    version_dir = localapp / "cursor-agent" / "versions" / "2026.09.08-6caf4ff"
+    versions_root = localapp / "cursor-agent" / "versions"
+    version_dirs = sorted(
+        [p for p in versions_root.iterdir() if p.is_dir()],
+        key=lambda p: p.name,
+        reverse=True,
+    )
+    version_dir = next((p for p in version_dirs if (p / "node.exe").is_file()), None)
+    if version_dir is None:
+        raise SystemExit(f"No Agent CLI version with node.exe under {versions_root}")
     node = version_dir / "node.exe"
     index = version_dir / "index.js"
-    if not node.is_file() or not index.is_file():
-        raise SystemExit(f"Agent CLI node/index missing under {version_dir}")
+    if not index.is_file():
+        raise SystemExit(f"Agent CLI index.js missing under {version_dir}")
 
     token = load_ide_access_token()
     env = os.environ.copy()
@@ -92,7 +111,7 @@ def main() -> int:
     ]
     if args.force:
         cmd.append("--force")
-    cmd.append(args.prompt)
+    cmd.append(prompt)
 
     out_path = Path(args.out)
     err_path = Path(args.err)
@@ -145,10 +164,12 @@ def main() -> int:
         "index": str(index),
         "workspace": args.workspace,
         "argv_without_prompt": cmd[:-1],
-        "prompt_len": len(args.prompt),
+        "prompt_len": len(prompt),
+        "prompt_sha256": __import__("hashlib").sha256(prompt.encode("utf-8")).hexdigest(),
         "prompt_sha256_prefix": __import__("hashlib")
-        .sha256(args.prompt.encode("utf-8"))
+        .sha256(prompt.encode("utf-8"))
         .hexdigest()[:16],
+        "prompt_source": str(args.prompt_file) if args.prompt_file else "argv",
         "used_continue": False,
         "used_resume": False,
         "auth": "CURSOR_AUTH_TOKEN from IDE cursorAuth/accessToken (value not recorded)",
