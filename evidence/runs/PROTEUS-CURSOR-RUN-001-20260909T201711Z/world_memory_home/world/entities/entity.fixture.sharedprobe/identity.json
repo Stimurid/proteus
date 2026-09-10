@@ -1,0 +1,12 @@
+{
+  "schema": "proteus.entity.v0.1",
+  "entity_id": "entity.fixture.sharedprobe",
+  "display_name": "Shared Probe Device",
+  "aliases": [
+    "shared probe",
+    "probe-device"
+  ],
+  "relations": [],
+  "created_utc": "2026-09-10T19:01:11.610691+00:00",
+  "note": "identity card is address/catalog, not ontology of the living object"
+}

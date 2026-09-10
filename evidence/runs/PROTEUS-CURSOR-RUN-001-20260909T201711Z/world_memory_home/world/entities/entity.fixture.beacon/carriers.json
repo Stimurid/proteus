@@ -1,0 +1,22 @@
+{
+  "schema": "proteus.entity.v0.1",
+  "entity_id": "entity.fixture.beacon",
+  "carriers": [
+    {
+      "role": "HOME",
+      "kind": "local_fs",
+      "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.fixture.beacon",
+      "authority": "local_semantic",
+      "currentness": "active"
+    },
+    {
+      "role": "BACKUP",
+      "kind": "google_drive",
+      "provider_id": "1Yg-q6O26lLaYoIC0mHk-twwRrP_LkId3",
+      "title": "proteus-entity-fixture-beacon-carrier-v0.1.zip",
+      "authority": "cloud_carrier",
+      "currentness": "synced_snapshot",
+      "recorded_utc": "2026-09-10T19:00:13.663689+00:00"
+    }
+  ]
+}

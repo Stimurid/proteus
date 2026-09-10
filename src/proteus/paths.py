@@ -61,3 +61,20 @@ def host_install_dir() -> Path:
     d = proteus_home() / "host" / "cursor"
     d.mkdir(parents=True, exist_ok=True)
     return d
+
+
+def aiye_home() -> Path:
+    """Subject-level Aiye home. Created only when world memory needs a local root.
+
+    No pre-existing ``~/.aiye`` / Archivarius object-home was found on this host
+    (2026-09-10). Override with ``AIYE_HOME``.
+    """
+    return Path(os.environ.get("AIYE_HOME") or (home() / ".aiye"))
+
+
+def world_root() -> Path:
+    """Entity substrate root. Override with ``PROTEUS_WORLD_ROOT``."""
+    override = os.environ.get("PROTEUS_WORLD_ROOT")
+    if override:
+        return Path(override)
+    return aiye_home() / "world"

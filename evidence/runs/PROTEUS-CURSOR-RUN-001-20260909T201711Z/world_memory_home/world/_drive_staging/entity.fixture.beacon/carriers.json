@@ -1,0 +1,13 @@
+{
+  "schema": "proteus.entity.v0.1",
+  "entity_id": "entity.fixture.beacon",
+  "carriers": [
+    {
+      "role": "HOME",
+      "kind": "local_fs",
+      "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.fixture.beacon",
+      "authority": "local_semantic",
+      "currentness": "active"
+    }
+  ]
+}

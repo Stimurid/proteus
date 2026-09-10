@@ -1,0 +1,38 @@
+{
+  "schema": "proteus.world.index.v0.1",
+  "entities": [
+    {
+      "entity_id": "entity.fixture.beacon",
+      "display_name": "Fixture Shared Beacon",
+      "aliases": [
+        "shared beacon",
+        "beacon"
+      ]
+    },
+    {
+      "entity_id": "entity.fixture.conflictdemo",
+      "display_name": "Conflict Demo Box",
+      "aliases": [
+        "conflict-demo"
+      ]
+    },
+    {
+      "entity_id": "entity.fixture.sharedprobe",
+      "display_name": "Shared Probe Device",
+      "aliases": [
+        "shared probe",
+        "probe-device"
+      ]
+    },
+    {
+      "entity_id": "entity.router.aw1000.home",
+      "display_name": "Arcadian AW1000 router",
+      "aliases": [
+        "AW1000",
+        "our router",
+        "Arcadian AW1000"
+      ]
+    }
+  ],
+  "rebuilt_utc": "2026-09-10T19:05:17.664592+00:00"
+}

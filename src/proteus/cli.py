@@ -10,6 +10,18 @@ from .activate import activate, remove_activation
 from .control import enqueue, list_queue
 from .flush import flush
 from .install_cursor import REPO_ROOT, install
+from .world import (
+    MemoryScope,
+    WorldStore,
+    classify_and_route,
+    ensure_world_home,
+    export_entity_carrier_bundle,
+    import_entity_carrier_bundle,
+    rebuild_index,
+    reconcile_entity,
+)
+from .world.archivarius import resolve_via_bridge
+from .world.store import Provenance
 
 
 def cmd_enqueue(ns: argparse.Namespace) -> None:
@@ -46,6 +58,80 @@ def cmd_activate(ns: argparse.Namespace) -> None:
     print(json.dumps(result, indent=2))
 
 
+def cmd_world(ns: argparse.Namespace) -> None:
+    ensure_world_home()
+    store = WorldStore()
+    if ns.world_cmd == "ensure-home":
+        print(json.dumps(ensure_world_home(), indent=2))
+        return
+    if ns.world_cmd == "create":
+        print(
+            json.dumps(
+                store.create_entity(
+                    ns.name,
+                    entity_id=ns.entity_id,
+                    aliases=ns.alias or [],
+                ),
+                indent=2,
+            )
+        )
+        return
+    if ns.world_cmd == "resolve":
+        print(json.dumps(store.resolve(ns.query), indent=2, ensure_ascii=False))
+        return
+    if ns.world_cmd == "mount":
+        print(json.dumps(resolve_via_bridge(ns.query), indent=2, ensure_ascii=False))
+        return
+    if ns.world_cmd == "route":
+        prov = Provenance(
+            observer=ns.observer or "proteus.cli",
+            project=ns.project,
+            run_id=ns.run_id,
+            source=ns.source,
+            kind=ns.kind,
+            confidence=ns.confidence,
+        )
+        result = classify_and_route(
+            scope=MemoryScope.parse(ns.scope),
+            text=ns.text,
+            provenance=prov,
+            entity_query=ns.entity,
+            entity_id=ns.entity_id,
+            topic=ns.topic,
+            status=ns.status,
+            project_path=ns.project,
+            secret_uri=ns.secret_uri,
+            secret_label=ns.secret_label,
+            world=store,
+        )
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+        return
+    if ns.world_cmd == "reconcile":
+        print(json.dumps(reconcile_entity(ns.entity_id, world=store), indent=2))
+        return
+    if ns.world_cmd == "rebuild-index":
+        print(json.dumps(rebuild_index(world=store), indent=2))
+        return
+    if ns.world_cmd == "export-carrier":
+        meta = export_entity_carrier_bundle(
+            ns.entity_id, world=store, out_path=Path(ns.out)
+        )
+        meta.pop("payload", None)
+        print(json.dumps(meta, indent=2))
+        return
+    if ns.world_cmd == "import-carrier":
+        print(
+            json.dumps(
+                import_entity_carrier_bundle(
+                    Path(ns.path), world=store, expect_entity_id=ns.entity_id
+                ),
+                indent=2,
+            )
+        )
+        return
+    raise SystemExit(f"Unknown world command: {ns.world_cmd}")
+
+
 def main() -> None:
     p = argparse.ArgumentParser(prog="proteus")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -67,6 +153,52 @@ def main() -> None:
     a.add_argument("--remove", action="store_true")
     a.add_argument("--run-id", default=None)
     a.set_defaults(func=cmd_activate)
+
+    w = sub.add_parser("world", help="Shared world / entity memory")
+    wsub = w.add_subparsers(dest="world_cmd", required=True)
+    wh = wsub.add_parser("ensure-home")
+    wh.set_defaults(func=cmd_world)
+    wc = wsub.add_parser("create")
+    wc.add_argument("--name", required=True)
+    wc.add_argument("--entity-id")
+    wc.add_argument("--alias", action="append", default=[])
+    wc.set_defaults(func=cmd_world)
+    wr = wsub.add_parser("resolve")
+    wr.add_argument("query")
+    wr.set_defaults(func=cmd_world)
+    wm = wsub.add_parser("mount")
+    wm.add_argument("query")
+    wm.set_defaults(func=cmd_world)
+    wrt = wsub.add_parser("route")
+    wrt.add_argument("--scope", required=True)
+    wrt.add_argument("--text", required=True)
+    wrt.add_argument("--entity")
+    wrt.add_argument("--entity-id")
+    wrt.add_argument("--topic")
+    wrt.add_argument("--status", default="current")
+    wrt.add_argument("--project")
+    wrt.add_argument("--observer")
+    wrt.add_argument("--run-id")
+    wrt.add_argument("--source")
+    wrt.add_argument("--kind", default="observation")
+    wrt.add_argument("--confidence")
+    wrt.add_argument("--secret-uri")
+    wrt.add_argument("--secret-label")
+    wrt.set_defaults(func=cmd_world)
+    wrec = wsub.add_parser("reconcile")
+    wrec.add_argument("--entity-id", required=True)
+    wrec.set_defaults(func=cmd_world)
+    wri = wsub.add_parser("rebuild-index")
+    wri.set_defaults(func=cmd_world)
+    wex = wsub.add_parser("export-carrier")
+    wex.add_argument("--entity-id", required=True)
+    wex.add_argument("--out", required=True)
+    wex.set_defaults(func=cmd_world)
+    wim = wsub.add_parser("import-carrier")
+    wim.add_argument("--path", required=True)
+    wim.add_argument("--entity-id")
+    wim.set_defaults(func=cmd_world)
+
     ns = p.parse_args()
     ns.func(ns)
 

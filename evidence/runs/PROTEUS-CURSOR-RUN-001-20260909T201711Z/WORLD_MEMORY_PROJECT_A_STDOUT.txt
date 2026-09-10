@@ -1,0 +1,11 @@
+## Receipt — PROJECT_A world-memory slice
+
+| Field | Value |
+|--------|--------|
+| **entity_id recovered** | `entity.fixture.sharedprobe` |
+| **ENTITY claim_id** | `claim.b5b0f9b31824` |
+| **ENTITY destination** | shared substrate `…\world_memory_home\world\entities\entity.fixture.sharedprobe` |
+| **PROJECT decision** | Routed to PROJECT scope only → `state/DECISIONS.md` + `.proteus/project_memory.jsonl` (note: must not appear as global entity truth) |
+| **Re-resolve** | Mount shows `Shared probe token is SP-ALPHA-991.` under current ENTITY claims |
+| **No local entity authority** | No `ENTITY.md` and no project-local `entities/` corpus under PROJECT_A |
+current_claims` / `entity_md`.

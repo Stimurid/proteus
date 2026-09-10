@@ -33,3 +33,9 @@
 - Not claimed: Gate 1; multi-host activation; automatic history import; that activation alone proves organ behavior; that activate installs user-global hooks.
 - Provenance: product activation episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; PRODUCT_SPEC §3C / §4.3; evidence `PRODUCT_ACTIVATION.md`.
 - Status: accepted for this incarnation; reversible by removing `src/proteus/activate.py` and activate templates.
+
+## D-007 — Shared world / entity substrate + memory-scope routing
+- Decision: Durable trans-project world knowledge lives in an **entity substrate** under configurable `AIYE_HOME` / `PROTEUS_WORLD_ROOT` (default `~/.aiye/world`), not inside each project's `state/*`. Proteus provides memory-scope routing (`SELF` / `ORGAN` / `PROJECT` / `ENTITY` / `EPISODE` / `SECRET_REFERENCE`) and resolve/mount/route CLI (`python -m proteus world`). Projects **reference/mount** entities; they do not own global entity truth. Archivarius remains identity/graph/index reconciliation (local adapter emits reconcile evidence; live Archivarius process not required for this slice). Drive carrier bundles are optional BACKUP carriers with explicit reconcile (no last-write-wins). Secret material is `secret_ref` only in semantic memory. Responsibility split: Aiye (self) / Proteus (routing/reentry) / Archivarius (graph) / entity substrate (world) / project memory / secret broker.
+- Not claimed: universal ontology; full Archivarius product; full Drive bidirectional sync; multi-host sync; real secret broker; Gate 1; natural recruitment.
+- Provenance: user-consented `WORKING_ARCHITECTURE — AIYE × PROTEUS × ARCHIVARIUS × ENTITY SUBSTRATE v0.1` (Drive `1MIaOF2uyozecgePkkowfblwGtOBG7tQrjUdVyLav1fw`); episode `WORLD_MEMORY_EPISODE.md` / `WORLD_MEMORY_TWO_SESSION.md`.
+- Status: accepted for this incarnation; reversible by removing `src/proteus/world/` and related activate skill/ENTRY sections.

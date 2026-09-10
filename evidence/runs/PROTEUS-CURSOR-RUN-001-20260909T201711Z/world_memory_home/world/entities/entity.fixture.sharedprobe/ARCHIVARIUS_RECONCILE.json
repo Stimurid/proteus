@@ -1,0 +1,45 @@
+{
+  "schema": "proteus.archivarius_bridge.v0.1",
+  "reconciled_utc": "2026-09-10T19:05:17.523786+00:00",
+  "entity_id": "entity.fixture.sharedprobe",
+  "identity": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.fixture.sharedprobe",
+    "display_name": "Shared Probe Device",
+    "aliases": [
+      "shared probe",
+      "probe-device"
+    ],
+    "relations": [],
+    "created_utc": "2026-09-10T19:01:11.610691+00:00",
+    "note": "identity card is address/catalog, not ontology of the living object"
+  },
+  "carriers": [
+    {
+      "role": "HOME",
+      "kind": "local_fs",
+      "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.fixture.sharedprobe",
+      "authority": "local_semantic",
+      "currentness": "active"
+    }
+  ],
+  "current_claim_count": 2,
+  "conflict_count": 0,
+  "unknown_count": 0,
+  "project_links": [
+    {
+      "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_fixtures\\PROJECT_A",
+      "relation": "uses",
+      "linked_utc": "2026-09-10T19:02:33.100899+00:00"
+    }
+  ],
+  "index_digest16": "8aa24aa4e219b89b",
+  "invariants": {
+    "ENTITY_NE_CARRIER": true,
+    "VIEW_NE_SOURCE_TRUTH": true,
+    "NO_LAST_WRITE_WINS": true,
+    "UNKNOWN_AND_CONFLICT_SURVIVE": true
+  },
+  "runtime_boundary": "No live Archivarius process invoked; this adapter emits Archivarius-compatible reconciliation evidence against the local entity substrate.",
+  "alias_collisions_in_view": []
+}

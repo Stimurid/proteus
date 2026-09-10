@@ -1,0 +1,43 @@
+{
+  "schema": "proteus.drive_entity_carrier.v0.1",
+  "reconciled_utc": "2026-09-10T19:00:13.663354+00:00",
+  "entity_id": "entity.fixture.beacon",
+  "provider_bundle": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\drive_carrier_entity.fixture.beacon.READBACK.zip",
+  "local_claim_ids": [
+    "claim.ed91f0c7c63e"
+  ],
+  "cloud_claim_ids": [
+    "claim.ed91f0c7c63e"
+  ],
+  "only_local": [],
+  "only_cloud": [],
+  "shared": [
+    "claim.ed91f0c7c63e"
+  ],
+  "no_last_write_wins": true,
+  "local_authority_preserved": true,
+  "staged_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\_drive_staging\\entity.fixture.beacon",
+  "manifest": {
+    "schema": "proteus.drive_entity_carrier.v0.1",
+    "entity_id": "entity.fixture.beacon",
+    "exported_utc": "2026-09-10T18:58:55.945887+00:00",
+    "files": [
+      "ENTITY.md",
+      "carriers.json",
+      "claims.jsonl",
+      "identity.json",
+      "projects.json",
+      "secret_refs.json",
+      "unresolved.md"
+    ],
+    "sha256": "b031d0eec0baebd835914b6a0e9f32059cf6c70591b50706fe462f36c70d0b3e",
+    "note": "Carrier bundle; ENTITY \u2260 this zip"
+  },
+  "provider": {
+    "retrieved_utc": "2026-09-10T19:00:04.5304258Z",
+    "file_id": "1Yg-q6O26lLaYoIC0mHk-twwRrP_LkId3",
+    "transport": "google_drive_mcp",
+    "title": "proteus-entity-fixture-beacon-carrier-v0.1.zip",
+    "parent_id": "18Bz8HiyOVsLfcEWJ1KKQ2Qvplh8LfJzt"
+  }
+}

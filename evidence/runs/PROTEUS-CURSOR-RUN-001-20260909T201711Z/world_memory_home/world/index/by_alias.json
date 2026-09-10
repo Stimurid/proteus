@@ -1,0 +1,58 @@
+{
+  "schema": "proteus.world.index.v0.1",
+  "rebuilt_utc": "2026-09-10T19:05:17.664592+00:00",
+  "view_note": "rebuildable VIEW; not source truth",
+  "entities": [
+    {
+      "entity_id": "entity.fixture.beacon",
+      "display_name": "Fixture Shared Beacon",
+      "aliases": [
+        "shared beacon",
+        "beacon"
+      ]
+    },
+    {
+      "entity_id": "entity.fixture.conflictdemo",
+      "display_name": "Conflict Demo Box",
+      "aliases": [
+        "conflict-demo"
+      ]
+    },
+    {
+      "entity_id": "entity.fixture.sharedprobe",
+      "display_name": "Shared Probe Device",
+      "aliases": [
+        "shared probe",
+        "probe-device"
+      ]
+    },
+    {
+      "entity_id": "entity.router.aw1000.home",
+      "display_name": "Arcadian AW1000 router",
+      "aliases": [
+        "AW1000",
+        "our router",
+        "Arcadian AW1000"
+      ]
+    }
+  ],
+  "by_alias": {
+    "entity.fixture.beacon": "entity.fixture.beacon",
+    "fixture shared beacon": "entity.fixture.beacon",
+    "shared beacon": "entity.fixture.beacon",
+    "beacon": "entity.fixture.beacon",
+    "entity.fixture.conflictdemo": "entity.fixture.conflictdemo",
+    "conflict demo box": "entity.fixture.conflictdemo",
+    "conflict-demo": "entity.fixture.conflictdemo",
+    "entity.fixture.sharedprobe": "entity.fixture.sharedprobe",
+    "shared probe device": "entity.fixture.sharedprobe",
+    "shared probe": "entity.fixture.sharedprobe",
+    "probe-device": "entity.fixture.sharedprobe",
+    "entity.router.aw1000.home": "entity.router.aw1000.home",
+    "arcadian aw1000 router": "entity.router.aw1000.home",
+    "aw1000": "entity.router.aw1000.home",
+    "our router": "entity.router.aw1000.home",
+    "arcadian aw1000": "entity.router.aw1000.home"
+  },
+  "alias_collisions": []
+}

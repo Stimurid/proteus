@@ -1,0 +1,13 @@
+{
+  "schema": "proteus.entity.v0.1",
+  "entity_id": "entity.router.aw1000.home",
+  "display_name": "Arcadian AW1000 router",
+  "aliases": [
+    "AW1000",
+    "our router",
+    "Arcadian AW1000"
+  ],
+  "relations": [],
+  "created_utc": "2026-09-10T18:58:50.018659+00:00",
+  "note": "identity card is address/catalog, not ontology of the living object"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "proteus.entity.v0.1",
+  "aiye_home": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home",
+  "world_root": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world",
+  "created_utc": "2026-09-10T18:58:43.426200+00:00",
+  "why": "No existing Aiye/Archivarius local world root found; smallest configurable home for entity substrate.",
+  "invariants": [
+    "ENTITY_NE_CARRIER",
+    "VIEW_NE_SOURCE_TRUTH",
+    "NO_LAST_WRITE_WINS",
+    "UNKNOWN_AND_CONFLICT_SURVIVE",
+    "MANIFEST_IS_ADDRESS_NOT_ONTOLOGY"
+  ]
+}

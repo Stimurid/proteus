@@ -1,0 +1,16 @@
+{
+  "host": "cursor",
+  "workspace": "C:\\projects\\Proteus",
+  "RUN_ID": null,
+  "conversation_id": null,
+  "model": null,
+  "last_event": "4389fb63-1de8-46a9-9b9c-6c2e141946af",
+  "last_hook": "sessionEnd",
+  "status": "SESSIONEND",
+  "semantic_stage": {
+    "value": "UNKNOWN",
+    "note": "semantic analyzer not run this event; deterministic status only"
+  },
+  "transcript_path": null,
+  "observatory_sync": "local_only"
+}

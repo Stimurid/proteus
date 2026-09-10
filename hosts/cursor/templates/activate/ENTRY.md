@@ -10,6 +10,18 @@ Proteus is **mounted** on this Cursor project. This is a project mount, not a cl
 4. Follow `.cursor/rules/proteus-*.mdc` (always-apply) for mount orientation.
 5. If this project already had its own `AGENTS.md` / rules before activation, those were **preserved**. Prefer project conventions there; Proteus carriers add reentry/checkpoint/anti-reduction surfaces.
 
+## Shared world / entity memory
+
+If the machine has a Proteus world substrate (`AIYE_HOME` / `PROTEUS_WORLD_ROOT`, default `~/.aiye/world`):
+
+```
+python -m proteus world resolve "<entity name or id>"
+python -m proteus world mount "<entity name or id>"
+python -m proteus world route --scope ENTITY --entity "<name>" --text "..." --project .
+```
+
+Do **not** copy entity knowledge into this project as local truth. Project decisions stay in `state/` / `.proteus/project_memory.jsonl`. ENTITY facts live in the shared substrate.
+
 ## What Proteus owns here
 
 See `.proteus/activation.json` (`owned_paths`). Only those paths are safe to reverse with:

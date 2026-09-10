@@ -1,0 +1,17 @@
+## Mount receipt — PROJECT_B
+
+**entity_id:** `entity.fixture.sharedprobe`  
+**display_name:** Shared Probe Device  
+**aliases:** `shared probe`, `probe-device`
+
+**Current claims (exact):**
+| claim_id | text |
+|---|---|
+| `claim.cbec0aae96ae` | Shared probe token is SP-ALPHA-991. |
+| `claim.b5b0f9b31824` | Shared probe token is SP-ALPHA-991. |
+
+**Provenance summary:** Both claims are `scope: ENTITY`, `topic: probe_token`, `status: current`, `kind: observation`. Observer/source: `agent-cli-project-a` / `agent_cli_project_a`. Project path in provenance: PROJECT_A. `run_id`: `PROTEUS-CURSOR-RUN-001-20260909T201711Z`. Conflicts/unknowns: none. Carrier HOME is under the shared world substrate (`world_memory_home/.../entity.fixture.sharedprobe`), not under PROJECT_B.
+
+**PROJECT_A-only decision as entity truth?** No. Mount returns only the shared probe-token ENTITY claims above; no PROJECT_A decision text appears as entity truth (PROJECT_A is provenance/link only).
+
+**Project isolation:** `ENTITY.md` absent at PROJECT_B root. Authority is the shared world path via `python -m proteus world resolve/mount`; no local entity corpus copied into this fixture.

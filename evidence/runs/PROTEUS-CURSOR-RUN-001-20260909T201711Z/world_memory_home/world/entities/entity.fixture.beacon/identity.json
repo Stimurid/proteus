@@ -1,0 +1,12 @@
+{
+  "schema": "proteus.entity.v0.1",
+  "entity_id": "entity.fixture.beacon",
+  "display_name": "Fixture Shared Beacon",
+  "aliases": [
+    "shared beacon",
+    "beacon"
+  ],
+  "relations": [],
+  "created_utc": "2026-09-10T18:58:45.711856+00:00",
+  "note": "identity card is address/catalog, not ontology of the living object"
+}

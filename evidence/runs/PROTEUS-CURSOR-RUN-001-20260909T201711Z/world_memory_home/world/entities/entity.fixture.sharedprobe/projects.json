@@ -1,0 +1,11 @@
+{
+  "schema": "proteus.entity.v0.1",
+  "entity_id": "entity.fixture.sharedprobe",
+  "projects": [
+    {
+      "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_fixtures\\PROJECT_A",
+      "relation": "uses",
+      "linked_utc": "2026-09-10T19:02:33.100899+00:00"
+    }
+  ]
+}

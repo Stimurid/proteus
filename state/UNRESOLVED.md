@@ -20,3 +20,8 @@
 - DONE (product activation v0): Cursor project-mount command `python -m proteus.activate` with dry-run, provenance, owned-path remove, and fixture campaign PASS (`PRODUCT_ACTIVATION.md`, D-006). Not Gate 1.
 - OPEN (activation): whether a real external (non-fixture) project mount is useful without further coexistence rules (e.g. dual AGENTS authority when foreign AGENTS.md is preserved). Not automatically imported: pre-activation project history.
 - OPEN (activation): activate does not install user-global hooks; projects rely on project-local hooks and/or a prior machine `install_cursor`. Portable zip not yet repacked with activate sources (source is in ideal body; next `handoff pack` will include it).
+- DONE (world memory v0): local entity substrate + scope routing + two independent Agent sessions PASS (`WORLD_MEMORY_EPISODE.md`). D-007 accepted. NATURAL_RECRUITMENT remains NOT_PROVED for activation episode.
+- PARTIAL (Drive): entity carrier round-trip via Drive MCP PASS for fixture beacon (file `1Yg-q6O26lLaYoIC0mHk-twwRrP_LkId3`); Desktop sync path unavailable; observatory flush still FAILED_TRANSPORT; not full bidirectional sync.
+- BOUNDARY (Archivarius): no live Archivarius process on this host; Proteus uses local adapter (`proteus.archivarius_bridge.v0.1`) only.
+- PARTIAL (real entity pilot): AW1000 entity mounted with small provenance slice + secret_ref; Tyumen University = BLOCKED_BY_SOURCE_ACCESS (no invented facts).
+- OPEN (world memory): default `~/.aiye` vs episode evidence home; multi-machine reconciliation; richer Aiye self-substrate; Secret Broker beyond `secret_ref`.
