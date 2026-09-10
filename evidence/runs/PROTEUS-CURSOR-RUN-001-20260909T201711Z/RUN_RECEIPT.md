@@ -45,7 +45,7 @@ Created `~/.cursor/hooks.json` and `~/.cursor/hooks/proteus_hook.cmd`. Generated
 ## 8. EXTERNAL CONTROL
 
 - Command `40a52a1d-16d2-43b8-a09a-10fea9d7ddec` TEST_STEER: SENT via simulated stop-hook `maybe_followup`; **ACKNOWLEDGED** in this receipt (acted: recorded as smoke, no unrelated product work).
-- Cursor Agent CLI / ACP: binary installed (`%LOCALAPPDATA%\cursor-agent\agent.cmd`); authenticated session NOT_RUN; print probe AUTH_REQUIRED (`FRESH_WORKSPACE_LAUNCH.md`)
+- Cursor Agent CLI / ACP: binary installed; auth via IDE token reuse; independent fresh print-run PASS (`FRESH_AGENT_CLI_EPISODE.md`)
 - Same-session IDE `stop` follow-up in this GUI chat: NOT_RUN (would require a real agent-stop boundary after a queued command)
 
 ## 9. TEST MATRIX
@@ -64,7 +64,9 @@ Created `~/.cursor/hooks.json` and `~/.cursor/hooks/proteus_hook.cmd`. Generated
 | Portable handoff / clean-room reconstruct | PASS | `PORTABLE_HANDOFF.md`; zip-only temp reconstruct; not a Gate 1 upgrade |
 | Fresh workspace prep from distribution ZIP | PASS (prep only) | `FRESH_WORKSPACE_PREP.md`; `C:\Projects\Proteus-FRESH-001\Proteus`; isolated; live user hooks unchanged |
 | Fresh workspace auto-launch (`Cursor.exe -n`) | PASS (launch only) | `FRESH_WORKSPACE_LAUNCH.md`; workspaceStorage + project dir verified; not a Gate upgrade |
-| Fresh-Agent execution of `FRESH_AGENT_TASK.md` | NOT_RUN | IDE new-chat API unavailable; Agent CLI installed but unauthenticated |
+| Cursor Agent CLI availability + auth reuse | PASS | `%LOCALAPPDATA%\cursor-agent\agent.cmd` `2026.09.08-6caf4ff`; IDE `cursorAuth/accessToken` → `CURSOR_AUTH_TOKEN` |
+| Independent fresh Agent CLI instantiation | PASS | `FRESH_AGENT_CLI_EPISODE.md` / `FRESH_AGENT_CLI_META.json`; PID 28588; no resume/continue |
+| Fresh-Agent execution of `FRESH_AGENT_TASK.md` | PASS | brief `Proteus-FRESH-001\...\distribution\PROTEUS_OPERATING_BRIEF.md`; raw `FRESH_AGENT_CLI_STDOUT.txt`; not a Gate upgrade |
 | T04 correction later session | NOT_RUN | capture skill installed only; not started because previously planned |
 | T05 project isolation | NOT_RUN | |
 | T11 organ preservation (behavioral) | PARTIAL | anti-reduction rule present in `.cursor/rules`; no independent organ task executed |
@@ -72,7 +74,7 @@ Created `~/.cursor/hooks.json` and `~/.cursor/hooks/proteus_hook.cmd`. Generated
 | Drive observatory visible to another agent | FAIL | transport blocked; local mirror only |
 | External control CLI queue | PASS | enqueue + claim |
 | External control live IDE stop-hook | NOT_RUN | |
-| Agent CLI headless | FAIL / blocked | binary installed; `Authentication required` without `agent login` / `CURSOR_API_KEY` |
+| Agent CLI headless | PASS (this episode) | auth reuse + `-p --workspace Proteus-FRESH-001 --force`; task exit 0 |
 
 ## 10. SELF-UPDATE / SECOND MUTATION
 

@@ -1,0 +1,27 @@
+## Completion report
+
+**Acting identity/role:** BUILDER-01 on Cursor (not Proteus).
+
+**Workspace / jurisdiction:** Reconstructed isolated tree at `C:\Projects\Proteus-FRESH-001\Proteus` (`HANDOFF.md`, `state/RECONSTRUCTION.md`). Origin RUN_ID `PROTEUS-CURSOR-RUN-001-20260909T201711Z`. PROCESS_DEATH continuity **NOT_CLAIMED**.
+
+**Candidate brief:** `distribution/PROTEUS_OPERATING_BRIEF.md` (~2,300 words).
+
+**Source basis:** Live `state/*`, `60_CURRENT_PROTEUS_STATUS.md`, `HANDOFF`/`RECONSTRUCTION`/`INCARNATION`, and origin evidence (`RUN_RECEIPT`, T01/T02b/T03, F01, `PORTABLE_HANDOFF`). Not used: `C:\Projects\Proteus`, prior chats, ChatGPT transcripts.
+
+**Survives one-file transfer:** Role≠organ≠carriers; characteristic question; reentry/mutation discipline; D-001–D-005; status labels with do-not-upgrade; UNKNOWN/CONFLICT/PARTIAL/OPEN distinctions; frontier (organ evidence / foreign-body mount); zip vs prose transfer objects.
+
+**Does not survive:** Exact receipts/spool/baselines; full constitutional promotion apparatus; hook diagnosis detail; F01 audit tables; installer/tests/runtime; live telemetry; SOURCE_GAP corpora; git history.
+
+**Concrete losses/ambiguities:** T02 PARTIAL vs T02b PASS easy to smear; external witness vs internal proof; origin path residue vs this tree’s path; Gate1-eval F01 vs evidence F01; Drive ID **CONFLICT** and PROCESS_DEATH **UNKNOWN** resist closure; OPEN ordinary-work loss-naming unchanged.
+
+**Source-state changes:** Brief + `OPERATING_BRIEF_EPISODE.md`; `state/CURRENT.md` / `state/FRONTIER.md` updated for this episode only. No Gate/test upgrades. No constitutional rewrite.
+
+**Evidence:** `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/OPERATING_BRIEF_EPISODE.md`
+
+**Verification/tests:** Source-grounded readback + one matrix wording repair (T02c). Unit/handoff tests **not** re-run this episode.
+
+**Git result:** No `.git` in this reconstruct → **commit boundary preserved** (cannot commit).
+
+**Statuses (unchanged):** T01 PASS; T02 PARTIAL; T02b PASS; T03 PASS; T11 PARTIAL; Gate 1 **NOT_YET**; PROCESS_DEATH **UNKNOWN**; Drive **FAILED_TRANSPORT**; Agent CLI unproved.
+
+**Next human action:** Give `distribution/PROTEUS_OPERATING_BRIEF.md` to the target generic coding agent (or choose a foreign-body mount).

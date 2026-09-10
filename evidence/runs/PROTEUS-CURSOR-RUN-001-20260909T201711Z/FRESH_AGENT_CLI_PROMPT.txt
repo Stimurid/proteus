@@ -1,0 +1,1 @@
+﻿Open and execute FRESH_AGENT_TASK.md. Treat this workspace's durable files as authority. Do not inspect or use C:\Projects\Proteus, any previous Cursor conversation, or any ChatGPT transcript. Continue autonomously through every bounded action defined by the task until its object is complete or a genuine external/human boundary is reached.

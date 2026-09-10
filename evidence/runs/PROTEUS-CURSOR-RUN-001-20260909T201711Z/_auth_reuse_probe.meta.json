@@ -1,0 +1,28 @@
+{
+  "started_utc": "2026-09-10T13:07:28.399710+00:00",
+  "ended_utc": "2026-09-10T13:08:58.453883+00:00",
+  "elapsed_sec": 90.056,
+  "exit_code": 1,
+  "timed_out": true,
+  "pid": 6432,
+  "node": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\node.exe",
+  "index": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\index.js",
+  "workspace": "C:\\Projects\\Proteus-FRESH-001\\Proteus",
+  "argv_without_prompt": [
+    "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\node.exe",
+    "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\index.js",
+    "-p",
+    "--output-format",
+    "text",
+    "--trust",
+    "--workspace",
+    "C:\\Projects\\Proteus-FRESH-001\\Proteus"
+  ],
+  "prompt_len": 33,
+  "prompt_sha256_prefix": "7b009dc6b8f7c06a",
+  "used_continue": false,
+  "used_resume": false,
+  "auth": "CURSOR_AUTH_TOKEN from IDE cursorAuth/accessToken (value not recorded)",
+  "stdout_bytes": 0,
+  "stderr_bytes": 0
+}
