@@ -158,6 +158,17 @@ def origin_path_markers(origin: str | None) -> tuple[str, ...]:
     return tuple(dict.fromkeys(variants))
 
 
+def mentions_origin_workspace(text: str, origin: str | None) -> bool:
+    """True if `origin` appears as a complete path, not as a longer sibling name.
+
+    `C:\\Projects\\Proteus-FRESH-001` must not count as `C:\\Projects\\Proteus`.
+    """
+    if not origin or not text:
+        return False
+    pattern = re.escape(origin.rstrip("\\/")) + r"(?![A-Za-z0-9._-])"
+    return re.search(pattern, text, flags=re.IGNORECASE) is not None
+
+
 def utc_now() -> datetime:
     return datetime.now(timezone.utc)
 
@@ -463,7 +474,7 @@ def operational_coupling_hits(root: Path, markers: Iterable[str] | None = None) 
                 text = path.read_text(encoding="utf-8")
             except Exception:
                 continue
-            if _contains_any(text, needles):
+            if any(mentions_origin_workspace(text, n) for n in needles):
                 hits.append(posix(path.relative_to(root)))
     return hits
 
@@ -499,7 +510,8 @@ def verify_reconstructed(dest: Path, *, isolated: bool, origin_workspace: str | 
     if origin_workspace:
         ok(
             "agents_source_root_not_origin",
-            origin_workspace.lower() not in agents.lower() or origin_workspace.lower() == str(dest).lower(),
+            (not mentions_origin_workspace(agents, origin_workspace))
+            or origin_workspace.lower() == str(dest).lower(),
         )
         ok(
             "state_current_keeps_origin_provenance",
@@ -509,7 +521,10 @@ def verify_reconstructed(dest: Path, *, isolated: bool, origin_workspace: str | 
     ok("reconstruction_not_process_death", "NOT_CLAIMED" in recon)
     hook = _text(dest / ".cursor" / "hooks" / "proteus_hook.cmd")
     markers = origin_path_markers(origin_workspace)
-    ok("project_hook_not_origin_tree", not _contains_any(hook, markers) if markers else True)
+    ok(
+        "project_hook_not_origin_tree",
+        not any(mentions_origin_workspace(hook, m) for m in markers) if markers else True,
+    )
     hits = operational_coupling_hits(dest, markers)
     ok("no_operational_origin_path_in_src_hosts", hits == [], ",".join(hits))
     if isolated:

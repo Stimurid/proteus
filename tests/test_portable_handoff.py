@@ -18,6 +18,7 @@ from proteus.handoff import (  # noqa: E402
     classify_payload_path,
     cleanroom,
     iter_payload_files,
+    mentions_origin_workspace,
     operational_coupling_hits,
     origin_path_markers,
     origin_workspace_from_state,
@@ -31,6 +32,16 @@ from proteus.paths import cursor_user_dir, proteus_home  # noqa: E402
 def assert_true(cond: bool, msg: str) -> None:
     if not cond:
         raise AssertionError(msg)
+
+
+def test_origin_path_boundary_does_not_treat_fresh_sibling_as_origin() -> None:
+    origin = r"C:\Projects\Proteus"
+    fresh_agents = "Source root: `C:\\projects\\Proteus-FRESH-001\\Proteus`\n"
+    fresh_hook = "set PYTHONPATH=C:\\projects\\Proteus-FRESH-001\\Proteus\\.proteus-runtime\\host\\cursor\\src\n"
+    assert_true(not mentions_origin_workspace(fresh_agents, origin), "FRESH dest is not origin")
+    assert_true(not mentions_origin_workspace(fresh_hook, origin), "FRESH hook is not origin")
+    assert_true(mentions_origin_workspace(r"Workspace: `C:\Projects\Proteus`", origin), "exact origin still matches")
+    assert_true(mentions_origin_workspace(r"set PYTHONPATH=C:\projects\Proteus\src", origin), "origin src still matches")
 
 
 def test_payload_omits_generated_and_classifies_residue() -> None:
@@ -133,6 +144,7 @@ def test_cleanroom_reconstruction() -> None:
 
 
 def main() -> None:
+    test_origin_path_boundary_does_not_treat_fresh_sibling_as_origin()
     test_payload_omits_generated_and_classifies_residue()
     test_isolated_install_does_not_use_live_cursor_dir()
     test_pack_zip_has_entrypoint_and_no_generated_payload()
