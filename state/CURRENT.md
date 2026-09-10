@@ -2,7 +2,7 @@
 
 Project: Proteus (candidate organ / first Cursor embodiment). BUILDER-01 is the acting host role, not Proteus itself (D-004).
 Workspace: `C:\Projects\Proteus`
-Status: first incarnation PARTIAL; T01 CLEAN_REENTRY PASS (externally witnessed); T02 PARTIAL (do not upgrade); T02b PASS (named argv sessionStart/workspaceOpen; OS quit UNKNOWN); T03 PASS (INTERNAL_PRECOMPACT; `/summarize` vs auto UNKNOWN; no operator witness that scoring turn); F01 SELF-TRANSDUCTION recorded; D-004 identity de-equation installed; D-005 portable handoff accepted; fresh workspace `C:\Projects\Proteus-FRESH-001\Proteus` PREPARED + GUI-launched; **independent Agent CLI session executed `FRESH_AGENT_TASK.md` (PASS)** producing `distribution/PROTEUS_OPERATING_BRIEF.md` in the fresh tree; Gate 1 NOT_YET.
+Status: first incarnation PARTIAL; T01 CLEAN_REENTRY PASS (externally witnessed); T02 PARTIAL (do not upgrade); T02b PASS; T03 PASS; F01 SELF-TRANSDUCTION recorded; D-004/D-005 accepted; fresh-incarnation experiment **CLOSED** (prep PASS; CLI instantiation PASS; operating-brief task PASS; process continuity NOT CLAIMED; Gate 1 NOT_YET; spontaneous organ behavior NOT TESTED — see `FRESH_INCARNATION_CLOSURE.md`); Gate 1 NOT_YET.
 Active RUN_ID: `PROTEUS-CURSOR-RUN-001-20260909T201711Z`
 
 Durable evidence:
@@ -21,3 +21,4 @@ Durable evidence:
 - `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/FRESH_WORKSPACE_LAUNCH.md`
 - `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/FRESH_AGENT_CLI_EPISODE.md`
 - `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/FRESH_AGENT_CLI_STDOUT.txt`
+- `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/FRESH_INCARNATION_CLOSURE.md`

@@ -67,6 +67,7 @@ Created `~/.cursor/hooks.json` and `~/.cursor/hooks/proteus_hook.cmd`. Generated
 | Cursor Agent CLI availability + auth reuse | PASS | `%LOCALAPPDATA%\cursor-agent\agent.cmd` `2026.09.08-6caf4ff`; IDE `cursorAuth/accessToken` → `CURSOR_AUTH_TOKEN` |
 | Independent fresh Agent CLI instantiation | PASS | `FRESH_AGENT_CLI_EPISODE.md` / `FRESH_AGENT_CLI_META.json`; PID 28588; no resume/continue |
 | Fresh-Agent execution of `FRESH_AGENT_TASK.md` | PASS | brief `Proteus-FRESH-001\...\distribution\PROTEUS_OPERATING_BRIEF.md`; raw `FRESH_AGENT_CLI_STDOUT.txt`; not a Gate upgrade |
+| Fresh-incarnation episode closure | CLOSED | `FRESH_INCARNATION_CLOSURE.md`; distinctions held; “Agent CLI unproved” divergence preserved; Gate 1 unchanged |
 | T04 correction later session | NOT_RUN | capture skill installed only; not started because previously planned |
 | T05 project isolation | NOT_RUN | |
 | T11 organ preservation (behavioral) | PARTIAL | anti-reduction rule present in `.cursor/rules`; no independent organ task executed |
