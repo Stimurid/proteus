@@ -1,5 +1,7 @@
 # DECISIONS
 
+**SUPERSEDED as current decision carrier.** Canonical accepted decisions with provenance live in `state/DECISIONS.md`. This root file is a first-embodiment dump; its D-001/D-002 numbers are **not** the same as `state/DECISIONS.md` and must not be merged as one ontology.
+
 ## D-001 — Local observatory fallback
 Source: HOST_CONSTRAINT (Drive MCP error; empty Drive Desktop).
 Decision: write Runtime Observatory cards under `%USERPROFILE%\.proteus\observatory\` and keep Drive folder IDs as intended destinations without pretending a successful cloud write.

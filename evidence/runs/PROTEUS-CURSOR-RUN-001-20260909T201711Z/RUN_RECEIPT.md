@@ -59,8 +59,9 @@ Created `~/.cursor/hooks.json` and `~/.cursor/hooks/proteus_hook.cmd`. Generated
 | T01 fresh session reentry | PASS | `T01_CLEAN_REENTRY.md`; external witness; contamination absence not internally provable |
 | T02 full Cursor restart | PARTIAL | `T02_RESULT.md`; do not upgrade; diagnosis `T02_DIAGNOSIS.md` |
 | T02b named-hook restart after argv identity | PASS | `T02b_RESULT.md` vs `T02b_BASELINE.json`; named argv `sessionStart`/`workspaceOpen`; OS quit UNKNOWN |
-| T03 compaction | NOT_RUN | prepared `T03_PRE_COMPACTION.md` / `T03_BASELINE.json` / `T03_POST_COMPACTION_PROMPT.md`; stop before `/summarize` |
-| T04 correction later session | NOT_RUN | capture skill installed only |
+| T03 compaction | PASS | `T03_RESULT.md`; continuity PASS; boundary INTERNAL_PRECOMPACT (argv `preCompact` on this transcript after freeze); `/summarize` vs auto UNKNOWN; no operator witness this scoring turn |
+| F01 self-transduction | RECORDED (not a Gate 1 upgrade) | `F01_SELF_TRANSDUCTION.md`; D-004 installed; T11 still PARTIAL |
+| T04 correction later session | NOT_RUN | capture skill installed only; not started because previously planned |
 | T05 project isolation | NOT_RUN | |
 | T11 organ preservation (behavioral) | PARTIAL | anti-reduction rule present in `.cursor/rules`; no independent organ task executed |
 | Global hook in arbitrary other workspace | NOT_RUN | user hooks installed; other workspace not opened |
@@ -77,6 +78,8 @@ Second install: cycle2/cycle3 receipts.
 Tests: `test_orientation_loads_state`.
 
 T02 empty-stdin repair (third source→install cycle this run): `hook_identity.py` + `--hook-event` in installer `hooks.json`; tests `tests/test_hook_event_identity.py`; host files via `python -m proteus.install_cursor`.
+
+F01 identity de-equation (fourth source→install cycle this run): `state/IDENTITY.md` + templates `AGENTS.md` / `proteus-orientation.mdc` / `proteus-anti-reduction.mdc` / `proteus-reentry`; removed duplicate `.cursor/rules/proteus.mdc`; stamped root `DECISIONS.md` / `UNKNOWN.md` SUPERSEDED. Tests `python tests\test_smoke.py` and `python tests\test_hook_event_identity.py` PASS. Host files via `python -m proteus.install_cursor` backup `host-backups-f01-repair`. Does **not** prove ordinary-work loss-naming, T11, or Gate 1.
 
 ## 11. FAILURES / UNKNOWN / CONFLICT
 
@@ -95,14 +98,15 @@ See `ROLLBACK.md`. Uninstall path exists. Rollback of user hooks **not destructi
 
 ## 14. NEXT FRONTIER
 
-T02 remains PARTIAL. T02b PASS (`T02b_RESULT.md`). T03 PREPARED / NOT_RUN: same-chat `/summarize` then `T03_POST_COMPACTION_PROMPT.md`. Drive observatory flush remains later (FAILED_TRANSPORT).
+F01 SELF-TRANSDUCTION recorded. D-004 identity de-equation installed. T02 remains PARTIAL. T02b PASS. T03 PASS (`T03_RESULT.md`, INTERNAL_PRECOMPACT). Do not start T04/T05/T02c as inherited next tests. Drive observatory flush remains FAILED_TRANSPORT. PROCESS_DEATH_BOUNDARY remains UNKNOWN.
 
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b PASS; T03 PREPARED)
+FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b PASS; T03 PASS; F01 RECORDED; T04 NOT_STARTED)
 OBSERVABILITY = PARTIAL (local PASS, Drive FAIL)
 EXTERNAL_CONTROL = PARTIAL (queue PASS, live stop/CLI FAIL or NOT_RUN)
 CLEAN_REENTRY = PASS (externally witnessed; see T01_CLEAN_REENTRY.md)
 T02_HOOKS_RESTART = PARTIAL
 T02B_NAMED_HOOK_RESTART = PASS
-T03_COMPACTION = NOT_RUN
+T03_COMPACTION = PASS
+F01_SELF_TRANSDUCTION = RECORDED
 GATE_1 = NOT_YET

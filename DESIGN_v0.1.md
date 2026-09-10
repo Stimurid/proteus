@@ -1,5 +1,7 @@
 # DESIGN v0.1 — first Cursor incarnation
 
+**Historical first-pass design dump.** A parallel write exists at `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/DESIGN_v0.1.md`. Neither file is Proteus itself. Accepted host-surface decisions live in `state/DECISIONS.md`.
+
 Status: implementation choice (class E), tested against host inspection on 2026-09-09.
 
 ## Chosen surfaces (discovered vs documented)

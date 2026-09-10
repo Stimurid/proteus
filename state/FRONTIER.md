@@ -1,5 +1,9 @@
 # FRONTIER
 
-Exact next step: T03 compaction boundary — in **this same** Agent conversation, run slash command `/summarize`, then send only the boxed text in `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T03_POST_COMPACTION_PROMPT.md`.
+Exact next step: F01 is recorded and D-004 is installed. Do not start T04, T05, or T02c because they were previously planned.
 
-T03 is PREPARED / NOT_RUN. Do not mark T03 PASS before that boundary. Do not open a new chat and call it T03 (that is T01-class). T02 stays PARTIAL. T02b stays PASS. PROCESS_DEATH_BOUNDARY stays UNKNOWN. Do not start T04.
+Product statuses unchanged: T01 PASS; T02 PARTIAL; T02b PASS; T03 PASS; PROCESS_DEATH_BOUNDARY UNKNOWN; Gate 1 NOT_YET; Drive FAILED_TRANSPORT; Agent CLI unproved.
+
+Next meaningful *organ* evidence is not another hook-survival protocol. It is whether ordinary subsequent work names a form-change loss when one occurs (T11 still PARTIAL), or a human-chosen foreign-body mount (`60_CURRENT` NEXT RESEARCH QUESTION). T04 remains operator-gated product L4 only. T05 remains unproved product isolation (other-workspace hook spill is not T05). T02c is not required to keep process-death UNKNOWN.
+
+Stop here: F01 object complete. Remaining items that need a later session, another workspace, Drive transport, or a missing CLI binary are external/human/host boundaries.

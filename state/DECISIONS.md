@@ -15,3 +15,9 @@
 - Decision: each Cursor `hooks.json` command string includes `--hook-event <slot>`; `proteus.hook` keeps stdin JSON when valid; `event_name_source` is `stdin` | `argv` | `stdin+argv` | `none` | `conflict`. Conflicting stdin vs argv is recorded and does not pick a winner. Timing is not used to name events.
 - Provenance: T02 PARTIAL (empty-stdin live spool) + Cursor hooks docs allowing extra argv on `command` + isolated `.cmd` pipe diagnostic (`T02_DIAGNOSIS.md`).
 - Status: accepted. T02b PASS confirmed argv naming on live `sessionStart`/`workspaceOpen`. T02 remains PARTIAL (empty-stdin original). OS quit still UNKNOWN.
+
+## D-004 — Proteus is not identical to BUILDER-01 or to incarnation carriers
+- Decision: treat Proteus as a candidate organ (constitutional carrier `60_CURRENT_PROTEUS_STATUS.md`); treat BUILDER-01 as this host's acting role; treat `state/*`, test statuses, hooks, manifests, and the installer as carriers. Do not load the full constitutional document into every `sessionStart`. Do not add a per-task transduction checklist.
+- Not claimed: that the de-equation text causes ordinary-work loss-naming without an explicit audit.
+- Provenance: F01 self-transduction (`evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F01_SELF_TRANSDUCTION.md`) against pre-repair `state/IDENTITY.md` / `AGENTS.md` versus `_BOOTSTRAP/BLIND_START/60_CURRENT_PROTEUS_STATUS.md` CORE FUNCTION and `72_PRIMARY_SOURCE_PLUGIN_LAUNCH.md`.
+- Status: accepted for this incarnation; reversible via IDENTITY/templates + reinstall.
