@@ -1,0 +1,126 @@
+## 1. Audited commit
+
+`4b1f8d39a6731a994dc67c66aa8f5c059bda78d8` (attested by the frozen manifest; the extracted bundle contains no `.git`, so Git ancestry is not independently replayable).
+
+## 2. Bundle identity/hashes
+
+- Content-address SHA-256: `2c29815b27e4637d0af973e2ea0f2b635c4af00eba378f64c3e803b5357a558f`
+- Archive SHA-256: `49a52f5aecf942e2a124cf7a1b9a443ac907f9e3aa2826b4460dba52ccce2007`
+- Manifest SHA-256: `5bbc27cd28e63131cfb6c7875bd7040dd88ffe3e1d8d72603a8214e373d7785a`
+
+I independently recalculated all 734 manifest-listed file hashes: 734 matched; 0 mismatched.
+
+## 3. Independence statement
+
+This audit used only `C:\projects\Proteus-GATE1-REAUDIT-001`. I did not access either live Proteus tree, install/activate Proteus, create a mount, modify code/evidence/tests, or use shared world-memory.
+
+## 4. Reconstructed Gate standard
+
+The controlling contract requires Gate 1 evidence for a Cursor embodiment’s durable continuity and an installed post-install development cycle. It expressly requires:
+
+- T02: same continuity after Cursor close/reopen.
+- T04/L4: meaningful correction → later independent analogous behavior, with recoverable provenance.
+- T05: project-local facts/rules do not silently leak.
+- T09: separate run/body/project frontiers are preserved and can be reconciled without last-write-wins semantic loss.
+- T11/L5: an LLM-native organ remains LLM-native under coding pressure; formal boundaries must be explicit.
+- T13/L6: after installation, installed continuity/checkpoint/install-update capability participates in a subsequent bounded Proteus product improvement, with tests and rollback intact.
+
+Gate 1 cannot be accepted below L6. [Gate contract](</C:/projects/Proteus-GATE1-REAUDIT-001/_BOOTSTRAP/BLIND_START/50_GATE1_EVAL.md>)
+
+## 5. Comparison with first audit
+
+The first auditor’s blockers correctly reflected the Gate contract. Later evidence materially improves T04, T05, and narrow T11 evidence, while preserving the historical T02 PARTIAL, T11 PARTIAL, and F05 PARTIAL records.
+
+However, the later T09 test does not show reconciliation, the process-death test does not reopen Cursor, and T13/L6 is a Cursor mount exercised by Codex with a highly directed fixture prompt. Thus the first verdict is not overturned.
+
+## 6. First-audit blocker closure
+
+| Blocker | Status | Primary citation |
+|---|---|---|
+| T04 | CLOSED | Independent ephemeral session consulted the durable correction and returned `UNKNOWN` with provenance. [T04 result](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T04_RESULT.md>) |
+| T11 | PARTIALLY_CLOSED | The implementation preserves a judgment-call boundary and explicit representational limits, but its executable test uses a deterministic stand-in rather than a real transformer invocation. [T11 crosswalk](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T11_CURRENT_SATISFACTION_CROSSWALK.md>) |
+| T02 / PROCESS_DEATH_BOUNDARY | CONTRADICTED | The contract says Cursor close/reopen. The evidence kills isolated Cursor, then uses a fresh Codex session as successor—not reopened Cursor. [Process-death result](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/PROCESS_DEATH_RESULT.md>) |
+| T05 | CLOSED | Fixture B independently reports the A-only token as UNKNOWN; this complements prior scoped-memory negative control. [T05 result](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T05_RESULT.md>) |
+| T09 | PARTIALLY_CLOSED | Two isolated bodies retain their own markers, but they never contend for or reconcile a shared frontier. The required no-last-write-wins reconciliation is untested. [T09 result](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T09_RESULT.md>) |
+| L6 / T13 | PARTIALLY_CLOSED | There are two independent Codex cycles over an activated Cursor fixture, but no evidence that Cursor-specific installed checkpoint/install-update capabilities were actually exercised; the prompt itself directs the continuity actions. [T13/L6 result](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T13_L6_POST_INSTALL_SECOND_CYCLE.md>) |
+
+## 7. L4/L5/L6 reconstruction
+
+| Level | Status | Gate minimum met? |
+|---|---|---|
+| L4 learns | SUPPORTED | Yes |
+| L5 preserves organs | SUPPORTED_WITH_LIMIT | Narrowly, but fixture-bound |
+| L6 second-cycle works | PARTIAL | No |
+
+Gate minimum maturity is not met because L6 is not sufficiently established. [L4–L6 evidence](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/PROTEUS_L4_L5_L6_EVIDENCE.md>)
+
+## 8. Whole-Gate claim table
+
+| Claim | Status |
+|---|---|
+| Identity / anti-self-reification | SUPPORTED_WITH_LIMIT |
+| Durable reentry | SUPPORTED_WITH_LIMIT |
+| Portable embodiment | SUPPORTED_WITH_LIMIT |
+| Controlled transduction | SUPPORTED_WITH_LIMIT |
+| Natural recruitment | SUPPORTED_WITH_LIMIT |
+| Projection / source distinction | SUPPORTED_WITH_LIMIT |
+| Bounded activation | SUPPORTED_WITH_LIMIT |
+| World / entity memory | SUPPORTED_WITH_LIMIT |
+| Scope routing | SUPPORTED |
+| Real-object use | SUPPORTED_WITH_LIMIT |
+| Secret boundary | SUPPORTED_WITH_LIMIT |
+| Foreign-carrier morphology | SUPPORTED_WITH_LIMIT |
+| Cross-carrier loop | SUPPORTED_WITH_LIMIT |
+| Epistemic discipline | SUPPORTED |
+| Reproducibility | SUPPORTED_WITH_LIMIT |
+
+The strongest support for cross-carrier, source/distinction, and scoped-memory claims is the Codex/Cursor loop and F06 retest; their stated exclusions remain material. [F04 evidence](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F04_CODEX_FOREIGN_CARRIER.md>), [F06 evidence](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F06_RECRUITMENT_REPAIR_AND_BLIND_RETEST.md>)
+
+## 9. Strongest evidence supporting acceptance
+
+- All frozen files match the manifest.
+- T04 and T05 have direct, independent-session behavioral evidence.
+- The T11 artifact does not reduce judgment to a keyword router or state machine and explicitly retains uncertainty/residue.
+- F04 and F06 show credible, bounded cross-carrier and representation-jurisdiction behavior.
+- Historical PARTIAL/UNKNOWN/CONFLICT results are preserved rather than rewritten.
+
+## 10. Strongest evidence against acceptance
+
+- T02’s required Cursor close/reopen was substituted with isolated Cursor termination plus Codex successor.
+- T09 never demonstrates reconciliation or a shared-frontier collision case.
+- T13’s fixture uses a Cursor activation but conducts both cycles in Codex; the prompt supplies the precise continuity/checkpoint workflow, so causal use of installed host capability is not isolated.
+- The archive can verify its file manifest, but not the asserted Git commit ancestry or unavailable external runtime environments.
+
+## 11. False-positive/adversarial findings
+
+- T09’s isolated workspaces make overwrite impossible by construction; preserved separate markers are not evidence of reconciliation.
+- PROCESS_DEATH labels a cross-host successor as a T02 Cursor reopen.
+- T13’s prompts prescribe the exact state/evidence operations that are attributed to installed capability.
+- T11’s test uses a controlled `RecordingLLMJudge`; it verifies an injection boundary, not transformer-backed runtime behavior.
+- Activation metadata itself says it does not claim PROCESS_DEATH continuity. [Activation record](</C:/projects/Proteus-GATE1-REAUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/gate1_blocker_fixtures/T13_BODY/.proteus/activation.json>)
+
+## 12. Remaining boundaries
+
+| Classification | Boundaries |
+|---|---|
+| GATE_BLOCKER | Cursor-native T02 close/reopen continuity; T09 reconciliation without semantic loss; unambiguous Cursor-installed L6/T13 cycle |
+| ACCEPTED_OPEN_BOUNDARY | Real secret unavailable; live Archivarius blocked; multi-machine reconciliation; Claude/OpenClaw morphology; Drive observatory transport |
+| POST_GATE | Packaging, marketplace/product UX, broader activation coverage |
+
+## 13. Exact verdict
+
+**NOT_ACCEPTED**
+
+## 14. Concise rationale
+
+The bundle is materially stronger than the first-audit bundle and preserves history honestly. But it does not satisfy the Gate’s own requirements that a Cursor restart be followed by Cursor reentry, that parallel frontiers be reconciled without loss, and that the installed Cursor capabilities causally support a later Proteus development cycle. Since L6 remains PARTIAL, Gate 1 cannot be accepted.
+
+## 15. Carried-forward boundaries
+
+Not applicable.
+
+## 16. Exact minimum Gate-critical blockers only
+
+- Demonstrate T02 with an actual Cursor close/reopen and independent Cursor reentry from durable carriers.
+- Demonstrate T09 reconciliation of independently changed frontiers without last-write-wins semantic loss.
+- Demonstrate T13/L6 on the installed Cursor path, with the later cycle’s continuity behavior attributable to installed capabilities rather than prompt-specified fixture steps.

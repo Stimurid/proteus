@@ -1,0 +1,17 @@
+﻿{
+    "schema":  "proteus.gate1_reaudit_freeze.v0.1",
+    "audited_commit":  "4b1f8d39a6731a994dc67c66aa8f5c059bda78d8",
+    "created_utc":  "2026-09-11T20:47:33.6315019Z",
+    "method":  "git archive --format=zip of commit; Expand-Archive to isolated re-audit dir",
+    "archive_zip":  "C:\\Projects\\_proteus_gate1_reaudit_4b1f8d3.zip",
+    "archive_zip_sha256":  "49a52f5aecf942e2a124cf7a1b9a443ac907f9e3aa2826b4460dba52ccce2007",
+    "origin_head_at_freeze":  "4b1f8d39a6731a994dc67c66aa8f5c059bda78d8",
+    "origin_working_tree":  "clean_for_audited_commit; untracked excluded: gate1_isolated_cursor_userdata*, gate1_isolated_cursor_userdata2*",
+    "origin_unrelated_changes_excluded":  [
+                                              "evidence/runs/.../gate1_isolated_cursor_userdata/",
+                                              "evidence/runs/.../gate1_isolated_cursor_userdata2/"
+                                          ],
+    "first_audit_subject_commit":  "94e3d60c9785789f1b7e812a865a325fcb23475f",
+    "first_audit_verdict":  "NOT_ACCEPTED",
+    "note":  "Isolated extract. Auditor must not use live C:\\Projects\\Proteus or C:\\projects\\Proteus. Do not treat blocker-closure claims as verdict authority."
+}

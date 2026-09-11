@@ -29,6 +29,7 @@
 - DONE (F05 / D-010): Project capsule capability PASS; NATURAL_TRANSDUCTION_PROJECT_CAPSULE PASS on multiagent-moderation-env handoff; durable NATURAL_RECRUITMENT elevated NOT_PROVED → **PARTIAL** at F05 (`F05_NATURAL_PROJECT_CAPSULE.md`). Residual: ModerBober-specific document candidates in generic capsule tool; receiver `-C` purity caveat. F05 PARTIAL not rewritten.
 - DONE (F06 / D-011): Consequential derived-representation recruitment repair + Agentum blind form-transition retest PASS; durable NATURAL_RECRUITMENT → **PASS** (`F06_RECRUITMENT_REPAIR_AND_BLIND_RETEST.md`). Residual: optional `derived record` unused in child; `output_class` backfill inferred from function text; recruitment still partly mediated by installed constitutive surfaces.
 - OPEN (world memory): multi-machine reconciliation; Claude/OpenClaw foreign carriers; Tyumen University still BLOCKED_BY_SOURCE_ACCESS for a clean university-entity slice.
-- DONE (Gate 1 independent audit): freeze `94e3d60…`; auditor **NOT_ACCEPTED** (`GATE1_INDEPENDENT_AUDIT.md`). Unchanged.
-- DONE (Gate blocker closure episode): current PASS evidence for T04, T05, T09, T11-current, PROCESS_DEATH_BOUNDARY, T13/L6 (`GATE1_BLOCKER_CLOSURE_MATRIX.md`). Historical T02 PARTIAL, T11 PARTIAL, F05 NR PARTIAL, and Gate NOT_ACCEPTED preserved. No new D-number (execution/evidence only).
-- OPEN (Gate): **INDEPENDENT_GATE_1_REAUDIT** required before any Gate acceptance. Origin must not self-accept.
+- DONE (Gate 1 independent audit): freeze `94e3d60…`; auditor **NOT_ACCEPTED** (`GATE1_INDEPENDENT_AUDIT.md`). Unchanged historical authority.
+- DONE (Gate blocker closure episode): origin-side PASS claims recorded in `GATE1_BLOCKER_CLOSURE_MATRIX.md` — **not** Gate acceptance.
+- DONE (Gate 1 independent re-audit): freeze `4b1f8d39a6731a994dc67c66aa8f5c059bda78d8`; re-auditor **NOT_ACCEPTED** (`GATE1_INDEPENDENT_REAUDIT.md`, `GATE1_REAUDITOR_RAW_RESULT.txt`). Origin did not repair.
+- OPEN (Gate blockers per re-auditor): (1) Cursor-native T02 close/reopen continuity; (2) T09 frontier reconciliation without LWW loss; (3) Cursor-installed L6/T13 second cycle attributable to installed capabilities.

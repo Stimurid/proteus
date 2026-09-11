@@ -1,14 +1,14 @@
 # FRONTIER
 
-D-006–D-011 remain complete. Gate 1 auditor verdict **NOT_ACCEPTED** is not disputed or rewritten.
-
-Gate-critical blockers identified by the independent auditor now have current PASS evidence in `GATE1_BLOCKER_CLOSURE_MATRIX.md` (historical PARTIAL episodes preserved).
+D-006–D-011 remain complete. First Gate audit **NOT_ACCEPTED** and re-audit **NOT_ACCEPTED** are preserved; origin does not dispute them.
 
 Preserve: LIVE_ARCHIVARIUS_RECONCILIATION BLOCKED; AW1000_REAL_SECRET UNAVAILABLE; F05 historical NATURAL_RECRUITMENT PARTIAL; T02 historical PARTIAL; T11 historical PARTIAL.
 
-Do not open non-blocking/post-Gate product work in place of re-audit.
-Do not perform the re-audit in the blocker-closure episode.
+Do not open non-blocking/post-Gate productization in place of remaining Gate blockers.
+Do not repair blockers in the re-audit recording episode.
 
-## Next
+## Next (re-auditor Gate-critical blockers only)
 
-`INDEPENDENT_GATE_1_REAUDIT`
+1. T02: actual Cursor close/reopen + independent Cursor reentry from durable carriers
+2. T09: reconciliation of independently changed frontiers without last-write-wins semantic loss
+3. T13/L6: installed Cursor-path second cycle with continuity attributable to installed capabilities (not prompt-specified fixture steps)

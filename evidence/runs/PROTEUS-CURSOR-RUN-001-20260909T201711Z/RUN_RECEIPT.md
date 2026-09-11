@@ -183,8 +183,19 @@ Causal repair: portable handoff verify accepts Gate `NOT_ACCEPTED` as unaccepted
 Regression: pytest activate/codex/world/secret/capsule/smoke/recruitment/portable → **46 passed**.
 Next frontier: `INDEPENDENT_GATE_1_REAUDIT` (not performed here).
 
+## 23. INDEPENDENT GATE 1 RE-AUDIT
+
+Freeze: commit `4b1f8d39a6731a994dc67c66aa8f5c059bda78d8`; clean subject; untracked isolated Cursor userdata excluded.
+Bundle: `C:\Projects\Proteus-GATE1-REAUDIT-001`; content-address `2c29815b27e4637d0af973e2ea0f2b635c4af00eba378f64c3e803b5357a558f`; zip `49a52f5aecf942e2a124cf7a1b9a443ac907f9e3aa2826b4460dba52ccce2007`.
+Re-auditor: Codex 0.153.4 ephemeral PID 5896; no Proteus activate; prompt sha `9f1001bb6b8c706c3f2a3caf45a61c0e10397686651600b9c76694d63ce44121`.
+Raw: `GATE1_REAUDITOR_RAW_RESULT.txt`. Origin record: `GATE1_INDEPENDENT_REAUDIT.md`.
+First audit NOT_ACCEPTED preserved. Re-auditor verdict: **NOT_ACCEPTED**.
+Blocker recheck (re-auditor): T04 CLOSED; T05 CLOSED; T11 PARTIALLY_CLOSED; T09 PARTIALLY_CLOSED; T02/PROCESS_DEATH CONTRADICTED; L6/T13 PARTIALLY_CLOSED.
+GATE_1 = NOT_ACCEPTED.
+Next frontier: re-auditor Gate-critical blockers (Cursor T02 reopen; T09 reconciliation; Cursor-path L6/T13).
+
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (…; D-006–D-011 accepted; F04–F06 recorded; Gate audited NOT_ACCEPTED; blockers closed pending re-audit)
+FIRST_INCARNATION = PARTIAL (…; D-006–D-011 accepted; F04–F06 recorded; Gate audited then re-audited NOT_ACCEPTED)
 OBSERVABILITY = PARTIAL (local PASS; Drive observatory FAIL; entity carriers MCP PARTIAL)
 PRODUCT_ACTIVATION = PASS
 WORLD_ENTITY_MEMORY = PASS (vertical slice)
@@ -196,15 +207,6 @@ RECRUITMENT_REPAIR = PASS
 BLIND_FORM_TRANSITION_RETEST = PASS
 NATURAL_TRANSDUCTION_RETEST = PASS
 NATURAL_RECRUITMENT = PASS
-T04 = PASS
-T05 = PASS
-T09 = PASS
-T11_CURRENT = PASS (historical PARTIAL preserved)
-PROCESS_DEATH_BOUNDARY = PASS
-T13 = PASS
-L4 = PASS
-L5 = PASS
-L6 = PASS
 LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED
 GATE_1 = NOT_ACCEPTED
-NEXT_FRONTIER = INDEPENDENT_GATE_1_REAUDIT
+NEXT_FRONTIER = GATE1_REAUDIT_BLOCKERS (Cursor T02 reopen; T09 reconciliation; Cursor-path L6/T13)
