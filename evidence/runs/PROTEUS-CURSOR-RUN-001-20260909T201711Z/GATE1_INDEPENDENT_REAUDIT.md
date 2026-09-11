@@ -78,3 +78,9 @@ Do not repair in this episode:
 
 ACCEPTED_OPEN_BOUNDARY: real secret unavailable; live Archivarius blocked; multi-machine reconciliation; Claude/OpenClaw; Drive observatory transport.  
 POST_GATE: packaging, marketplace/product UX, broader activation coverage.
+
+## Drive / recovery result
+
+- Local recording commit: `c04a7083974db667b0b357a5eab47d6645505513`.
+- Drive MCP status note id: `1fhZRkdf2mQt2t2LxMIFRFXpG9LNJDcuT` (observatory folder).
+
