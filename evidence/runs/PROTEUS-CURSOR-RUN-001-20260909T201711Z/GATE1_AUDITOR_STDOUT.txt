@@ -1,0 +1,133 @@
+## 1. audited commit and bundle identity
+
+- Audited bundle: `C:\Projects\Proteus-GATE1-AUDIT-001`
+- Frozen claimed commit: `94e3d60c9785789f1b7e812a865a325fcb23475f`
+- Freeze archive SHA-256: `33301f6a012efe9853ab316f02b5617a9f1e791a5702f412108035539ee36d80`
+- Freeze record: [AUDIT_FREEZE.json](/C:/projects/Proteus-GATE1-AUDIT-001/AUDIT_FREEZE.json)
+
+The audit copy has no `.git` directory, so the commit/archive identity is supported by the freeze declaration, not independently re-derived from Git objects.
+
+## 2. independence statement
+
+I worked only in this audit bundle. I did not open or use either live `C:\Projects\Proteus` origin tree, did not install or activate Proteus, and did not modify code, state, evidence, tests, or acceptance criteria.
+
+## 3. reconstructed Gate 1 definition
+
+Gate 1 asks whether a fresh Cursor embodiment can recover durable project continuity, rules, learning, and anti-reduction behavior; survive relevant session discontinuities; and use the installed capabilities safely in a subsequent bounded Proteus-development change. It is not a file-existence or test-count gate. [50_GATE1_EVAL.md](/C:/projects/Proteus-GATE1-AUDIT-001/_BOOTSTRAP/BLIND_START/50_GATE1_EVAL.md)
+
+For Proteus itself, acceptance is not below L6: demonstrated learning (L4), behavioral preservation of LLM-native organs (L5), and a safe post-install second cycle (L6). The constitutional status document also requires empirical, concrete evidence that consequential representational losses are detected, alternatives/provenance can remain reopenable, and Proteus itself is not reified into a fixed ontology. [60_CURRENT_PROTEUS_STATUS.md](/C:/projects/Proteus-GATE1-AUDIT-001/_BOOTSTRAP/BLIND_START/60_CURRENT_PROTEUS_STATUS.md)
+
+## 4. claim-by-claim evidence table
+
+| Claim | Audit status | Basis |
+|---|---|---|
+| T01 fresh reentry | SUPPORTED_WITH_LIMIT | Externally witnessed fresh reentry recovered durable state without transcript paste; non-contamination cannot be internally proven. [T01_CLEAN_REENTRY.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T01_CLEAN_REENTRY.md) |
+| T02 / T02b restart | PARTIAL | Original T02 remains PARTIAL; T02b proves argv-named fires but not a full Cursor OS quit/restart. [T02_RESULT.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T02_RESULT.md), [T02b_RESULT.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T02b_RESULT.md) |
+| T03 compaction | SUPPORTED_WITH_LIMIT | Durable continuity plus real `preCompact` hook evidence is persuasive; manual `/summarize` versus auto-compaction remains unknown. [T03_RESULT.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/T03_RESULT.md) |
+| F01 / D-004 | PARTIAL | The role/carrier ≠ organ correction is explicit and installed, but ordinary-work loss-naming was not demonstrated; T11 remains PARTIAL. [F01_SELF_TRANSDUCTION.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F01_SELF_TRANSDUCTION.md) |
+| Portable handoff | SUPPORTED_WITH_LIMIT | Zip-only isolated reconstruction passed and correctly excludes live-process continuity; Python remains an external requirement. [PORTABLE_HANDOFF.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/PORTABLE_HANDOFF.md) |
+| Fresh independent incarnation | SUPPORTED_WITH_LIMIT | Fresh workspace, independent CLI instantiation, and brief task completed; it is explicitly not process continuity, spontaneous organ behavior, or Gate 1. [FRESH_INCARNATION_CLOSURE.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/FRESH_INCARNATION_CLOSURE.md) |
+| Controlled transduction | SUPPORTED_WITH_LIMIT | F06 documented a real theory → schema/validator/report transition, visible omissions, provenance, and downstream receiver behavior; installed constitutive text remained a mediating influence. [F06_RECRUITMENT_REPAIR_AND_BLIND_RETEST.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F06_RECRUITMENT_REPAIR_AND_BLIND_RETEST.md), [F06_SOURCE_VS_REPRESENTATION.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F06_SOURCE_VS_REPRESENTATION.md) |
+| D-006 activation | SUPPORTED | Bounded Cursor mount, coexistence, dry-run, idempotence, and owned-path removal have fixture and test evidence. [PRODUCT_ACTIVATION.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/PRODUCT_ACTIVATION.md) |
+| D-007 shared-world routing | SUPPORTED_WITH_LIMIT | Two independent sessions recovered an ENTITY fact without prompt/project duplication and preserved a project-scope negative control; scope is one local shared substrate, not universal or multi-machine continuity. [WORLD_MEMORY_TWO_SESSION.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/WORLD_MEMORY_TWO_SESSION.md) |
+| D-008 AW1000 hardening | SUPPORTED_WITH_LIMIT | Real entity, provenance, conflict preservation, cross-project recall, and non-plaintext secret handling are evidenced; real secret is UNAVAILABLE and live Archivarius is blocked. [AW1000_REAL_ENTITY_EPISODE.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/AW1000_REAL_ENTITY_EPISODE.md) |
+| D-009 / F04 foreign carrier | SUPPORTED_WITH_LIMIT | Codex morphology used native Codex surfaces and shared world API, with independent writeback and Cursor readback; only Codex is established, with version/proxy transport residue. [F04_CODEX_FOREIGN_CARRIER.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F04_CODEX_FOREIGN_CARRIER.md) |
+| D-010 / F05 capsule | SUPPORTED_WITH_LIMIT | A real-project compact handoff preserved conflicts, truncation, and source jurisdiction. The episode’s historical global recruitment status remains PARTIAL. [F05_NATURAL_PROJECT_CAPSULE.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F05_NATURAL_PROJECT_CAPSULE.md) |
+| D-011 / F06 | SUPPORTED_WITH_LIMIT | The different Agentum form transition passed its blind retest and preserved visible non-equivalence; optional derived-record tooling was unused and recruitment was partly instruction-surface mediated. [F06_RECRUITMENT_REPAIR_AND_BLIND_RETEST.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F06_RECRUITMENT_REPAIR_AND_BLIND_RETEST.md) |
+| Global `NATURAL_RECRUITMENT = PASS` | SUPPORTED_WITH_LIMIT | F06 may promote the durable global status based on a structurally different retest; it does not retroactively convert F05’s PARTIAL result. It is not equivalent to Gate 1. [F06_RECRUITMENT_REPAIR_AND_BLIND_RETEST.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F06_RECRUITMENT_REPAIR_AND_BLIND_RETEST.md) |
+| Pre-audit Gate status | SUPPORTED | Durable state and receipt consistently record `GATE_1 = NOT_YET`. [RUN_RECEIPT.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/RUN_RECEIPT.md), [CURRENT.md](/C:/projects/Proteus-GATE1-AUDIT-001/state/CURRENT.md) |
+
+## 5. strongest positive evidence
+
+The strongest evidence is the combination of:
+
+- Durable reentry and compaction recovery with preserved UNKNOWN/CONFLICT distinctions.
+- A real, bounded cross-project entity-routing demonstration with a negative-control project decision.
+- A foreign Codex carrier that did not clone Cursor-specific morphology, wrote a scoped shared-memory observation, and was read back from Cursor.
+- Two materially different representation transitions: project handoff in F05 and Agentum theory-to-schema/validator in F06, with explicit non-source-of-truth and reopenability boundaries.
+
+## 6. strongest negative evidence
+
+The decisive negative evidence is not a failure of tests but absence of required Gate-level demonstrations:
+
+- T04 correction learning was not run.
+- T11 behavioral organ preservation remains PARTIAL.
+- Original T02 remains PARTIAL; process-death/full restart is UNKNOWN.
+- T05 project isolation and T09 parallel-run safety were not demonstrated as behavioral Gate evidence.
+- The record itself repeatedly says Gate 1 was not performed or accepted. [RUN_RECEIPT.md](/C:/projects/Proteus-GATE1-AUDIT-001/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/RUN_RECEIPT.md)
+
+## 7. contaminated/weak evidence and whether later evidence repairs it
+
+- T01’s clean-context condition relies on an external witness; later work does not make that absence internally provable.
+- T02’s unknown hook names are not repaired retroactively. T02b repairs named hook identity only; it does not prove full restart.
+- F05’s receiver launched with `-C` on the source project, a mild ambient-contamination risk. F06 is structurally different and strengthens the global recruitment inference, but does not repair F05’s historical PARTIAL status.
+- Fresh-incarnation evidence refers to an external fresh directory not contained as a complete independently inspectable tree in this bundle. Its preserved raw outputs support its limited claim only.
+- Drive IDs conflict in the source map; local packet copies are usable evidence, but the external Drive provenance conflict remains unresolved. [UNRESOLVED.md](/C:/projects/Proteus-GATE1-AUDIT-001/state/UNRESOLVED.md)
+
+## 8. open boundaries classified BLOCKING / NON_BLOCKING / POST_GATE
+
+**BLOCKING**
+
+- T04 / L4 correction learning.
+- T11 / L5 behavioral preservation of an LLM-native organ.
+- Full restart/process-death boundary: T02 remains PARTIAL.
+- Demonstrated parallel safety and project isolation at the required behavioral level.
+- A clearly evidenced L6/T13 post-install Proteus-development cycle using the newly installed continuity capabilities, rather than source/install iterations alone.
+
+**NON_BLOCKING**
+
+- `AW1000_REAL_SECRET = UNAVAILABLE`.
+- `LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED`.
+- Drive observatory flush failure.
+- Python 3 as portable destination prerequisite.
+- Claude/OpenClaw morphology and Tyumen pilot.
+- Multi-machine reconciliation and complete Drive bidirectional sync.
+
+**POST_GATE**
+
+- Broader multi-host activation/productization.
+- Full Archivarius product and production secret-broker coverage.
+- Universal ontology or universal world knowledge.
+- Marketplace/plugin packaging and richer runtime observability.
+
+## 9. anti-self-reification assessment
+
+PARTIAL. D-004 is a substantive correction: Proteus is explicitly distinguished from BUILDER-01, state files, hooks, tests, and installer carriers. F01 also names the risk that evidence bureaucracy can become ontology. But the evidence admits that ordinary work has not shown spontaneous recognition of its own representational losses. This is meaningful constitutional progress, not behavioral completion.
+
+## 10. natural-recruitment assessment
+
+SUPPORTED_WITH_LIMIT. F06 provides a stronger basis than F05 for the durable `NATURAL_RECRUITMENT = PASS`: it uses a distinct real project and non-handoff form transition, and a downstream receiver respects representation jurisdiction. The conclusion properly leaves F05 historical PARTIAL intact. This supports the recruitment claim, but does not establish all Gate 1 survival, learning, and organ-preservation requirements.
+
+## 11. foreign-carrier assessment
+
+SUPPORTED_WITH_LIMIT. F04 is credible evidence that a Codex morphology can reuse a host-neutral world API without equating Codex with Cursor/BUILDER-01. It establishes one foreign carrier, on one machine and substrate, with explicit exclusions for Claude/OpenClaw, full multi-host synchronization, and Gate 1.
+
+## 12. shared-world-memory assessment
+
+SUPPORTED_WITH_LIMIT. D-007/D-008 show concrete scope routing, shared entity recall across independent sessions, negative control against project-memory leakage, provenance-bearing claims, conflict retention, and secret references without plaintext. This is a credible vertical slice, not proof of multi-machine reconciliation, universal global memory, or a live Archivarius system.
+
+## 13. evidence-integrity assessment
+
+The bundle is unusually candid: it preserves PARTIAL, UNKNOWN, CONFLICT, failed transport, raw child outputs, and explicit non-claims. That materially increases confidence in the limited claims.
+
+Limits remain: the archive/commit identity cannot be independently verified from this archive-only copy; some key runtime facts are represented by receipts and preserved output rather than replayable environments; origin/fresh workspaces and external Drive artifacts are unavailable for independent inspection. These limits require conservative interpretation, not dismissal of all local evidence.
+
+## 14. exact final verdict: one of ACCEPTED | ACCEPTED_WITH_OPEN_BOUNDARIES | NOT_ACCEPTED
+
+NOT_ACCEPTED
+
+## 15. concise rationale
+
+The frozen evidence establishes a promising reusable candidate organ with credible continuity carriers, scoped memory routing, one foreign morphology, and meaningful controlled transduction evidence. It does not establish Gate 1’s minimum L4–L6 threshold: correction learning is unrun, behavioral organ preservation is only PARTIAL, restart survival remains PARTIAL/UNKNOWN, and the Gate-specific post-install second-cycle demonstration is not established as such. The bundle’s own durable status—`GATE_1 = NOT_YET`—is therefore confirmed rather than overridden.
+
+## 16. conditions carried forward if accepted with boundaries
+
+Not applicable: verdict is NOT_ACCEPTED.
+
+## 17. if NOT_ACCEPTED: minimum blocking gaps only (no repair plan)
+
+- No T04 evidence that a meaningful correction changes later independent behavior with recoverable provenance.
+- No T11 behavioral evidence that a coding task preserves an LLM-native organ rather than reducing it.
+- T02 full restart remains PARTIAL; process-death boundary is UNKNOWN.
+- No sufficient behavioral evidence for parallel safety/project isolation at Gate scope.
+- No unambiguous Gate-specific L6/T13 evidence that installed continuity capabilities safely participated in a subsequent bounded Proteus-development change.

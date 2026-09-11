@@ -1,0 +1,11 @@
+﻿{
+    "note":  "Isolated extract; not a live worktree of origin. Auditor must not use C:\\Projects\\Proteus or C:\\projects\\Proteus.",
+    "method":  "git archive --format=zip -o ZIP \u003ccommit\u003e; Expand-Archive to AUDIT",
+    "archive_zip_sha256":  "33301f6a012efe9853ab316f02b5617a9f1e791a5702f412108035539ee36d80",
+    "created_utc":  "2026-09-11T18:34:46.3281894Z",
+    "audited_commit":  "94e3d60c9785789f1b7e812a865a325fcb23475f",
+    "origin_working_tree":  "clean",
+    "archive_zip":  "C:\\Projects\\_proteus_gate1_audit_94e3d60.zip",
+    "origin_unrelated_changes":  false,
+    "origin_head_at_freeze":  "94e3d60c9785789f1b7e812a865a325fcb23475f"
+}

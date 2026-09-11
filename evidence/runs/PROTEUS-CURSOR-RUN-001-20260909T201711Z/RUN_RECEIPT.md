@@ -163,8 +163,18 @@ Next frontier: `INDEPENDENT_GATE_1_AUDIT` (not performed here).
 Regression: pytest recruitment/activate/codex/world/secret/capsule/smoke → 41 passed.
 Not claimed: Gate 1 completed; that optional `derived record` was used; F05 historical PARTIAL rewritten.
 
+## 21. INDEPENDENT GATE 1 AUDIT
+
+Freeze: commit `94e3d60c9785789f1b7e812a865a325fcb23475f`; clean working tree; bundle `C:\Projects\Proteus-GATE1-AUDIT-001` via git archive zip.
+Manifest content-address: `08082b7597fa1f5e8599733660fafc09f9ad7f67594143b1f07a9e799b56a9a0`.
+Auditor: independent Codex 0.153.4 ephemeral PID 20080; no Proteus activate; prompt sha `8b9dd038d8a6caa8ee10819f8761023318358e8cdd3824937bed1961bea42037`.
+Raw: `GATE1_AUDITOR_RAW_RESULT.txt`. Origin record: `GATE1_INDEPENDENT_AUDIT.md`.
+Auditor verdict: **NOT_ACCEPTED**. Origin did not alter verdict; no repairs in this episode.
+GATE_1 = NOT_ACCEPTED.
+Next frontier: auditor Gate-critical gaps (T04; T11; T02/process-death; T05/T09; L6/T13).
+
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (…; D-006–D-011 accepted; F04–F06 recorded; T04 NOT_STARTED; Gate 1 NOT_YET)
+FIRST_INCARNATION = PARTIAL (…; D-006–D-011 accepted; F04–F06 recorded; Gate 1 audited NOT_ACCEPTED)
 OBSERVABILITY = PARTIAL (local PASS; Drive observatory FAIL; entity carriers MCP PARTIAL)
 PRODUCT_ACTIVATION = PASS
 WORLD_ENTITY_MEMORY = PASS (vertical slice)
@@ -177,5 +187,5 @@ BLIND_FORM_TRANSITION_RETEST = PASS
 NATURAL_TRANSDUCTION_RETEST = PASS
 NATURAL_RECRUITMENT = PASS
 LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED
-GATE_1 = NOT_YET
-NEXT_FRONTIER = INDEPENDENT_GATE_1_AUDIT
+GATE_1 = NOT_ACCEPTED
+NEXT_FRONTIER = GATE1_BLOCKERS (T04; T11; T02/PROCESS_DEATH; T05/T09; L6/T13)
