@@ -1,0 +1,8 @@
+﻿# CHECKPOINT Gate1 blocker closure
+
+recording_commit: d2d374f35e119600f22e41585ff34c8d887d19a6
+contract_map_commit: 54a4ffef84e5a42ac60d5f7436fd48e745691ed1
+gate_status: NOT_ACCEPTED (preserved)
+matrix: evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/GATE1_BLOCKER_CLOSURE_MATRIX.md
+next_frontier: INDEPENDENT_GATE_1_REAUDIT
+drive_mcp_status_file: 1mr--6FlgXhHXmSnnCAvod1QEjaRZcwjI

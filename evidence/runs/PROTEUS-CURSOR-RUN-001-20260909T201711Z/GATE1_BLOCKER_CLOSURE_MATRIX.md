@@ -22,3 +22,8 @@ This matrix closes blockers for **re-audit readiness** only.
 
 Still **NOT_ACCEPTED** until independent re-audit.  
 **NEXT_FRONTIER = INDEPENDENT_GATE_1_REAUDIT**
+
+## Drive recovery
+
+MCP status file id: `1mr--6FlgXhHXmSnnCAvod1QEjaRZcwjI` (observatory folder). Recording commit: `d2d374f35e119600f22e41585ff34c8d887d19a6`.
+
