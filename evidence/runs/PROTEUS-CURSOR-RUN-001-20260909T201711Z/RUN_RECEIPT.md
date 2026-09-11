@@ -194,8 +194,20 @@ Blocker recheck (re-auditor): T04 CLOSED; T05 CLOSED; T11 PARTIALLY_CLOSED; T09 
 GATE_1 = NOT_ACCEPTED.
 Next frontier: re-auditor Gate-critical blockers (Cursor T02 reopen; T09 reconciliation; Cursor-path L6/T13).
 
+## 24. GATE1 FINAL-THREE BLOCKER CLOSURE (not a re-audit)
+
+Contract map: `GATE1_FINAL_THREE_CONTRACT_MAP.md` (pre-mutation).
+Mechanism: D-012 `proteus.frontier_reconcile` (commit `e033169`).
+Current PASS: Cursor-native T02; T09 shared reconcile; Cursor-path T13; L6 — `GATE1_FINAL_THREE_CLOSURE_MATRIX.md`.
+Evidence episode: `GATE1_FINAL_THREE_BLOCKER_CLOSURE.md`.
+T11 inherited PARTIALLY_CLOSED (not upgraded).
+Historical preserved: T02 PARTIAL; both Gate audits NOT_ACCEPTED; prior T09/T13 origin claims.
+Regression: pytest **55 passed**; FINAL3_BODY inventory **4 passed**.
+GATE_1 = NOT_ACCEPTED.
+NEXT_FRONTIER = INDEPENDENT_GATE_1_REAUDIT_2 (not performed here).
+
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (…; D-006–D-011 accepted; F04–F06 recorded; Gate audited then re-audited NOT_ACCEPTED)
+FIRST_INCARNATION = PARTIAL (…; D-006–D-012 accepted; F04–F06 recorded; Gate audited then re-audited NOT_ACCEPTED; final-three origin closure recorded)
 OBSERVABILITY = PARTIAL (local PASS; Drive observatory FAIL; entity carriers MCP PARTIAL)
 PRODUCT_ACTIVATION = PASS
 WORLD_ENTITY_MEMORY = PASS (vertical slice)
@@ -209,4 +221,4 @@ NATURAL_TRANSDUCTION_RETEST = PASS
 NATURAL_RECRUITMENT = PASS
 LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED
 GATE_1 = NOT_ACCEPTED
-NEXT_FRONTIER = GATE1_REAUDIT_BLOCKERS (Cursor T02 reopen; T09 reconciliation; Cursor-path L6/T13)
+NEXT_FRONTIER = INDEPENDENT_GATE_1_REAUDIT_2

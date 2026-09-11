@@ -32,4 +32,5 @@
 - DONE (Gate 1 independent audit): freeze `94e3d60…`; auditor **NOT_ACCEPTED** (`GATE1_INDEPENDENT_AUDIT.md`). Unchanged historical authority.
 - DONE (Gate blocker closure episode): origin-side PASS claims recorded in `GATE1_BLOCKER_CLOSURE_MATRIX.md` — **not** Gate acceptance.
 - DONE (Gate 1 independent re-audit): freeze `4b1f8d39a6731a994dc67c66aa8f5c059bda78d8`; re-auditor **NOT_ACCEPTED** (`GATE1_INDEPENDENT_REAUDIT.md`, `GATE1_REAUDITOR_RAW_RESULT.txt`). Origin did not repair.
-- OPEN (Gate blockers per re-auditor): (1) Cursor-native T02 close/reopen continuity; (2) T09 frontier reconciliation without LWW loss; (3) Cursor-installed L6/T13 second cycle attributable to installed capabilities.
+- DONE (Gate final-three closure episode): origin current PASS for Cursor-native T02, T09 shared reconcile (D-012), Cursor-path T13/L6 (`GATE1_FINAL_THREE_CLOSURE_MATRIX.md`). Gate remains NOT_ACCEPTED until independent re-audit-2. T11 inherited PARTIALLY_CLOSED (not upgraded; not in re-auditor minimum set).
+- OPEN (Gate): `INDEPENDENT_GATE_1_REAUDIT_2` not yet run.

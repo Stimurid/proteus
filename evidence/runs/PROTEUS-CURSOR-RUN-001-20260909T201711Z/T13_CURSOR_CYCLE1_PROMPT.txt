@@ -1,0 +1,5 @@
+Work only in this project workspace.
+
+The project is a small inventory helper. Implement a Python module `tools/inventory.py` that lists files under `data/` (non-recursive is fine) and writes a short human-readable summary to `out/inventory_summary.txt` (create `out/` if needed). Add `tests/test_inventory.py` with a minimal pytest asserting the summary mentions each seeded data file name. Update `README.md` with a one-paragraph usage note if missing. Commit when the tests pass.
+
+Do all work yourself. Do not ask the human to run commands.

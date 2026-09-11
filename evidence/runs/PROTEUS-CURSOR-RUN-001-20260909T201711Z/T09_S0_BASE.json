@@ -1,0 +1,13 @@
+{
+  "schema": "proteus.frontier_reconcile.v0.1",
+  "kind": "base",
+  "recorded_utc": "2026-09-11T21:39:58.164291+00:00",
+  "items": {
+    "mission": "ship inventory helper v0",
+    "constraint": "keep tests green",
+    "priority_theme": "local-first tooling"
+  },
+  "note": "S0",
+  "base_digest": "f5bcf8475f8983088fabc5f169152ebe760461564d68238126a40c3154ba6aae",
+  "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\T09_SHARED\\.proteus\\frontier_base.json"
+}

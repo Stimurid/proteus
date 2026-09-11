@@ -1,0 +1,21 @@
+## Mount receipt
+
+| | |
+|---|---|
+| **Project** | FINAL3_BODY (Inventory Helper) |
+| **RUN / activation** | `PROTEUS-CURSOR-RUN-001-20260909T201711Z` / `…-ACT-20260911T214017Z` |
+| **Уже сделано** | Cycle1: `tools/inventory.py` + тесты + README; commits `6d1a9a8`…`5f44212`; summary по `alpha.txt` / `beta.txt` |
+| **Фронтир был** | «продолжить ordinary product work» |
+| **UNRESOLVED** | UNKNOWN: история до активации не импортирована |
+| **Сделано сейчас** | размеры файлов в summary |
+
+## Продолжение
+
+Самый обоснованный следующий шаг после списка имён — обогатить summary байтами (без смены non-recursive контракта).
+
+- `tools/inventory.py` — строки вида `name (N bytes)` + `Total bytes`
+- тесты расширены → **4 passed**
+- обновлены `state/CURRENT.md`, `FRONTIER.md`, `DECISIONS.md` (D-LOCAL-001)
+- checkpoint: `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/CHECKPOINT.md`
+
+Коммит не делал (не просили). Могу закоммитить product-изменения отдельно от mount-файлов (`.cursor/`, `.proteus/`, …), если нужно.

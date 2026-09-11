@@ -1,0 +1,19 @@
+{
+  "schema": "proteus.frontier_reconcile.v0.1",
+  "kind": "branch",
+  "branch_id": "B",
+  "actor": "session.B.worker",
+  "recorded_utc": "2026-09-11T21:40:01.183966+00:00",
+  "base_digest": "f5bcf8475f8983088fabc5f169152ebe760461564d68238126a40c3154ba6aae",
+  "items": {
+    "next_step": "implement offline cache first",
+    "constraint": "keep tests green",
+    "risk": "UNKNOWN: auth vendor SLA",
+    "priority_theme": "local-first tooling"
+  },
+  "note": "B1_cache",
+  "invariants": {
+    "NO_LAST_WRITE_WINS": true,
+    "BRANCH_DOES_NOT_MUTATE_SIBLINGS": true
+  }
+}

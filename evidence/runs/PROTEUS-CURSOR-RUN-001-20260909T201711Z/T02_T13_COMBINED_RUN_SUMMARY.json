@@ -1,0 +1,12 @@
+{
+  "utc": "2026-09-11T21:48:45.856377+00:00",
+  "t02_process_A_pid": 16296,
+  "t02_process_B_pid": 4532,
+  "terminated_A": true,
+  "cycle1_exit": 0,
+  "cycle2_exit": 0,
+  "cycle1_prompt_sha256": "53004c19b70e9dbed857abf898b0242cf8b9e3d4ad81ac4377d19e6da703db6a",
+  "cycle2_prompt_sha256": "5682f67380a549efc2195b12f326eb081bdc2945d285069ccd3f9142a6b4816b",
+  "successor_is_cursor_native": true,
+  "successor_is_codex": false
+}

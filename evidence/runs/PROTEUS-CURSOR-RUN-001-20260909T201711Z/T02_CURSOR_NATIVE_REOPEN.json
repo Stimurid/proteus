@@ -1,0 +1,30 @@
+{
+  "phase": "reopen_B",
+  "utc": "2026-09-11T21:45:16.868070+00:00",
+  "launcher_pid_B": 4532,
+  "tree_pids_B": [
+    4532,
+    20680,
+    12928,
+    26440,
+    29684,
+    13780,
+    28072,
+    200,
+    24512,
+    26456,
+    17260,
+    16108,
+    25680,
+    4668,
+    10120,
+    27224
+  ],
+  "user_data_dir": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_isolated_cursor_userdata",
+  "workspace": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\FINAL3_BODY",
+  "distinct_from_A": true,
+  "A_pids_still_alive": [
+    25680
+  ],
+  "successor_host": "Cursor.exe + Cursor Agent CLI (not Codex)"
+}

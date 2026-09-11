@@ -1,0 +1,8 @@
+Done. Inventory helper is in place and committed.
+
+- `tools/inventory.py` — lists files under `data/`, writes `out/inventory_summary.txt`
+- `tests/test_inventory.py` — pytest checks that seeded names appear in the summary (2 passed)
+- `README.md` — usage paragraph added
+- Commits: `6d1a9a8` (feature), plus follow-ups to drop `__pycache__` and add `.gitignore`
+
+Run with: `python -m tools.inventory`

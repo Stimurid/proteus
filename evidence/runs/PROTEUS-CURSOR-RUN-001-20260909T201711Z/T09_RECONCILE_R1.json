@@ -1,0 +1,159 @@
+{
+  "schema": "proteus.frontier_reconcile.v0.1",
+  "kind": "reconciled",
+  "reconciled_utc": "2026-09-11T21:40:01.202748+00:00",
+  "observer": "gate1.final3.t09",
+  "project": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\T09_SHARED",
+  "base_digest": "f5bcf8475f8983088fabc5f169152ebe760461564d68238126a40c3154ba6aae",
+  "branch_ids": [
+    "A",
+    "B"
+  ],
+  "branch_provenance": [
+    {
+      "branch_id": "A",
+      "actor": "session.A.worker",
+      "recorded_utc": "2026-09-11T21:39:59.181039+00:00",
+      "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\T09_SHARED\\.proteus\\frontier_branches\\A.json",
+      "items": {
+        "next_step": "implement login flow first",
+        "constraint": "keep tests green",
+        "shared_note": "document CLI usage",
+        "priority_theme": "local-first tooling"
+      }
+    },
+    {
+      "branch_id": "B",
+      "actor": "session.B.worker",
+      "recorded_utc": "2026-09-11T21:40:01.183966+00:00",
+      "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\T09_SHARED\\.proteus\\frontier_branches\\B.json",
+      "items": {
+        "next_step": "implement offline cache first",
+        "constraint": "keep tests green",
+        "risk": "UNKNOWN: auth vendor SLA",
+        "priority_theme": "local-first tooling"
+      }
+    }
+  ],
+  "merged": {
+    "constraint": "keep tests green",
+    "mission": "ship inventory helper v0",
+    "priority_theme": "local-first tooling",
+    "shared_note": "document CLI usage"
+  },
+  "conflicts": [
+    {
+      "key": "next_step",
+      "status": "CONFLICT",
+      "candidates": [
+        {
+          "value": "implement login flow first",
+          "provenance": [
+            {
+              "branch_id": "A",
+              "actor": "session.A.worker",
+              "recorded_utc": "2026-09-11T21:39:59.181039+00:00"
+            }
+          ]
+        },
+        {
+          "value": "implement offline cache first",
+          "provenance": [
+            {
+              "branch_id": "B",
+              "actor": "session.B.worker",
+              "recorded_utc": "2026-09-11T21:40:01.183966+00:00"
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED",
+      "rejected_methods": [
+        "last_write_wins",
+        "recorded_utc_order"
+      ]
+    }
+  ],
+  "unknowns": [
+    {
+      "key": "risk",
+      "text": "UNKNOWN: auth vendor SLA",
+      "provenance": [
+        {
+          "branch_id": "B",
+          "actor": "session.B.worker",
+          "recorded_utc": "2026-09-11T21:40:01.183966+00:00"
+        }
+      ]
+    }
+  ],
+  "contributions_by_key": {
+    "constraint": [
+      {
+        "value": "keep tests green",
+        "branch_id": "A",
+        "actor": "session.A.worker",
+        "recorded_utc": "2026-09-11T21:39:59.181039+00:00"
+      },
+      {
+        "value": "keep tests green",
+        "branch_id": "B",
+        "actor": "session.B.worker",
+        "recorded_utc": "2026-09-11T21:40:01.183966+00:00"
+      }
+    ],
+    "mission": [],
+    "next_step": [
+      {
+        "value": "implement login flow first",
+        "branch_id": "A",
+        "actor": "session.A.worker",
+        "recorded_utc": "2026-09-11T21:39:59.181039+00:00"
+      },
+      {
+        "value": "implement offline cache first",
+        "branch_id": "B",
+        "actor": "session.B.worker",
+        "recorded_utc": "2026-09-11T21:40:01.183966+00:00"
+      }
+    ],
+    "priority_theme": [
+      {
+        "value": "local-first tooling",
+        "branch_id": "A",
+        "actor": "session.A.worker",
+        "recorded_utc": "2026-09-11T21:39:59.181039+00:00"
+      },
+      {
+        "value": "local-first tooling",
+        "branch_id": "B",
+        "actor": "session.B.worker",
+        "recorded_utc": "2026-09-11T21:40:01.183966+00:00"
+      }
+    ],
+    "risk": [
+      {
+        "value": "UNKNOWN: auth vendor SLA",
+        "branch_id": "B",
+        "actor": "session.B.worker",
+        "recorded_utc": "2026-09-11T21:40:01.183966+00:00"
+      }
+    ],
+    "shared_note": [
+      {
+        "value": "document CLI usage",
+        "branch_id": "A",
+        "actor": "session.A.worker",
+        "recorded_utc": "2026-09-11T21:39:59.181039+00:00"
+      }
+    ]
+  },
+  "invariants": {
+    "NO_LAST_WRITE_WINS": true,
+    "BRANCH_PROVENANCE_SURVIVES": true,
+    "CONFLICT_AND_UNKNOWN_EXPLICIT": true,
+    "VIEW_NE_SILENT_OVERWRITE": true
+  },
+  "receipt_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\T09_SHARED\\.proteus\\FRONTIER_RECONCILED.json",
+  "markdown_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\T09_SHARED\\state\\FRONTIER_RECONCILED.md"
+}

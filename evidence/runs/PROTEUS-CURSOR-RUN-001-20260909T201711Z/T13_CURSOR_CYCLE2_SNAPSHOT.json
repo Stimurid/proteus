@@ -1,0 +1,42 @@
+{
+  "utc": "2026-09-11T21:48:34.252377+00:00",
+  "agent_meta": {
+    "started_utc": "2026-09-11T21:45:22.546791+00:00",
+    "ended_utc": "2026-09-11T21:48:34.202686+00:00",
+    "elapsed_sec": 191.669,
+    "exit_code": 0,
+    "timed_out": false,
+    "pid": 15800,
+    "node": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.10-fd3934a\\node.exe",
+    "index": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.10-fd3934a\\index.js",
+    "workspace": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\FINAL3_BODY",
+    "argv_without_prompt": [
+      "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.10-fd3934a\\node.exe",
+      "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.10-fd3934a\\index.js",
+      "-p",
+      "--output-format",
+      "text",
+      "--trust",
+      "--workspace",
+      "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\FINAL3_BODY",
+      "--force"
+    ],
+    "prompt_len": 179,
+    "prompt_sha256": "5682f67380a549efc2195b12f326eb081bdc2945d285069ccd3f9142a6b4816b",
+    "prompt_sha256_prefix": "5682f67380a549ef",
+    "prompt_source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\T13_CURSOR_CYCLE2_PROMPT.txt",
+    "used_continue": false,
+    "used_resume": false,
+    "auth": "CURSOR_AUTH_TOKEN from IDE cursorAuth/accessToken (value not recorded)",
+    "stdout_bytes": 1342,
+    "stderr_bytes": 0
+  },
+  "used_resume": false,
+  "used_continue": false,
+  "git_log": "5f44212 Ignore bytecode caches and generated inventory output.\n8e87366 Stop tracking bytecode caches and ignore generated output.\n6d1a9a8 Add inventory module that summarizes data/ files.\nb4b8820 seed inventory helper\n",
+  "frontier_after": "# FRONTIER\n\nDone this session: recovered Cycle1 inventory helper from durable tree; extended summary with per-file and total byte sizes; tests green.\n\nNext: on further product work, consider optional CLI flags (e.g. `--json` or recursive listing) only if a real need appears; keep the tool small. Do not treat Proteus mount success as product acceptance.\n",
+  "current_after": "# CURRENT\n\nProject: FINAL3_BODY\nWorkspace: `C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\FINAL3_BODY`\nStatus: Inventory helper v0 ships names + per-file/total byte sizes; pytest 4 passed.\nProteus mount: activated (`PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T214017Z`). No Gate 1 claim from this product step.\nProteus source used for this mount: `C:\\projects\\Proteus`\nLast product change: summary now includes sizes (`tools/inventory.py`).\n",
+  "pre_boundary_marker_still_present": true,
+  "inventory_still_present": true,
+  "files_changed_vs_cycle1": true
+}
