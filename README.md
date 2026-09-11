@@ -30,3 +30,11 @@ python -m proteus.activate --project <path> --remove
 ```
 
 (`PYTHONPATH=src` if needed.) Writes Proteus-owned surfaces and `.proteus/ENTRY.md`; does not overwrite an existing `AGENTS.md` or non-`proteus-*` Cursor rules. Not Gate 1.
+
+Project capsule (compact, practical context for a fresh coding agent):
+
+```
+python -m proteus capsule --project C:\path\to\project --out C:\handoff\PROJECT_CAPSULE.md
+```
+
+The command is read-only with respect to the selected project. It records observed Git state, manifests, mandatory instructions, and bounded excerpts from standard overview/current-state/roadmap documents. Give the Markdown file to the fresh agent as project context, then have it inspect the cited sources before editing. It deliberately omits diff bodies, untracked file contents, binaries, dependency trees, environment files, and agent transcripts; credential-shaped strings in included excerpts are heuristically redacted. Use `--max-chars` (default 48,000; minimum 4,000) to bound the result.

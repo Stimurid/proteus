@@ -1,0 +1,12 @@
+You are a fresh, independent coding-agent receiver. You have no prior conversation or transcript.
+
+Your only supplied project-context artifact is:
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\F05_MULTIAGENT_MODERATION_PROJECT_CAPSULE.md
+
+Read that capsule. Do not edit the project, run tests, inspect source files, or consult any other project-context document. Based solely on the capsule, report concisely:
+1. what you understand the project to be;
+2. the current working situation;
+3. what you think should happen next;
+4. what material you would need to inspect before actually changing the project.
+
+Distinguish observed facts, conflicting signals, and inferences. Your response is being preserved verbatim as a handoff evaluation result.

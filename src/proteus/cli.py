@@ -27,6 +27,7 @@ from .world.archivarius import resolve_via_bridge
 from .world.store import Provenance
 from .secrets import delete_secret, describe_secret, put_secret, redact
 from .secrets.broker import SecretNotFoundError, get_secret
+from .capsule import DEFAULT_MAX_CHARS, build_capsule
 
 
 def cmd_enqueue(ns: argparse.Namespace) -> None:
@@ -76,6 +77,23 @@ def cmd_activate_codex(ns: argparse.Namespace) -> None:
             aiye_home=aiye,
         )
     print(json.dumps(result, indent=2))
+
+
+def cmd_capsule(ns: argparse.Namespace) -> None:
+    result = build_capsule(
+        Path(ns.project), Path(ns.out), max_chars=ns.max_chars
+    )
+    print(
+        json.dumps(
+            {
+                "project": str(result.project),
+                "output": str(result.output),
+                "chars": result.chars,
+                "included_documents": list(result.included_documents),
+            },
+            indent=2,
+        )
+    )
 
 
 def cmd_world(ns: argparse.Namespace) -> None:
@@ -240,6 +258,15 @@ def main() -> None:
     ac.add_argument("--run-id", default=None)
     ac.add_argument("--aiye-home", default=None)
     ac.set_defaults(func=cmd_activate_codex)
+
+    cap = sub.add_parser(
+        "capsule",
+        help="Create a compact, source-grounded Markdown handoff capsule without mutating the project",
+    )
+    cap.add_argument("--project", required=True, help="existing coding project to inspect")
+    cap.add_argument("--out", required=True, help="Markdown capsule path (normally outside the target project)")
+    cap.add_argument("--max-chars", type=int, default=DEFAULT_MAX_CHARS)
+    cap.set_defaults(func=cmd_capsule)
 
     w = sub.add_parser("world", help="Shared world / entity memory")
     wsub = w.add_subparsers(dest="world_cmd", required=True)
