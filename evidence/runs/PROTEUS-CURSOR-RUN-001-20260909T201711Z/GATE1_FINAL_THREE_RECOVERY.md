@@ -4,7 +4,7 @@ RUN_ID: `PROTEUS-CURSOR-RUN-001-20260909T201711Z`
 
 | Field | Value |
 | --- | --- |
-| Tip commit | `800fed856b9b7b05024b4a347f02a58cecc0cc27` |
+| Tip commit | `e88308e5a5353513f2f3e5fc0cefe1b6389056b6` |
 | Evidence commit | `9c53ad2e8dc1ea77f03ae1b7b8d221c182f6723a` |
 | Fixture fix | `c30c72502444519ee1bbfb5ce66112be6d839daa` |
 | Causal D-012 | `e033169` |
