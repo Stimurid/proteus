@@ -28,6 +28,7 @@ from .world.store import Provenance
 from .secrets import delete_secret, describe_secret, put_secret, redact
 from .secrets.broker import SecretNotFoundError, get_secret
 from .capsule import DEFAULT_MAX_CHARS, build_capsule
+from .derived import read_relation, record_relation
 
 
 def cmd_enqueue(ns: argparse.Namespace) -> None:
@@ -94,6 +95,26 @@ def cmd_capsule(ns: argparse.Namespace) -> None:
             indent=2,
         )
     )
+
+
+def cmd_derived(ns: argparse.Namespace) -> None:
+    if ns.derived_cmd == "record":
+        receipt = record_relation(
+            derived=ns.derived,
+            sources=list(ns.source),
+            note=ns.note,
+            observer=ns.observer,
+            project=ns.project,
+        )
+        print(json.dumps(receipt, indent=2))
+        return
+    if ns.derived_cmd == "show":
+        rel = read_relation(ns.derived)
+        if rel is None:
+            raise SystemExit(f"no derived relation beside {ns.derived}")
+        print(json.dumps(rel, indent=2))
+        return
+    raise SystemExit(f"Unknown derived command: {ns.derived_cmd}")
 
 
 def cmd_world(ns: argparse.Namespace) -> None:
@@ -267,6 +288,22 @@ def main() -> None:
     cap.add_argument("--out", required=True, help="Markdown capsule path (normally outside the target project)")
     cap.add_argument("--max-chars", type=int, default=DEFAULT_MAX_CHARS)
     cap.set_defaults(func=cmd_capsule)
+
+    d = sub.add_parser(
+        "derived",
+        help="Optional source↔derived representation relation recorder (not canonicalization)",
+    )
+    dsub = d.add_subparsers(dest="derived_cmd", required=True)
+    dr = dsub.add_parser("record")
+    dr.add_argument("--derived", required=True)
+    dr.add_argument("--source", action="append", required=True)
+    dr.add_argument("--note", default=None)
+    dr.add_argument("--observer", default=None)
+    dr.add_argument("--project", default=None)
+    dr.set_defaults(func=cmd_derived)
+    ds = dsub.add_parser("show")
+    ds.add_argument("--derived", required=True)
+    ds.set_defaults(func=cmd_derived)
 
     w = sub.add_parser("world", help="Shared world / entity memory")
     wsub = w.add_subparsers(dest="world_cmd", required=True)

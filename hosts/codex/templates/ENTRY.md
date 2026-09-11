@@ -38,6 +38,10 @@ Host-neutral module: `proteus.world.api`.
 
 Do **not** copy entity knowledge into this project as local truth. Project decisions stay in `state/` / `.proteus/project_memory.jsonl`. ENTITY facts live in the shared substrate.
 
+## Consequential derived representations
+
+Read `.proteus/CONSTITUTIVE.md`. When a durable artifact will stand in for richer source in later action, keep it distinct from that source and retain reopenability. Optional: `python -m proteus derived record ...` (after loading `.proteus/world_env.cmd`).
+
 Secrets: opaque `secret://` refs only. Never print plaintext secrets.
 
 ## What Proteus owns here

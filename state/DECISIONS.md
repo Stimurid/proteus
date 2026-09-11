@@ -57,3 +57,9 @@
 - Not claimed: full project reconstruction; Gate 1; NATURAL_RECRUITMENT full PASS; that hardcoded document candidates cover every project shape.
 - Provenance: F05 ordinary-work episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; child commit `4e8204a`; evidence `F05_NATURAL_PROJECT_CAPSULE.md` / `F05_PROJECT_CAPSULE_EPISODE.md`.
 - Status: accepted for this incarnation; reversible by removing `src/proteus/capsule.py` and related CLI/tests.
+
+## D-011 — Consequential derived-representation recruitment
+- Decision: Host-neutral constitutive principle for consequential durable derived representations is installed into Cursor and Codex morphologies (anti-reduction rule, `.proteus/CONSTITUTIVE.md`, ENTRY pointers). Optional recorder: `python -m proteus derived record` writes a non-canonical source↔derived relation receipt beside the derived artifact. Not capsule-specific; not a per-task checklist; trivial copies are out of scope.
+- Not claimed: Gate 1; NATURAL_RECRUITMENT PASS; that the principle alone guarantees recruitment; mandatory relation files for every write.
+- Provenance: F06 causal diagnosis of F05 PARTIAL (`F06_F05_CAUSAL_DIAGNOSIS.md`); task-entanglement + missing general recruitment mechanism.
+- Status: accepted for this incarnation; reversible by removing constitutive template sections and `src/proteus/derived.py`.

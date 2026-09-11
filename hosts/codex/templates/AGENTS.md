@@ -45,7 +45,11 @@ Python API (same substrate): `proteus.world.api` — `resolve_entity`, `retrieve
 - **PROJECT** notes and decisions that only matter for this disposable/workspace → `--scope PROJECT`. Do not promote them into entity truth.
 - **SECRET_REFERENCE**: credential material appears only as opaque refs. Never print secret values. Use `python -m proteus secret describe <uri>` when needed; do not copy secrets into files, prompts, or stdout.
 
-Do **not** copy entity corpora into this project as local truth.
+Do **not** copy entity knowledge into this project as local truth.
+
+## Consequential derived representations
+
+Read `.proteus/CONSTITUTIVE.md`. When a durable artifact will stand in for richer source in later action, keep it distinct from that source and retain reopenability. Optional: `python -m proteus derived record ...` (after `.proteus/world_env.cmd`).
 
 ## Hard constraints
 

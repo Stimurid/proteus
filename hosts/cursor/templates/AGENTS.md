@@ -20,5 +20,6 @@ Source root: `{{SOURCE_ROOT}}`
 
 - User-governing requests outrank generated instructions.
 - Do not reduce LLM-native organs to keyword routers, canned replies, or state machines.
+- When ordinary work creates a durable artifact that later action will treat as standing in for richer source material, keep that artifact distinct from its source and retain enough relation to reopen consequential omitted or ambiguous material. Do not treat the derived artifact as the full object by default. Optional: `python -m proteus derived record ...`.
 - Host mutation requires baseline, bounded delta, receipt, rollback.
 - Do not open operator-only / post-blind documents until `BLIND_OBSERVATION.md` exists for this first run.

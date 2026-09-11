@@ -146,6 +146,7 @@ def owned_file_plan() -> list[tuple[str, str]]:
     """(relative dest, template relative path under hosts/codex/templates)."""
     return [
         (f"{ACTIVATION_DIR}/{ENTRY_FILE}", "ENTRY.md"),
+        (f"{ACTIVATION_DIR}/CONSTITUTIVE.md", "CONSTITUTIVE.md"),
         (f"{ACTIVATION_DIR}/world_env.cmd", "world_env.cmd"),
         ("state/IDENTITY.md", "state/IDENTITY.md"),
         ("state/CURRENT.md", "state/CURRENT.md"),
@@ -170,6 +171,7 @@ PRESERVE_IF_EXISTS = {
 
 REFRESHABLE = {
     f"{ACTIVATION_DIR}/{ENTRY_FILE}",
+    f"{ACTIVATION_DIR}/CONSTITUTIVE.md",
     f"{ACTIVATION_DIR}/world_env.cmd",
     f"{ACTIVATION_DIR}/{ACTIVATION_MANIFEST}",
 }

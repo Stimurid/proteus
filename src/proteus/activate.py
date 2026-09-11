@@ -141,6 +141,7 @@ def owned_file_plan() -> list[tuple[str, str]]:
     """(relative dest, template key). template key: activate:<rel> or shared:<rel>."""
     return [
         (f"{ACTIVATION_DIR}/{ENTRY_FILE}", "activate:ENTRY.md"),
+        (f"{ACTIVATION_DIR}/CONSTITUTIVE.md", "activate:CONSTITUTIVE.md"),
         ("state/IDENTITY.md", "activate:state/IDENTITY.md"),
         ("state/CURRENT.md", "activate:state/CURRENT.md"),
         ("state/FRONTIER.md", "activate:state/FRONTIER.md"),
@@ -175,6 +176,7 @@ PRESERVE_IF_EXISTS = {
 # On re-run, Proteus-owned generated surfaces may be refreshed.
 REFRESHABLE = {
     f"{ACTIVATION_DIR}/{ENTRY_FILE}",
+    f"{ACTIVATION_DIR}/CONSTITUTIVE.md",
     ".cursor/rules/proteus-orientation.mdc",
     ".cursor/rules/proteus-mutation.mdc",
     ".cursor/rules/proteus-anti-reduction.mdc",

@@ -22,6 +22,10 @@ python -m proteus world route --scope ENTITY --entity "<name>" --text "..." --pr
 
 Do **not** copy entity knowledge into this project as local truth. Project decisions stay in `state/` / `.proteus/project_memory.jsonl`. ENTITY facts live in the shared substrate.
 
+## Consequential derived representations
+
+Read `.proteus/CONSTITUTIVE.md`. When a durable artifact will stand in for richer source in later action, keep it distinct from that source and retain reopenability. Optional: `python -m proteus derived record ...`.
+
 ## What Proteus owns here
 
 See `.proteus/activation.json` (`owned_paths`). Only those paths are safe to reverse with:
