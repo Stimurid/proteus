@@ -1,0 +1,8 @@
+{
+  "schema": "proteus.final3.pre_boundary.v0.1",
+  "written_utc": "2026-09-11T21:41:36.040385+00:00",
+  "note": "pre-death durable marker for Cursor-native T02",
+  "workspace": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_fixtures\\FINAL3_BODY",
+  "isolated_profile": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_final3_isolated_cursor_userdata",
+  "process_A_launcher_pid": 16296
+}
