@@ -51,3 +51,9 @@
 - Not claimed: Gate 1; NATURAL_RECRUITMENT; identity with Cursor incarnation; Claude/OpenClaw; live Archivarius; real secret availability; that desktop `codex.exe` shim version equals nested CLI.
 - Provenance: F04 episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; evidence `F04_CODEX_FOREIGN_CARRIER.md`.
 - Status: accepted for this incarnation; reversible by removing `src/proteus/activate_codex.py`, `hosts/codex/`, and related tests/CLI wiring.
+
+## D-010 — Project capsule handoff capability
+- Decision: Proteus provides `python -m proteus capsule --project <path> --out <file.md>` to emit one bounded, redacted Markdown handoff index from an existing coding project (Git observation + prioritized durable docs/excerpts). The capsule is generated context for fresh-agent reentry, not a source of truth, not an archive, and must not write into the selected project. Truncation and conflict/dirtiness are labeled for reopening richer source.
+- Not claimed: full project reconstruction; Gate 1; NATURAL_RECRUITMENT full PASS; that hardcoded document candidates cover every project shape.
+- Provenance: F05 ordinary-work episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; child commit `4e8204a`; evidence `F05_NATURAL_PROJECT_CAPSULE.md` / `F05_PROJECT_CAPSULE_EPISODE.md`.
+- Status: accepted for this incarnation; reversible by removing `src/proteus/capsule.py` and related CLI/tests.

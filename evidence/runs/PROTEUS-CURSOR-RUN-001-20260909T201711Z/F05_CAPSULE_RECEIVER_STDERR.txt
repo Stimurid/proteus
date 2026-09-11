@@ -1,0 +1,1911 @@
+OpenAI Codex v0.153.4
+--------
+workdir: C:\projects\multiagent-moderation-env
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a090bb-6201-79c1-9596-c0359c3e47ca
+--------
+user
+You are a fresh, independent coding-agent receiver. You have no prior conversation or transcript.
+
+Your only supplied project-context artifact is:
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\F05_MULTIAGENT_MODERATION_PROJECT_CAPSULE.md
+
+Read that capsule. Do not edit the project, run tests, inspect source files, or consult any other project-context document. Based solely on the capsule, report concisely:
+1. what you understand the project to be;
+2. the current working situation;
+3. what you think should happen next;
+4. what material you would need to inspect before actually changing the project.
+
+Distinguish observed facts, conflicting signals, and inferences. Your response is being preserved verbatim as a handoff evaluation result.
+
+codex
+I’ll read only the supplied capsule and base the handoff assessment exclusively on it.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw 'C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\F05_MULTIAGENT_MODERATION_PROJECT_CAPSULE.md'" in C:\projects\multiagent-moderation-env
+ succeeded in 82ms:
+# Project Capsule
+
+> Generated context, not a source of truth. Verify cited files and current Git state before changing the project.
+
+## Receiver protocol
+
+1. Treat the project instructions and constraints below as binding.
+2. Preserve existing dirty work: inspect it before editing or cleaning anything.
+3. Reconcile any conflicting roadmap/current-state material by checking Git history and the cited source files.
+4. Before implementation, read the listed files most relevant to the chosen change and run the narrowest documented check.
+
+## Observed repository
+
+- Project: `C:\projects\multiagent-moderation-env`
+- Generated (UTC): `2026-09-11T13:49:27.854526+00:00`
+- Approximate tracked/working source files (excluding common dependency/cache directories): 4,207
+- Top level: `.claude_note_ps_cd.tmp`, `.codex_authoritative_xlsx_fix.patch`, `.codex_authoritative_xlsx_fix.stat.txt`, `.codex_authoritative_xlsx_fix.status.txt`, `.gitignore`, `00_README.md`, `00_README_PUT_IN_REPO_ROOT.md`, `01_environment_architecture_v1.md`, `02_object_model_v1.md`, `03_agent_contract_v1.md`, `04_pipeline_templates_v1.md`, `05_SAS_VIEW3_LAYOUT_CONTRACT_v1.0.json`, `05_mvp_scope_and_roadmap.md`, `06_codex_handoff_prompt_v1.md`, `07_seed_data_and_test_scenario.md`, `1003-1037-1-SM.pdf`, `AGENTS.md`, `AGENT_OBJECT_COREA.md`, `ARCHITECTURE_AND_RUNTIME_STACK.md`, `Agent 0.md`, `Agent A.md`, `Agent C.md`, `CHECKLIST_v2_3_SESSION_CONTROL_ACTIVE_CONTEXT.md`, `CODEX_AGENT_WORKING_RULES.md`, `COMBINED_CODEX_BASE.md`, `INTERFACE_SURFACES_PLAN.md`, `KAYONA_LIVE_VOICE_AGENT.md`, `MODULE GUIDE CORE 42.pdf`, `NEXT_PROMPT_TEMPLATE.md`, `NEXT_PROMPT_v1_0_SESSION_HUB_GROUP_WORKSPACE.md`, `Orc_agent_met.md`, `PLAN_v2_6_to_v2_9__AGENTIC_LLM_WORKSPACE.md`, `PROJECT_INTENT_AND_CURRENT_STATE.md`, `README.md`, `RECOVERY_REENTRY_MASTER_PLAN_v2_3_to_v3_4.md`, `ROADMAP_NEXT_STEPS.md`, `SAS_CANONICAL_REPOSITORY/`, `SAS_VIEW3_DRAFT_RENDER_PACKAGE_v1.0.zip`, `SAS_VIEW3_ENTITY_REGISTRY_v1.0.csv`, `SAS_VIEW3_FUNCTIONAL_PLACE_REGISTRY_v1.0.csv`, `SAS_VIEW3_MODEL_v1.0.json`, `SAS_VIEW3_POSITION_REGISTRY_v1.0.csv`, `SAS_VIEW3_RELATION_REGISTRY_v1.0.csv`, `SAS_VIEW3_REPRESENTATION_REGISTRY_v1.0.csv`, `STRATEGIC_FUNCTION_REGISTRY__DGTU_MODERATION_ENV (1).md`, `STRATEGIC_FUNCTION_REGISTRY__DGTU_MODERATION_ENV.md`, `UM_2019_4_132-141.pdf`, `UNI Kayona 4.pdf`, `UX_ROLES_ACTIVITIES_OBJECTS.md`, `VIEW1_OUTPUT/`, `_debug_exports/`, `_local_docs_pack/`, `_РџРўРћ-РЇРґСЂРѕ V1.3_РїСЂРµСЃСЃ.docx`, `agents/`, `artifacts/`, `backend/`, `deliverables/`, `docker-compose.yml`, `docs/`, `draft_zip_verify/` вЂ¦
+
+## Git working situation
+
+Git root: `C:/projects/multiagent-moderation-env`
+Branch: `main`
+HEAD: `e52389098cb21d9d65a6998702253a7535e25872`
+Working tree: dirty (3075 paths)
+Changed paths (porcelain; inspect before editing):
+```text
+M backend/app/routers/api.py
+ M frontend/app/components/ProductShell.tsx
+ M scripts/smoke_structured_source_pack_no_llm.py
+?? .codex_authoritative_xlsx_fix.patch
+?? .codex_authoritative_xlsx_fix.stat.txt
+?? .codex_authoritative_xlsx_fix.status.txt
+?? 05_SAS_VIEW3_LAYOUT_CONTRACT_v1.0.json
+?? SAS_CANONICAL_REPOSITORY/00_NOTATION/RUSSIAN_TERMINOLOGY_CANON/01_OD_SAS_RUSSIAN_TERMINOLOGY_CANON_v1.0.md
+?? SAS_CANONICAL_REPOSITORY/00_NOTATION/RUSSIAN_TERMINOLOGY_CANON/02_OD_SAS_RUSSIAN_RELATION_GRAMMAR_v1.0.md
+?? SAS_CANONICAL_REPOSITORY/00_NOTATION/RUSSIAN_TERMINOLOGY_CANON/03_OD_SAS_TRANSLATION_DECISIONS_v1.0.md
+?? SAS_CANONICAL_REPOSITORY/00_NOTATION/RUSSIAN_TERMINOLOGY_CANON/04_OD_SAS_TERM_MAPPING_TABLE.xlsx
+?? SAS_CANONICAL_REPOSITORY/00_NOTATION/RUSSIAN_TERMINOLOGY_CANON/04_OD_SAS_TERM_MAPPING_TABLE.xlsx.inspect.ndjson
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Crashpad/metadata
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Crashpad/settings.dat
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Crashpad/throttle_store.dat
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Affiliation Database"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Affiliation Database-journal"
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/BookmarkMergedSurfaceOrdering
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Bookmarks
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Cache/Cache_Data/data_0
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Cache/Cache_Data/data_1
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Cache/Cache_Data/data_2
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Cache/Cache_Data/data_3
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Cache/Cache_Data/index
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Cache/No_Vary_Search/journal.baj
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Cache/No_Vary_Search/snapshot.baf
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/ClientCertificates/LOCK
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/ClientCertificates/LOG
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/2a8a6f695a3ff316_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/2cca9bc741a6516d_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/5cce1706364839f1_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/5fbb54f36261c413_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/7de0dc67a2b3a69c_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/8020acacb3d13763_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/8bb1867be67136eb_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/945cb8fb56d09a8e_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/b21fb45197b9c728_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/ba678a2fbd8c358c_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/baded5730168391f_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/e94999eac39dfd99_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/e9a142a21b9ad9ef_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/ebce9e52a869b921_0"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/index"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/js/index-dir/the-real-index"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/wasm/index"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Code Cache/wasm/index-dir/the-real-index"
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnGraphiteCache/data_0
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnGraphiteCache/data_1
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnGraphiteCache/data_2
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnGraphiteCache/data_3
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnGraphiteCache/index
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnWebGPUCache/data_0
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnWebGPUCache/data_1
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnWebGPUCache/data_2
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnWebGPUCache/data_3
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DawnWebGPUCache/index
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DualEngine/SiteList-Consumer.json
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/DualEngine/SiteList-Enterprise.json
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/EdgeHubAppUsage/EdgeHubAppUsageSQLite.db
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/EdgeHubAppUsage/EdgeHubAppUsageSQLite.db-journal
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/EdgePushStorageWithConnectTokenAndKey/LOCK
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/EdgePushStorageWithConnectTokenAndKey/LOG
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension Rules/CURRENT"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension Rules/LOCK"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension Rules/LOG"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension Rules/MANIFEST-000001"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension Scripts/CURRENT"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension Scripts/LOCK"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension Scripts/LOG"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension Scripts/MANIFEST-000001"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension State/CURRENT"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension State/LOCK"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension State/LOG"
+?? "SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Extension State/MANIFEST-000001"
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Favicons
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/Favicons-journal
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/GPUCache/data_0
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/GPUCache/data_1
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/GPUCache/data_2
+?? SAS_CANONICAL_REPOSITORY/01_VIEW1_HERITAGE/.edge-render-ru1/Default/GPUCache/data_3
+```
+[Only first 80 of 3075 changed paths shown.]
+
+### Recent commits
+
+```text
+e523890 2026-06-09 Ensure authoritative XLSX sheet coverage in semantic source pack
+faa9301 2026-06-09 Preserve structured source bodies for semantic packs
+ff9bf65 2026-06-04 narrow semantic participant row detection
+29743bd 2026-06-04 tighten semantic participant accounting validation
+8365e15 2026-06-04 strengthen semantic participant extraction guard
+ef72e2f 2026-06-04 expand semantic run trace audit logging
+1051514 2026-06-04 add semantic run trace export
+bd585d1 2026-06-02 add semantic group source pack extraction path
+```
+
+## Runtime / build manifests
+
+### `backend/requirements.txt`
+
+```text
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+pydantic==2.10.3
+alembic==1.14.0
+python-multipart==0.0.19
+pypdf==5.9.0
+python-docx==1.2.0
+python-pptx==1.0.2
+openpyxl==3.1.5
+```
+
+### `frontend/package.json`
+
+```text
+{
+  "name": "moderation-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000"
+  },
+  "dependencies": {
+    "next": "14.2.25",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3",
+    "@types/node": "22.10.1",
+    "@types/react": "18.3.12"
+  }
+}
+```
+
+### `docker-compose.yml`
+
+```text
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: moderation_env
+      POSTGRES_USER: postgres
+      POSTGRES_<REDACTED>
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg2://postgres:postgres@db:5432/moderation_env
+      DGTU_ENABLE_DEV_CLEANUP: ${DGTU_ENABLE_DEV_CLEANUP:-true}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+      - ./agents:/app/agents:ro
+
+  frontend:
+    build: ./frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000/api
+    command: ["sh", "-lc", "unset CI; npm run dev"]
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  worker:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg2://postgres:postgres@db:5432/moderation_env
+      DGTU_WORKER_ENABLED: ${DGTU_WORKER_ENABLED:-false}
+      DGTU_WORKER_BACKEND_URL: ${DGTU_WORKER_BACKEND_URL:-http://backend:8000}
+      DGTU_WORKER_POLL_SECONDS: ${DGTU_WORKER_POLL_SECONDS:-10}
+      DGTU_WORKER_INCLUDE_SMOKE: ${DGTU_WORKER_INCLUDE_SMOKE:-false}
+      DGTU_WORKER_MAX_TICKS_PER_CYCLE: ${DGTU_WORKER_MAX_TICKS_PER_CYCLE:-1}
+      DGTU_WORKER_MAX_EXECUTION_REQUESTS_PER_CYCLE: ${DGTU_WORKER_MAX_EXECUTION_REQUESTS_PER_CYCLE:-10}
+      DGTU_WORKER_RUN_PROVIDER_EXECUTION: ${DGTU_WORKER_RUN_PROVIDER_EXECUTION:-true}
+    depends_on:
+      - backend
+      - db
+    volumes:
+      - ./backend:/app
+      - ./agents:/app/agents:ro
+    command: ["python", "-m", "app.workers.agent_loop_worker"]
+
+volumes:
+  pgdata:
+```
+
+## Project instructions: `AGENTS.md`
+
+# AGENTS
+
+Before changing deploy, production checks, Caddy, LLM runtime, or manual-test gates, read:
+
+- `docs/ops/PRODUCTION_TOPOLOGY_AND_GATES.md`
+
+Before changing `/moderator`, `/workbench`, `/rpr`, Kayona Dock, task strips, timelines, agent buttons, report/plenary/canvas UX, read:
+
+- `docs/product/MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md`
+
+Mandatory rules:
+
+- Moderator Cockpit must be canvas-first, not runtime-first.
+- Kayona Dock must be resizable and placeable right or bottom.
+- Main app layout must not become a scrolling landing page.
+- ModerBober product URL is `https://moderbober.mindkampf.ru/`.
+- `81.26.176.248` is shared server/debug only (SSH/server-local checks), not product URL.
+- Do not use bare IP as ModerBober product URL.
+- Do not change `ANTHROPIC_MODEL` unless explicitly requested.
+- Do not expose secrets in code, logs, status output, or frontend payloads.
+- Manual testing is blocked while LLM gate is `mock`/`missing_config`/opaque `provider_error`.
+
+## Project overview: `README.md`
+
+# Multiagent Moderation Environment (Milestone 1)
+
+Typed substrate MVP for:
+- workspace/session/group/event lifecycle
+- transcript ingestion (immutable raw text)
+- fragment generation
+- mock extraction (claim/question/task candidates)
+- review queue with accept/reject/revise
+- provenance links
+- draft project state snapshots
+- kernel state snapshots (`snapshot_type` + `payload`)
+- pipeline and agent run records
+
+## Stack
+- Backend: FastAPI + SQLAlchemy + Alembic
+- Frontend: Next.js + TypeScript
+- DB: PostgreSQL 16
+- Runtime: Docker Compose
+
+## Start
+```bash
+docker compose up --build
+```
+
+Services:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8000
+- API docs: http://localhost:8000/docs
+
+## Seed Scenario
+1. Open `/workspaces` and click **Load seed**.
+2. Open API docs (`/docs`) or UI routes to continue flow.
+3. Go to `/events/{event_id}/transcript` (seed already has transcript).
+4. Go to `/events/{event_id}/fragments` and click auto-generate.
+5. Go to `/events/{event_id}/analytical-units` and run mock extraction.
+6. Go to `/review` and accept/reject units.
+7. Go to `/groups/{group_id}/project-state` and generate a draft from accepted units.
+8. Inspect created kernel snapshots via `/api/groups/{group_id}/state-snapshots`.
+9. Check `/pipelines` and `/agent-runs`.
+10. Run full kernel smoke: `powershell -ExecutionPolicy Bypass -File .\docs\smoke\smoke_kernel_mvp.ps1`
+
+## Key API Routes
+- `POST /api/workspaces`
+- `POST /api/programs`
+- `POST /api/sessions`
+- `POST /api/groups`
+- `POST /api/events`
+- `POST /api/transcripts`
+- `POST /api/events/{event_id}/fragments/auto`
+- `POST /api/pipelines/mock-extract`
+- `POST /api/events/{event_id}/run-mock-extraction` (kernel alias)
+- `GET/POST /api/review`
+- `POST /api/analytical-units/{unit_id}/review` (kernel alias)
+- `POST /api/project-state/from-accepted`
+- `POST /api/groups/{group_id}/build-state-snapshot` (kernel alias)
+- `GET /api/state-snapshots`
+- `GET /api/groups/{group_id}/state-snapshots`
+- `POST /api/seed/load`
+
+## Smoke Validation
+- Full reproducible path and commands: [KERNEL_MVP_SMOKE.md](/C:/projects/multiagent-moderation-env/docs/smoke/KERNEL_MVP_SMOKE.md)
+
+## Principles Enforced
+- Raw transcript text is stored as source material and never overwritten.
+- Analytical units are candidates first; acceptance is explicit review.
+- Provenance links are created from each extracted unit to source fragment.
+- Typed relational substrate is primary; no embedding-first/RAG foundation.
+- Mock extraction only validates workflow mechanics, not NLP quality.
+
+## Current-state carrier: `PROJECT_INTENT_AND_CURRENT_STATE.md`
+
+# Project Intent and Current State
+
+## Р Р°Р±РѕС‡РµРµ РёРјСЏ
+
+`multiagent-moderation-env`
+
+РЎРјС‹СЃР»РѕРІРѕР№ РїСЂРѕРµРєС‚: Р”Р“РўРЈ Moderator / multiagent moderation environment.
+
+## Р§С‚Рѕ СЃС‚СЂРѕРёС‚СЃСЏ
+
+РЎС‚СЂРѕРёС‚СЃСЏ РЅРµ вЂњС‡Р°С‚-Р±РѕС‚вЂќ Рё РЅРµ вЂњРїР°РЅРµР»СЊ СЃ РјРµС‚СЂРёРєР°РјРёвЂќ. РЎС‚СЂРѕРёС‚СЃСЏ РѕРїРµСЂР°С†РёРѕРЅРЅР°СЏ СЃСЂРµРґР° РґР»СЏ РїСЂРѕРµРєС‚РЅРѕ-РјРѕРґРµСЂР°С†РёРѕРЅРЅРѕР№ СЃРµСЃСЃРёРё, РіРґРµ РјРѕР¶РЅРѕ:
+
+- СЃРѕР·РґР°С‚СЊ РёР»Рё РѕС‚РєСЂС‹С‚СЊ СЃРµСЃСЃРёСЋ;
+- Р·Р°РІРµСЃС‚Рё РіСЂСѓРїРїС‹ Рё СѓС‡Р°СЃС‚РЅРёРєРѕРІ;
+- Р·Р°РіСЂСѓР·РёС‚СЊ РјР°С‚РµСЂРёР°Р»С‹: СЃРїРёСЃРєРё, РїСЂРµР·РµРЅС‚Р°С†РёРё, СЂР°СЃС€РёС„СЂРѕРІРєРё, Р·Р°РјРµС‚РєРё, Р°СЂС‚РµС„Р°РєС‚С‹ РіСЂСѓРїРїРѕРІРѕР№ СЂР°Р±РѕС‚С‹;
+- Р·Р°РїСѓСЃС‚РёС‚СЊ РѕР±СЂР°Р±РѕС‚РєСѓ РјР°С‚РµСЂРёР°Р»РѕРІ Р°РіРµРЅС‚Р°РјРё;
+- РїРѕР»СѓС‡РёС‚СЊ С„СЂР°РіРјРµРЅС‚С‹, Р°РЅР°Р»РёС‚РёС‡РµСЃРєРёРµ РµРґРёРЅРёС†С‹, РїСЂРѕР±Р»РµРјРЅС‹Рµ С„РѕСЂРјСѓР»РёСЂРѕРІРєРё, РїРѕРЅСЏС‚РёР№РЅС‹Рµ СѓР·Р»С‹, РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ;
+- РІРёРґРµС‚СЊ СЃРѕСЃС‚РѕСЏРЅРёРµ РєР°Р¶РґРѕР№ РіСЂСѓРїРїС‹ Рё РІСЃРµС… РіСЂСѓРїРї РІРјРµСЃС‚Рµ;
+- СѓРґРµСЂР¶РёРІР°С‚СЊ С‚Р°Р№РјР»Р°Р№РЅ СЃРѕР±С‹С‚РёР№;
+- СЃРѕР±РёСЂР°С‚СЊ РѕС‚С‡С‘С‚С‹;
+- СЃС‚СЂРѕРёС‚СЊ РѕС‡РµСЂРµРґСЊ РґРµР№СЃС‚РІРёР№ РґР»СЏ РјРѕРґРµСЂР°С‚РѕСЂР°;
+- РґР°РІР°С‚СЊ Р РџР  РѕР±Р·РѕСЂ РґРІРёР¶РµРЅРёСЏ РіСЂСѓРїРї;
+- РїРѕРґРєР»СЋС‡РёС‚СЊ РіРѕР»РѕСЃРѕРІРѕР№/РєРѕРјР°РЅРґРЅС‹Р№ СЃР»РѕР№ Kayona Live;
+- СЃРѕС…СЂР°РЅСЏС‚СЊ РІРѕСЃРїСЂРѕРёР·РІРѕРґРёРјСѓСЋ РёСЃС‚РѕСЂРёСЋ РґРµР№СЃС‚РІРёР№ Рё СЂРµС€РµРЅРёР№.
+
+РџСЂРѕРµРєС‚ РґРѕР»Р¶РµРЅ РїРѕРґРґРµСЂР¶РёРІР°С‚СЊ Р¶РёРІСѓСЋ СЃРµСЃСЃРёСЋ, Р° РЅРµ С‚РѕР»СЊРєРѕ РїРѕСЃС‚С„Р°РєС‚СѓРј-Р°РЅР°Р»РёР·. РџРѕСЌС‚РѕРјСѓ РІР°Р¶РЅС‹ Р±С‹СЃС‚СЂС‹Рµ СЂР°Р±РѕС‡РёРµ РїРѕРІРµСЂС…РЅРѕСЃС‚Рё, РјРёРЅРёРјР°Р»СЊРЅС‹Р№ РєРѕРіРЅРёС‚РёРІРЅС‹Р№ С€СѓРј, СЏСЃРЅС‹Рµ СЃС‚Р°С‚СѓСЃС‹ Рё РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р±С‹СЃС‚СЂРѕ Р·Р°РїСѓСЃРєР°С‚СЊ РїР°Р№РїР»Р°Р№РЅС‹.
+
+## Р§С‚Рѕ СѓР¶Рµ СЂРµР°Р»РёР·РѕРІР°РЅРѕ Р»РѕРєР°Р»СЊРЅРѕ
+
+РќР° РјРѕРјРµРЅС‚ С„РёРєСЃР°С†РёРё РєРѕРЅС‚РµРєСЃС‚Р° РїРѕСЃР»РµРґРЅСЏСЏ РёР·РІРµСЃС‚РЅР°СЏ Р»РѕРєР°Р»СЊРЅР°СЏ Р»РёРЅРёСЏ РєРѕРјРјРёС‚РѕРІ:
+
+- `d4a1d02` вЂ” bootstrap executable dgtu moderator kernel mvp
+- `10c9acc` вЂ” harden moderator workbench ui for dgtu smoke flow
+- `bd9a4b3` вЂ” add concept passport ontology workbench v0
+- `ddf11f7` вЂ” generalize concept passport correction flow v0.1
+- `dc29dea` вЂ” add moderator workbench launcher v0
+- `670e3eb` вЂ” add deterministic group session report draft v0
+- `3c4e601` вЂ” add agentic context and research runtime v0.1
+- `2afce1e` вЂ” add role surfaces provider budget recording runtime v0.1
+- `d481e3c` вЂ” add agent worker event loop runtime v0.1
+- `143a973` вЂ” harden agent worker event loop runtime v0.2
+- `6606065` вЂ” add runtime hygiene smoke isolation scoped views v0.3
+- `1ba4601` вЂ” add provider execution boundary v0.4
+- `a77bae2` вЂ” add worker service continuous runtime v0.5
+- `3b7fdf5` вЂ” add agent action executor domain reducers v0.6
+- `8156518` вЂ” add moderator action queue human review control plane v0.7
+- `2ab829d` вЂ” end-to-end moderator session flow v0.8
+- `201c7e1` вЂ” add moderator console operator cockpit v0.9
+- `8348374` вЂ” demo readiness / export layer
+
+Р•СЃР»Рё С„Р°РєС‚РёС‡РµСЃРєРёР№ git log РѕС‚Р»РёС‡Р°РµС‚СЃСЏ, СЃС‡РёС‚Р°С‚СЊ git log РёСЃС‚РѕС‡РЅРёРєРѕРј РёСЃС‚РёРЅС‹, РЅРѕ СЌС‚Сѓ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєР°Рє СЃРјС‹СЃР»РѕРІСѓСЋ РєР°СЂС‚Сѓ.
+
+## Р§С‚Рѕ СѓР¶Рµ РµСЃС‚СЊ РїРѕ СЃР»РѕСЏРј
+
+### Kernel / domain moderation
+
+Р•СЃС‚СЊ Р±Р°Р·РѕРІС‹Р№ РґРѕРјРµРЅРЅС‹Р№ СЃР»РѕР№: workspace, program, session, group, event, transcript, fragment, analytical units, review decisions, state snapshots, provenance links.
+
+### Concept passport
+
+Р•СЃС‚СЊ СЃР»РѕР№ РїРѕРЅСЏС‚РёР№ Рё РєРѕСЂСЂРµРєС†РёРё РїРѕРЅСЏС‚РёР№: problem concept, resource deficit, negative/positive examples, scope, challenge/update actions, impact preview.
+
+### Reports
+
+Р•СЃС‚СЊ deterministic group session report draft: РѕС‚С‡С‘С‚ РїРѕ РіСЂСѓРїРїРµ РЅР° РѕСЃРЅРѕРІРµ РёРјРµСЋС‰РёС…СЃСЏ РґР°РЅРЅС‹С…, СЃ placeholder-Р°РјРё Рё warnings, РµСЃР»Рё РґР°РЅРЅС‹С… РјР°Р»Рѕ.
+
+### Agentic runtime
+
+Р•СЃС‚СЊ AgentRun / ResearchRequest / EvidenceItem / ResearchMemo Рё СЃРІСЏР·Р°РЅРЅС‹Рµ mock-СЌРЅРґРїРѕРёРЅС‚С‹.
+
+### Role / provider / recording runtime
+
+Р•СЃС‚СЊ РїРѕРІРµСЂС…РЅРѕСЃС‚Рё Рё РѕР±СЉРµРєС‚С‹ РґР»СЏ СЂРѕР»РµР№, resource profiles, usage ledger, recording/transcription mock jobs.
+
+### Agent Worker Event Loop
+
+Р•СЃС‚СЊ event-driven runtime С‡РµСЂРµР· StateSnapshot:
+
+- AgentEvent
+- AgentTrigger
+- AgentActivation
+- AgentState
+- AgentHandoff
+
+Р•СЃС‚СЊ tick / run-pending, trigger matching, activation creation, dedupe, smoke tagging.
+
+### Runtime hygiene
+
+Default API views РёСЃРєР»СЋС‡Р°СЋС‚ smoke. Р•СЃС‚СЊ `include_smoke`, `test_run_id`, scoped runtime filters, runtime overview, dev cleanup smoke.
+
+### Provider Execution Boundary
+
+Р•СЃС‚СЊ executable mock boundary: ProviderCapability, ProviderPolicy, ExecutionRequest, ExecutionResult, guard-check, mock-execute, usage ledger, blocking live/non-mock providers.
+
+### Worker Service
+
+Р•СЃС‚СЊ continuous worker container/service, РєРѕС‚РѕСЂС‹Р№ РІС‹Р·С‹РІР°РµС‚ health, seed-default, tick, run-pending, provider boundary, heartbeat/status.
+
+### Agent Action Executor / Domain Reducers
+
+Р•СЃС‚СЊ deterministic reducers, РїСЂРµРІСЂР°С‰Р°СЋС‰РёРµ AgentRun / AgentActivation РІ РґРѕРјРµРЅРЅС‹Рµ Р°СЂС‚РµС„Р°РєС‚С‹:
+
+- `content_extractor`
+- `concept_guardian`
+- `project_state_compiler`
+- `report_synthesizer`
+- `research_router`
+- `moderator_copilot`
+
+### Moderator Action Queue / Human Review Control Plane
+
+Р•СЃС‚СЊ РѕС‡РµСЂРµРґСЊ РјРѕРґРµСЂР°С‚РѕСЂР°: build, approve, reject, defer, request-revision, resolve. Р РµС€РµРЅРёСЏ marker-based Рё non-destructive.
+
+### Moderator Session Flow / Console
+
+Р•СЃС‚СЊ end-to-end deterministic session flow Рё Operator Cockpit РЅР° `/moderator`.
+
+### Demo readiness/export
+
+Р•СЃС‚СЊ СЃР»РѕР№ demo readiness, reset-demo, run-demo, export, acceptance.
+
+## Р“Р»Р°РІРЅРѕРµ РѕРіСЂР°РЅРёС‡РµРЅРёРµ
+
+Р”Рѕ РѕС‚РґРµР»СЊРЅРѕРіРѕ СЂРµС€РµРЅРёСЏ РЅРµ РІРєР»СЋС‡Р°С‚СЊ СЂРµР°Р»СЊРЅС‹Рµ РІРЅРµС€РЅРёРµ РІС‹Р·РѕРІС‹:
+
+- no real LLM;
+- no real web search;
+- no real n8n;
+- no real transcription provider;
+- no new database tables Р±РµР· СЏРІРЅРѕРіРѕ СЂРµС€РµРЅРёСЏ;
+- smoke isolation СЃРѕС…СЂР°РЅСЏС‚СЊ;
+- СЃРµРєСЂРµС‚С‹ РІ payload РЅРµ С…СЂР°РЅРёС‚СЊ.
+
+## РўРµРєСѓС‰РёР№ СЂРёСЃРє
+
+РџСЂРѕРµРєС‚ СЃС‚Р°Р» С‚РµС…РЅРёС‡РµСЃРєРё РЅР°СЃС‹С‰РµРЅРЅС‹Рј, РЅРѕ UX-Р·Р°РјС‹СЃРµР» РЅР°С‡Р°Р» РѕС‚СЂС‹РІР°С‚СЊСЃСЏ РѕС‚ Р¶РёРІС‹С… СЃС†РµРЅР°СЂРёРµРІ СЃРµСЃСЃРёРё. РЎР»РµРґСѓСЋС‰РёР№ СЌС‚Р°Рї РґРѕР»Р¶РµРЅ РЅРµ РїСЂРѕСЃС‚Рѕ РґРѕР±Р°РІР»СЏС‚СЊ endpoints, Р° РїСЂРёРІРµСЃС‚Рё СЂР°Р±РѕС‡РёРµ РїРѕРІРµСЂС…РЅРѕСЃС‚Рё Рє Р±Р°Р·РѕРІС‹Рј СЃС†РµРЅР°СЂРёСЏРј:
+
+1. Р±С‹СЃС‚СЂС‹Р№ СЃС‚Р°СЂС‚ СЃРµСЃСЃРёРё;
+2. СЂР°Р±РѕС‡Р°СЏ СЃС‚СЂР°РЅРёС†Р° РіСЂСѓРїРїС‹;
+3. Р РџР -СЂР°РґР°СЂ РІСЃРµС… РіСЂСѓРїРї;
+4. РјРѕРґРµСЂР°С‚РѕСЂСЃРєР°СЏ РєРѕРЅСЃРѕР»СЊ РІРѕ РІСЂРµРјСЏ РіСЂСѓРїРїРѕРІРѕР№ СЂР°Р±РѕС‚С‹;
+5. РјР°С‚РµСЂРёР°Р»С‹ РґРЅСЏ / РІРµС‡РµСЂРЅСЏСЏ СЃР±РѕСЂРєР°;
+6. Kayona Live РєР°Рє РєРѕРјР°РЅРґРЅС‹Р№/РіРѕР»РѕСЃРѕРІРѕР№ СЃР»РѕР№.
+
+## v1.5 update
+Deterministic Materials Library layer added: material records, bundles, processing markers, lightweight keyword search/ask, and cross-surface material panels (workbench/moderator/rpr/group-live/agent-runtime).
+
+## v1.6 update
+Session Setup / Agent Launch Orchestrator added with deterministic setup-readiness and launch-plan endpoints, plus /session-setup UI surface.
+
+## v1.7 Operator Journey Navigation
+Added operator-journey context, role-entry, surface-map, next-action, and demo-progress spine for coherent cross-surface navigation (bounded, deterministic, smoke-safe).
+
+## v1.8 Demo UX Walkthrough
+Added a deterministic operator-facing demo walkthrough/acceptance layer with step progress, per-surface acceptance, and markdown reporting over existing v1.0-v1.7 surfaces.
+
+## v1.9 Bulk Material Intake
+Added operator-facing bulk intake gate for messy multi-source materials (files, links, text, late uploads) with deterministic triage, assignment, bundle, process, and readiness flows.
+
+## v1.9.2 Demo Rehearsal / Operator Path Hardening
+- Added deterministic /api/demo-rehearsal/* orchestration wrappers over existing setup/intake/moderator/rpr/group-live/kayona surfaces.
+- Focus: one executable operator demo path with idempotent step markers and markdown report.
+
+
+## v2.0 Russian Unified Operator Workspace
+- Unified Russian-language operator-facing surfaces across workbench/setup/material-intake/moderator/rpr/group-live/demo.
+- Technical runtime page is explicitly marked as appendix/debug only.
+
+
+## v2.1 update
+Visual unified product interface вЂ” shared ProductShell with Russian nav, full-page CSS design system, consistent surface layout across all routes.
+
+## v2.2 update
+Real work loop вЂ” LLM Console adapter (mock/live), bulk material workbench, session timeline, group workspace endpoints added.
+
+## v3.0 update (CURRENT)
+Full product overhaul вЂ” real session workspace:
+- **LLM Settings persistence**: `backend/.local/llm_settings.json` (gitignored). Endpoints: GET/POST /api/llm-settings, /test, /clear-key. Supports mock, openai_compatible, anthropic, 302ai_openai_compatible, 302ai_claude_format. Always falls back to mock on error.
+- **Session management**: /api/sessions/list, /create, /{id}/activate, DELETE /{id}, /current. Current session stored as StateSnapshot(current_session_pointer).
+- **Session Schedule**: /api/session-schedule/* вЂ” 8 default stages, stored as StateSnapshot(session_schedule_stage). Stages: create, update, attach-material, run-analysis, ask.
+- **Material Desk**: /api/material-desk/* вЂ” full bulk material workflow stored as StateSnapshot(material_desk_item). add-bulk, bulk-classify, bulk-assi
+
+[Excerpt truncated at 8,000 characters; inspect PROJECT_INTENT_AND_CURRENT_STATE.md before relying on omitted detail.]
+
+## Roadmap / next work: `ROADMAP_NEXT_STEPS.md`
+
+# Roadmap Next Steps
+
+## Recovery re-entry control note
+
+- Stable baseline after runtime break: `07a81d7`.
+- Master plan source of truth: `RECOVERY_REENTRY_MASTER_PLAN_v2_3_to_v3_4.md`.
+- Immediate implementation step: `v2.3 Session Control / Active Context`.
+- Execution rule: one closed loop per subversion + targeted smoke + `smoke_changed_fast`.
+- Current loop in progress: `v2.4 Active Session Material Desk` (active-session scoped bulk add, classification, and deterministic mock analysis).
+
+## Р“РґРµ РјС‹ РЅР°С…РѕРґРёРјСЃСЏ
+
+РўРµРєСѓС‰РёР№ РїСЂРѕРµРєС‚ РїСЂРѕС€С‘Р» С„Р°Р·Сѓ backend/runtime MVP:
+
+- kernel;
+- concept passport;
+- reports;
+- agent runtime;
+- provider/resource/recording mock;
+- event loop;
+- smoke isolation;
+- provider boundary;
+- worker service;
+- domain reducers;
+- human review queue;
+- moderator session flow;
+- moderator console;
+- demo readiness/export.
+
+РўРµРїРµСЂСЊ РЅРµР»СЊР·СЏ РїСЂРѕРґРѕР»Р¶Р°С‚СЊ Р±РµСЃРєРѕРЅРµС‡РЅРѕ РЅР°СЂР°С‰РёРІР°С‚СЊ endpoints Р±РµР· UX-С†РµРЅС‚СЂРёСЂРѕРІР°РЅРёСЏ. РЎР»РµРґСѓСЋС‰РёРµ С€Р°РіРё РґРѕР»Р¶РЅС‹ СЃРІСЏР·Р°С‚СЊ runtime СЃ Р¶РёРІС‹РјРё СЃС†РµРЅР°СЂРёСЏРјРё СЃРµСЃСЃРёРё.
+
+## РЎС‚СЂР°С‚РµРіРёС‡РµСЃРєР°СЏ Р»РёРЅРёСЏ
+
+Р”РІРёР¶РµРЅРёРµ РґР°Р»СЊС€Рµ:
+
+1. Session Hub / Group Workspace foundation
+2. Materials Intake / Session Folder Model
+3. Kayona Live command layer
+4. RPR Radar
+5. Day Assembly / Evening Room
+6. Participant-facing group mode
+7. Real recording/transcription integration
+8. Real RAG/vector storage
+9. Deployment/push/repo hygiene
+
+## v1.0 Session Hub / Group Workspace
+
+Р¦РµР»СЊ: СЃРѕР·РґР°С‚СЊ РЅРѕСЂРјР°Р»СЊРЅС‹Р№ РІС…РѕРґРЅРѕР№ Рё РіСЂСѓРїРїРѕРІРѕР№ РёРЅС‚РµСЂС„РµР№СЃ.
+
+### Backend
+
+Р”РѕР±Р°РІРёС‚СЊ РёР»Рё РѕР±РѕР±С‰РёС‚СЊ endpoints:
+
+- `GET /api/session-hub/overview`
+- `POST /api/session-hub/create-session`
+- `POST /api/session-hub/open-or-ensure-demo`
+- `POST /api/session-hub/configure-groups`
+- `GET /api/groups/{group_id}/workspace`
+- `GET /api/groups/{group_id}/timeline`
+- `GET /api/groups/{group_id}/materials`
+- `GET /api/groups/{group_id}/people-dynamics`
+- `GET /api/groups/{group_id}/concept-map`
+- `GET /api/groups/{group_id}/project-state-summary`
+
+Р•СЃР»Рё РјРѕР¶РЅРѕ, СЂРµР°Р»РёР·РѕРІР°С‚СЊ wrappers РЅР°Рґ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРјРё СЃСѓС‰РЅРѕСЃС‚СЏРјРё Р±РµР· РјРёРіСЂР°С†РёР№.
+
+### UI
+
+- `/workbench` РїСЂРµРІСЂР°С‚РёС‚СЊ РІ Session Hub.
+- Р”РѕР±Р°РІРёС‚СЊ/СЃРѕР·РґР°С‚СЊ `/groups/[group_id]/workspace`.
+- РћСЃС‚Р°РІРёС‚СЊ `/moderator` РєР°Рє cockpit, РЅРѕ СЃРІСЏР·Р°С‚СЊ РµРіРѕ СЃ РІС‹Р±СЂР°РЅРЅРѕР№ РіСЂСѓРїРїРѕР№.
+- `/agent-runtime` РѕСЃС‚Р°РІРёС‚СЊ advanced.
+
+### Smoke
+
+- СЃРѕР·РґР°С‚СЊ СЃРµСЃСЃРёСЋ;
+- СЃРѕР·РґР°С‚СЊ РЅРµСЃРєРѕР»СЊРєРѕ РіСЂСѓРїРї;
+- Р·Р°РіСЂСѓР·РёС‚СЊ/СЃРѕР·РґР°С‚СЊ mock materials;
+- РѕС‚РєСЂС‹С‚СЊ group workspace;
+- СѓРІРёРґРµС‚СЊ timeline/materials/state/concept map placeholders;
+- smoke_all pass.
+
+## v1.1 Materials Intake / Session Folder Model
+
+Р¦РµР»СЊ: РїСЂРёРІРµСЃС‚Рё РјР°С‚РµСЂРёР°Р»С‹ Рє РЅРѕСЂРјР°Р»СЊРЅРѕР№ РѕРїРµСЂР°С†РёРѕРЅРЅРѕР№ РјРѕРґРµР»Рё.
+
+### РќСѓР¶РЅРѕ
+
+- РїР°РїРєРё/РїР°РєРµС‚С‹ РјР°С‚РµСЂРёР°Р»РѕРІ;
+- С‚РёРїС‹ РјР°С‚РµСЂРёР°Р»РѕРІ: transcript, slide, doc, participant list, photo, note, artifact;
+- СЃРІСЏР·СЊ material в†’ session/group/event;
+- processed/unprocessed status;
+- Р·Р°РїСѓСЃРє РѕР±СЂР°Р±РѕС‚РєРё РїРѕ РјР°С‚РµСЂРёР°Р»Сѓ/РїР°РїРєРµ;
+- РІРёРґРёРјРѕСЃС‚СЊ РІ Group Workspace Рё Session Hub.
+
+### Р‘РµР· СЂРµР°Р»СЊРЅС‹С… РІРЅРµС€РЅРёС… API
+
+РџРѕРєР° mock/file metadata/text intake. Р РµР°Р»СЊРЅРѕРµ С‡С‚РµРЅРёРµ Google Docs, Telegram, audio вЂ” РїРѕР·Р¶Рµ.
+
+## v1.2 Kayona Live Command Layer
+
+Р¦РµР»СЊ: РґРѕР±Р°РІРёС‚СЊ РІРµСЂС…РЅРёР№ РєРѕРјР°РЅРґРЅС‹Р№ СЃР»РѕР№.
+
+### РЎРЅР°С‡Р°Р»Р° text-first
+
+- command bar РІ Session Hub / Group Workspace / Moderator / RPR Radar;
+- endpoints `/api/kayona/...`;
+- command types: answer/retrieve/run/guide;
+- deterministic/mock command handling;
+- Р·Р°РїСѓСЃРє СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёС… pipelines;
+- command journal;
+- provenance.
+
+### РџРѕС‚РѕРј voice
+
+Р РµР°Р»СЊРЅС‹Р№ РјРёРєСЂРѕС„РѕРЅ Рё speech-to-text РїРѕСЃР»Рµ СЃС‚Р°Р±РёР»РёР·Р°С†РёРё command layer.
+
+## v1.3 RPR Radar
+
+Р¦РµР»СЊ: РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ СЂСѓРєРѕРІРѕРґРёС‚РµР»СЏ РїСЂРѕРµРєС‚РЅРѕР№ СЂР°РјРєРё.
+
+### РќСѓР¶РЅРѕ РїРѕРєР°Р·Р°С‚СЊ
+
+- РІСЃРµ РіСЂСѓРїРїС‹;
+- СЃС‚Р°С‚СѓСЃ РґРІРёР¶РµРЅРёСЏ;
+- РїРѕРЅСЏС‚РёР№РЅСѓСЋ СЃРѕРіР»Р°СЃРѕРІР°РЅРЅРѕСЃС‚СЊ/СЂР°СЃС…РѕР¶РґРµРЅРёРµ;
+- СЂРёСЃРєРё;
+- handoffs;
+- РІРѕРїСЂРѕСЃС‹ Рє РїР»РµРЅР°СЂСѓ;
+- day synthesis.
+
+## v1.4 Day Assembly / Evening Room
+
+Р¦РµР»СЊ: РІРµС‡РµСЂРЅСЏСЏ СЃР±РѕСЂРєР° РґРЅСЏ.
+
+### РќСѓР¶РЅРѕ
+
+- РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ РјР°С‚РµСЂРёР°Р»С‹;
+- СЃРІРѕРґРєР° РїРѕ РіСЂСѓРїРїР°Рј;
+- РѕС‚С‡С‘С‚С‹;
+- РІРѕРїСЂРѕСЃС‹ РЅР° Р·Р°РІС‚СЂР°;
+- research gaps;
+- export.
+
+## v1.5 Participant Mode
+
+Р¦РµР»СЊ: Р±РµР·РѕРїР°СЃРЅС‹Р№ СЂРµР¶РёРј РґР»СЏ РіСЂСѓРїРїС‹/СѓС‡Р°СЃС‚РЅРёРєРѕРІ.
+
+### РќСѓР¶РЅРѕ
+
+- group-facing page;
+- simplified timeline;
+- materials;
+- current task;
+- idea/concept map;
+- Kayona group mode;
+- no private moderator warnings.
+
+## v1.6 Real Recording / Transcription
+
+РўРѕР»СЊРєРѕ РїРѕСЃР»Рµ v1.0вЂ“v1.2.
+
+### РќСѓР¶РЅРѕ
+
+- browser recording;
+- upload audio;
+- transcription job;
+- provider boundary;
+- transcript versioning;
+- real provider disabled by default unless explicitly enabled.
+
+## v1.7 Real RAG / Vector Store
+
+РўРѕР»СЊРєРѕ РїРѕСЃР»Рµ РЅРѕСЂРјР°Р»РёР·Р°С†РёРё materials.
+
+### РќСѓР¶РЅРѕ
+
+- chunking;
+- embeddings;
+- vector store;
+- retrieval endpoint;
+- citations/provenance;
+- Kayona RAG integration.
+
+## v1.8 GitHub / deployment hygiene
+
+РџРѕРєР° РјРѕР¶РЅРѕ РїСЂРѕРґРѕР»Р¶Р°С‚СЊ Р»РѕРєР°Р»СЊРЅС‹Рµ РєРѕРјРјРёС‚С‹. РќРѕ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РёРІРЅРѕ РЅСѓР¶РЅРѕ:
+
+- РЅР°СЃС‚СЂРѕРёС‚СЊ remote;
+- РїСЂРѕРІРµСЂРёС‚СЊ autopush;
+- РЅРµ С‚РµСЂСЏС‚СЊ Р»РѕРєР°Р»СЊРЅС‹Рµ РєРѕРјРјРёС‚С‹;
+- РёРјРµС‚СЊ `PROJECT_CONTEXT` files in repo root;
+- smoke before commit;
+- no push without known remote unless user explicitly configured.
+
+## Smoke iteration rule
+
+- For normal iteration, run targeted smoke plus `scripts/smoke_changed_fast.ps1`.
+- Use bounded `smoke_all` as a final acceptance pass, not as a long blocking loop.
+
+- v1.5 Materials / Files / RAG-ready Library: deterministic material records, bundles, processing coverage, search/ask, and UI panels.
+
+- v1.6 Session Setup / Agent Launch Orchestrator: session/group prep, material assignment, launch profiles, readiness, and setup timeline.
+
+## v1.7 complete
+Operator journey hardening now provides role-based entry and context continuity across /workbench, /session-setup, /moderator, /rpr, /group-live, and /agent-runtime.
+
+## v1.8 complete
+Demo UX walkthrough now provides a coherent acceptance path across workbench, setup, moderator, group-live, RPR, and runtime appendix.
+
+## v1.9 complete
+Bulk intake/triage now bridges preparation, live session, evening reconstruction, and post-session analysis through one intake surface.
+
+## v1.9.2 status
+- Demo rehearsal path is now executable as a bounded smoke-safe chain (setup -> material intake -> classification -> processing -> moderator -> rpr -> group-live -> kayona).
+- Next step: stabilize operator UX copy and keep fast smoke lane under 120s budgets.
+
+
+## v2.0 completion note
+- Product shell and operator copy are localized to Russian for real colleague testing.
+- Next iterations should refine visual density and reduce residual English debug tokens on non-technical cards.
+
+
+## v3.0 complete
+Real Session Workspace shipped:
+- LLM Settings panel with 4 provider support (mock/openai_compatible/anthropic/302ai)
+- Session management (create/list/activate/archive)
+- Session Schedule (8 default stages, editable, material attachment, per-stage LLM analysis)
+- Material Desk (bulk add, classify, assign to stage/group, batch analyze, gaps, search)
+- All pages redesigned around real session workflow
+- ScheduleTimeline, SessionSelector, LLMSettingsPanel components
+- KayonaPanel: fallback badge, settings gear, provider badge, context chips
+- ProductShell: Demo demoted to footer link
+- Smoke: 24 checks in smoke_real_session_workspace_v3.ps1
+
+## v3.1 remaining items (next iteration)
+- Real-time stage status updates (active/done based on time or operator click)
+- Material attachment UI: drag-and-drop from desk to stage card
+- Group-specific material filtering in desk
+- Per-stage Kayona context injection (pull stage description into LLM context)
+- Voice input for Kayona (browser microphone)
+- Real RAG/vector search for material retrieval
+- Export: per-stage report, full session report as markdown
+- Session duplication / template sessions
+- v2.5.1 in progress: split schedule/program from activity feed; add flexible raw-blob + drag/drop material intake in active session context.
+
+- v2.6 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: LLM Processing Agents пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (agent specs, context packs, llm-processing runs/results, review-required outputs).
+
+## v2.9.4 Focus
+- Restore product core: Group Project Canvas as moderator center.
+- Add participant roster and moderator packets.
+- Add group setup extraction/apply flow from materials.
+- Add RPR matrix for project-state coverage across groups.
+- Keep materials/review/artifact as service layers, not product center.
+
+## Operations constraints: `docs/ops/PRODUCTION_TOPOLOGY_AND_GATES.md`
+
+# ModerBober Production Topology And Gates
+
+## A. Server topology
+
+- `81.26.176.248` = shared production server / SSH / debug host.
+- Known project roots on this server:
+  - `/opt/moderbober`
+  - `/opt/quinta`
+  - `/opt/whitecrow`
+- Caddy/subdomain routing is shared across projects; avoid changes that can break other projects.
+
+## B. Product URLs
+
+- ModerBober canonical production URL:
+  - `https://moderbober.mindkampf.ru/`
+- Quinta:
+  - `https://quinta.mindkampf.ru/`
+- WhiteCrow:
+  - same shared server; exact subdomain/route must be verified before using.
+- Rule:
+  - never treat bare IP as ModerBober product URL.
+
+## C. Check discipline
+
+- Browser/manual product checks:
+  - use `https://moderbober.mindkampf.ru/`
+- SSH/deploy/status checks:
+  - use `81.26.176.248` via
+  - `C:\Windows\System32\OpenSSH\ssh.exe -l deploy 81.26.176.248 ...`
+- Server-local diagnostics:
+  - `docker exec` / internal endpoint / `/opt/moderbober/bin/*`
+- Public API checks may be auth-gated or redirected.
+  - Do not treat `308` / `401` at edge as product failure without server-local verification.
+
+## D. Manual-test gates
+
+Manual test of real DGTU archive is blocked unless:
+
+- production URL opens;
+- Russian UI encoding is normal;
+- clean test/demo session works;
+- upload/intake hardening is active;
+- reset/archive is active for test sessions;
+- LLM status is one of:
+  - `live_ok`
+  - or explicit deterministic/mock mode accepted as a waived non-live test;
+- opaque `provider_error` is not acceptable;
+- `provider_error` must include:
+  - `error_class`
+  - `sanitized_error_message`
+  - `http_status` if available
+  - `failing_stage`
+  - verification method.
+
+## E. LLM production gate
+
+- Runtime env file path:
+  - `/opt/moderbober/secrets/llm.env`
+- Backend must see:
+  - `ANTHROPIC_API_KEY` as boolean presence only;
+  - `ANTHROPIC_MODEL` as configured model name.
+- Frontend must not receive API key.
+- UI badge must be clickable and show diagnostics/settings.
+- `provider_error` without class/message fails the gate.
+- `mock` is not an acceptable silent fallback when live provider config exists.
+- Server-local diagnostics must work behind public auth gate.
+- Never leak API key in git/logs/frontend/status output.
+
+## F. Current known LLM status (as of 2026-05-27)
+
+- Env is wired into backend runtime.
+- Model is preserved from env; do not switch model automatically.
+- Current live smoke result:
+  - `provider_error / auth_error / HTTP 403`
+- Next investigation:
+  - Anthropic auth/access/request issue; do not start with model switching by default.
+
+## Product law: `docs/product/MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md`
+
+# ModerBober Moderator Cockpit Interface Law v0.1
+
+Р”Р°С‚Р° С„РёРєСЃР°С†РёРё: 2026-05-17  
+РЎС‚Р°С‚СѓСЃ: СЂР°Р±РѕС‡Р°СЏ СЃРїРµС†РёС„РёРєР°С†РёСЏ РґР»СЏ Codex / РїСЂРѕРґСѓРєС‚РѕРІС‹Р№ РёРЅС‚РµСЂС„РµР№СЃРЅС‹Р№ Р·Р°РєРѕРЅ  
+РќР°Р·РЅР°С‡РµРЅРёРµ: РїСЂРµРєСЂР°С‚РёС‚СЊ РґРµРіСЂР°РґР°С†РёСЋ РёРЅС‚РµСЂС„РµР№СЃР° РњРѕРґРµСЂР‘РѕР±СЂР° РІ CRM, Kubernetes-РїР°РЅРµР»СЊ, С„Р°Р№Р»РѕРІС‹Р№ Р°СЂС…РёРІ, smoke-board РёР»Рё runtime console; РІРµСЂРЅСѓС‚СЊ РїСЂРѕРµРєС‚ Рє РѕСЃРЅРѕРІРЅРѕР№ Р»РѕРіРёРєРµ вЂ” РїРѕРґРґРµСЂР¶РєРµ РјРѕРґРµСЂР°С‚РѕСЂСЃРєРѕР№ Рё РїСЂРѕРµРєС‚РЅРѕР№ СЂР°Р±РѕС‚С‹ РЅР° 2вЂ“3 РґРµРЅСЊ СЃС‚СЂР°С‚РµРіРёС‡РµСЃРєРѕР№ / РїСЂРѕРµРєС‚РЅРѕ-РїСЂРѕР±Р»РµРјРЅРѕР№ СЃРµСЃСЃРёРё.
+
+## 0. Р“Р»Р°РІРЅР°СЏ С„РѕСЂРјСѓР»Р°
+
+РњРѕРґРµСЂР‘РѕР±РµСЂ вЂ” РЅРµ RAG РїРѕ РјР°С‚РµСЂРёР°Р»Р°Рј, РЅРµ С‡Р°С‚-Р±РѕС‚, РЅРµ CRM, РЅРµ dashboard backend-СЃСѓС‰РЅРѕСЃС‚РµР№ Рё РЅРµ РёРЅС‚РµСЂС„РµР№СЃ РЅР°Р±Р»СЋРґРµРЅРёСЏ Р·Р° agent runs.
+
+РњРѕРґРµСЂР‘РѕР±РµСЂ вЂ” СЃРѕР±С‹С‚РёР№РЅРѕ-РѕРЅС‚РѕР»РѕРіРёС‡РµСЃРєР°СЏ СЃСЂРµРґР° РїРѕРґРґРµСЂР¶РєРё РјРѕРґРµСЂР°С‚РѕСЂСЃРєРѕР№ Рё РїСЂРѕРµРєС‚РЅРѕР№ СЂР°Р±РѕС‚С‹ РЅР° СЃРµСЃСЃРёРё.
+
+Р“Р»Р°РІРЅС‹Р№ РѕР±СЉРµРєС‚ РїСЂРѕРґСѓРєС‚Р° вЂ” РЅРµ С„Р°Р№Р», РЅРµ С‡Р°С‚, РЅРµ Р°РіРµРЅС‚РЅС‹Р№ Р·Р°РїСѓСЃРє, РЅРµ review item, РЅРµ Р»РѕРі Рё РЅРµ endpoint.
+
+Р“Р»Р°РІРЅС‹Р№ РѕР±СЉРµРєС‚ РїСЂРѕРґСѓРєС‚Р° вЂ” РёР·РјРµРЅСЏСЋС‰РµРµСЃСЏ СЃРѕСЃС‚РѕСЏРЅРёРµ РіСЂСѓРїРїС‹:
+
+- РѕР±СЉРµРєС‚ СЂР°Р±РѕС‚С‹;
+- С‚РµРјР°;
+- РїСЂРѕР±Р»РµРјР°;
+- СЃРёС‚СѓР°С†РёСЏ;
+- С†РµР»СЊ;
+- РїСЂРѕРµРєС‚РЅРѕРµ СЂРµС€РµРЅРёРµ;
+- СЌС„С„РµРєС‚ / РєСЂРёС‚РµСЂРёРё;
+- РѕСЂРіРїСЂРѕРµРєС‚;
+- РїР»Р°РЅ РґРµР№СЃС‚РІРёР№;
+- СЂРёСЃРєРё / РѕРіСЂР°РЅРёС‡РµРЅРёСЏ;
+- РѕСЃРЅРѕРІР°РЅРёСЏ / Р°СЂРіСѓРјРµРЅС‚С‹ / РґРѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІР°;
+- РІРѕРїСЂРѕСЃС‹;
+- РєСЂРёС‚РёРєР°;
+- РїРѕСЂСѓС‡РµРЅРёСЏ;
+- РїРѕР·РёС†РёРё СѓС‡Р°СЃС‚РЅРёРєРѕРІ;
+- СЃР°РјРѕРѕРїСЂРµРґРµР»РµРЅРёРµ;
+- РіСЂСѓРїРїРѕРІР°СЏ РґРёРЅР°РјРёРєР°;
+- Р»РёРЅРёСЏ РґРѕРєР»Р°РґРѕРІ;
+- РѕС‚РІРµС‚ РЅР° РєСЂРёС‚РёРєСѓ;
+- РґРІРёР¶РµРЅРёРµ РїРѕ Р°СЂРєРµ СЃРµСЃСЃРёРё.
+
+Р“Р»Р°РІРЅР°СЏ РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ РјРѕРґРµСЂР°С‚РѕСЂР° РґРѕР»Р¶РЅР° СЃС‚СЂРѕРёС‚СЊСЃСЏ РІРѕРєСЂСѓРі РїСЂРѕРµРєС‚РЅРѕРіРѕ РєР°РЅРІР°СЃР° РіСЂСѓРїРїС‹.
+
+Р›СЋР±Р°СЏ РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ, РєРѕС‚РѕСЂР°СЏ РіР»Р°РІРЅС‹Рј РѕР±СЉРµРєС‚РѕРј РґРµР»Р°РµС‚ С„Р°Р№Р»С‹, С‚Р°Р±Р»РёС†С‹, agent runs, provider status, smoke, raw logs, execution requests РёР»Рё backend entities, СЏРІР»СЏРµС‚СЃСЏ backstage Рё РЅРµ РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РѕСЃРЅРѕРІРЅС‹Рј РёРЅС‚РµСЂС„РµР№СЃРѕРј РјРѕРґРµСЂР°С‚РѕСЂР°.
+
+## 1. РўРµРєСѓС‰РёР№ СЂР°Р±РѕС‡РёР№ РєРѕРЅС‚РµРєСЃС‚: РІС‚РѕСЂРѕР№-С‚СЂРµС‚РёР№ РґРµРЅСЊ СЃРµСЃСЃРёРё
+
+РџСЂРѕРµРєС‚РёСЂСѓРµРј РЅРµ РїРѕРґРіРѕС‚РѕРІРёС‚РµР»СЊРЅС‹Р№ РґРµРЅСЊ, РЅРµ Р·Р°РіСЂСѓР·РєСѓ РјР°С‚РµСЂРёР°Р»РѕРІ, РЅРµ РЅР°СЃС‚СЂРѕР№РєСѓ РїСЂРѕРІР°Р№РґРµСЂРѕРІ Рё РЅРµ СЃРѕР·РґР°РЅРёРµ РїРµСЂРІРѕР№ СЃРµСЃСЃРёРё.
+
+Р¦РµР»РµРІРѕР№ СЃС†РµРЅР°СЂРёР№ РґР»СЏ Moderator Cockpit вЂ” РІС‚РѕСЂРѕР№-С‚СЂРµС‚РёР№ РґРµРЅСЊ РїСЂРѕРіСЂР°РјРјС‹:
+
+- СЃРµСЃСЃРёСЏ СѓР¶Рµ СЃРѕР·РґР°РЅР°;
+- РіСЂСѓРїРїС‹ СѓР¶Рµ РµСЃС‚СЊ;
+- РјР°С‚РµСЂРёР°Р»С‹ СѓР¶Рµ Р·Р°РіСЂСѓР¶РµРЅС‹;
+- СЂР°СЃРїРёСЃР°РЅРёРµ РёР·РІРµСЃС‚РЅРѕ;
+- Р±С‹Р»Рё РїСЂРµРґС‹РґСѓС‰РёРµ РіСЂСѓРїРїРѕРІС‹Рµ СЂР°Р±РѕС‚С‹;
+- Р±С‹Р»Рё РґРѕРєР»Р°РґС‹;
+- Р±С‹Р»Р° РєСЂРёС‚РёРєР°;
+- РµСЃС‚СЊ Р·Р°РґР°С‡Рё РЅР° РґРѕСЂР°Р±РѕС‚РєСѓ;
+- РµСЃС‚СЊ С‚РµРєСѓС‰РёР№ РґРµРЅСЊ Рё С‚РµРєСѓС‰РёР№ С‚Р°РєС‚ СЂР°Р±РѕС‚С‹;
+- РјРѕРґРµСЂР°С‚РѕСЂСѓ РЅСѓР¶РЅРѕ РЅРµ В«РЅР°СЃС‚СЂРѕРёС‚СЊ СЃРёСЃС‚РµРјСѓВ», Р° РІРµСЃС‚Рё РіСЂСѓРїРїСѓ Рё СѓРґРµСЂР¶РёРІР°С‚СЊ СЃРѕРґРµСЂР¶Р°РЅРёРµ;
+- Р РџР  РЅСѓР¶РЅРѕ РІРёРґРµС‚СЊ РґРІРёР¶РµРЅРёРµ РІСЃРµС… РіСЂСѓРїРї Рё С‚РѕС‡РєРё РІРјРµС€Р°С‚РµР»СЊСЃС‚РІР°;
+- РіСЂСѓРїРїР° СЂР°Р±РѕС‚Р°РµС‚ РЅРµ РІ realtime voice/ASR СЂРµР¶РёРјРµ, Р° С‡РµСЂРµР· СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРµ РјР°С‚РµСЂРёР°Р»С‹ Рё РїРµСЂРёРѕРґРёС‡РµСЃРєРёРµ СЃР±РѕСЂРєРё.
+
+Р’ С‚РµРєСѓС‰РµР№ С„Р°Р·Рµ РќР• РїСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ:
+
+- live transcription РЅР° С…РѕРґСѓ;
+- РіРѕР»РѕСЃРѕРІРѕР№ РёРЅС‚РµСЂС„РµР№СЃ;
+- РїРѕСЃС‚РѕСЏРЅРЅРѕРµ СЂР°СЃРїРѕР·РЅР°РІР°РЅРёРµ РіСЂСѓРїРїРѕРІРѕР№ СЂР°Р±РѕС‚С‹ РІ СЂРµР°Р»СЊРЅРѕРј РІСЂРµРјРµРЅРё;
+- Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ РїРµСЂРµРїРёСЃС‹РІР°РЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ РіСЂСѓРїРїС‹ Р±РµР· review;
+- РїРѕРєР°Р· runtime-debug РјРѕРґРµСЂР°С‚РѕСЂСѓ РєР°Рє РѕСЃРЅРѕРІРЅРѕРіРѕ РёРЅС‚РµСЂС„РµР№СЃР°.
+
+Р’ С‚РµРєСѓС‰РµР№ С„Р°Р·Рµ РїСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ:
+
+- СЂР°Р±РѕС‚Р° СЃ СЂРµР·СѓР»СЊС‚Р°С‚Р°РјРё РїСЂРµРґС‹РґСѓС‰РёС… С‚Р°РєС‚РѕРІ;
+- СЂР°Р±РѕС‚Р° СЃ СѓР¶Рµ Р·Р°РіСЂСѓР¶РµРЅРЅС‹РјРё С‚СЂР°РЅСЃРєСЂРёРїС‚Р°РјРё, РґРѕРєР»Р°РґР°РјРё, РјР°С‚РµСЂРёР°Р»Р°РјРё;
+- РґРёР°Р»РѕРі СЃ РљР°Р№РѕРЅРѕР№ РІРЅСѓС‚СЂРё РєРѕРЅС‚РµРєСЃС‚Р° С‚РµРєСѓС‰РµР№ РїРѕРІРµСЂС…РЅРѕСЃС‚Рё;
+- РіРµРЅРµСЂР°С†РёСЏ Р·Р°РјРµС‚РѕРє / СЃР±РѕСЂРѕРє / РїР»Р°РЅРѕРІ РґРѕРєР»Р°РґР°;
+- СЃРѕС…СЂР°РЅРµРЅРёРµ СѓРґР°С‡РЅС‹С… РѕС‚РІРµС‚РѕРІ Р›Р›Рњ РєР°Рє Р·Р°РјРµС‚РѕРє РёР»Рё РґРµР»СЊС‚ РІ РјР°С‚РµСЂРёР°Р»С‹/РєР°РЅРІР°СЃ;
+- СЂСѓС‡РЅРѕР№ РёР»Рё РїРѕР»СѓР°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ review;
+- РїРµСЂРёРѕРґРёС‡РµСЃРєРёРµ СЃР±РѕСЂРєРё РІРЅСѓС‚СЂРё С‚Р°РєС‚Р°.
+
+## 2. Р“Р»Р°РІРЅС‹Р№ РёРЅС‚РµСЂС„РµР№СЃРЅС‹Р№ Р·Р°РєРѕРЅ
+
+Moderator Cockpit = Canvas-first app screen Р±РµР· page scroll, РіРґРµ С†РµРЅС‚СЂР°Р»СЊРЅС‹Р№ РєР°РЅРІР°СЃ РіСЂСѓРїРїС‹ РїРѕРєР°Р·С‹РІР°РµС‚ СЃРѕСЃС‚РѕСЏРЅРёРµ РїСЂРѕРµРєС‚Р° Рё Р»РѕРіРёС‡РµСЃРєРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ; РІРѕРєСЂСѓРі РЅРµРіРѕ С‚РѕРЅРєРёРµ РѕРїРµСЂР°С†РёРѕРЅРЅС‹Рµ СЃР»РѕРё вЂ” РїРѕР·РёС†РёРё, СѓС‡Р°СЃС‚РЅРёРєРё, РґРѕРєР»Р°Рґ, Р·Р°РґР°С‡Рё, timeline, РјР°С‚РµСЂРёР°Р»С‹, Р РџР -СѓСЃС‚Р°РЅРѕРІРєР° Рё Kayona Dock; РІСЃРµ РіРµРЅРµСЂР°С‚РёРІРЅС‹Рµ РґРµР№СЃС‚РІРёСЏ СЏРІР»СЏСЋС‚СЃСЏ РЅР°СЃС‚СЂР°РёРІР°РµРјС‹РјРё agent commands, РЅРѕ РІ РїРµСЂРІРѕРј СЃР»РѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅС‹ РєР°Рє РїСЂРѕСЃС‚С‹Рµ СЂР°Р±РѕС‡РёРµ РѕРїРµСЂР°С‚РѕСЂС‹ РјРѕРґРµСЂР°С‚РѕСЂР°.
+
+РќРµ В«СЃС‚СЂР°РЅРёС†Р° СЃР°Р№С‚Р°В».  
+РќРµ В«Р»РµРЅРґРёРЅРіВ».  
+РќРµ В«С‚Р°Р±Р»РёС†Р° РєР°СЂС‚РѕС‡РµРєВ».  
+РќРµ В«РїР°РЅРµР»СЊ KubernetesВ».  
+РќРµ В«РІСЃРµ СЃСѓС‰РЅРѕСЃС‚Рё backend РЅР° РѕРґРЅРѕРј СЌРєСЂР°РЅРµВ».
+
+Р­С‚Рѕ РїСЂРёР»РѕР¶РµРЅРёРµ СЃ С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Рј СЂР°Р±РѕС‡РёРј РїРѕР»РµРј.
+
+РћСЃРЅРѕРІРЅРѕР№ layout РґРѕР»Р¶РµРЅ РїРѕРјРµС‰Р°С‚СЊСЃСЏ РІ СЌРєСЂР°РЅ Р±РµР· РїСЂРѕРєСЂСѓС‚РєРё СЃС‚СЂР°РЅРёС†С‹. Р”РµС‚Р°Р»СЊРЅС‹Рµ РѕР±Р»Р°СЃС‚Рё РјРѕРіСѓС‚ РёРјРµС‚СЊ РІРЅСѓС‚СЂРµРЅРЅСЋСЋ РїСЂРѕРєСЂСѓС‚РєСѓ, РЅРѕ РіР»Р°РІРЅС‹Р№ layout РЅРµ РґРѕР»Р¶РµРЅ РїСЂРµРІСЂР°С‰Р°С‚СЊСЃСЏ РІ РґР»РёРЅРЅС‹Р№ СЃР°Р№С‚.
+
+Р¤РѕСЂРјСѓР»Р°:
+
+- РЅРµС‚ page scroll Сѓ РѕСЃРЅРѕРІРЅРѕРіРѕ cockpit;
+- РµСЃС‚СЊ resizable panels;
+- РµСЃС‚СЊ СЂР°СЃРєСЂС‹С‚РёСЏ / С€С‚РѕСЂРєРё / РјРѕРґР°Р»СЊРЅС‹Рµ СЂР°Р±РѕС‡РёРµ РѕР±Р»Р°СЃС‚Рё;
+- РµСЃС‚СЊ РІРЅСѓС‚СЂРµРЅРЅРёРµ scroll Сѓ РґР»РёРЅРЅС‹С… С‚РµРєСЃС‚РѕРІ, СЂР°СЃС€РёС„СЂРѕРІРѕРє, РѕС‚РІРµС‚РѕРІ РљР°Р№РѕРЅС‹ Рё source lists;
+- РѕСЃРЅРѕРІРЅРѕР№ canvas РІСЃРµРіРґР° РѕСЃС‚Р°С‘С‚СЃСЏ РіР»Р°РІРЅС‹Рј РѕР±СЉРµРєС‚РѕРј.
+
+## 3. Р¦РµРЅС‚СЂР°Р»СЊРЅС‹Р№ РєР°РЅРІР°СЃ
+
+Р’ С†РµРЅС‚СЂРµ СЌРєСЂР°РЅР° РЅР°С…РѕРґРёС‚СЃСЏ РїСЂРѕРµРєС‚РЅС‹Р№ РєР°РЅРІР°СЃ РіСЂСѓРїРїС‹.
+
+РћРЅ РїРѕС…РѕР¶ РЅРµ РЅР° С‚Р°Р±Р»РёС†Сѓ Рё РЅРµ РЅР° dashboard, Р° РЅР° РєР°СЂС‚Сѓ РІСЂРѕРґРµ Osterwalder canvas: РЅР°Р±РѕСЂ РїРѕР»РµР№/РєР°СЂС‚РѕС‡РµРє, РјРµР¶РґСѓ РєРѕС‚РѕСЂС‹РјРё РІРёРґРЅС‹ СЃРІСЏР·Рё.
+
+Р‘Р°Р·РѕРІС‹Рµ Р±Р»РѕРєРё РєР°РЅРІР°СЃР°:
+
+1. РўРµРјР° / РѕР±СЉРµРєС‚ СЂР°Р±РѕС‚С‹
+2. РџСЂРѕР±Р»РµРјР°
+3. РЎРёС‚СѓР°С†РёСЏ / РјРѕРґРµР»СЊ В«РєР°Рє РµСЃС‚СЊВ»
+4. Р¦РµР»СЊ
+5. РџСЂРѕРµРєС‚РЅРѕРµ СЂРµС€РµРЅРёРµ
+6. Р­С„С„РµРєС‚ / РєСЂРёС‚РµСЂРёРё
+7. РћСЂРіРїСЂРѕРµРєС‚
+8. РџР»Р°РЅ РґРµР№СЃС‚РІРёР№
+9. Р РёСЃРєРё / РѕРіСЂР°РЅРёС‡РµРЅРёСЏ
+10. РћСЂРіРїСЂРѕРµРєС‚ РєР°Рє РІР»РѕР¶РµРЅРЅС‹Р№ Р±Р»РѕРє: СЂРѕР»Рё, РїСЂРѕС†РµСЃСЃС‹, СЂРµСЃСѓСЂСЃС‹, РєРѕРјРјСѓРЅРёРєР°С†РёРё
+11. Р’Р»РѕР¶РµРЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ РѕСЂРіРїСЂРѕРµРєС‚Р°
+12. Р’Р»РѕР¶РµРЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ РѕСЂРіРїСЂРѕРµРєС‚Р°
+13. Р’Р»РѕР¶РµРЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ РѕСЂРіРїСЂРѕРµРєС‚Р°
+14. РћСЃРЅРѕРІР°РЅРёСЏ / Р°СЂРіСѓРјРµРЅС‚С‹ / РґРѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІР° РїРѕ РєР°Р¶РґРѕРјСѓ Р±Р»РѕРєСѓ
+15. РћР±С‰РёР№ РЅР°Р±РѕСЂ СЃРѕРґРµСЂР¶Р°С‚РµР»СЊРЅС‹С… РІРѕРїСЂРѕСЃРѕРІ Рё Р·Р°РґР°С‡ РіСЂСѓРїРїС‹
+
+Р’ РєР°Р¶РґРѕРј Р±Р»РѕРєРµ РЅР° РѕР±Р·РѕСЂРЅРѕРј СЃР»РѕРµ РІРёРґРµРЅ РѕРґРёРЅ РіР»Р°РІРЅС‹Р№ С‚РµР·РёСЃ, СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Р№ РЅР° РѕСЃРЅРѕРІРµ РјР°С‚РµСЂРёР°Р»РѕРІ Рё РїСЂРёРЅСЏС‚С‹С… СЃРѕСЃС‚РѕСЏРЅРёР№ РіСЂСѓРїРїС‹.
+
+РСЃС‚РѕС‡РЅРёРєРё С‚РµР·РёСЃР°:
+
+- СЂР°СЃС€РёС„СЂРѕРІРєРё РіСЂСѓРїРїРѕРІРѕР№ СЂР°Р±РѕС‚С‹;
+- РїСЂРµРґС‹РґСѓС‰РёРµ РґРѕРєР»Р°РґС‹;
+- РєСЂРёС‚РёРєР° РїР»РµРЅР°СЂР°;
+- РїРѕСЃС‚Р°РЅРѕРІРєР° РґРЅСЏ;
+- РјРµС‚РѕРґРёС‡РµСЃРєРёРµ РєРѕРЅСЃСѓР»СЊС‚Р°С†РёРё;
+- РїСЂРёРЅСЏС‚С‹Рµ Р·Р°РјРµС‚РєРё РјРѕРґРµСЂР°С‚РѕСЂР°;
+- СЃРѕС…СЂР°РЅС‘РЅРЅС‹Рµ РѕС‚РІРµС‚С‹ РљР°Р№РѕРЅС‹;
+- РїСЂРёРЅСЏС‚С‹Рµ canvas deltas;
+- СЂСѓС‡РЅРѕР№ РІРІРѕРґ РјРѕРґРµСЂР°С‚РѕСЂР°.
+
+РљР°РЅРІР°СЃ РЅРµ РґРѕР»Р¶РµРЅ РїРѕРєР°Р·С‹РІР°С‚СЊ В«СЃС‹СЂРѕР№ AI summaryВ» РєР°Рє РёСЃС‚РёРЅСѓ. РљР°Р¶РґС‹Р№ С‚РµР·РёСЃ РґРѕР»Р¶РµРЅ РёРјРµС‚СЊ СЃС‚Р°С‚СѓСЃ:
+
+- draft;
+- proposed;
+- accepted;
+- disputed;
+- weakly grounded;
+- needs research;
+- archived / superseded.
+
+## 4. РЎРІСЏР·Рё РјРµР¶РґСѓ Р±Р»РѕРєР°РјРё РєР°РЅРІР°СЃР°
+
+Р‘Р»РѕРєРё РєР°РЅРІР°СЃР° РЅРµ РЅРµР·Р°РІРёСЃРёРјС‹.
+
+РџСЂРёРјРµСЂС‹ СЃРІСЏР·РµР№:
+
+- РїСЂРѕР±Р»РµРјР° РґРѕР»Р¶РЅР° РІС‹С‚РµРєР°С‚СЊ РёР· СЃРёС‚СѓР°С†РёРё;
+- СЃРёС‚СѓР°С†РёСЏ Р·Р°РІРёСЃРёС‚ РѕС‚ РїРѕР·РёС†РёРё Рё С†РµР»Рё РЅР°Р±Р»СЋРґРµРЅРёСЏ;
+- С†РµР»СЊ РґРѕР»Р¶РЅР° РѕС‚РІРµС‡Р°С‚СЊ РїСЂРѕР±Р»РµРјРµ;
+- РїСЂРѕРµРєС‚РЅРѕРµ СЂРµС€РµРЅРёРµ РґРѕР»Р¶РЅРѕ РѕС‚РІРµС‡Р°С‚СЊ С†РµР»Рё Рё РїСЂРѕР±Р»РµРјРµ;
+- СЌС„С„РµРєС‚ РґРѕР»Р¶РµРЅ СЃРѕРѕС‚РІРµС‚СЃС‚РІРѕРІР°С‚СЊ С†РµР»Рё;
+- РѕСЂРіРїСЂРѕРµРєС‚ РґРѕР»Р¶РµРЅ РѕР±РµСЃРїРµС‡РёРІР°С‚СЊ СЂРµР°Р»РёР·Р°С†РёСЋ СЂРµС€РµРЅРёСЏ;
+- РїР»Р°РЅ РґРѕР»Р¶РµРЅ РІС‹С‚РµРєР°С‚СЊ РёР· РѕСЂРіРїСЂРѕРµРєС‚Р°;
+- СЂРёСЃРєРё РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ СЃРІСЏР·Р°РЅС‹ СЃ СЂРµС€РµРЅРёРµРј, СЂРµСЃСѓСЂСЃР°РјРё, РїРѕР·РёС†РёРµР№ Рё РѕСЂРіРїСЂРѕРµРєС‚РѕРј;
+- РѕСЃРЅРѕРІР°РЅРёСЏ РґРѕР»Р¶РЅС‹ РїРѕРґРґРµСЂР¶РёРІР°С‚СЊ РєРѕРЅРєСЂРµС‚РЅС‹Рµ С‚РµР·РёСЃС‹, Р° РЅРµ РІРёСЃРµС‚СЊ РѕС‚РґРµР»СЊРЅС‹Рј Р°СЂС…РёРІРѕРј.
+
+РќР° РєР°РЅРІР°СЃРµ СЃРІСЏР·Рё РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ Р»РёРЅРёСЏРјРё.
+
+Р‘Р°Р·РѕРІР°СЏ С†РІРµС‚РѕРІР°СЏ Р»РѕРіРёРєР°:
+
+- Р·РµР»С‘РЅС‹Р№ вЂ” СЃРІСЏР·СЊ СЃРѕРіР»Р°СЃРѕРІР°РЅР° / РїСЂРёРЅСЏС‚Р° / Р»РѕРіРёС‡РµСЃРєРё РґРµСЂР¶РёС‚СЃСЏ;
+- РєСЂР°СЃРЅС‹Р№ вЂ” СЃРІСЏР·СЊ РїСЂРѕС‚РёРІРѕСЂРµС‡РёРІР° / РЅРµ Р±СЊС‘С‚СЃСЏ;
+- Р¶С‘Р»С‚С‹Р№ вЂ” СЃР»Р°Р±РѕРµ РѕСЃРЅРѕРІР°РЅРёРµ / РЅСѓР¶РЅР° РґРѕСЂР°Р±РѕС‚РєР°;
+- СЃРµСЂС‹Р№ вЂ” СЃРІСЏР·СЊ РЅРµ Р·Р°РїРѕР»РЅРµРЅР° / РґР°РЅРЅС‹С… РЅРµС‚;
+- СЃРёРЅРёР№ РёР»Рё С„РёРѕР»РµС‚РѕРІС‹Р№ вЂ” РіРёРїРѕС‚РµР·Р° / С‡РµСЂРЅРѕРІРёРє / С‚СЂРµР±СѓРµС‚ РїСЂРѕРІРµСЂРєРё.
+
+Р•СЃР»Рё РЅР° РїРµСЂРІРѕРј СЌС‚Р°РїРµ РЅСѓР¶РЅРѕ РІРёР·СѓР°Р»СЊРЅРѕ СѓРїСЂРѕСЃС‚РёС‚СЊ, РјРѕР¶РЅРѕ РЅР°С‡Р°С‚СЊ СЃ green/red, РЅРѕ РјРѕРґРµР»СЊ РґР°РЅРЅС‹С… РґРѕР»Р¶РЅР° РїРѕРґРґРµСЂР¶РёРІР°С‚СЊ Р±РѕР»СЊС€Рµ СЃС‚Р°С‚СѓСЃРѕРІ.
+
+РџСЂРё РєР»РёРєРµ РїРѕ Р»РёРЅРёРё СЃРІСЏР·Рё РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ explanation panel:
+
+- РєР°РєРёРµ Р±Р»РѕРєРё СЃРІСЏР·Р°РЅС‹;
+- РєР°РєРѕР№ С‚РёРї СЃРІСЏР·Рё РїСЂРѕРІРµСЂСЏРµС‚СЃСЏ;
+- РєР°РєРѕР№ С‚РµР·РёСЃ РІ Р±Р»РѕРєРµ A;
+- РєР°РєРѕР№ С‚РµР·РёСЃ РІ Р±Р»РѕРєРµ B;
+- РїРѕС‡РµРјСѓ СЃРІСЏР·СЊ СЃС‡РёС‚Р°РµС‚СЃСЏ СЃРёР»СЊРЅРѕР№/СЃР»Р°Р±РѕР№/РєСЂР°СЃРЅРѕР№;
+- РєР°РєРёРµ РёСЃС‚РѕС‡РЅРёРєРё СЌС‚Рѕ РїРѕРґС‚РІРµСЂР¶РґР°СЋС‚;
+- РєР°РєРёРµ С„СЂР°РіРјРµРЅС‚С‹ СЂР°СЃС€РёС„СЂРѕРІРєРё / РґРѕРєР»Р°РґР° / РєСЂРёС‚РёРєРё РёСЃРїРѕР»СЊР·РѕРІР°РЅС‹;
+- РєР°РєРѕР№ Р°РіРµРЅС‚ РёР»Рё С‡РµР»РѕРІРµРє РІС‹СЃС‚Р°РІРёР» СЃС‚Р°С‚СѓСЃ;
+- РјРѕР¶РЅРѕ Р»Рё РїСЂРёРЅСЏС‚СЊ, РёСЃРїСЂР°РІРёС‚СЊ, РѕС‚Р»РѕР¶РёС‚СЊ, РѕС‚РїСЂР°РІРёС‚СЊ РЅР° research.
+
+Р—Р°РїСЂРµС‰РµРЅРѕ: РїСЂРѕСЃС‚Рѕ РєСЂР°СЃРёС‚СЊ СЃРІСЏР·СЊ РєСЂР°СЃРЅС‹Рј Р±РµР· РѕР±СЉСЏСЃРЅРµРЅРёСЏ Рё provenance.
+
+## 5. Р Р°СЃРєСЂС‹С‚РёРµ Р±Р»РѕРєР° РєР°РЅРІР°СЃР°
+
+РџСЂРё РєР»РёРєРµ РїРѕ Р±Р»РѕРєСѓ РєР°РЅРІР°СЃР°, РЅР°РїСЂРёРјРµСЂ В«РћР±СЉРµРєС‚В», СЌС‚РѕС‚ Р±Р»РѕРє СЂР°Р·РІРѕСЂР°С‡РёРІР°РµС‚СЃСЏ РЅР° РІСЃСЋ С†РµРЅС‚СЂР°Р»СЊРЅСѓСЋ РѕР±Р»Р°СЃС‚СЊ, РіРґРµ РґРѕ СЌС‚РѕРіРѕ Р±С‹Р» РІРµСЃСЊ РєР°РЅРІР°СЃ.
+
+Р­С‚Рѕ РЅРµ РїСЂРѕСЃС‚Рѕ enlarged card. Р­С‚Рѕ СЂР°Р±РѕС‡РµРµ РјРµСЃС‚Рѕ РїРѕ РѕРґРЅРѕРјСѓ СЌР»РµРјРµРЅС‚Сѓ РєР°РЅРІР°СЃР°.
+
+Р’РЅСѓС‚СЂРё СЂР°СЃРєСЂС‹С‚РѕРіРѕ Р±Р»РѕРєР° РґРѕР»Р¶РЅС‹ Р±
+
+[Excerpt truncated at 7,000 characters; inspect MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md before relying on omitted detail.]
+
+## What to inspect before changing code
+
+- The mandatory instruction files above, plus any documents named by them for the surface you will change.
+- The current diff for every dirty path that overlaps your task; do not assume it is disposable.
+- The owning backend/frontend module and its nearest existing smoke or test script.
+- Deployment/production gates before touching deploy, Caddy, provider configuration, or a manual-test gate.
+
+## Capsule boundaries
+
+- This is a compact index and excerpts, not an archive, a transcript, or a substitute for source inspection.
+- It intentionally omits untracked file contents, Git diff bodies, binaries, dependency trees, and environment files.
+- Common credential-shaped values are redacted heuristically; never treat a capsule as a safe place for secrets.
+- `current` and `next` claims remain attributed to the included documents and Git observation; documents can be stale or conflict.
+
+## Included source map
+
+- `AGENTS.md`
+- `README.md`
+- `PROJECT_INTENT_AND_CURRENT_STATE.md`
+- `ROADMAP_NEXT_STEPS.md`
+- `docs/ops/PRODUCTION_TOPOLOGY_AND_GATES.md`
+- `docs/product/MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md`
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\F05_MULTIAGENT_MODERATION_PROJECT_CAPSULE.md'; "'$l=Get-Content $p; $l[300..599]' in C:\projects\multiagent-moderation-env
+ succeeded in 104ms:
+- `POST /api/events/{event_id}/fragments/auto`
+- `POST /api/pipelines/mock-extract`
+- `POST /api/events/{event_id}/run-mock-extraction` (kernel alias)
+- `GET/POST /api/review`
+- `POST /api/analytical-units/{unit_id}/review` (kernel alias)
+- `POST /api/project-state/from-accepted`
+- `POST /api/groups/{group_id}/build-state-snapshot` (kernel alias)
+- `GET /api/state-snapshots`
+- `GET /api/groups/{group_id}/state-snapshots`
+- `POST /api/seed/load`
+
+## Smoke Validation
+- Full reproducible path and commands: [KERNEL_MVP_SMOKE.md](/C:/projects/multiagent-moderation-env/docs/smoke/KERNEL_MVP_SMOKE.md)
+
+## Principles Enforced
+- Raw transcript text is stored as source material and never overwritten.
+- Analytical units are candidates first; acceptance is explicit review.
+- Provenance links are created from each extracted unit to source fragment.
+- Typed relational substrate is primary; no embedding-first/RAG foundation.
+- Mock extraction only validates workflow mechanics, not NLP quality.
+
+## Current-state carrier: `PROJECT_INTENT_AND_CURRENT_STATE.md`
+
+# Project Intent and Current State
+
+## Р Р°Р±РѕС‡РµРµ РёРјСЏ
+
+`multiagent-moderation-env`
+
+РЎРјС‹СЃР»РѕРІРѕР№ РїСЂРѕРµРєС‚: Р”Р“РўРЈ Moderator / multiagent moderation environment.
+
+## Р§С‚Рѕ СЃС‚СЂРѕРёС‚СЃСЏ
+
+РЎС‚СЂРѕРёС‚СЃСЏ РЅРµ вЂњС‡Р°С‚-Р±РѕС‚вЂќ Рё РЅРµ вЂњРїР°РЅРµР»СЊ СЃ РјРµС‚СЂРёРєР°РјРёвЂќ. РЎС‚СЂРѕРёС‚СЃСЏ РѕРїРµСЂР°С†РёРѕРЅРЅР°СЏ СЃСЂРµРґР° РґР»СЏ РїСЂРѕРµРєС‚РЅРѕ-РјРѕРґРµСЂР°С†РёРѕРЅРЅРѕР№ СЃРµСЃСЃРёРё, РіРґРµ РјРѕР¶РЅРѕ:
+
+- СЃРѕР·РґР°С‚СЊ РёР»Рё РѕС‚РєСЂС‹С‚СЊ СЃРµСЃСЃРёСЋ;
+- Р·Р°РІРµСЃС‚Рё РіСЂСѓРїРїС‹ Рё СѓС‡Р°СЃС‚РЅРёРєРѕРІ;
+- Р·Р°РіСЂСѓР·РёС‚СЊ РјР°С‚РµСЂРёР°Р»С‹: СЃРїРёСЃРєРё, РїСЂРµР·РµРЅС‚Р°С†РёРё, СЂР°СЃС€РёС„СЂРѕРІРєРё, Р·Р°РјРµС‚РєРё, Р°СЂС‚РµС„Р°РєС‚С‹ РіСЂСѓРїРїРѕРІРѕР№ СЂР°Р±РѕС‚С‹;
+- Р·Р°РїСѓСЃС‚РёС‚СЊ РѕР±СЂР°Р±РѕС‚РєСѓ РјР°С‚РµСЂРёР°Р»РѕРІ Р°РіРµРЅС‚Р°РјРё;
+- РїРѕР»СѓС‡РёС‚СЊ С„СЂР°РіРјРµРЅС‚С‹, Р°РЅР°Р»РёС‚РёС‡РµСЃРєРёРµ РµРґРёРЅРёС†С‹, РїСЂРѕР±Р»РµРјРЅС‹Рµ С„РѕСЂРјСѓР»РёСЂРѕРІРєРё, РїРѕРЅСЏС‚РёР№РЅС‹Рµ СѓР·Р»С‹, РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ;
+- РІРёРґРµС‚СЊ СЃРѕСЃС‚РѕСЏРЅРёРµ РєР°Р¶РґРѕР№ РіСЂСѓРїРїС‹ Рё РІСЃРµС… РіСЂСѓРїРї РІРјРµСЃС‚Рµ;
+- СѓРґРµСЂР¶РёРІР°С‚СЊ С‚Р°Р№РјР»Р°Р№РЅ СЃРѕР±С‹С‚РёР№;
+- СЃРѕР±РёСЂР°С‚СЊ РѕС‚С‡С‘С‚С‹;
+- СЃС‚СЂРѕРёС‚СЊ РѕС‡РµСЂРµРґСЊ РґРµР№СЃС‚РІРёР№ РґР»СЏ РјРѕРґРµСЂР°С‚РѕСЂР°;
+- РґР°РІР°С‚СЊ Р РџР  РѕР±Р·РѕСЂ РґРІРёР¶РµРЅРёСЏ РіСЂСѓРїРї;
+- РїРѕРґРєР»СЋС‡РёС‚СЊ РіРѕР»РѕСЃРѕРІРѕР№/РєРѕРјР°РЅРґРЅС‹Р№ СЃР»РѕР№ Kayona Live;
+- СЃРѕС…СЂР°РЅСЏС‚СЊ РІРѕСЃРїСЂРѕРёР·РІРѕРґРёРјСѓСЋ РёСЃС‚РѕСЂРёСЋ РґРµР№СЃС‚РІРёР№ Рё СЂРµС€РµРЅРёР№.
+
+РџСЂРѕРµРєС‚ РґРѕР»Р¶РµРЅ РїРѕРґРґРµСЂР¶РёРІР°С‚СЊ Р¶РёРІСѓСЋ СЃРµСЃСЃРёСЋ, Р° РЅРµ С‚РѕР»СЊРєРѕ РїРѕСЃС‚С„Р°РєС‚СѓРј-Р°РЅР°Р»РёР·. РџРѕСЌС‚РѕРјСѓ РІР°Р¶РЅС‹ Р±С‹СЃС‚СЂС‹Рµ СЂР°Р±РѕС‡РёРµ РїРѕРІРµСЂС…РЅРѕСЃС‚Рё, РјРёРЅРёРјР°Р»СЊРЅС‹Р№ РєРѕРіРЅРёС‚РёРІРЅС‹Р№ С€СѓРј, СЏСЃРЅС‹Рµ СЃС‚Р°С‚СѓСЃС‹ Рё РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р±С‹СЃС‚СЂРѕ Р·Р°РїСѓСЃРєР°С‚СЊ РїР°Р№РїР»Р°Р№РЅС‹.
+
+## Р§С‚Рѕ СѓР¶Рµ СЂРµР°Р»РёР·РѕРІР°РЅРѕ Р»РѕРєР°Р»СЊРЅРѕ
+
+РќР° РјРѕРјРµРЅС‚ С„РёРєСЃР°С†РёРё РєРѕРЅС‚РµРєСЃС‚Р° РїРѕСЃР»РµРґРЅСЏСЏ РёР·РІРµСЃС‚РЅР°СЏ Р»РѕРєР°Р»СЊРЅР°СЏ Р»РёРЅРёСЏ РєРѕРјРјРёС‚РѕРІ:
+
+- `d4a1d02` вЂ” bootstrap executable dgtu moderator kernel mvp
+- `10c9acc` вЂ” harden moderator workbench ui for dgtu smoke flow
+- `bd9a4b3` вЂ” add concept passport ontology workbench v0
+- `ddf11f7` вЂ” generalize concept passport correction flow v0.1
+- `dc29dea` вЂ” add moderator workbench launcher v0
+- `670e3eb` вЂ” add deterministic group session report draft v0
+- `3c4e601` вЂ” add agentic context and research runtime v0.1
+- `2afce1e` вЂ” add role surfaces provider budget recording runtime v0.1
+- `d481e3c` вЂ” add agent worker event loop runtime v0.1
+- `143a973` вЂ” harden agent worker event loop runtime v0.2
+- `6606065` вЂ” add runtime hygiene smoke isolation scoped views v0.3
+- `1ba4601` вЂ” add provider execution boundary v0.4
+- `a77bae2` вЂ” add worker service continuous runtime v0.5
+- `3b7fdf5` вЂ” add agent action executor domain reducers v0.6
+- `8156518` вЂ” add moderator action queue human review control plane v0.7
+- `2ab829d` вЂ” end-to-end moderator session flow v0.8
+- `201c7e1` вЂ” add moderator console operator cockpit v0.9
+- `8348374` вЂ” demo readiness / export layer
+
+Р•СЃР»Рё С„Р°РєС‚РёС‡РµСЃРєРёР№ git log РѕС‚Р»РёС‡Р°РµС‚СЃСЏ, СЃС‡РёС‚Р°С‚СЊ git log РёСЃС‚РѕС‡РЅРёРєРѕРј РёСЃС‚РёРЅС‹, РЅРѕ СЌС‚Сѓ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РєР°Рє СЃРјС‹СЃР»РѕРІСѓСЋ РєР°СЂС‚Сѓ.
+
+## Р§С‚Рѕ СѓР¶Рµ РµСЃС‚СЊ РїРѕ СЃР»РѕСЏРј
+
+### Kernel / domain moderation
+
+Р•СЃС‚СЊ Р±Р°Р·РѕРІС‹Р№ РґРѕРјРµРЅРЅС‹Р№ СЃР»РѕР№: workspace, program, session, group, event, transcript, fragment, analytical units, review decisions, state snapshots, provenance links.
+
+### Concept passport
+
+Р•СЃС‚СЊ СЃР»РѕР№ РїРѕРЅСЏС‚РёР№ Рё РєРѕСЂСЂРµРєС†РёРё РїРѕРЅСЏС‚РёР№: problem concept, resource deficit, negative/positive examples, scope, challenge/update actions, impact preview.
+
+### Reports
+
+Р•СЃС‚СЊ deterministic group session report draft: РѕС‚С‡С‘С‚ РїРѕ РіСЂСѓРїРїРµ РЅР° РѕСЃРЅРѕРІРµ РёРјРµСЋС‰РёС…СЃСЏ РґР°РЅРЅС‹С…, СЃ placeholder-Р°РјРё Рё warnings, РµСЃР»Рё РґР°РЅРЅС‹С… РјР°Р»Рѕ.
+
+### Agentic runtime
+
+Р•СЃС‚СЊ AgentRun / ResearchRequest / EvidenceItem / ResearchMemo Рё СЃРІСЏР·Р°РЅРЅС‹Рµ mock-СЌРЅРґРїРѕРёРЅС‚С‹.
+
+### Role / provider / recording runtime
+
+Р•СЃС‚СЊ РїРѕРІРµСЂС…РЅРѕСЃС‚Рё Рё РѕР±СЉРµРєС‚С‹ РґР»СЏ СЂРѕР»РµР№, resource profiles, usage ledger, recording/transcription mock jobs.
+
+### Agent Worker Event Loop
+
+Р•СЃС‚СЊ event-driven runtime С‡РµСЂРµР· StateSnapshot:
+
+- AgentEvent
+- AgentTrigger
+- AgentActivation
+- AgentState
+- AgentHandoff
+
+Р•СЃС‚СЊ tick / run-pending, trigger matching, activation creation, dedupe, smoke tagging.
+
+### Runtime hygiene
+
+Default API views РёСЃРєР»СЋС‡Р°СЋС‚ smoke. Р•СЃС‚СЊ `include_smoke`, `test_run_id`, scoped runtime filters, runtime overview, dev cleanup smoke.
+
+### Provider Execution Boundary
+
+Р•СЃС‚СЊ executable mock boundary: ProviderCapability, ProviderPolicy, ExecutionRequest, ExecutionResult, guard-check, mock-execute, usage ledger, blocking live/non-mock providers.
+
+### Worker Service
+
+Р•СЃС‚СЊ continuous worker container/service, РєРѕС‚РѕСЂС‹Р№ РІС‹Р·С‹РІР°РµС‚ health, seed-default, tick, run-pending, provider boundary, heartbeat/status.
+
+### Agent Action Executor / Domain Reducers
+
+Р•СЃС‚СЊ deterministic reducers, РїСЂРµРІСЂР°С‰Р°СЋС‰РёРµ AgentRun / AgentActivation РІ РґРѕРјРµРЅРЅС‹Рµ Р°СЂС‚РµС„Р°РєС‚С‹:
+
+- `content_extractor`
+- `concept_guardian`
+- `project_state_compiler`
+- `report_synthesizer`
+- `research_router`
+- `moderator_copilot`
+
+### Moderator Action Queue / Human Review Control Plane
+
+Р•СЃС‚СЊ РѕС‡РµСЂРµРґСЊ РјРѕРґРµСЂР°С‚РѕСЂР°: build, approve, reject, defer, request-revision, resolve. Р РµС€РµРЅРёСЏ marker-based Рё non-destructive.
+
+### Moderator Session Flow / Console
+
+Р•СЃС‚СЊ end-to-end deterministic session flow Рё Operator Cockpit РЅР° `/moderator`.
+
+### Demo readiness/export
+
+Р•СЃС‚СЊ СЃР»РѕР№ demo readiness, reset-demo, run-demo, export, acceptance.
+
+## Р“Р»Р°РІРЅРѕРµ РѕРіСЂР°РЅРёС‡РµРЅРёРµ
+
+Р”Рѕ РѕС‚РґРµР»СЊРЅРѕРіРѕ СЂРµС€РµРЅРёСЏ РЅРµ РІРєР»СЋС‡Р°С‚СЊ СЂРµР°Р»СЊРЅС‹Рµ РІРЅРµС€РЅРёРµ РІС‹Р·РѕРІС‹:
+
+- no real LLM;
+- no real web search;
+- no real n8n;
+- no real transcription provider;
+- no new database tables Р±РµР· СЏРІРЅРѕРіРѕ СЂРµС€РµРЅРёСЏ;
+- smoke isolation СЃРѕС…СЂР°РЅСЏС‚СЊ;
+- СЃРµРєСЂРµС‚С‹ РІ payload РЅРµ С…СЂР°РЅРёС‚СЊ.
+
+## РўРµРєСѓС‰РёР№ СЂРёСЃРє
+
+РџСЂРѕРµРєС‚ СЃС‚Р°Р» С‚РµС…РЅРёС‡РµСЃРєРё РЅР°СЃС‹С‰РµРЅРЅС‹Рј, РЅРѕ UX-Р·Р°РјС‹СЃРµР» РЅР°С‡Р°Р» РѕС‚СЂС‹РІР°С‚СЊСЃСЏ РѕС‚ Р¶РёРІС‹С… СЃС†РµРЅР°СЂРёРµРІ СЃРµСЃСЃРёРё. РЎР»РµРґСѓСЋС‰РёР№ СЌС‚Р°Рї РґРѕР»Р¶РµРЅ РЅРµ РїСЂРѕСЃС‚Рѕ РґРѕР±Р°РІР»СЏС‚СЊ endpoints, Р° РїСЂРёРІРµСЃС‚Рё СЂР°Р±РѕС‡РёРµ РїРѕРІРµСЂС…РЅРѕСЃС‚Рё Рє Р±Р°Р·РѕРІС‹Рј СЃС†РµРЅР°СЂРёСЏРј:
+
+1. Р±С‹СЃС‚СЂС‹Р№ СЃС‚Р°СЂС‚ СЃРµСЃСЃРёРё;
+2. СЂР°Р±РѕС‡Р°СЏ СЃС‚СЂР°РЅРёС†Р° РіСЂСѓРїРїС‹;
+3. Р РџР -СЂР°РґР°СЂ РІСЃРµС… РіСЂСѓРїРї;
+4. РјРѕРґРµСЂР°С‚РѕСЂСЃРєР°СЏ РєРѕРЅСЃРѕР»СЊ РІРѕ РІСЂРµРјСЏ РіСЂСѓРїРїРѕРІРѕР№ СЂР°Р±РѕС‚С‹;
+5. РјР°С‚РµСЂРёР°Р»С‹ РґРЅСЏ / РІРµС‡РµСЂРЅСЏСЏ СЃР±РѕСЂРєР°;
+6. Kayona Live РєР°Рє РєРѕРјР°РЅРґРЅС‹Р№/РіРѕР»РѕСЃРѕРІРѕР№ СЃР»РѕР№.
+
+## v1.5 update
+Deterministic Materials Library layer added: material records, bundles, processing markers, lightweight keyword search/ask, and cross-surface material panels (workbench/moderator/rpr/group-live/agent-runtime).
+
+## v1.6 update
+Session Setup / Agent Launch Orchestrator added with deterministic setup-readiness and launch-plan endpoints, plus /session-setup UI surface.
+
+## v1.7 Operator Journey Navigation
+Added operator-journey context, role-entry, surface-map, next-action, and demo-progress spine for coherent cross-surface navigation (bounded, deterministic, smoke-safe).
+
+## v1.8 Demo UX Walkthrough
+Added a deterministic operator-facing demo walkthrough/acceptance layer with step progress, per-surface acceptance, and markdown reporting over existing v1.0-v1.7 surfaces.
+
+## v1.9 Bulk Material Intake
+Added operator-facing bulk intake gate for messy multi-source materials (files, links, text, late uploads) with deterministic triage, assignment, bundle, process, and readiness flows.
+
+## v1.9.2 Demo Rehearsal / Operator Path Hardening
+- Added deterministic /api/demo-rehearsal/* orchestration wrappers over existing setup/intake/moderator/rpr/group-live/kayona surfaces.
+- Focus: one executable operator demo path with idempotent step markers and markdown report.
+
+
+## v2.0 Russian Unified Operator Workspace
+- Unified Russian-language operator-facing surfaces across workbench/setup/material-intake/moderator/rpr/group-live/demo.
+- Technical runtime page is explicitly marked as appendix/debug only.
+
+
+## v2.1 update
+Visual unified product interface вЂ” shared ProductShell with Russian nav, full-page CSS design system, consistent surface layout across all routes.
+
+## v2.2 update
+Real work loop вЂ” LLM Console adapter (mock/live), bulk material workbench, session timeline, group workspace endpoints added.
+
+## v3.0 update (CURRENT)
+Full product overhaul вЂ” real session workspace:
+- **LLM Settings persistence**: `backend/.local/llm_settings.json` (gitignored). Endpoints: GET/POST /api/llm-settings, /test, /clear-key. Supports mock, openai_compatible, anthropic, 302ai_openai_compatible, 302ai_claude_format. Always falls back to mock on error.
+- **Session management**: /api/sessions/list, /create, /{id}/activate, DELETE /{id}, /current. Current session stored as StateSnapshot(current_session_pointer).
+- **Session Schedule**: /api/session-schedule/* вЂ” 8 default stages, stored as StateSnapshot(session_schedule_stage). Stages: create, update, attach-material, run-analysis, ask.
+- **Material Desk**: /api/material-desk/* вЂ” full bulk material workflow stored as StateSnapshot(material_desk_item). add-bulk, bulk-classify, bulk-assi
+
+[Excerpt truncated at 8,000 characters; inspect PROJECT_INTENT_AND_CURRENT_STATE.md before relying on omitted detail.]
+
+## Roadmap / next work: `ROADMAP_NEXT_STEPS.md`
+
+# Roadmap Next Steps
+
+## Recovery re-entry control note
+
+- Stable baseline after runtime break: `07a81d7`.
+- Master plan source of truth: `RECOVERY_REENTRY_MASTER_PLAN_v2_3_to_v3_4.md`.
+- Immediate implementation step: `v2.3 Session Control / Active Context`.
+- Execution rule: one closed loop per subversion + targeted smoke + `smoke_changed_fast`.
+- Current loop in progress: `v2.4 Active Session Material Desk` (active-session scoped bulk add, classification, and deterministic mock analysis).
+
+## Р“РґРµ РјС‹ РЅР°С…РѕРґРёРјСЃСЏ
+
+РўРµРєСѓС‰РёР№ РїСЂРѕРµРєС‚ РїСЂРѕС€С‘Р» С„Р°Р·Сѓ backend/runtime MVP:
+
+- kernel;
+- concept passport;
+- reports;
+- agent runtime;
+- provider/resource/recording mock;
+- event loop;
+- smoke isolation;
+- provider boundary;
+- worker service;
+- domain reducers;
+- human review queue;
+- moderator session flow;
+- moderator console;
+- demo readiness/export.
+
+РўРµРїРµСЂСЊ РЅРµР»СЊР·СЏ РїСЂРѕРґРѕР»Р¶Р°С‚СЊ Р±РµСЃРєРѕРЅРµС‡РЅРѕ РЅР°СЂР°С‰РёРІР°С‚СЊ endpoints Р±РµР· UX-С†РµРЅС‚СЂРёСЂРѕРІР°РЅРёСЏ. РЎР»РµРґСѓСЋС‰РёРµ С€Р°РіРё РґРѕР»Р¶РЅС‹ СЃРІСЏР·Р°С‚СЊ runtime СЃ Р¶РёРІС‹РјРё СЃС†РµРЅР°СЂРёСЏРјРё СЃРµСЃСЃРёРё.
+
+## РЎС‚СЂР°С‚РµРіРёС‡РµСЃРєР°СЏ Р»РёРЅРёСЏ
+
+Р”РІРёР¶РµРЅРёРµ РґР°Р»СЊС€Рµ:
+
+1. Session Hub / Group Workspace foundation
+2. Materials Intake / Session Folder Model
+3. Kayona Live command layer
+4. RPR Radar
+5. Day Assembly / Evening Room
+6. Participant-facing group mode
+7. Real recording/transcription integration
+8. Real RAG/vector storage
+9. Deployment/push/repo hygiene
+
+## v1.0 Session Hub / Group Workspace
+
+Р¦РµР»СЊ: СЃРѕР·РґР°С‚СЊ РЅРѕСЂРјР°Р»СЊРЅС‹Р№ РІС…РѕРґРЅРѕР№ Рё РіСЂСѓРїРїРѕРІРѕР№ РёРЅС‚РµСЂС„РµР№СЃ.
+
+### Backend
+
+Р”РѕР±Р°РІРёС‚СЊ РёР»Рё РѕР±РѕР±С‰РёС‚СЊ endpoints:
+
+- `GET /api/session-hub/overview`
+- `POST /api/session-hub/create-session`
+- `POST /api/session-hub/open-or-ensure-demo`
+- `POST /api/session-hub/configure-groups`
+- `GET /api/groups/{group_id}/workspace`
+- `GET /api/groups/{group_id}/timeline`
+- `GET /api/groups/{group_id}/materials`
+- `GET /api/groups/{group_id}/people-dynamics`
+- `GET /api/groups/{group_id}/concept-map`
+- `GET /api/groups/{group_id}/project-state-summary`
+
+Р•СЃР»Рё РјРѕР¶РЅРѕ, СЂРµР°Р»РёР·РѕРІР°С‚СЊ wrappers РЅР°Рґ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРјРё СЃСѓС‰РЅРѕСЃС‚СЏРјРё Р±РµР· РјРёРіСЂР°С†РёР№.
+
+### UI
+
+- `/workbench` РїСЂРµРІСЂР°С‚РёС‚СЊ РІ Session Hub.
+- Р”РѕР±Р°РІРёС‚СЊ/СЃРѕР·РґР°С‚СЊ `/groups/[group_id]/workspace`.
+- РћСЃС‚Р°РІРёС‚СЊ `/moderator` РєР°Рє cockpit, РЅРѕ СЃРІСЏР·Р°С‚СЊ РµРіРѕ СЃ РІС‹Р±СЂР°РЅРЅРѕР№ РіСЂСѓРїРїРѕР№.
+- `/agent-runtime` РѕСЃС‚Р°РІРёС‚СЊ advanced.
+
+### Smoke
+
+- СЃРѕР·РґР°С‚СЊ СЃРµСЃСЃРёСЋ;
+- СЃРѕР·РґР°С‚СЊ РЅРµСЃРєРѕР»СЊРєРѕ РіСЂСѓРїРї;
+- Р·Р°РіСЂСѓР·РёС‚СЊ/СЃРѕР·РґР°С‚СЊ mock materials;
+- РѕС‚РєСЂС‹С‚СЊ group workspace;
+- СѓРІРёРґРµС‚СЊ timeline/materials/state/concept map placeholders;
+- smoke_all pass.
+
+## v1.1 Materials Intake / Session Folder Model
+
+Р¦РµР»СЊ: РїСЂРёРІРµСЃС‚Рё РјР°С‚РµСЂРёР°Р»С‹ Рє РЅРѕСЂРјР°Р»СЊРЅРѕР№ РѕРїРµСЂР°С†РёРѕРЅРЅРѕР№ РјРѕРґРµР»Рё.
+
+### РќСѓР¶РЅРѕ
+
+- РїР°РїРєРё/РїР°РєРµС‚С‹ РјР°С‚РµСЂРёР°Р»РѕРІ;
+- С‚РёРїС‹ РјР°С‚РµСЂРёР°Р»РѕРІ: transcript, slide, doc, participant list, photo, note, artifact;
+- СЃРІСЏР·СЊ material в†’ session/group/event;
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\F05_MULTIAGENT_MODERATION_PROJECT_CAPSULE.md'; "'$l=Get-Content $p; $l[600..899]' in C:\projects\multiagent-moderation-env
+ succeeded in 98ms:
+- processed/unprocessed status;
+- Р·Р°РїСѓСЃРє РѕР±СЂР°Р±РѕС‚РєРё РїРѕ РјР°С‚РµСЂРёР°Р»Сѓ/РїР°РїРєРµ;
+- РІРёРґРёРјРѕСЃС‚СЊ РІ Group Workspace Рё Session Hub.
+
+### Р‘РµР· СЂРµР°Р»СЊРЅС‹С… РІРЅРµС€РЅРёС… API
+
+РџРѕРєР° mock/file metadata/text intake. Р РµР°Р»СЊРЅРѕРµ С‡С‚РµРЅРёРµ Google Docs, Telegram, audio вЂ” РїРѕР·Р¶Рµ.
+
+## v1.2 Kayona Live Command Layer
+
+Р¦РµР»СЊ: РґРѕР±Р°РІРёС‚СЊ РІРµСЂС…РЅРёР№ РєРѕРјР°РЅРґРЅС‹Р№ СЃР»РѕР№.
+
+### РЎРЅР°С‡Р°Р»Р° text-first
+
+- command bar РІ Session Hub / Group Workspace / Moderator / RPR Radar;
+- endpoints `/api/kayona/...`;
+- command types: answer/retrieve/run/guide;
+- deterministic/mock command handling;
+- Р·Р°РїСѓСЃРє СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёС… pipelines;
+- command journal;
+- provenance.
+
+### РџРѕС‚РѕРј voice
+
+Р РµР°Р»СЊРЅС‹Р№ РјРёРєСЂРѕС„РѕРЅ Рё speech-to-text РїРѕСЃР»Рµ СЃС‚Р°Р±РёР»РёР·Р°С†РёРё command layer.
+
+## v1.3 RPR Radar
+
+Р¦РµР»СЊ: РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ СЂСѓРєРѕРІРѕРґРёС‚РµР»СЏ РїСЂРѕРµРєС‚РЅРѕР№ СЂР°РјРєРё.
+
+### РќСѓР¶РЅРѕ РїРѕРєР°Р·Р°С‚СЊ
+
+- РІСЃРµ РіСЂСѓРїРїС‹;
+- СЃС‚Р°С‚СѓСЃ РґРІРёР¶РµРЅРёСЏ;
+- РїРѕРЅСЏС‚РёР№РЅСѓСЋ СЃРѕРіР»Р°СЃРѕРІР°РЅРЅРѕСЃС‚СЊ/СЂР°СЃС…РѕР¶РґРµРЅРёРµ;
+- СЂРёСЃРєРё;
+- handoffs;
+- РІРѕРїСЂРѕСЃС‹ Рє РїР»РµРЅР°СЂСѓ;
+- day synthesis.
+
+## v1.4 Day Assembly / Evening Room
+
+Р¦РµР»СЊ: РІРµС‡РµСЂРЅСЏСЏ СЃР±РѕСЂРєР° РґРЅСЏ.
+
+### РќСѓР¶РЅРѕ
+
+- РЅРµРѕР±СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ РјР°С‚РµСЂРёР°Р»С‹;
+- СЃРІРѕРґРєР° РїРѕ РіСЂСѓРїРїР°Рј;
+- РѕС‚С‡С‘С‚С‹;
+- РІРѕРїСЂРѕСЃС‹ РЅР° Р·Р°РІС‚СЂР°;
+- research gaps;
+- export.
+
+## v1.5 Participant Mode
+
+Р¦РµР»СЊ: Р±РµР·РѕРїР°СЃРЅС‹Р№ СЂРµР¶РёРј РґР»СЏ РіСЂСѓРїРїС‹/СѓС‡Р°СЃС‚РЅРёРєРѕРІ.
+
+### РќСѓР¶РЅРѕ
+
+- group-facing page;
+- simplified timeline;
+- materials;
+- current task;
+- idea/concept map;
+- Kayona group mode;
+- no private moderator warnings.
+
+## v1.6 Real Recording / Transcription
+
+РўРѕР»СЊРєРѕ РїРѕСЃР»Рµ v1.0вЂ“v1.2.
+
+### РќСѓР¶РЅРѕ
+
+- browser recording;
+- upload audio;
+- transcription job;
+- provider boundary;
+- transcript versioning;
+- real provider disabled by default unless explicitly enabled.
+
+## v1.7 Real RAG / Vector Store
+
+РўРѕР»СЊРєРѕ РїРѕСЃР»Рµ РЅРѕСЂРјР°Р»РёР·Р°С†РёРё materials.
+
+### РќСѓР¶РЅРѕ
+
+- chunking;
+- embeddings;
+- vector store;
+- retrieval endpoint;
+- citations/provenance;
+- Kayona RAG integration.
+
+## v1.8 GitHub / deployment hygiene
+
+РџРѕРєР° РјРѕР¶РЅРѕ РїСЂРѕРґРѕР»Р¶Р°С‚СЊ Р»РѕРєР°Р»СЊРЅС‹Рµ РєРѕРјРјРёС‚С‹. РќРѕ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РёРІРЅРѕ РЅСѓР¶РЅРѕ:
+
+- РЅР°СЃС‚СЂРѕРёС‚СЊ remote;
+- РїСЂРѕРІРµСЂРёС‚СЊ autopush;
+- РЅРµ С‚РµСЂСЏС‚СЊ Р»РѕРєР°Р»СЊРЅС‹Рµ РєРѕРјРјРёС‚С‹;
+- РёРјРµС‚СЊ `PROJECT_CONTEXT` files in repo root;
+- smoke before commit;
+- no push without known remote unless user explicitly configured.
+
+## Smoke iteration rule
+
+- For normal iteration, run targeted smoke plus `scripts/smoke_changed_fast.ps1`.
+- Use bounded `smoke_all` as a final acceptance pass, not as a long blocking loop.
+
+- v1.5 Materials / Files / RAG-ready Library: deterministic material records, bundles, processing coverage, search/ask, and UI panels.
+
+- v1.6 Session Setup / Agent Launch Orchestrator: session/group prep, material assignment, launch profiles, readiness, and setup timeline.
+
+## v1.7 complete
+Operator journey hardening now provides role-based entry and context continuity across /workbench, /session-setup, /moderator, /rpr, /group-live, and /agent-runtime.
+
+## v1.8 complete
+Demo UX walkthrough now provides a coherent acceptance path across workbench, setup, moderator, group-live, RPR, and runtime appendix.
+
+## v1.9 complete
+Bulk intake/triage now bridges preparation, live session, evening reconstruction, and post-session analysis through one intake surface.
+
+## v1.9.2 status
+- Demo rehearsal path is now executable as a bounded smoke-safe chain (setup -> material intake -> classification -> processing -> moderator -> rpr -> group-live -> kayona).
+- Next step: stabilize operator UX copy and keep fast smoke lane under 120s budgets.
+
+
+## v2.0 completion note
+- Product shell and operator copy are localized to Russian for real colleague testing.
+- Next iterations should refine visual density and reduce residual English debug tokens on non-technical cards.
+
+
+## v3.0 complete
+Real Session Workspace shipped:
+- LLM Settings panel with 4 provider support (mock/openai_compatible/anthropic/302ai)
+- Session management (create/list/activate/archive)
+- Session Schedule (8 default stages, editable, material attachment, per-stage LLM analysis)
+- Material Desk (bulk add, classify, assign to stage/group, batch analyze, gaps, search)
+- All pages redesigned around real session workflow
+- ScheduleTimeline, SessionSelector, LLMSettingsPanel components
+- KayonaPanel: fallback badge, settings gear, provider badge, context chips
+- ProductShell: Demo demoted to footer link
+- Smoke: 24 checks in smoke_real_session_workspace_v3.ps1
+
+## v3.1 remaining items (next iteration)
+- Real-time stage status updates (active/done based on time or operator click)
+- Material attachment UI: drag-and-drop from desk to stage card
+- Group-specific material filtering in desk
+- Per-stage Kayona context injection (pull stage description into LLM context)
+- Voice input for Kayona (browser microphone)
+- Real RAG/vector search for material retrieval
+- Export: per-stage report, full session report as markdown
+- Session duplication / template sessions
+- v2.5.1 in progress: split schedule/program from activity feed; add flexible raw-blob + drag/drop material intake in active session context.
+
+- v2.6 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: LLM Processing Agents пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (agent specs, context packs, llm-processing runs/results, review-required outputs).
+
+## v2.9.4 Focus
+- Restore product core: Group Project Canvas as moderator center.
+- Add participant roster and moderator packets.
+- Add group setup extraction/apply flow from materials.
+- Add RPR matrix for project-state coverage across groups.
+- Keep materials/review/artifact as service layers, not product center.
+
+## Operations constraints: `docs/ops/PRODUCTION_TOPOLOGY_AND_GATES.md`
+
+# ModerBober Production Topology And Gates
+
+## A. Server topology
+
+- `81.26.176.248` = shared production server / SSH / debug host.
+- Known project roots on this server:
+  - `/opt/moderbober`
+  - `/opt/quinta`
+  - `/opt/whitecrow`
+- Caddy/subdomain routing is shared across projects; avoid changes that can break other projects.
+
+## B. Product URLs
+
+- ModerBober canonical production URL:
+  - `https://moderbober.mindkampf.ru/`
+- Quinta:
+  - `https://quinta.mindkampf.ru/`
+- WhiteCrow:
+  - same shared server; exact subdomain/route must be verified before using.
+- Rule:
+  - never treat bare IP as ModerBober product URL.
+
+## C. Check discipline
+
+- Browser/manual product checks:
+  - use `https://moderbober.mindkampf.ru/`
+- SSH/deploy/status checks:
+  - use `81.26.176.248` via
+  - `C:\Windows\System32\OpenSSH\ssh.exe -l deploy 81.26.176.248 ...`
+- Server-local diagnostics:
+  - `docker exec` / internal endpoint / `/opt/moderbober/bin/*`
+- Public API checks may be auth-gated or redirected.
+  - Do not treat `308` / `401` at edge as product failure without server-local verification.
+
+## D. Manual-test gates
+
+Manual test of real DGTU archive is blocked unless:
+
+- production URL opens;
+- Russian UI encoding is normal;
+- clean test/demo session works;
+- upload/intake hardening is active;
+- reset/archive is active for test sessions;
+- LLM status is one of:
+  - `live_ok`
+  - or explicit deterministic/mock mode accepted as a waived non-live test;
+- opaque `provider_error` is not acceptable;
+- `provider_error` must include:
+  - `error_class`
+  - `sanitized_error_message`
+  - `http_status` if available
+  - `failing_stage`
+  - verification method.
+
+## E. LLM production gate
+
+- Runtime env file path:
+  - `/opt/moderbober/secrets/llm.env`
+- Backend must see:
+  - `ANTHROPIC_API_KEY` as boolean presence only;
+  - `ANTHROPIC_MODEL` as configured model name.
+- Frontend must not receive API key.
+- UI badge must be clickable and show diagnostics/settings.
+- `provider_error` without class/message fails the gate.
+- `mock` is not an acceptable silent fallback when live provider config exists.
+- Server-local diagnostics must work behind public auth gate.
+- Never leak API key in git/logs/frontend/status output.
+
+## F. Current known LLM status (as of 2026-05-27)
+
+- Env is wired into backend runtime.
+- Model is preserved from env; do not switch model automatically.
+- Current live smoke result:
+  - `provider_error / auth_error / HTTP 403`
+- Next investigation:
+  - Anthropic auth/access/request issue; do not start with model switching by default.
+
+## Product law: `docs/product/MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md`
+
+# ModerBober Moderator Cockpit Interface Law v0.1
+
+Р”Р°С‚Р° С„РёРєСЃР°С†РёРё: 2026-05-17  
+РЎС‚Р°С‚СѓСЃ: СЂР°Р±РѕС‡Р°СЏ СЃРїРµС†РёС„РёРєР°С†РёСЏ РґР»СЏ Codex / РїСЂРѕРґСѓРєС‚РѕРІС‹Р№ РёРЅС‚РµСЂС„РµР№СЃРЅС‹Р№ Р·Р°РєРѕРЅ  
+РќР°Р·РЅР°С‡РµРЅРёРµ: РїСЂРµРєСЂР°С‚РёС‚СЊ РґРµРіСЂР°РґР°С†РёСЋ РёРЅС‚РµСЂС„РµР№СЃР° РњРѕРґРµСЂР‘РѕР±СЂР° РІ CRM, Kubernetes-РїР°РЅРµР»СЊ, С„Р°Р№Р»РѕРІС‹Р№ Р°СЂС…РёРІ, smoke-board РёР»Рё runtime console; РІРµСЂРЅСѓС‚СЊ РїСЂРѕРµРєС‚ Рє РѕСЃРЅРѕРІРЅРѕР№ Р»РѕРіРёРєРµ вЂ” РїРѕРґРґРµСЂР¶РєРµ РјРѕРґРµСЂР°С‚РѕСЂСЃРєРѕР№ Рё РїСЂРѕРµРєС‚РЅРѕР№ СЂР°Р±РѕС‚С‹ РЅР° 2вЂ“3 РґРµРЅСЊ СЃС‚СЂР°С‚РµРіРёС‡РµСЃРєРѕР№ / РїСЂРѕРµРєС‚РЅРѕ-РїСЂРѕР±Р»РµРјРЅРѕР№ СЃРµСЃСЃРёРё.
+
+## 0. Р“Р»Р°РІРЅР°СЏ С„РѕСЂРјСѓР»Р°
+
+РњРѕРґРµСЂР‘РѕР±РµСЂ вЂ” РЅРµ RAG РїРѕ РјР°С‚РµСЂРёР°Р»Р°Рј, РЅРµ С‡Р°С‚-Р±РѕС‚, РЅРµ CRM, РЅРµ dashboard backend-СЃСѓС‰РЅРѕСЃС‚РµР№ Рё РЅРµ РёРЅС‚РµСЂС„РµР№СЃ РЅР°Р±Р»СЋРґРµРЅРёСЏ Р·Р° agent runs.
+
+РњРѕРґРµСЂР‘РѕР±РµСЂ вЂ” СЃРѕР±С‹С‚РёР№РЅРѕ-РѕРЅС‚РѕР»РѕРіРёС‡РµСЃРєР°СЏ СЃСЂРµРґР° РїРѕРґРґРµСЂР¶РєРё РјРѕРґРµСЂР°С‚РѕСЂСЃРєРѕР№ Рё РїСЂРѕРµРєС‚РЅРѕР№ СЂР°Р±РѕС‚С‹ РЅР° СЃРµСЃСЃРёРё.
+
+Р“Р»Р°РІРЅС‹Р№ РѕР±СЉРµРєС‚ РїСЂРѕРґСѓРєС‚Р° вЂ” РЅРµ С„Р°Р№Р», РЅРµ С‡Р°С‚, РЅРµ Р°РіРµРЅС‚РЅС‹Р№ Р·Р°РїСѓСЃРє, РЅРµ review item, РЅРµ Р»РѕРі Рё РЅРµ endpoint.
+
+Р“Р»Р°РІРЅС‹Р№ РѕР±СЉРµРєС‚ РїСЂРѕРґСѓРєС‚Р° вЂ” РёР·РјРµРЅСЏСЋС‰РµРµСЃСЏ СЃРѕСЃС‚РѕСЏРЅРёРµ РіСЂСѓРїРїС‹:
+
+- РѕР±СЉРµРєС‚ СЂР°Р±РѕС‚С‹;
+- С‚РµРјР°;
+- РїСЂРѕР±Р»РµРјР°;
+- СЃРёС‚СѓР°С†РёСЏ;
+- С†РµР»СЊ;
+- РїСЂРѕРµРєС‚РЅРѕРµ СЂРµС€РµРЅРёРµ;
+- СЌС„С„РµРєС‚ / РєСЂРёС‚РµСЂРёРё;
+- РѕСЂРіРїСЂРѕРµРєС‚;
+- РїР»Р°РЅ РґРµР№СЃС‚РІРёР№;
+- СЂРёСЃРєРё / РѕРіСЂР°РЅРёС‡РµРЅРёСЏ;
+- РѕСЃРЅРѕРІР°РЅРёСЏ / Р°СЂРіСѓРјРµРЅС‚С‹ / РґРѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІР°;
+- РІРѕРїСЂРѕСЃС‹;
+- РєСЂРёС‚РёРєР°;
+- РїРѕСЂСѓС‡РµРЅРёСЏ;
+- РїРѕР·РёС†РёРё СѓС‡Р°СЃС‚РЅРёРєРѕРІ;
+- СЃР°РјРѕРѕРїСЂРµРґРµР»РµРЅРёРµ;
+- РіСЂСѓРїРїРѕРІР°СЏ РґРёРЅР°РјРёРєР°;
+- Р»РёРЅРёСЏ РґРѕРєР»Р°РґРѕРІ;
+- РѕС‚РІРµС‚ РЅР° РєСЂРёС‚РёРєСѓ;
+- РґРІРёР¶РµРЅРёРµ РїРѕ Р°СЂРєРµ СЃРµСЃСЃРёРё.
+
+Р“Р»Р°РІРЅР°СЏ РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ РјРѕРґРµСЂР°С‚РѕСЂР° РґРѕР»Р¶РЅР° СЃС‚СЂРѕРёС‚СЊСЃСЏ РІРѕРєСЂСѓРі РїСЂРѕРµРєС‚РЅРѕРіРѕ РєР°РЅРІР°СЃР° РіСЂСѓРїРїС‹.
+
+Р›СЋР±Р°СЏ РїРѕРІРµСЂС…РЅРѕСЃС‚СЊ, РєРѕС‚РѕСЂР°СЏ РіР»Р°РІРЅС‹Рј РѕР±СЉРµРєС‚РѕРј РґРµР»Р°РµС‚ С„Р°Р№Р»С‹, С‚Р°Р±Р»РёС†С‹, agent runs, provider status, smoke, raw logs, execution requests РёР»Рё backend entities, СЏРІР»СЏРµС‚СЃСЏ backstage Рё РЅРµ РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РѕСЃРЅРѕРІРЅС‹Рј РёРЅС‚РµСЂС„РµР№СЃРѕРј РјРѕРґРµСЂР°С‚РѕСЂР°.
+
+## 1. РўРµРєСѓС‰РёР№ СЂР°Р±РѕС‡РёР№ РєРѕРЅС‚РµРєСЃС‚: РІС‚РѕСЂРѕР№-С‚СЂРµС‚РёР№ РґРµРЅСЊ СЃРµСЃСЃРёРё
+
+РџСЂРѕРµРєС‚РёСЂСѓРµРј РЅРµ РїРѕРґРіРѕС‚РѕРІРёС‚РµР»СЊРЅС‹Р№ РґРµРЅСЊ, РЅРµ Р·Р°РіСЂСѓР·РєСѓ РјР°С‚РµСЂРёР°Р»РѕРІ, РЅРµ РЅР°СЃС‚СЂРѕР№РєСѓ РїСЂРѕРІР°Р№РґРµСЂРѕРІ Рё РЅРµ СЃРѕР·РґР°РЅРёРµ РїРµСЂРІРѕР№ СЃРµСЃСЃРёРё.
+
+Р¦РµР»РµРІРѕР№ СЃС†РµРЅР°СЂРёР№ РґР»СЏ Moderator Cockpit вЂ” РІС‚РѕСЂРѕР№-С‚СЂРµС‚РёР№ РґРµРЅСЊ РїСЂРѕРіСЂР°РјРјС‹:
+
+- СЃРµСЃСЃРёСЏ СѓР¶Рµ СЃРѕР·РґР°РЅР°;
+- РіСЂСѓРїРїС‹ СѓР¶Рµ РµСЃС‚СЊ;
+- РјР°С‚РµСЂРёР°Р»С‹ СѓР¶Рµ Р·Р°РіСЂСѓР¶РµРЅС‹;
+- СЂР°СЃРїРёСЃР°РЅРёРµ РёР·РІРµСЃС‚РЅРѕ;
+- Р±С‹Р»Рё РїСЂРµРґС‹РґСѓС‰РёРµ РіСЂСѓРїРїРѕРІС‹Рµ СЂР°Р±РѕС‚С‹;
+- Р±С‹Р»Рё РґРѕРєР»Р°РґС‹;
+- Р±С‹Р»Р° РєСЂРёС‚РёРєР°;
+- РµСЃС‚СЊ Р·Р°РґР°С‡Рё РЅР° РґРѕСЂР°Р±РѕС‚РєСѓ;
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$p='"'C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\F05_MULTIAGENT_MODERATION_PROJECT_CAPSULE.md'; "'$l=Get-Content $p; $l[900..1067]' in C:\projects\multiagent-moderation-env
+ succeeded in 109ms:
+- РµСЃС‚СЊ С‚РµРєСѓС‰РёР№ РґРµРЅСЊ Рё С‚РµРєСѓС‰РёР№ С‚Р°РєС‚ СЂР°Р±РѕС‚С‹;
+- РјРѕРґРµСЂР°С‚РѕСЂСѓ РЅСѓР¶РЅРѕ РЅРµ В«РЅР°СЃС‚СЂРѕРёС‚СЊ СЃРёСЃС‚РµРјСѓВ», Р° РІРµСЃС‚Рё РіСЂСѓРїРїСѓ Рё СѓРґРµСЂР¶РёРІР°С‚СЊ СЃРѕРґРµСЂР¶Р°РЅРёРµ;
+- Р РџР  РЅСѓР¶РЅРѕ РІРёРґРµС‚СЊ РґРІРёР¶РµРЅРёРµ РІСЃРµС… РіСЂСѓРїРї Рё С‚РѕС‡РєРё РІРјРµС€Р°С‚РµР»СЊСЃС‚РІР°;
+- РіСЂСѓРїРїР° СЂР°Р±РѕС‚Р°РµС‚ РЅРµ РІ realtime voice/ASR СЂРµР¶РёРјРµ, Р° С‡РµСЂРµР· СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРµ РјР°С‚РµСЂРёР°Р»С‹ Рё РїРµСЂРёРѕРґРёС‡РµСЃРєРёРµ СЃР±РѕСЂРєРё.
+
+Р’ С‚РµРєСѓС‰РµР№ С„Р°Р·Рµ РќР• РїСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ:
+
+- live transcription РЅР° С…РѕРґСѓ;
+- РіРѕР»РѕСЃРѕРІРѕР№ РёРЅС‚РµСЂС„РµР№СЃ;
+- РїРѕСЃС‚РѕСЏРЅРЅРѕРµ СЂР°СЃРїРѕР·РЅР°РІР°РЅРёРµ РіСЂСѓРїРїРѕРІРѕР№ СЂР°Р±РѕС‚С‹ РІ СЂРµР°Р»СЊРЅРѕРј РІСЂРµРјРµРЅРё;
+- Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРµ РїРµСЂРµРїРёСЃС‹РІР°РЅРёРµ СЃРѕСЃС‚РѕСЏРЅРёСЏ РіСЂСѓРїРїС‹ Р±РµР· review;
+- РїРѕРєР°Р· runtime-debug РјРѕРґРµСЂР°С‚РѕСЂСѓ РєР°Рє РѕСЃРЅРѕРІРЅРѕРіРѕ РёРЅС‚РµСЂС„РµР№СЃР°.
+
+Р’ С‚РµРєСѓС‰РµР№ С„Р°Р·Рµ РїСЂРµРґРїРѕР»Р°РіР°РµС‚СЃСЏ:
+
+- СЂР°Р±РѕС‚Р° СЃ СЂРµР·СѓР»СЊС‚Р°С‚Р°РјРё РїСЂРµРґС‹РґСѓС‰РёС… С‚Р°РєС‚РѕРІ;
+- СЂР°Р±РѕС‚Р° СЃ СѓР¶Рµ Р·Р°РіСЂСѓР¶РµРЅРЅС‹РјРё С‚СЂР°РЅСЃРєСЂРёРїС‚Р°РјРё, РґРѕРєР»Р°РґР°РјРё, РјР°С‚РµСЂРёР°Р»Р°РјРё;
+- РґРёР°Р»РѕРі СЃ РљР°Р№РѕРЅРѕР№ РІРЅСѓС‚СЂРё РєРѕРЅС‚РµРєСЃС‚Р° С‚РµРєСѓС‰РµР№ РїРѕРІРµСЂС…РЅРѕСЃС‚Рё;
+- РіРµРЅРµСЂР°С†РёСЏ Р·Р°РјРµС‚РѕРє / СЃР±РѕСЂРѕРє / РїР»Р°РЅРѕРІ РґРѕРєР»Р°РґР°;
+- СЃРѕС…СЂР°РЅРµРЅРёРµ СѓРґР°С‡РЅС‹С… РѕС‚РІРµС‚РѕРІ Р›Р›Рњ РєР°Рє Р·Р°РјРµС‚РѕРє РёР»Рё РґРµР»СЊС‚ РІ РјР°С‚РµСЂРёР°Р»С‹/РєР°РЅРІР°СЃ;
+- СЂСѓС‡РЅРѕР№ РёР»Рё РїРѕР»СѓР°РІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ review;
+- РїРµСЂРёРѕРґРёС‡РµСЃРєРёРµ СЃР±РѕСЂРєРё РІРЅСѓС‚СЂРё С‚Р°РєС‚Р°.
+
+## 2. Р“Р»Р°РІРЅС‹Р№ РёРЅС‚РµСЂС„РµР№СЃРЅС‹Р№ Р·Р°РєРѕРЅ
+
+Moderator Cockpit = Canvas-first app screen Р±РµР· page scroll, РіРґРµ С†РµРЅС‚СЂР°Р»СЊРЅС‹Р№ РєР°РЅРІР°СЃ РіСЂСѓРїРїС‹ РїРѕРєР°Р·С‹РІР°РµС‚ СЃРѕСЃС‚РѕСЏРЅРёРµ РїСЂРѕРµРєС‚Р° Рё Р»РѕРіРёС‡РµСЃРєРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ; РІРѕРєСЂСѓРі РЅРµРіРѕ С‚РѕРЅРєРёРµ РѕРїРµСЂР°С†РёРѕРЅРЅС‹Рµ СЃР»РѕРё вЂ” РїРѕР·РёС†РёРё, СѓС‡Р°СЃС‚РЅРёРєРё, РґРѕРєР»Р°Рґ, Р·Р°РґР°С‡Рё, timeline, РјР°С‚РµСЂРёР°Р»С‹, Р РџР -СѓСЃС‚Р°РЅРѕРІРєР° Рё Kayona Dock; РІСЃРµ РіРµРЅРµСЂР°С‚РёРІРЅС‹Рµ РґРµР№СЃС‚РІРёСЏ СЏРІР»СЏСЋС‚СЃСЏ РЅР°СЃС‚СЂР°РёРІР°РµРјС‹РјРё agent commands, РЅРѕ РІ РїРµСЂРІРѕРј СЃР»РѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅС‹ РєР°Рє РїСЂРѕСЃС‚С‹Рµ СЂР°Р±РѕС‡РёРµ РѕРїРµСЂР°С‚РѕСЂС‹ РјРѕРґРµСЂР°С‚РѕСЂР°.
+
+РќРµ В«СЃС‚СЂР°РЅРёС†Р° СЃР°Р№С‚Р°В».  
+РќРµ В«Р»РµРЅРґРёРЅРіВ».  
+РќРµ В«С‚Р°Р±Р»РёС†Р° РєР°СЂС‚РѕС‡РµРєВ».  
+РќРµ В«РїР°РЅРµР»СЊ KubernetesВ».  
+РќРµ В«РІСЃРµ СЃСѓС‰РЅРѕСЃС‚Рё backend РЅР° РѕРґРЅРѕРј СЌРєСЂР°РЅРµВ».
+
+Р­С‚Рѕ РїСЂРёР»РѕР¶РµРЅРёРµ СЃ С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Рј СЂР°Р±РѕС‡РёРј РїРѕР»РµРј.
+
+РћСЃРЅРѕРІРЅРѕР№ layout РґРѕР»Р¶РµРЅ РїРѕРјРµС‰Р°С‚СЊСЃСЏ РІ СЌРєСЂР°РЅ Р±РµР· РїСЂРѕРєСЂСѓС‚РєРё СЃС‚СЂР°РЅРёС†С‹. Р”РµС‚Р°Р»СЊРЅС‹Рµ РѕР±Р»Р°СЃС‚Рё РјРѕРіСѓС‚ РёРјРµС‚СЊ РІРЅСѓС‚СЂРµРЅРЅСЋСЋ РїСЂРѕРєСЂСѓС‚РєСѓ, РЅРѕ РіР»Р°РІРЅС‹Р№ layout РЅРµ РґРѕР»Р¶РµРЅ РїСЂРµРІСЂР°С‰Р°С‚СЊСЃСЏ РІ РґР»РёРЅРЅС‹Р№ СЃР°Р№С‚.
+
+Р¤РѕСЂРјСѓР»Р°:
+
+- РЅРµС‚ page scroll Сѓ РѕСЃРЅРѕРІРЅРѕРіРѕ cockpit;
+- РµСЃС‚СЊ resizable panels;
+- РµСЃС‚СЊ СЂР°СЃРєСЂС‹С‚РёСЏ / С€С‚РѕСЂРєРё / РјРѕРґР°Р»СЊРЅС‹Рµ СЂР°Р±РѕС‡РёРµ РѕР±Р»Р°СЃС‚Рё;
+- РµСЃС‚СЊ РІРЅСѓС‚СЂРµРЅРЅРёРµ scroll Сѓ РґР»РёРЅРЅС‹С… С‚РµРєСЃС‚РѕРІ, СЂР°СЃС€РёС„СЂРѕРІРѕРє, РѕС‚РІРµС‚РѕРІ РљР°Р№РѕРЅС‹ Рё source lists;
+- РѕСЃРЅРѕРІРЅРѕР№ canvas РІСЃРµРіРґР° РѕСЃС‚Р°С‘С‚СЃСЏ РіР»Р°РІРЅС‹Рј РѕР±СЉРµРєС‚РѕРј.
+
+## 3. Р¦РµРЅС‚СЂР°Р»СЊРЅС‹Р№ РєР°РЅРІР°СЃ
+
+Р’ С†РµРЅС‚СЂРµ СЌРєСЂР°РЅР° РЅР°С…РѕРґРёС‚СЃСЏ РїСЂРѕРµРєС‚РЅС‹Р№ РєР°РЅРІР°СЃ РіСЂСѓРїРїС‹.
+
+РћРЅ РїРѕС…РѕР¶ РЅРµ РЅР° С‚Р°Р±Р»РёС†Сѓ Рё РЅРµ РЅР° dashboard, Р° РЅР° РєР°СЂС‚Сѓ РІСЂРѕРґРµ Osterwalder canvas: РЅР°Р±РѕСЂ РїРѕР»РµР№/РєР°СЂС‚РѕС‡РµРє, РјРµР¶РґСѓ РєРѕС‚РѕСЂС‹РјРё РІРёРґРЅС‹ СЃРІСЏР·Рё.
+
+Р‘Р°Р·РѕРІС‹Рµ Р±Р»РѕРєРё РєР°РЅРІР°СЃР°:
+
+1. РўРµРјР° / РѕР±СЉРµРєС‚ СЂР°Р±РѕС‚С‹
+2. РџСЂРѕР±Р»РµРјР°
+3. РЎРёС‚СѓР°С†РёСЏ / РјРѕРґРµР»СЊ В«РєР°Рє РµСЃС‚СЊВ»
+4. Р¦РµР»СЊ
+5. РџСЂРѕРµРєС‚РЅРѕРµ СЂРµС€РµРЅРёРµ
+6. Р­С„С„РµРєС‚ / РєСЂРёС‚РµСЂРёРё
+7. РћСЂРіРїСЂРѕРµРєС‚
+8. РџР»Р°РЅ РґРµР№СЃС‚РІРёР№
+9. Р РёСЃРєРё / РѕРіСЂР°РЅРёС‡РµРЅРёСЏ
+10. РћСЂРіРїСЂРѕРµРєС‚ РєР°Рє РІР»РѕР¶РµРЅРЅС‹Р№ Р±Р»РѕРє: СЂРѕР»Рё, РїСЂРѕС†РµСЃСЃС‹, СЂРµСЃСѓСЂСЃС‹, РєРѕРјРјСѓРЅРёРєР°С†РёРё
+11. Р’Р»РѕР¶РµРЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ РѕСЂРіРїСЂРѕРµРєС‚Р°
+12. Р’Р»РѕР¶РµРЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ РѕСЂРіРїСЂРѕРµРєС‚Р°
+13. Р’Р»РѕР¶РµРЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ РѕСЂРіРїСЂРѕРµРєС‚Р°
+14. РћСЃРЅРѕРІР°РЅРёСЏ / Р°СЂРіСѓРјРµРЅС‚С‹ / РґРѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІР° РїРѕ РєР°Р¶РґРѕРјСѓ Р±Р»РѕРєСѓ
+15. РћР±С‰РёР№ РЅР°Р±РѕСЂ СЃРѕРґРµСЂР¶Р°С‚РµР»СЊРЅС‹С… РІРѕРїСЂРѕСЃРѕРІ Рё Р·Р°РґР°С‡ РіСЂСѓРїРїС‹
+
+Р’ РєР°Р¶РґРѕРј Р±Р»РѕРєРµ РЅР° РѕР±Р·РѕСЂРЅРѕРј СЃР»РѕРµ РІРёРґРµРЅ РѕРґРёРЅ РіР»Р°РІРЅС‹Р№ С‚РµР·РёСЃ, СЃС„РѕСЂРјРёСЂРѕРІР°РЅРЅС‹Р№ РЅР° РѕСЃРЅРѕРІРµ РјР°С‚РµСЂРёР°Р»РѕРІ Рё РїСЂРёРЅСЏС‚С‹С… СЃРѕСЃС‚РѕСЏРЅРёР№ РіСЂСѓРїРїС‹.
+
+РСЃС‚РѕС‡РЅРёРєРё С‚РµР·РёСЃР°:
+
+- СЂР°СЃС€РёС„СЂРѕРІРєРё РіСЂСѓРїРїРѕРІРѕР№ СЂР°Р±РѕС‚С‹;
+- РїСЂРµРґС‹РґСѓС‰РёРµ РґРѕРєР»Р°РґС‹;
+- РєСЂРёС‚РёРєР° РїР»РµРЅР°СЂР°;
+- РїРѕСЃС‚Р°РЅРѕРІРєР° РґРЅСЏ;
+- РјРµС‚РѕРґРёС‡РµСЃРєРёРµ РєРѕРЅСЃСѓР»СЊС‚Р°С†РёРё;
+- РїСЂРёРЅСЏС‚С‹Рµ Р·Р°РјРµС‚РєРё РјРѕРґРµСЂР°С‚РѕСЂР°;
+- СЃРѕС…СЂР°РЅС‘РЅРЅС‹Рµ РѕС‚РІРµС‚С‹ РљР°Р№РѕРЅС‹;
+- РїСЂРёРЅСЏС‚С‹Рµ canvas deltas;
+- СЂСѓС‡РЅРѕР№ РІРІРѕРґ РјРѕРґРµСЂР°С‚РѕСЂР°.
+
+РљР°РЅРІР°СЃ РЅРµ РґРѕР»Р¶РµРЅ РїРѕРєР°Р·С‹РІР°С‚СЊ В«СЃС‹СЂРѕР№ AI summaryВ» РєР°Рє РёСЃС‚РёРЅСѓ. РљР°Р¶РґС‹Р№ С‚РµР·РёСЃ РґРѕР»Р¶РµРЅ РёРјРµС‚СЊ СЃС‚Р°С‚СѓСЃ:
+
+- draft;
+- proposed;
+- accepted;
+- disputed;
+- weakly grounded;
+- needs research;
+- archived / superseded.
+
+## 4. РЎРІСЏР·Рё РјРµР¶РґСѓ Р±Р»РѕРєР°РјРё РєР°РЅРІР°СЃР°
+
+Р‘Р»РѕРєРё РєР°РЅРІР°СЃР° РЅРµ РЅРµР·Р°РІРёСЃРёРјС‹.
+
+РџСЂРёРјРµСЂС‹ СЃРІСЏР·РµР№:
+
+- РїСЂРѕР±Р»РµРјР° РґРѕР»Р¶РЅР° РІС‹С‚РµРєР°С‚СЊ РёР· СЃРёС‚СѓР°С†РёРё;
+- СЃРёС‚СѓР°С†РёСЏ Р·Р°РІРёСЃРёС‚ РѕС‚ РїРѕР·РёС†РёРё Рё С†РµР»Рё РЅР°Р±Р»СЋРґРµРЅРёСЏ;
+- С†РµР»СЊ РґРѕР»Р¶РЅР° РѕС‚РІРµС‡Р°С‚СЊ РїСЂРѕР±Р»РµРјРµ;
+- РїСЂРѕРµРєС‚РЅРѕРµ СЂРµС€РµРЅРёРµ РґРѕР»Р¶РЅРѕ РѕС‚РІРµС‡Р°С‚СЊ С†РµР»Рё Рё РїСЂРѕР±Р»РµРјРµ;
+- СЌС„С„РµРєС‚ РґРѕР»Р¶РµРЅ СЃРѕРѕС‚РІРµС‚СЃС‚РІРѕРІР°С‚СЊ С†РµР»Рё;
+- РѕСЂРіРїСЂРѕРµРєС‚ РґРѕР»Р¶РµРЅ РѕР±РµСЃРїРµС‡РёРІР°С‚СЊ СЂРµР°Р»РёР·Р°С†РёСЋ СЂРµС€РµРЅРёСЏ;
+- РїР»Р°РЅ РґРѕР»Р¶РµРЅ РІС‹С‚РµРєР°С‚СЊ РёР· РѕСЂРіРїСЂРѕРµРєС‚Р°;
+- СЂРёСЃРєРё РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ СЃРІСЏР·Р°РЅС‹ СЃ СЂРµС€РµРЅРёРµРј, СЂРµСЃСѓСЂСЃР°РјРё, РїРѕР·РёС†РёРµР№ Рё РѕСЂРіРїСЂРѕРµРєС‚РѕРј;
+- РѕСЃРЅРѕРІР°РЅРёСЏ РґРѕР»Р¶РЅС‹ РїРѕРґРґРµСЂР¶РёРІР°С‚СЊ РєРѕРЅРєСЂРµС‚РЅС‹Рµ С‚РµР·РёСЃС‹, Р° РЅРµ РІРёСЃРµС‚СЊ РѕС‚РґРµР»СЊРЅС‹Рј Р°СЂС…РёРІРѕРј.
+
+РќР° РєР°РЅРІР°СЃРµ СЃРІСЏР·Рё РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ Р»РёРЅРёСЏРјРё.
+
+Р‘Р°Р·РѕРІР°СЏ С†РІРµС‚РѕРІР°СЏ Р»РѕРіРёРєР°:
+
+- Р·РµР»С‘РЅС‹Р№ вЂ” СЃРІСЏР·СЊ СЃРѕРіР»Р°СЃРѕРІР°РЅР° / РїСЂРёРЅСЏС‚Р° / Р»РѕРіРёС‡РµСЃРєРё РґРµСЂР¶РёС‚СЃСЏ;
+- РєСЂР°СЃРЅС‹Р№ вЂ” СЃРІСЏР·СЊ РїСЂРѕС‚РёРІРѕСЂРµС‡РёРІР° / РЅРµ Р±СЊС‘С‚СЃСЏ;
+- Р¶С‘Р»С‚С‹Р№ вЂ” СЃР»Р°Р±РѕРµ РѕСЃРЅРѕРІР°РЅРёРµ / РЅСѓР¶РЅР° РґРѕСЂР°Р±РѕС‚РєР°;
+- СЃРµСЂС‹Р№ вЂ” СЃРІСЏР·СЊ РЅРµ Р·Р°РїРѕР»РЅРµРЅР° / РґР°РЅРЅС‹С… РЅРµС‚;
+- СЃРёРЅРёР№ РёР»Рё С„РёРѕР»РµС‚РѕРІС‹Р№ вЂ” РіРёРїРѕС‚РµР·Р° / С‡РµСЂРЅРѕРІРёРє / С‚СЂРµР±СѓРµС‚ РїСЂРѕРІРµСЂРєРё.
+
+Р•СЃР»Рё РЅР° РїРµСЂРІРѕРј СЌС‚Р°РїРµ РЅСѓР¶РЅРѕ РІРёР·СѓР°Р»СЊРЅРѕ СѓРїСЂРѕСЃС‚РёС‚СЊ, РјРѕР¶РЅРѕ РЅР°С‡Р°С‚СЊ СЃ green/red, РЅРѕ РјРѕРґРµР»СЊ РґР°РЅРЅС‹С… РґРѕР»Р¶РЅР° РїРѕРґРґРµСЂР¶РёРІР°С‚СЊ Р±РѕР»СЊС€Рµ СЃС‚Р°С‚СѓСЃРѕРІ.
+
+РџСЂРё РєР»РёРєРµ РїРѕ Р»РёРЅРёРё СЃРІСЏР·Рё РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ explanation panel:
+
+- РєР°РєРёРµ Р±Р»РѕРєРё СЃРІСЏР·Р°РЅС‹;
+- РєР°РєРѕР№ С‚РёРї СЃРІСЏР·Рё РїСЂРѕРІРµСЂСЏРµС‚СЃСЏ;
+- РєР°РєРѕР№ С‚РµР·РёСЃ РІ Р±Р»РѕРєРµ A;
+- РєР°РєРѕР№ С‚РµР·РёСЃ РІ Р±Р»РѕРєРµ B;
+- РїРѕС‡РµРјСѓ СЃРІСЏР·СЊ СЃС‡РёС‚Р°РµС‚СЃСЏ СЃРёР»СЊРЅРѕР№/СЃР»Р°Р±РѕР№/РєСЂР°СЃРЅРѕР№;
+- РєР°РєРёРµ РёСЃС‚РѕС‡РЅРёРєРё СЌС‚Рѕ РїРѕРґС‚РІРµСЂР¶РґР°СЋС‚;
+- РєР°РєРёРµ С„СЂР°РіРјРµРЅС‚С‹ СЂР°СЃС€РёС„СЂРѕРІРєРё / РґРѕРєР»Р°РґР° / РєСЂРёС‚РёРєРё РёСЃРїРѕР»СЊР·РѕРІР°РЅС‹;
+- РєР°РєРѕР№ Р°РіРµРЅС‚ РёР»Рё С‡РµР»РѕРІРµРє РІС‹СЃС‚Р°РІРёР» СЃС‚Р°С‚СѓСЃ;
+- РјРѕР¶РЅРѕ Р»Рё РїСЂРёРЅСЏС‚СЊ, РёСЃРїСЂР°РІРёС‚СЊ, РѕС‚Р»РѕР¶РёС‚СЊ, РѕС‚РїСЂР°РІРёС‚СЊ РЅР° research.
+
+Р—Р°РїСЂРµС‰РµРЅРѕ: РїСЂРѕСЃС‚Рѕ РєСЂР°СЃРёС‚СЊ СЃРІСЏР·СЊ РєСЂР°СЃРЅС‹Рј Р±РµР· РѕР±СЉСЏСЃРЅРµРЅРёСЏ Рё provenance.
+
+## 5. Р Р°СЃРєСЂС‹С‚РёРµ Р±Р»РѕРєР° РєР°РЅРІР°СЃР°
+
+РџСЂРё РєР»РёРєРµ РїРѕ Р±Р»РѕРєСѓ РєР°РЅРІР°СЃР°, РЅР°РїСЂРёРјРµСЂ В«РћР±СЉРµРєС‚В», СЌС‚РѕС‚ Р±Р»РѕРє СЂР°Р·РІРѕСЂР°С‡РёРІР°РµС‚СЃСЏ РЅР° РІСЃСЋ С†РµРЅС‚СЂР°Р»СЊРЅСѓСЋ РѕР±Р»Р°СЃС‚СЊ, РіРґРµ РґРѕ СЌС‚РѕРіРѕ Р±С‹Р» РІРµСЃСЊ РєР°РЅРІР°СЃ.
+
+Р­С‚Рѕ РЅРµ РїСЂРѕСЃС‚Рѕ enlarged card. Р­С‚Рѕ СЂР°Р±РѕС‡РµРµ РјРµСЃС‚Рѕ РїРѕ РѕРґРЅРѕРјСѓ СЌР»РµРјРµРЅС‚Сѓ РєР°РЅРІР°СЃР°.
+
+Р’РЅСѓС‚СЂРё СЂР°СЃРєСЂС‹С‚РѕРіРѕ Р±Р»РѕРєР° РґРѕР»Р¶РЅС‹ Р±
+
+[Excerpt truncated at 7,000 characters; inspect MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md before relying on omitted detail.]
+
+## What to inspect before changing code
+
+- The mandatory instruction files above, plus any documents named by them for the surface you will change.
+- The current diff for every dirty path that overlaps your task; do not assume it is disposable.
+- The owning backend/frontend module and its nearest existing smoke or test script.
+- Deployment/production gates before touching deploy, Caddy, provider configuration, or a manual-test gate.
+
+## Capsule boundaries
+
+- This is a compact index and excerpts, not an archive, a transcript, or a substitute for source inspection.
+- It intentionally omits untracked file contents, Git diff bodies, binaries, dependency trees, and environment files.
+- Common credential-shaped values are redacted heuristically; never treat a capsule as a safe place for secrets.
+- `current` and `next` claims remain attributed to the included documents and Git observation; documents can be stale or conflict.
+
+## Included source map
+
+- `AGENTS.md`
+- `README.md`
+- `PROJECT_INTENT_AND_CURRENT_STATE.md`
+- `ROADMAP_NEXT_STEPS.md`
+- `docs/ops/PRODUCTION_TOPOLOGY_AND_GATES.md`
+- `docs/product/MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md`
+
+codex
+1. **Project — observed facts**
+
+A FastAPI/SQLAlchemy/PostgreSQL + Next.js application for moderated multi-group project sessions. Its core preserves source materials and provenance, creates reviewable analytical outputs, maintains group/session state, and supports moderator workflows, reports, agent-runtime records, and material handling.
+
+The intended product is ModerBober: a moderator’s operational workspace—not a chatbot, file archive, runtime console, or metrics dashboard. The moderator cockpit should be a fixed, canvas-first group-project surface; materials, agents, logs, and provider details are supporting layers.
+
+2. **Current situation — observed facts**
+
+- Repository is on `main` at `e523890`, with a very dirty tree: 3,075 paths, including edits to `backend/app/routers/api.py`, `frontend/app/components/ProductShell.tsx`, and a smoke script. Much of the untracked content appears to be browser-profile/cache material, but that must be verified rather than assumed disposable.
+- The project has substantial deterministic/mock functionality already: kernel workflow, review/provenance, reports, agent worker/reducers, moderator queue and cockpit, materials/session setup, operator journey/demo flow, and a v3.0 “real session workspace.”
+- The capsule reports a current product-direction focus of restoring the **Group Project Canvas** as the moderator center, plus roster/packets, material-driven group setup, and an RPR coverage matrix.
+- Production LLM configuration was known to be wired, but the last cited live smoke (2026-05-27) was `provider_error / auth_error / HTTP 403`. Manual real-archive testing is therefore blocked unless the stated production gates are met.
+
+**Conflicting signals**
+
+- The roadmap calls the active loop `v2.4 Active Session Material Desk`; the current-state document calls `v3.0` current and lists later v2.5–v2.9.4 work. These are incompatible as a single linear status and require Git/source verification.
+- The capsule’s observed HEAD is a June semantic-source-pack commit, while its older “known local commit line” ends at `8348374`; this confirms that narrative commit history is stale.
+- Product planning says real LLM/RAG/voice come later or need explicit approval, while v3.0 claims configurable live provider support. The production gate and actual implementation must decide the operative constraint.
+
+3. **What should happen next — inference**
+
+First reconcile reality: inspect Git status/diffs and history; determine which roadmap/current-state claims match the checked-out code; preserve all overlapping dirty work. Then choose one closed, UX-centered slice—most plausibly the v2.9.4 canvas-centered moderator workflow—rather than add more runtime endpoints. Validate it with the narrowest applicable smoke plus the fast changed-files smoke. Do not treat live LLM or manual production testing as available until the documented gate is demonstrably satisfied.
+
+4. **Material to inspect before changing anything — observed requirements**
+
+- `AGENTS.md`; for cockpit/workbench/RPR/Kayona/UI work, `docs/product/MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md`; for deployment, provider, Caddy, or manual-test work, `docs/ops/PRODUCTION_TOPOLOGY_AND_GATES.md`.
+- Current Git status, complete diffs for every overlapping dirty path, and recent Git history.
+- The actual source modules owning the chosen backend/frontend behavior and their nearest smoke/test scripts.
+- The cited master recovery plan, `RECOVERY_REENTRY_MASTER_PLAN_v2_3_to_v3_4.md`, before relying on roadmap sequencing.
+- For production work, runtime configuration and server-local diagnostics—without exposing secrets—and the actual state of the LLM gate.
+tokens used
+46 362

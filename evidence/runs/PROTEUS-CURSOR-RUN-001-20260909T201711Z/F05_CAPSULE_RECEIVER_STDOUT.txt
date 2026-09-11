@@ -1,0 +1,30 @@
+1. **Project — observed facts**
+
+A FastAPI/SQLAlchemy/PostgreSQL + Next.js application for moderated multi-group project sessions. Its core preserves source materials and provenance, creates reviewable analytical outputs, maintains group/session state, and supports moderator workflows, reports, agent-runtime records, and material handling.
+
+The intended product is ModerBober: a moderator’s operational workspace—not a chatbot, file archive, runtime console, or metrics dashboard. The moderator cockpit should be a fixed, canvas-first group-project surface; materials, agents, logs, and provider details are supporting layers.
+
+2. **Current situation — observed facts**
+
+- Repository is on `main` at `e523890`, with a very dirty tree: 3,075 paths, including edits to `backend/app/routers/api.py`, `frontend/app/components/ProductShell.tsx`, and a smoke script. Much of the untracked content appears to be browser-profile/cache material, but that must be verified rather than assumed disposable.
+- The project has substantial deterministic/mock functionality already: kernel workflow, review/provenance, reports, agent worker/reducers, moderator queue and cockpit, materials/session setup, operator journey/demo flow, and a v3.0 “real session workspace.”
+- The capsule reports a current product-direction focus of restoring the **Group Project Canvas** as the moderator center, plus roster/packets, material-driven group setup, and an RPR coverage matrix.
+- Production LLM configuration was known to be wired, but the last cited live smoke (2026-05-27) was `provider_error / auth_error / HTTP 403`. Manual real-archive testing is therefore blocked unless the stated production gates are met.
+
+**Conflicting signals**
+
+- The roadmap calls the active loop `v2.4 Active Session Material Desk`; the current-state document calls `v3.0` current and lists later v2.5–v2.9.4 work. These are incompatible as a single linear status and require Git/source verification.
+- The capsule’s observed HEAD is a June semantic-source-pack commit, while its older “known local commit line” ends at `8348374`; this confirms that narrative commit history is stale.
+- Product planning says real LLM/RAG/voice come later or need explicit approval, while v3.0 claims configurable live provider support. The production gate and actual implementation must decide the operative constraint.
+
+3. **What should happen next — inference**
+
+First reconcile reality: inspect Git status/diffs and history; determine which roadmap/current-state claims match the checked-out code; preserve all overlapping dirty work. Then choose one closed, UX-centered slice—most plausibly the v2.9.4 canvas-centered moderator workflow—rather than add more runtime endpoints. Validate it with the narrowest applicable smoke plus the fast changed-files smoke. Do not treat live LLM or manual production testing as available until the documented gate is demonstrably satisfied.
+
+4. **Material to inspect before changing anything — observed requirements**
+
+- `AGENTS.md`; for cockpit/workbench/RPR/Kayona/UI work, `docs/product/MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md`; for deployment, provider, Caddy, or manual-test work, `docs/ops/PRODUCTION_TOPOLOGY_AND_GATES.md`.
+- Current Git status, complete diffs for every overlapping dirty path, and recent Git history.
+- The actual source modules owning the chosen backend/frontend behavior and their nearest smoke/test scripts.
+- The cited master recovery plan, `RECOVERY_REENTRY_MASTER_PLAN_v2_3_to_v3_4.md`, before relying on roadmap sequencing.
+- For production work, runtime configuration and server-local diagnostics—without exposing secrets—and the actual state of the LLM gate.

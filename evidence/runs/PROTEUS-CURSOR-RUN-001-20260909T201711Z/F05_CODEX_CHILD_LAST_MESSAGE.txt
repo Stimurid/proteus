@@ -1,0 +1,27 @@
+Implemented and committed `4e8204a Add compact project capsule handoff capability`.
+
+Command:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m proteus capsule --project C:\projects\multiagent-moderation-env --out C:\path\PROJECT_CAPSULE.md
+```
+
+Selected project: `C:\projects\multiagent-moderation-env`
+
+Generated capsule: `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F05_MULTIAGENT_MODERATION_PROJECT_CAPSULE.md`
+
+Receiver raw result: `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F05_CAPSULE_RECEIVER_RAW_RESULT.txt`
+
+Evidence: `evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/F05_PROJECT_CAPSULE_EPISODE.md`
+
+Validation passed:
+
+- `python tests/test_capsule.py`
+- `python -m pytest -q` — 50 passed
+- `python -m proteus capsule --help`
+- `git diff --cached --check`
+
+The receiver correctly identified the product, dirty working tree, roadmap conflicts, production gate, and necessary pre-change inspection. Its feedback led to two repairs: include the roadmap’s referenced master recovery plan, and summarize untracked directories so transient browser-cache paths do not drown out actionable changes.
+
+Limitations: document discovery follows prioritized standard filenames; redaction is heuristic; the capsule intentionally excludes diff bodies, untracked-file contents, binaries, environment files, and transcripts.

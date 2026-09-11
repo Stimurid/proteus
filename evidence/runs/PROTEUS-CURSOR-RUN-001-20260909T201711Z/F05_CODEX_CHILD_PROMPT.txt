@@ -1,0 +1,36 @@
+Continue work in this repository from its own current project instructions and state.
+
+Add a usable **project capsule** capability.
+
+Use case:
+
+Given an existing coding project at:
+
+C:\projects\multiagent-moderation-env
+
+produce one reasonably compact Markdown file that can be handed to a completely fresh coding agent with no previous conversation so that it can understand the project, enter the work effectively, know the current situation, and continue from the right next work.
+
+The capsule is meant for practical agent handoff, so it should be substantially smaller than the source project rather than an archive or dump of the repository.
+
+Implement this as a reproducible command/capability in the product, document how to use it, and add appropriate automated tests.
+
+Exercise the implementation on the real project above.
+
+Then create a fresh independent coding-agent session that receives the generated capsule as its project-context input but does not receive this conversation or prior agent transcript.
+
+Ask that fresh receiver to report:
+
+* what it understands the project to be;
+* the current working situation;
+* what it thinks should happen next;
+* what material it would need to inspect before actually changing the project.
+
+Preserve that receiver's raw result.
+
+Inspect the result and the produced capsule, repair causal implementation defects you discover, rerun relevant tests, and finish the bounded capability.
+
+Do not use the human as a shell runner.
+
+Commit legitimate source changes and record normal implementation evidence.
+
+At completion report the command/capability, selected project, generated capsule path, receiver result path, tests, limitations discovered, evidence path and commit.
