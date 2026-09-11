@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentum.local/schemas/agent-organ-record/v1",
+  "title": "Agentum AgentOrgan Record",
+  "description": "Machine-readable contract for durable AgentOrgan registry records. Semantic link and lifecycle checks are implemented by scripts/agent_organ_registry.py.",
+  "type": "object",
+  "required": ["organs"],
+  "additionalProperties": false,
+  "properties": {
+    "organs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/organ" }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "stringList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nonEmptyString" }
+    },
+    "organ": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "name", "status", "version", "trust_level", "project_scope",
+        "deficit_origin", "function", "non_function", "working_object", "output_class",
+        "input_contract", "output_contract", "context_requirements", "memory_dependencies",
+        "memory_regimes_used", "memory_authority_limits", "tools_allowed", "write_surface",
+        "approval_boundary", "runtime_risks", "test_scenes", "evaluation_criteria", "failure_modes",
+        "critic_links", "lineage", "parent_organs", "child_organs", "mutation_history",
+        "activation_policy", "activation_levels", "observability_hooks", "provenance_policy",
+        "quarantine_status", "install_scope"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^ORGAN-[0-9]{3,}$" },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "status": { "enum": ["draft", "candidate", "selected", "active", "quarantined", "retired"] },
+        "version": { "$ref": "#/$defs/nonEmptyString" },
+        "trust_level": { "enum": ["theory_only", "scene_tested", "install_tested", "field_validated", "legacy_only"] },
+        "project_scope": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "deficit_origin": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "function": { "$ref": "#/$defs/nonEmptyString" },
+        "non_function": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "working_object": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "output_class": { "enum": ["report", "patch", "draft", "extraction", "routing", "critique", "synthesis"] },
+        "input_contract": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "output_contract": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "context_requirements": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "memory_dependencies": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "memory_regimes_used": {
+          "type": "array", "minItems": 1,
+          "items": { "enum": ["verbatim", "compressed", "normalized", "linked", "narrative", "graph", "task_packet", "method"] }
+        },
+        "memory_authority_limits": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "tools_allowed": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "write_surface": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "approval_boundary": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "runtime_risks": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "test_scenes": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "evaluation_criteria": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "failure_modes": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "critic_links": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "lineage": { "$ref": "#/$defs/nonEmptyString" },
+        "parent_organs": { "$ref": "#/$defs/stringList" },
+        "child_organs": { "$ref": "#/$defs/stringList" },
+        "mutation_history": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "activation_policy": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "activation_levels": {
+          "type": "array", "minItems": 1,
+          "items": { "enum": ["library_visible", "manually_invoked", "profile_enabled", "review_required", "orchestrated", "auto_run_forbidden"] }
+        },
+        "observability_hooks": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "provenance_policy": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "quarantine_status": { "enum": ["none", "bounded", "strict"] },
+        "install_scope": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "notes": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    }
+  }
+}

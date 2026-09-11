@@ -1,0 +1,273 @@
+OpenAI Codex v0.153.4
+--------
+workdir: C:\projects\protected-agent-kit
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a091a3-2b1b-7e32-8ae7-4ff304e43d86
+--------
+user
+You are a fresh independent session. Work only with these consumable artifacts under C:\projects\protected-agent-kit — do not open 03_THEORY, 01_RESEARCH_ARCHIVE, or other narrative design docs unless a path below explicitly requires it for the listed file itself:
+
+- registry_contracts/agent_organ_record.schema.json
+- registry_contracts/README.md
+- scripts/agent_organ_registry.py
+- 02_REGISTRIES/AGENT_ORGAN_REGISTRY.yaml
+- 02_REGISTRIES/derived/agent_organ_registry_report.json
+- 02_REGISTRIES/derived/README.md
+- tests/test_agent_organ_registry.py
+
+Tasks:
+1. Run `python scripts/agent_organ_registry.py validate` and `python scripts/agent_organ_registry.py report` from the repo root.
+2. From the schema + report + README only, answer:
+   - What does the machine-readable representation claim to be for?
+   - How many organs are valid, and the status/trust inventory?
+   - What source file does the report say it was derived from, and does it claim to be source-of-truth?
+   - What limitations of the contract are stated in the contract README (not invent new ones)?
+3. Do not modify the repository.
+4. Do not ask the human to run commands.
+
+Report results, command output summaries, and any ambiguity you cannot resolve from these artifacts alone.
+
+codex
+I’ll inspect only the named consumable artifacts, run the two registry commands, and report the contract’s stated claims without changing files.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'python scripts/agent_organ_registry.py validate; python scripts/agent_organ_registry.py report' in C:\projects\protected-agent-kit
+ succeeded in 536ms:
+organs=7
+agent_organ_registry=ok
+report=02_REGISTRIES\derived\agent_organ_registry_report.json
+agent_organ_registry=ok
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-Content -Raw registry_contracts/agent_organ_record.schema.json; Get-Content -Raw registry_contracts/README.md; Get-Content -Raw 02_REGISTRIES/derived/agent_organ_registry_report.json; Get-Content -Raw 02_REGISTRIES/derived/README.md' in C:\projects\protected-agent-kit
+ succeeded in 146ms:
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentum.local/schemas/agent-organ-record/v1",
+  "title": "Agentum AgentOrgan Record",
+  "description": "Machine-readable contract for durable AgentOrgan registry records. Semantic link and lifecycle checks are implemented by scripts/agent_organ_registry.py.",
+  "type": "object",
+  "required": ["organs"],
+  "additionalProperties": false,
+  "properties": {
+    "organs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/organ" }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "stringList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nonEmptyString" }
+    },
+    "organ": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "name", "status", "version", "trust_level", "project_scope",
+        "deficit_origin", "function", "non_function", "working_object", "output_class",
+        "input_contract", "output_contract", "context_requirements", "memory_dependencies",
+        "memory_regimes_used", "memory_authority_limits", "tools_allowed", "write_surface",
+        "approval_boundary", "runtime_risks", "test_scenes", "evaluation_criteria", "failure_modes",
+        "critic_links", "lineage", "parent_organs", "child_organs", "mutation_history",
+        "activation_policy", "activation_levels", "observability_hooks", "provenance_policy",
+        "quarantine_status", "install_scope"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^ORGAN-[0-9]{3,}$" },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "status": { "enum": ["draft", "candidate", "selected", "active", "quarantined", "retired"] },
+        "version": { "$ref": "#/$defs/nonEmptyString" },
+        "trust_level": { "enum": ["theory_only", "scene_tested", "install_tested", "field_validated", "legacy_only"] },
+        "project_scope": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "deficit_origin": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "function": { "$ref": "#/$defs/nonEmptyString" },
+        "non_function": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "working_object": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "output_class": { "enum": ["report", "patch", "draft", "extraction", "routing", "critique", "synthesis"] },
+        "input_contract": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "output_contract": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "context_requirements": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "memory_dependencies": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "memory_regimes_used": {
+          "type": "array", "minItems": 1,
+          "items": { "enum": ["verbatim", "compressed", "normalized", "linked", "narrative", "graph", "task_packet", "method"] }
+        },
+        "memory_authority_limits": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "tools_allowed": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "write_surface": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "approval_boundary": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "runtime_risks": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "test_scenes": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "evaluation_criteria": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "failure_modes": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "critic_links": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "lineage": { "$ref": "#/$defs/nonEmptyString" },
+        "parent_organs": { "$ref": "#/$defs/stringList" },
+        "child_organs": { "$ref": "#/$defs/stringList" },
+        "mutation_history": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "activation_policy": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "activation_levels": {
+          "type": "array", "minItems": 1,
+          "items": { "enum": ["library_visible", "manually_invoked", "profile_enabled", "review_required", "orchestrated", "auto_run_forbidden"] }
+        },
+        "observability_hooks": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "provenance_policy": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "quarantine_status": { "enum": ["none", "bounded", "strict"] },
+        "install_scope": { "$ref": "#/$defs/stringList", "minItems": 1 },
+        "notes": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    }
+  }
+}
+
+# Registry contracts
+
+This directory contains executable, machine-readable contracts for Agentum registry surfaces. It preserves the source registries as YAML and does not turn theory or the research archive into runtime payload.
+
+`agent_organ_record.schema.json` encodes the record shape from `03_THEORY/AGENT_ORGAN_RECORD_SPEC.md`; `scripts/agent_organ_registry.py` adds the checks JSON Schema cannot express cleanly: known relation IDs, duplicate IDs, lifecycle/trust compatibility, and self-lineage prevention.
+
+The current contract deliberately validates only the compact registry lifecycle (`draft`, `candidate`, `selected`, `active`, `quarantined`, `retired`). The richer lifecycle remains governed by `03_THEORY/AGENTUM_ORGAN_TRUST_AND_LIFECYCLE.md` until the living registry adopts it.
+
+{
+  "contract": {
+    "name": "Agentum AgentOrgan Record",
+    "version": "1.0.0",
+    "schema": "registry_contracts/agent_organ_record.schema.json"
+  },
+  "source": {
+    "path": "02_REGISTRIES/AGENT_ORGAN_REGISTRY.yaml",
+    "sha256": "9428035b7b317fd468bd364493492693e14b7e6b625a041fadd3456cb58c966f"
+  },
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "organ_count": 7,
+    "by_status": {
+      "active": 1,
+      "candidate": 1,
+      "selected": 5
+    },
+    "by_trust_level": {
+      "install_tested": 2,
+      "scene_tested": 5
+    },
+    "by_status_and_trust": {
+      "active": {
+        "install_tested": 1
+      },
+      "candidate": {
+        "scene_tested": 1
+      },
+      "selected": {
+        "install_tested": 1,
+        "scene_tested": 4
+      }
+    }
+  },
+  "inventory": [
+    {
+      "id": "ORGAN-001",
+      "name": "Ingress Membrane",
+      "status": "selected",
+      "trust_level": "install_tested",
+      "quarantine_status": "bounded",
+      "output_class": "routing"
+    },
+    {
+      "id": "ORGAN-002",
+      "name": "Litops Digestion Organ",
+      "status": "selected",
+      "trust_level": "scene_tested",
+      "quarantine_status": "bounded",
+      "output_class": "extraction"
+    },
+    {
+      "id": "ORGAN-003",
+      "name": "MemoryWorkbench Reconstructive Memory",
+      "status": "selected",
+      "trust_level": "scene_tested",
+      "quarantine_status": "bounded",
+      "output_class": "synthesis"
+    },
+    {
+      "id": "ORGAN-004",
+      "name": "WhiteCrow Manuscript Field Organ",
+      "status": "selected",
+      "trust_level": "scene_tested",
+      "quarantine_status": "bounded",
+      "output_class": "patch"
+    },
+    {
+      "id": "ORGAN-005",
+      "name": "Mindlock Critic Organ",
+      "status": "selected",
+      "trust_level": "scene_tested",
+      "quarantine_status": "none",
+      "output_class": "critique"
+    },
+    {
+      "id": "ORGAN-006",
+      "name": "Agentum Governance and Immune Organ",
+      "status": "active",
+      "trust_level": "install_tested",
+      "quarantine_status": "none",
+      "output_class": "routing"
+    },
+    {
+      "id": "ORGAN-007",
+      "name": "Paideia Quality Gate",
+      "status": "candidate",
+      "trust_level": "scene_tested",
+      "quarantine_status": "bounded",
+      "output_class": "report"
+    }
+  ]
+}
+
+# Derived registry outputs
+
+These files are reproducible hygiene artifacts, not source-of-truth registry records.
+
+Regenerate `agent_organ_registry_report.json` from the repository root:
+
+```powershell
+python scripts/agent_organ_registry.py validate
+python scripts/agent_organ_registry.py report
+```
+
+The report is deterministic for a given source registry: it includes the source SHA-256 and does not include a generation timestamp.
+
+
+codex
+Both commands succeeded:
+
+- `validate`: `organs=7`, `agent_organ_registry=ok`
+- `report`: wrote `02_REGISTRIES\derived\agent_organ_registry_report.json`, then confirmed `agent_organ_registry=ok`
+
+The machine-readable representation is a contract for durable AgentOrgan registry records. The schema handles record shape; the accompanying validator provides semantic/lifecycle checks.
+
+There are 7 valid organs, with no errors or warnings.
+
+| Status | Count | Trust inventory |
+|---|---:|---|
+| active | 1 | 1 install_tested |
+| candidate | 1 | 1 scene_tested |
+| selected | 5 | 1 install_tested; 4 scene_tested |
+
+Total trust levels: 2 `install_tested`, 5 `scene_tested`.
+
+The report identifies its source as `02_REGISTRIES/AGENT_ORGAN_REGISTRY.yaml` (with SHA-256 `942803…c966f`). It does not claim to be source-of-truth: the derived-output README explicitly calls these reproducible hygiene artifacts, not source-of-truth registry records.
+
+The contract README states one limitation: it deliberately validates only the compact lifecycle—`draft`, `candidate`, `selected`, `active`, `quarantined`, `retired`. The richer lifecycle remains governed elsewhere until the living registry adopts it.
+
+No ambiguity remained for these questions from the allowed artifacts. No files were modified.
+tokens used
+8 937

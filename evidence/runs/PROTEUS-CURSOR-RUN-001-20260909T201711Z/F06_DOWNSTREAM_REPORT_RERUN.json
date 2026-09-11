@@ -1,0 +1,96 @@
+{
+  "contract": {
+    "name": "Agentum AgentOrgan Record",
+    "version": "1.0.0",
+    "schema": "registry_contracts/agent_organ_record.schema.json"
+  },
+  "source": {
+    "path": "02_REGISTRIES/AGENT_ORGAN_REGISTRY.yaml",
+    "sha256": "9428035b7b317fd468bd364493492693e14b7e6b625a041fadd3456cb58c966f"
+  },
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "organ_count": 7,
+    "by_status": {
+      "active": 1,
+      "candidate": 1,
+      "selected": 5
+    },
+    "by_trust_level": {
+      "install_tested": 2,
+      "scene_tested": 5
+    },
+    "by_status_and_trust": {
+      "active": {
+        "install_tested": 1
+      },
+      "candidate": {
+        "scene_tested": 1
+      },
+      "selected": {
+        "install_tested": 1,
+        "scene_tested": 4
+      }
+    }
+  },
+  "inventory": [
+    {
+      "id": "ORGAN-001",
+      "name": "Ingress Membrane",
+      "status": "selected",
+      "trust_level": "install_tested",
+      "quarantine_status": "bounded",
+      "output_class": "routing"
+    },
+    {
+      "id": "ORGAN-002",
+      "name": "Litops Digestion Organ",
+      "status": "selected",
+      "trust_level": "scene_tested",
+      "quarantine_status": "bounded",
+      "output_class": "extraction"
+    },
+    {
+      "id": "ORGAN-003",
+      "name": "MemoryWorkbench Reconstructive Memory",
+      "status": "selected",
+      "trust_level": "scene_tested",
+      "quarantine_status": "bounded",
+      "output_class": "synthesis"
+    },
+    {
+      "id": "ORGAN-004",
+      "name": "WhiteCrow Manuscript Field Organ",
+      "status": "selected",
+      "trust_level": "scene_tested",
+      "quarantine_status": "bounded",
+      "output_class": "patch"
+    },
+    {
+      "id": "ORGAN-005",
+      "name": "Mindlock Critic Organ",
+      "status": "selected",
+      "trust_level": "scene_tested",
+      "quarantine_status": "none",
+      "output_class": "critique"
+    },
+    {
+      "id": "ORGAN-006",
+      "name": "Agentum Governance and Immune Organ",
+      "status": "active",
+      "trust_level": "install_tested",
+      "quarantine_status": "none",
+      "output_class": "routing"
+    },
+    {
+      "id": "ORGAN-007",
+      "name": "Paideia Quality Gate",
+      "status": "candidate",
+      "trust_level": "scene_tested",
+      "quarantine_status": "bounded",
+      "output_class": "report"
+    }
+  ]
+}

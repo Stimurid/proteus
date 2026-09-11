@@ -1,0 +1,19 @@
+Work in C:\projects\protected-agent-kit (Agentum) from its current instructions and source material.
+
+There is a substantial existing design for the AgentOrgan record expressed primarily in project documents under 03_THEORY (especially AGENT_ORGAN_RECORD_SPEC.md and related typology/trust docs). The living registry surface is 02_REGISTRIES/AGENT_ORGAN_REGISTRY.yaml.
+
+Implement a useful machine-readable/executable representation of that organ-record design so other project tooling can consume or validate it.
+
+Choose the narrowest real project slice that is coherent and valuable (organ-record contract → schema/validator, not a full rewrite of Agentum).
+
+Add the command/module/data representation needed to generate or maintain it, plus automated validation/tests.
+
+Exercise it against the actual AGENT_ORGAN_REGISTRY.yaml material.
+
+Then use the generated representation in one concrete downstream operation: produce a validation report (and a compact inventory of organs by status/trust) that tooling could consume for registry hygiene.
+
+Repair implementation defects you find.
+
+Do not use the human as a shell runner.
+
+Commit legitimate changes and report what was implemented, what source material it is based on, the generated representation, downstream use, tests, limitations, evidence and commit.

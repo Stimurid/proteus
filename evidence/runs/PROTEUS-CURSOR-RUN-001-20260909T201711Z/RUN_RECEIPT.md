@@ -146,11 +146,25 @@ Capability: `python -m proteus capsule`.
 Capsule: `F05_MULTIAGENT_MODERATION_PROJECT_CAPSULE.md`.
 Receiver: independent Codex; prompt sha `6b308a044a8b62b3a4d479264ee3c84c68b4e14095d8456c2b5803571339c846`; raw `F05_CAPSULE_RECEIVER_RAW_RESULT.txt`.
 Decision: D-010. Evidence: `F05_NATURAL_PROJECT_CAPSULE.md`.
-Statuses: PROJECT_CAPSULE PASS; NATURAL_TRANSDUCTION_PROJECT_CAPSULE PASS; NATURAL_RECRUITMENT PARTIAL.
-Not claimed: Gate 1; full reconstruction; natural recruitment full PASS.
+Statuses: PROJECT_CAPSULE PASS; NATURAL_TRANSDUCTION_PROJECT_CAPSULE PASS; NATURAL_RECRUITMENT PARTIAL (historical episode ceiling).
+Not claimed at F05 time: Gate 1; full reconstruction; natural recruitment full PASS.
+
+## 20. F06 RECRUITMENT REPAIR + BLIND FORM-TRANSITION RETEST
+
+Causal diagnosis: `F06_F05_CAUSAL_DIAGNOSIS.md` (A+D primary; C repair target).
+Repair: D-011 consequential derived-representation recruitment; Proteus commit `f407173`.
+Selected different project: `C:\projects\protected-agent-kit` (Agentum); selection `F06_PROJECT_SELECTION.md`.
+Child: independent Codex 0.153.4 ephemeral; prompt sha `304c634f10c538cf072b06074716d9fdba3de9ee9d02eb5dc663276d5792ff7d`; Agentum commit `117a821`.
+Formal representation: organ-record JSON Schema + validator + hygiene report.
+Receiver: independent Codex; prompt sha `5ca8c204aa5aa162d108a0cae11b8bbbcc3c6f56f7a8b8bc422a389aeffb5f85`.
+Evidence: `F06_RECRUITMENT_REPAIR_AND_BLIND_RETEST.md`, `F06_SOURCE_VS_REPRESENTATION.md`.
+Statuses: RECRUITMENT_REPAIR PASS; BLIND_FORM_TRANSITION_RETEST PASS; NATURAL_TRANSDUCTION_RETEST PASS; durable NATURAL_RECRUITMENT PASS.
+Next frontier: `INDEPENDENT_GATE_1_AUDIT` (not performed here).
+Regression: pytest recruitment/activate/codex/world/secret/capsule/smoke → 41 passed.
+Not claimed: Gate 1 completed; that optional `derived record` was used; F05 historical PARTIAL rewritten.
 
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (…; D-006 PASS; D-007 PASS; D-008 AW1000 HARDEN PASS/PARTIAL; F04/D-009 PASS; F05/D-010 PROJECT_CAPSULE PASS; T04 NOT_STARTED)
+FIRST_INCARNATION = PARTIAL (…; D-006–D-011 accepted; F04–F06 recorded; T04 NOT_STARTED; Gate 1 NOT_YET)
 OBSERVABILITY = PARTIAL (local PASS; Drive observatory FAIL; entity carriers MCP PARTIAL)
 PRODUCT_ACTIVATION = PASS
 WORLD_ENTITY_MEMORY = PASS (vertical slice)
@@ -158,6 +172,10 @@ AW1000_REAL_ENTITY = PASS (hardening episode; facts dated; real secret UNAVAILAB
 F04_FOREIGN_CARRIER = PASS
 PROJECT_CAPSULE = PASS
 NATURAL_TRANSDUCTION_PROJECT_CAPSULE = PASS
-NATURAL_RECRUITMENT = PARTIAL
+RECRUITMENT_REPAIR = PASS
+BLIND_FORM_TRANSITION_RETEST = PASS
+NATURAL_TRANSDUCTION_RETEST = PASS
+NATURAL_RECRUITMENT = PASS
 LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED
 GATE_1 = NOT_YET
+NEXT_FRONTIER = INDEPENDENT_GATE_1_AUDIT

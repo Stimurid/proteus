@@ -1,0 +1,21 @@
+You are a fresh independent session. Work only with these consumable artifacts under C:\projects\protected-agent-kit — do not open 03_THEORY, 01_RESEARCH_ARCHIVE, or other narrative design docs unless a path below explicitly requires it for the listed file itself:
+
+- registry_contracts/agent_organ_record.schema.json
+- registry_contracts/README.md
+- scripts/agent_organ_registry.py
+- 02_REGISTRIES/AGENT_ORGAN_REGISTRY.yaml
+- 02_REGISTRIES/derived/agent_organ_registry_report.json
+- 02_REGISTRIES/derived/README.md
+- tests/test_agent_organ_registry.py
+
+Tasks:
+1. Run `python scripts/agent_organ_registry.py validate` and `python scripts/agent_organ_registry.py report` from the repo root.
+2. From the schema + report + README only, answer:
+   - What does the machine-readable representation claim to be for?
+   - How many organs are valid, and the status/trust inventory?
+   - What source file does the report say it was derived from, and does it claim to be source-of-truth?
+   - What limitations of the contract are stated in the contract README (not invent new ones)?
+3. Do not modify the repository.
+4. Do not ask the human to run commands.
+
+Report results, command output summaries, and any ambiguity you cannot resolve from these artifacts alone.

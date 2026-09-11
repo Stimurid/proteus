@@ -1,0 +1,27 @@
+Implemented and committed the executable AgentOrgan registry slice.
+
+- Added JSON Schema contract: [agent_organ_record.schema.json](C:/projects/protected-agent-kit/registry_contracts/agent_organ_record.schema.json)
+- Added executable validator/report CLI: [agent_organ_registry.py](C:/projects/protected-agent-kit/scripts/agent_organ_registry.py)
+- Added tests: [test_agent_organ_registry.py](C:/projects/protected-agent-kit/tests/test_agent_organ_registry.py)
+- Completed the missing `output_class` field for all seven living organ records.
+- Generated consumable hygiene report/inventory: [agent_organ_registry_report.json](C:/projects/protected-agent-kit/02_REGISTRIES/derived/agent_organ_registry_report.json)
+
+The contract is based on `AGENT_ORGAN_RECORD_SPEC.md`, the compact lifecycle/trust model, and the existing registry’s actual field conventions. It validates schema shape plus duplicate IDs, cross-record organ/deficit/failure references, self-lineage, and key lifecycle/trust constraints.
+
+Downstream report result: valid, 7 organs — 5 selected, 1 active, 1 candidate; trust inventory is 2 install-tested and 5 scene-tested.
+
+Validation evidence:
+
+```powershell
+python -m unittest discover -s tests -p "test_agent_organ_registry.py" -v
+python scripts\agent_organ_registry.py validate
+python scripts\agent_organ_registry.py report
+```
+
+All passed. I repaired two defects found while exercising it: removed an unavailable `jsonschema` dependency by interpreting the checked-in schema directly, and aligned `provenance_policy` with the registry’s list representation.
+
+Limitation: the tool intentionally validates the registry’s compact lifecycle vocabulary; the richer theory lifecycle remains documentation-governed until the living registry adopts those states.
+
+Commit: `117a821 add executable agent organ registry contract`
+
+Pre-existing untracked `.proteus/` and `state/` were left untouched.

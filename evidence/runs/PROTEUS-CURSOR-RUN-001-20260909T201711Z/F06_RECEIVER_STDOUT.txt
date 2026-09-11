@@ -1,0 +1,22 @@
+Both commands succeeded:
+
+- `validate`: `organs=7`, `agent_organ_registry=ok`
+- `report`: wrote `02_REGISTRIES\derived\agent_organ_registry_report.json`, then confirmed `agent_organ_registry=ok`
+
+The machine-readable representation is a contract for durable AgentOrgan registry records. The schema handles record shape; the accompanying validator provides semantic/lifecycle checks.
+
+There are 7 valid organs, with no errors or warnings.
+
+| Status | Count | Trust inventory |
+|---|---:|---|
+| active | 1 | 1 install_tested |
+| candidate | 1 | 1 scene_tested |
+| selected | 5 | 1 install_tested; 4 scene_tested |
+
+Total trust levels: 2 `install_tested`, 5 `scene_tested`.
+
+The report identifies its source as `02_REGISTRIES/AGENT_ORGAN_REGISTRY.yaml` (with SHA-256 `942803…c966f`). It does not claim to be source-of-truth: the derived-output README explicitly calls these reproducible hygiene artifacts, not source-of-truth registry records.
+
+The contract README states one limitation: it deliberately validates only the compact lifecycle—`draft`, `candidate`, `selected`, `active`, `quarantined`, `retired`. The richer lifecycle remains governed elsewhere until the living registry adopts it.
+
+No ambiguity remained for these questions from the allowed artifacts. No files were modified.
