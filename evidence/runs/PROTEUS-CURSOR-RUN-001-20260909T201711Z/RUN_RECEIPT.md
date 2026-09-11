@@ -138,6 +138,17 @@ Decision: D-009. Evidence: `F04_CODEX_FOREIGN_CARRIER.md`.
 Tests: activate/world/secret subset 31 PASS.
 Not claimed: NATURAL_RECRUITMENT; Gate 1; Claude; live Archivarius; real secret.
 
+## 19. F05 PROJECT CAPSULE / NATURAL ORDINARY WORK
+
+Selected real project: `C:\projects\multiagent-moderation-env`.
+Child: independent Codex 0.153.4; prompt sha `20523f26f76dd10a4149ceaad6a3c4adce505fe57b84b3f2fcf4de5f6afb3fd7`; product commit `4e8204a`.
+Capability: `python -m proteus capsule`.
+Capsule: `F05_MULTIAGENT_MODERATION_PROJECT_CAPSULE.md`.
+Receiver: independent Codex; prompt sha `6b308a044a8b62b3a4d479264ee3c84c68b4e14095d8456c2b5803571339c846`; raw `F05_CAPSULE_RECEIVER_RAW_RESULT.txt`.
+Decision: D-010. Evidence: `F05_NATURAL_PROJECT_CAPSULE.md`.
+Statuses: PROJECT_CAPSULE PASS; NATURAL_TRANSDUCTION_PROJECT_CAPSULE PASS; NATURAL_RECRUITMENT PARTIAL.
+Not claimed: Gate 1; full reconstruction; natural recruitment full PASS.
+
 FINAL STATUS:
 FIRST_INCARNATION = PARTIAL (…; D-006 PASS; D-007 PASS; D-008 AW1000 HARDEN PASS/PARTIAL; F04/D-009 PASS; F05/D-010 PROJECT_CAPSULE PASS; T04 NOT_STARTED)
 OBSERVABILITY = PARTIAL (local PASS; Drive observatory FAIL; entity carriers MCP PARTIAL)
