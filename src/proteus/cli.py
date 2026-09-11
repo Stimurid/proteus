@@ -7,6 +7,8 @@ import sys
 from pathlib import Path
 
 from .activate import activate, remove_activation
+from .activate_codex import activate as activate_codex
+from .activate_codex import remove_activation as remove_codex_activation
 from .control import enqueue, list_queue
 from .flush import flush
 from .install_cursor import REPO_ROOT, install
@@ -58,6 +60,21 @@ def cmd_activate(ns: argparse.Namespace) -> None:
         result = remove_activation(target, dry_run=ns.dry_run)
     else:
         result = activate(target, dry_run=ns.dry_run, run_id=ns.run_id)
+    print(json.dumps(result, indent=2))
+
+
+def cmd_activate_codex(ns: argparse.Namespace) -> None:
+    target = Path(ns.project)
+    if ns.remove:
+        result = remove_codex_activation(target, dry_run=ns.dry_run)
+    else:
+        aiye = Path(ns.aiye_home).expanduser() if ns.aiye_home else None
+        result = activate_codex(
+            target,
+            dry_run=ns.dry_run,
+            run_id=ns.run_id,
+            aiye_home=aiye,
+        )
     print(json.dumps(result, indent=2))
 
 
@@ -212,6 +229,17 @@ def main() -> None:
     a.add_argument("--remove", action="store_true")
     a.add_argument("--run-id", default=None)
     a.set_defaults(func=cmd_activate)
+
+    ac = sub.add_parser(
+        "activate-codex",
+        help="Mount Proteus world-memory morphology on a Codex project (foreign carrier)",
+    )
+    ac.add_argument("--project", required=True)
+    ac.add_argument("--dry-run", action="store_true")
+    ac.add_argument("--remove", action="store_true")
+    ac.add_argument("--run-id", default=None)
+    ac.add_argument("--aiye-home", default=None)
+    ac.set_defaults(func=cmd_activate_codex)
 
     w = sub.add_parser("world", help="Shared world / entity memory")
     wsub = w.add_subparsers(dest="world_cmd", required=True)

@@ -1,0 +1,18 @@
+Reading additional input from stdin...
+OpenAI Codex v0.153.4
+--------
+workdir: C:\Projects\Proteus-CODEX-001
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a09093-1dc1-7901-b1c4-4454b805080c
+--------
+user
+Reply with exactly: CODEX_SMOKE_OK
+codex
+CODEX_SMOKE_OK
+tokens used
+5 370

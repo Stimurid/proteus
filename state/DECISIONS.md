@@ -45,3 +45,9 @@
 - Not claimed: full local↔Drive sync; live Archivarius process; that all imported facts are eternally current; real secret availability when only synthetic broker tests pass; Gate 1; natural recruitment; Codex/Claude portability.
 - Provenance: AW1000 real-entity episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; evidence `AW1000_REAL_ENTITY_EPISODE.md`.
 - Status: accepted for this incarnation; reversible by removing `src/proteus/secrets/` and reverting AW1000 carrier pointers.
+
+## D-009 — Codex foreign-carrier morphology (world API reuse)
+- Decision: First foreign-carrier morphology for Codex uses Codex-native surfaces only (`hosts/codex/templates` + `python -m proteus.activate_codex`): project `AGENTS.md`, `.proteus/ENTRY.md`, `.proteus/world_env.cmd`, minimal `state/*`. It does **not** clone Cursor hooks/rules/BUILDER-01. Shared memory goes through host-neutral `proteus.world.api` / `python -m proteus world` against the same `AIYE_HOME` entity substrate. Independent sessions use `codex exec --ephemeral` (launcher `proteus.launch_codex`); resume/fork are not used for foreign-carrier proof. PYTHONPATH prefers ideal-body `src` over Cursor host-install copy.
+- Not claimed: Gate 1; NATURAL_RECRUITMENT; identity with Cursor incarnation; Claude/OpenClaw; live Archivarius; real secret availability; that desktop `codex.exe` shim version equals nested CLI.
+- Provenance: F04 episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; evidence `F04_CODEX_FOREIGN_CARRIER.md`.
+- Status: accepted for this incarnation; reversible by removing `src/proteus/activate_codex.py`, `hosts/codex/`, and related tests/CLI wiring.

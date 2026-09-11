@@ -105,7 +105,7 @@ See `ROLLBACK.md`. Uninstall path exists. Rollback of user hooks **not destructi
 
 ## 14. NEXT FRONTIER
 
-F01 SELF-TRANSDUCTION recorded. D-004–D-008 accepted. D-006 PRODUCT_ACTIVATION PASS with NATURAL_RECRUITMENT NOT_PROVED. D-007 world-memory vertical slice PASS. D-008 AW1000 real-entity hardening recorded. T02 remains PARTIAL. Do not start T04/T05/T02c. Drive observatory flush remains FAILED_TRANSPORT. PROCESS_DEATH_BOUNDARY UNKNOWN. Gate 1 NOT_YET.
+F01 SELF-TRANSDUCTION recorded. D-004–D-009 accepted. D-006 PRODUCT_ACTIVATION PASS with NATURAL_RECRUITMENT NOT_PROVED. D-007 world-memory PASS. D-008 AW1000 harden PASS. F04 Codex foreign-carrier PASS. T02 remains PARTIAL. Do not start T04/T05/T02c. Drive observatory flush remains FAILED_TRANSPORT. PROCESS_DEATH_BOUNDARY UNKNOWN. Gate 1 NOT_YET.
 
 ## 15. PRODUCT ACTIVATION (project mount)
 
@@ -125,14 +125,26 @@ Recall: PROJECT_R1/R2 PASS (`AW1000_PROJECT_R*_STDOUT.txt`).
 Cloud recovery: `aw1000_cloud_recovery_world/` PASS (partial).
 Archivarius: adapter PASS; live BLOCKED.
 Decision: D-008. Evidence: `AW1000_REAL_ENTITY_EPISODE.md`.
-Tests: full suite 42 PASS.
 Not claimed: eternal currency of all facts; full Drive sync; real password availability; live Archivarius; Gate 1.
 
+## 18. F04 CODEX FOREIGN CARRIER
+
+Source: `hosts/codex/**`, `src/proteus/activate_codex.py`, `src/proteus/launch_codex.py`, CLI `activate-codex`, `tests/test_activate_codex.py`.
+Disposable Codex project: `C:\Projects\Proteus-CODEX-001`. Cursor readback: `C:\Projects\Proteus-CURSOR-F04-READBACK`.
+Codex: `codex-cli 0.153.4` nested binary; prompt sha `fb0025163c6c04361638592b56f7dce837d2758133813f3947a25d8bd87c3a9c`.
+Writeback: EPISODE `claim.d992454666c9` on `entity.router.aw1000.home`.
+Cursor readback recovered claim without prompt transfer.
+Decision: D-009. Evidence: `F04_CODEX_FOREIGN_CARRIER.md`.
+Tests: activate/world/secret subset 31 PASS.
+Not claimed: NATURAL_RECRUITMENT; Gate 1; Claude; live Archivarius; real secret.
+
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (…; D-006 PASS; D-007 PASS; D-008 AW1000 HARDEN PASS/PARTIAL; T04 NOT_STARTED)
+FIRST_INCARNATION = PARTIAL (…; D-006 PASS; D-007 PASS; D-008 AW1000 HARDEN PASS/PARTIAL; F04/D-009 PASS; T04 NOT_STARTED)
 OBSERVABILITY = PARTIAL (local PASS; Drive observatory FAIL; entity carriers MCP PARTIAL)
 PRODUCT_ACTIVATION = PASS (NATURAL_RECRUITMENT NOT_PROVED)
 WORLD_ENTITY_MEMORY = PASS (vertical slice)
 AW1000_REAL_ENTITY = PASS (hardening episode; facts dated; real secret UNAVAILABLE)
+F04_FOREIGN_CARRIER = PASS
 LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED
 GATE_1 = NOT_YET
+NATURAL_RECRUITMENT = NOT_PROVED

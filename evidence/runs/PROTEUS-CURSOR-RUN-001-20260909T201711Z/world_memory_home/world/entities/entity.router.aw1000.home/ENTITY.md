@@ -5,6 +5,10 @@
 
 ## Current facts
 
+- 2026-09-11T13:07:12.8583725Z: Read-only SSH verification from C:\projects\Proteus-CODEX-001 to root@192.168.3.1 succeeded using the documented key with StrictHostKeyChecking=yes; ubus call system board identified hostname QWRT, model Arcadyan AW1000, OpenWrt 21.02-SNAPSHOT / ipq807x/generic. No configuration changes made.  
+  - claim_id: `claim.d992454666c9`  
+  - provenance: observation / proteus.cli  
+
 - PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.  
   - claim_id: `claim.f2e90089d2ca`  
   - provenance: observation / origin-aw1000-hardening / post_cloud_delta  

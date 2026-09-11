@@ -1,0 +1,23 @@
+**Да — сегодня по AW1000 есть новые проверенные наблюдения.** Ничего не менял.
+
+### Mount receipt
+- **Project:** Proteus-CURSOR-F04-READBACK  
+- **RUN_ID / activation:** `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T130831Z`  
+- **Frontier:** обычная работа проекта; mount ≠ Gate 1  
+- **Unresolved (project):** доактивационная история не импортирована  
+- **Next:** по роутеру — продолжать с entity memory, не копируя в `state/` как локальную истину  
+
+### Роутер (`entity.router.aw1000.home`)
+Arcadyan AW1000 / QWRT. Onlime `192.168.3.0/24` DIRECT; NM `192.168.2.0/24` через туннель. SSH: `root@192.168.3.1`, ключ `id_rsa_aw1000`. Clash снят; AmneziaWG `awg0` peer `10.8.1.4`. Primary workspace: `C:\projects\aw1000-audit`.
+
+**Открыто:** mwan3 failover при «кабель UP / интернет мёртв» — UNKNOWN; смысл зелёного mobile LED — UNKNOWN. **CONFLICT:** исторический LAN `192.168.2.1` vs текущий mgmt `192.168.3.1`.
+
+### Сегодняшние verified observations (`kind: observation`)
+**~13:01 MSK (10:01Z)** — live SSH read-only:
+- SSH жив; hostname QWRT; OpenWrt `r47273-b4df38cf18`
+- `eth4` UP `188.32.115.18/19`; `wwan0` UP; `br-lan` `192.168.2.1/24`; `br-iot` `192.168.3.1/24`; `awg0` `10.8.1.4/32`
+- default: eth4 metric 10, wwan0 metric 20 (+ лишний default через wwan0 без metric)
+
+**~16:07 MSK (13:07Z)** — повторная read-only проверка из `Proteus-CODEX-001`: SSH ок, `ubus` → QWRT / Arcadyan AW1000 / тот же OpenWrt; без изменений конфигурации (`claim.d992454666c9`).
+
+Маркеры reconciliation (`CLOUD-MARKER`, `LOCAL-ONLY-DELTA`) — тоже сегодня, но это не live network reads.

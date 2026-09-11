@@ -1,0 +1,2393 @@
+OpenAI Codex v0.153.4
+--------
+workdir: C:\projects\Proteus-CODEX-001
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a09093-a968-70b3-9f48-637ebdb422bb
+--------
+user
+Разберись, пожалуйста, с нашим роутером. Восстанови доступный тебе рабочий контекст о нём, скажи, что сейчас известно достоверно, что остаётся неясным или противоречивым, и проверь, доступен ли он сейчас с этой машины. Ничего в конфигурации не меняй. Если безопасная read-only проверка возможна — выполни её и сохрани полученное новое наблюдение обычным для этого рабочего окружения способом. Затем скажи, что имеет смысл делать дальше.
+codex
+Сначала восстановлю контекст из памяти проекта и общего мира, затем выполню только безопасную проверку доступности без изменений и запишу наблюдение в предусмотренное хранилище.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw .proteus\\ENTRY.md; Get-Content -Raw state\\IDENTITY.md; Get-Content -Raw state\\CURRENT.md; Get-Content -Raw state\\FRONTIER.md; Get-Content -Raw state\\DECISIONS.md; Get-Content -Raw state\\UNRESOLVED.md" in C:\projects\Proteus-CODEX-001
+ succeeded in 173ms:
+# Proteus entry вЂ” Codex project mount
+
+Proteus is **mounted** on this **Codex** project for shared world/entity memory. This is not a claim that this tree is the Proteus ideal body, not a Cursor BUILDER-01 incarnation, and not Gate 1 acceptance of the whole product.
+
+## Open / continue work
+
+1. Open this folder as the Codex working directory (`codex -C <path>` / project root).
+2. Start a **new** Codex session (do not `codex resume` / `fork` an unrelated session for continuity of foreign work).
+3. Read, in order when present: `state/IDENTITY.md`, `state/CURRENT.md`, `state/FRONTIER.md`, `state/DECISIONS.md`, `state/UNRESOLVED.md`.
+4. Follow project `AGENTS.md` for mount orientation (Codex-native instruction surface).
+5. If this project already had its own `AGENTS.md` before activation, that file was **preserved**; prefer those conventions for project-specific work. Proteus carriers still live under `.proteus/` and optional owned `AGENTS.md` only when created by activation.
+
+## Shared world / entity memory
+
+Environment for this mount (also written to `.proteus/world_env.cmd`):
+
+- `AIYE_HOME=C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\world_memory_home`
+- `PROTEUS_WORLD_ROOT=C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\world_memory_home\world`
+- `PYTHONPATH=C:\projects\Proteus\src`
+- `PROTEUS_SOURCE_ROOT=C:\projects\Proteus`
+
+Load with:
+
+```
+call .proteus\world_env.cmd
+```
+
+Then:
+
+```
+python -m proteus world resolve "<entity name or alias>"
+python -m proteus world mount "<entity name or alias>"
+python -m proteus world route --scope ENTITY --entity "<name>" --text "..." --project .
+python -m proteus world route --scope PROJECT --project . --text "<project-only>"
+```
+
+Host-neutral module: `proteus.world.api`.
+
+Do **not** copy entity knowledge into this project as local truth. Project decisions stay in `state/` / `.proteus/project_memory.jsonl`. ENTITY facts live in the shared substrate.
+
+Secrets: opaque `secret://` refs only. Never print plaintext secrets.
+
+## What Proteus owns here
+
+See `.proteus/activation.json` (`owned_paths`). Reverse with:
+
+```
+python -m proteus.activate_codex --project . --remove
+```
+
+(from a machine where the `proteus` package is importable; typically `PYTHONPATH=<proteus-src>`).
+
+## Activation provenance
+
+- activation_id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-CODEX-20260911T122912Z`
+- activated_at: `2026-09-11T12:29:48.444886+00:00`
+- proteus_source: `C:\projects\Proteus`
+- target: `C:\projects\Proteus-CODEX-001`
+- host: Codex
+- aiye_home: `C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\world_memory_home`
+
+# Identity (project mount)
+
+This is a **Codex** project with a Proteus world-memory mount.
+
+Acting host role: Codex coding agent (not BUILDER-01 / not Cursor incarnation).
+Proteus: candidate organ / cognitive infrastructure вЂ” not identical to this mount or to `state/*`.
+
+If a required fact is missing, write UNKNOWN rather than filling the gap.
+
+# CURRENT
+
+Project: `Proteus-CODEX-001` (Codex disposable / working mount).
+Status: Proteus Codex activation present; shared world via `AIYE_HOME`.
+Activation id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-CODEX-20260911T122912Z`
+
+# FRONTIER
+
+Continue from the user's ordinary request. Prefer shared world resolve/mount/route over inventing durable entity facts.
+
+# DECISIONS
+
+(none yet for this project mount)
+
+## Project decision (2026-09-11T12:29:12.618313+00:00)
+- Proteus-CODEX-001 disposable fixture prefers quiet project-local logging only. Marker: NEGATIVE_CONTROL_CODEX_F04.
+- topic: (none)
+- provenance: observation / origin-builder-01
+- scope: PROJECT (not ENTITY)
+
+# UNRESOLVED / UNKNOWN / CONFLICT
+
+- UNKNOWN until inspected via shared world substrate.
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "cmd /c \"call .proteus\\world_env.cmd && python -m proteus world resolve router && python -m proteus world resolve роутер && python -m proteus world mount router\"" in C:\projects\Proteus-CODEX-001
+ succeeded in 622ms:
+{
+  "schema": "proteus.entity.v0.1",
+  "entity_id": "entity.router.aw1000.home",
+  "identity": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "display_name": "Arcadian AW1000 router",
+    "aliases": [
+      "AW1000",
+      "our router",
+      "Arcadian AW1000",
+      "Arcadyan AW1000",
+      "QWRT",
+      "home router",
+      "��� ������"
+    ],
+    "relations": [],
+    "created_utc": "2026-09-10T18:58:50.018659+00:00",
+    "note": "identity card is address/catalog, not ontology of the living object",
+    "aliases_updated_utc": "2026-09-11T10:00:43.373747+00:00"
+  },
+  "carriers": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "carriers": [
+      {
+        "role": "HOME",
+        "kind": "local_fs",
+        "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home",
+        "authority": "local_semantic",
+        "currentness": "active"
+      },
+      {
+        "role": "BACKUP",
+        "kind": "google_drive",
+        "provider_id": "1IYbaIRyC3ScnppX1iNdlVgo688jwE48r",
+        "title": "proteus-entity-router-aw1000-home-carrier-v0.1.zip",
+        "authority": "cloud_carrier",
+        "currentness": "synced_snapshot",
+        "recorded_utc": "2026-09-11T10:05:31.182202+00:00"
+      }
+    ]
+  },
+  "projects": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "projects": [
+      {
+        "project_path": "C:\\projects\\aw1000-audit",
+        "relation": "primary_workspace",
+        "linked_utc": "2026-09-11T10:00:44.952246+00:00"
+      },
+      {
+        "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R1",
+        "relation": "fixture_recall",
+        "linked_utc": "2026-09-11T10:05:31.241210+00:00"
+      },
+      {
+        "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R2",
+        "relation": "fixture_recall",
+        "linked_utc": "2026-09-11T10:05:31.249058+00:00"
+      }
+    ]
+  },
+  "secret_refs": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "secret_refs": [
+      {
+        "secret_uri": "secret://router.aw1000.home.admin",
+        "label": "AW1000 root/admin password",
+        "auth_method": "external_askpass_pointer_unread",
+        "scope": "entity",
+        "recorded_utc": "2026-09-10T18:58:55.544228+00:00",
+        "plaintext": null,
+        "note": "askpass.cmd exists but was not read; plaintext never loaded into broker or entity memory this episode",
+        "updated_utc": "2026-09-11T10:00:45.100634+00:00",
+        "AW1000_REAL_SECRET": "UNAVAILABLE",
+        "external_pointer": "C:\\projects\\aw1000-audit\\askpass.cmd",
+        "external_pointer_read": false
+      },
+      {
+        "secret_uri": "secret://router.aw1000.home.ssh_key",
+        "label": "AW1000 agent SSH private key path",
+        "auth_method": "filesystem_key_path",
+        "scope": "entity",
+        "recorded_utc": "2026-09-11T10:00:45.108166+00:00",
+        "plaintext": null,
+        "note": "path/capability only; key material not copied into entity memory",
+        "key_path": "C:\\Users\\Timur Shchukin\\.ssh\\id_rsa_aw1000",
+        "key_exists": true
+      }
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "claim.197c538b75e5",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "lan_topology",
+      "text": "Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-pilot",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-10T18:58:53.325369+00:00",
+        "source": "C:\\projects\\.cursor\\rules\\aw1000-network.mdc + aw1000-audit workspace constraints",
+        "kind": "imported_reference",
+        "confidence": "documented_constraint"
+      },
+      "recorded_utc": "2026-09-10T18:58:53.327150+00:00"
+    },
+    {
+      "claim_id": "claim.7f5c15b2e7ef",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "SECRET_REFERENCE",
+      "topic": "secret_ref:secret://router.aw1000.home.admin",
+      "text": "Secret reference recorded: secret://router.aw1000.home.admin (AW1000 admin)",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-pilot",
+        "observed_at": "2026-09-10T18:58:55.534204+00:00",
+        "kind": "imported_reference"
+      },
+      "recorded_utc": "2026-09-10T18:58:55.555346+00:00"
+    },
+    {
+      "claim_id": "claim.c3eb0e10d195",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "device_identity",
+      "text": "Device is Arcadyan AW1000; web UI brand is QWRT (OpenWrt-based).",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.541828+00:00",
+        "source": "Drive handoff 1lM9BTn1vecgVlWbtN1K14acgzS0nEjn_vZceaQSiLyQ �1",
+        "kind": "imported_reference",
+        "confidence": "drive_handoff_2026-08-30"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.542434+00:00"
+    },
+    {
+      "claim_id": "claim.2bd4952d98b2",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "firmware_os_release",
+      "text": "On 2026-08-30 live read: OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18; OPENWRT_BOARD=ipq807x/generic; OPENWRT_ARCH=aarch64_cortex-a53. Treat as historical unless revalidated.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.696774+00:00",
+        "source": "Drive handoff 1lM9BTn1... �1 os-release",
+        "kind": "imported_reference",
+        "confidence": "historical_live_read"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.703539+00:00"
+    },
+    {
+      "claim_id": "claim.2f697980c5d1",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "modem_quectel",
+      "text": "USB modem identified as Quectel ID 2c7c:0800; mobile Linux interface wwan0; control path /dev/cdc-wdm0; mmcli not present.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.859611+00:00",
+        "source": "Drive handoff 1lM9BTn1... �2",
+        "kind": "imported_reference",
+        "confidence": "drive_handoff_2026-08-30"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.866130+00:00"
+    },
+    {
+      "claim_id": "claim.4384b8bba2ff",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "ethernet_wan_device",
+      "text": "Historical diagnostic mapping: upstream Ethernet corresponded to Linux eth4; logical OpenWrt interface WAN_ETH was created as DHCP client on eth4. Names wan/wanb/WAN_ETH are not reliable role labels without live map.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.022611+00:00",
+        "source": "Drive handoff 1lM9BTn1... �3",
+        "kind": "imported_reference",
+        "confidence": "historical"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.029740+00:00"
+    },
+    {
+      "claim_id": "claim.f3e244b00b87",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "mgmt_ssh",
+      "text": "Agent SSH management path when PC is on onlime: root@192.168.3.1 using RSA key %USERPROFILE%\\.ssh\\id_rsa_aw1000 (dropbear requires ssh-rsa). Helper: C:\\projects\\aw1000-audit\\ssh-aw1000.cmd",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.181858+00:00",
+        "source": "C:\\projects\\aw1000-audit\\SSH-HANDOFF.md",
+        "kind": "imported_reference",
+        "confidence": "documented"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.188754+00:00"
+    },
+    {
+      "claim_id": "claim.d1c7486578fe",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "amneziawg_migration",
+      "text": "As of 2026-09-10 STATUS: Clash/OpenClash removed; AmneziaWG awg0 peer 10.8.1.4 endpoint 130.17.29.18:2066; NM 192.168.2.0/24 via tunnel; onlime 192.168.3.0/24 DIRECT untouched.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.343534+00:00",
+        "source": "C:\\projects\\aw1000-audit\\STATUS.md + MIGRATION-STATUS.md",
+        "kind": "imported_reference",
+        "confidence": "project_status_2026-09-10"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.351208+00:00"
+    },
+    {
+      "claim_id": "claim.d7d01282f4ef",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "lan_mgmt_address_history",
+      "text": "During Aug 2026 handoff session Arcadyan LAN was often 192.168.2.1/24; later STATUS/SSH handoff use management on 192.168.3.1 (onlime). Do not collapse to one eternal LAN address without live measure.",
+      "status": "conflict",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.505326+00:00",
+        "source": "Drive handoff �4 vs SSH-HANDOFF.md",
+        "kind": "imported_reference",
+        "confidence": "conflict_retained"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.512645+00:00"
+    },
+    {
+      "claim_id": "claim.a1a3b5d7da4a",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "failover_logical_upstream",
+      "text": "Drive handoff acceptance still required: automatic failover when Ethernet carrier stays UP but upstream Internet is dead (mwan3 health). Closure of that acceptance is UNKNOWN from available docs as of this episode.",
+      "status": "unknown",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.659784+00:00",
+        "source": "Drive handoff �7/�16",
+        "kind": "imported_reference",
+        "confidence": "open_acceptance"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.667397+00:00"
+    },
+    {
+      "claim_id": "claim.951e9924ae0e",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "mobile_led_green",
+      "text": "User observed front mobile LED stays green even when traffic is on cable; whether LED means standby registration vs active default path is unresolved without measurement.",
+      "status": "unknown",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.817300+00:00",
+        "source": "Drive handoff �12",
+        "kind": "imported_reference"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.825267+00:00"
+    },
+    {
+      "claim_id": "claim.05e1a5296c9f",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "ssh_reachability_20260911",
+      "text": "2026-09-11T10:00Z approx: SSH root@192.168.3.1 reachable via id_rsa_aw1000; hostname QWRT; OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18 confirmed live.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.722410+00:00"
+    },
+    {
+      "claim_id": "claim.e3b4d633a175",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "live_interfaces_20260911",
+      "text": "Live 2026-09-11: eth4 UP with IPv4 188.32.115.18/19; wwan0 UP; br-lan 192.168.2.1/24; br-iot 192.168.3.1/24; awg0 10.8.1.4/32 present.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.730550+00:00"
+    },
+    {
+      "claim_id": "claim.23cdcb47eb88",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "live_default_routes_20260911",
+      "text": "Live 2026-09-11 main table shows default via eth4 metric 10 and via wwan0 metric 20 (plus an additional default via wwan0 without metric in snapshot). Dual-default/mwan state needs ongoing care; do not treat as eternal.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.745805+00:00"
+    },
+    {
+      "claim_id": "claim.9ffe9145edc7",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "firmware_os_release_live",
+      "text": "Live 2026-09-11 revalidated firmware identity: OpenWrt 21.02-SNAPSHOT BUILD_ID=r47273-b4df38cf18 board=ipq807x/generic arch=aarch64_cortex-a53; ubus hostname=QWRT.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.761366+00:00"
+    },
+    {
+      "claim_id": "claim.e9d2c3b0a9d1",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "cloud_marker_20260911",
+      "text": "PROTEUS-AW1000-CLOUD-MARKER-20260911 non-sensitive reconciliation marker.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.923108+00:00",
+        "source": "aw1000_real_entity_episode",
+        "kind": "observation"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.923802+00:00"
+    },
+    {
+      "claim_id": "claim.f2e90089d2ca",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "local_only_delta_20260911",
+      "text": "PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:05:31.139021+00:00",
+        "source": "post_cloud_delta",
+        "kind": "observation"
+      },
+      "recorded_utc": "2026-09-11T10:05:31.140326+00:00"
+    }
+  ],
+  "current_claims": [
+    {
+      "claim_id": "claim.197c538b75e5",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "lan_topology",
+      "text": "Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-pilot",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-10T18:58:53.325369+00:00",
+        "source": "C:\\projects\\.cursor\\rules\\aw1000-network.mdc + aw1000-audit workspace constraints",
+        "kind": "imported_reference",
+        "confidence": "documented_constraint"
+      },
+      "recorded_utc": "2026-09-10T18:58:53.327150+00:00"
+    },
+    {
+      "claim_id": "claim.7f5c15b2e7ef",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "SECRET_REFERENCE",
+      "topic": "secret_ref:secret://router.aw1000.home.admin",
+      "text": "Secret reference recorded: secret://router.aw1000.home.admin (AW1000 admin)",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-pilot",
+        "observed_at": "2026-09-10T18:58:55.534204+00:00",
+        "kind": "imported_reference"
+      },
+      "recorded_utc": "2026-09-10T18:58:55.555346+00:00"
+    },
+    {
+      "claim_id": "claim.c3eb0e10d195",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "device_identity",
+      "text": "Device is Arcadyan AW1000; web UI brand is QWRT (OpenWrt-based).",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.541828+00:00",
+        "source": "Drive handoff 1lM9BTn1vecgVlWbtN1K14acgzS0nEjn_vZceaQSiLyQ �1",
+        "kind": "imported_reference",
+        "confidence": "drive_handoff_2026-08-30"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.542434+00:00"
+    },
+    {
+      "claim_id": "claim.2bd4952d98b2",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "firmware_os_release",
+      "text": "On 2026-08-30 live read: OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18; OPENWRT_BOARD=ipq807x/generic; OPENWRT_ARCH=aarch64_cortex-a53. Treat as historical unless revalidated.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.696774+00:00",
+        "source": "Drive handoff 1lM9BTn1... �1 os-release",
+        "kind": "imported_reference",
+        "confidence": "historical_live_read"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.703539+00:00"
+    },
+    {
+      "claim_id": "claim.2f697980c5d1",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "modem_quectel",
+      "text": "USB modem identified as Quectel ID 2c7c:0800; mobile Linux interface wwan0; control path /dev/cdc-wdm0; mmcli not present.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.859611+00:00",
+        "source": "Drive handoff 1lM9BTn1... �2",
+        "kind": "imported_reference",
+        "confidence": "drive_handoff_2026-08-30"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.866130+00:00"
+    },
+    {
+      "claim_id": "claim.4384b8bba2ff",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "ethernet_wan_device",
+      "text": "Historical diagnostic mapping: upstream Ethernet corresponded to Linux eth4; logical OpenWrt interface WAN_ETH was created as DHCP client on eth4. Names wan/wanb/WAN_ETH are not reliable role labels without live map.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.022611+00:00",
+        "source": "Drive handoff 1lM9BTn1... �3",
+        "kind": "imported_reference",
+        "confidence": "historical"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.029740+00:00"
+    },
+    {
+      "claim_id": "claim.f3e244b00b87",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "mgmt_ssh",
+      "text": "Agent SSH management path when PC is on onlime: root@192.168.3.1 using RSA key %USERPROFILE%\\.ssh\\id_rsa_aw1000 (dropbear requires ssh-rsa). Helper: C:\\projects\\aw1000-audit\\ssh-aw1000.cmd",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.181858+00:00",
+        "source": "C:\\projects\\aw1000-audit\\SSH-HANDOFF.md",
+        "kind": "imported_reference",
+        "confidence": "documented"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.188754+00:00"
+    },
+    {
+      "claim_id": "claim.d1c7486578fe",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "amneziawg_migration",
+      "text": "As of 2026-09-10 STATUS: Clash/OpenClash removed; AmneziaWG awg0 peer 10.8.1.4 endpoint 130.17.29.18:2066; NM 192.168.2.0/24 via tunnel; onlime 192.168.3.0/24 DIRECT untouched.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.343534+00:00",
+        "source": "C:\\projects\\aw1000-audit\\STATUS.md + MIGRATION-STATUS.md",
+        "kind": "imported_reference",
+        "confidence": "project_status_2026-09-10"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.351208+00:00"
+    },
+    {
+      "claim_id": "claim.05e1a5296c9f",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "ssh_reachability_20260911",
+      "text": "2026-09-11T10:00Z approx: SSH root@192.168.3.1 reachable via id_rsa_aw1000; hostname QWRT; OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18 confirmed live.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.722410+00:00"
+    },
+    {
+      "claim_id": "claim.e3b4d633a175",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "live_interfaces_20260911",
+      "text": "Live 2026-09-11: eth4 UP with IPv4 188.32.115.18/19; wwan0 UP; br-lan 192.168.2.1/24; br-iot 192.168.3.1/24; awg0 10.8.1.4/32 present.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.730550+00:00"
+    },
+    {
+      "claim_id": "claim.23cdcb47eb88",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "live_default_routes_20260911",
+      "text": "Live 2026-09-11 main table shows default via eth4 metric 10 and via wwan0 metric 20 (plus an additional default via wwan0 without metric in snapshot). Dual-default/mwan state needs ongoing care; do not treat as eternal.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.745805+00:00"
+    },
+    {
+      "claim_id": "claim.9ffe9145edc7",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "firmware_os_release_live",
+      "text": "Live 2026-09-11 revalidated firmware identity: OpenWrt 21.02-SNAPSHOT BUILD_ID=r47273-b4df38cf18 board=ipq807x/generic arch=aarch64_cortex-a53; ubus hostname=QWRT.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.761366+00:00"
+    },
+    {
+      "claim_id": "claim.e9d2c3b0a9d1",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "cloud_marker_20260911",
+      "text": "PROTEUS-AW1000-CLOUD-MARKER-20260911 non-sensitive reconciliation marker.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.923108+00:00",
+        "source": "aw1000_real_entity_episode",
+        "kind": "observation"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.923802+00:00"
+    },
+    {
+      "claim_id": "claim.f2e90089d2ca",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "local_only_delta_20260911",
+      "text": "PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:05:31.139021+00:00",
+        "source": "post_cloud_delta",
+        "kind": "observation"
+      },
+      "recorded_utc": "2026-09-11T10:05:31.140326+00:00"
+    }
+  ],
+  "conflicts": [
+    {
+      "claim_id": "claim.d7d01282f4ef",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "lan_mgmt_address_history",
+      "text": "During Aug 2026 handoff session Arcadyan LAN was often 192.168.2.1/24; later STATUS/SSH handoff use management on 192.168.3.1 (onlime). Do not collapse to one eternal LAN address without live measure.",
+      "status": "conflict",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.505326+00:00",
+        "source": "Drive handoff �4 vs SSH-HANDOFF.md",
+        "kind": "imported_reference",
+        "confidence": "conflict_retained"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.512645+00:00"
+    }
+  ],
+  "unknowns": [
+    {
+      "claim_id": "claim.a1a3b5d7da4a",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "failover_logical_upstream",
+      "text": "Drive handoff acceptance still required: automatic failover when Ethernet carrier stays UP but upstream Internet is dead (mwan3 health). Closure of that acceptance is UNKNOWN from available docs as of this episode.",
+      "status": "unknown",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.659784+00:00",
+        "source": "Drive handoff �7/�16",
+        "kind": "imported_reference",
+        "confidence": "open_acceptance"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.667397+00:00"
+    },
+    {
+      "claim_id": "claim.951e9924ae0e",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "mobile_led_green",
+      "text": "User observed front mobile LED stays green even when traffic is on cable; whether LED means standby registration vs active default path is unresolved without measurement.",
+      "status": "unknown",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.817300+00:00",
+        "source": "Drive handoff �12",
+        "kind": "imported_reference"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.825267+00:00"
+    }
+  ],
+  "unresolved_md": "# Unresolved � Arcadian AW1000 router\n\nUNKNOWN and CONFLICT survive here. Do not collapse by last-write-wins.\n\n- 2026-09-11T10:00:44.668252+00:00: UNKNOWN: Drive handoff acceptance still required: automatic failover when Ethernet carrier stays UP but upstream Internet is dead (mwan3 health). Closure of that acceptance is UNKNOWN from available docs as of this episode. (claim.a1a3b5d7da4a)\n\n- 2026-09-11T10:00:44.826216+00:00: UNKNOWN: User observed front mobile LED stays green even when traffic is on cable; whether LED means standby registration vs active default path is unresolved without measurement. (claim.951e9924ae0e)\n",
+  "entity_md": "# Arcadian AW1000 router\n\n- entity_id: `entity.router.aw1000.home`\n- aliases: AW1000, our router, Arcadian AW1000, Arcadyan AW1000, QWRT, home router, ��� ������\n\n## Current facts\n\n- PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.  \n  - claim_id: `claim.f2e90089d2ca`  \n  - provenance: observation / origin-aw1000-hardening / post_cloud_delta  \n\n- PROTEUS-AW1000-CLOUD-MARKER-20260911 non-sensitive reconciliation marker.  \n  - claim_id: `claim.e9d2c3b0a9d1`  \n  - provenance: observation / origin-aw1000-hardening / aw1000_real_entity_episode  \n\n- Live 2026-09-11 revalidated firmware identity: OpenWrt 21.02-SNAPSHOT BUILD_ID=r47273-b4df38cf18 board=ipq807x/generic arch=aarch64_cortex-a53; ubus hostname=QWRT.  \n  - claim_id: `claim.9ffe9145edc7`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- Live 2026-09-11 main table shows default via eth4 metric 10 and via wwan0 metric 20 (plus an additional default via wwan0 without metric in snapshot). Dual-default/mwan state needs ongoing care; do not treat as eternal.  \n  - claim_id: `claim.23cdcb47eb88`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- Live 2026-09-11: eth4 UP with IPv4 188.32.115.18/19; wwan0 UP; br-lan 192.168.2.1/24; br-iot 192.168.3.1/24; awg0 10.8.1.4/32 present.  \n  - claim_id: `claim.e3b4d633a175`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- 2026-09-11T10:00Z approx: SSH root@192.168.3.1 reachable via id_rsa_aw1000; hostname QWRT; OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18 confirmed live.  \n  - claim_id: `claim.05e1a5296c9f`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- As of 2026-09-10 STATUS: Clash/OpenClash removed; AmneziaWG awg0 peer 10.8.1.4 endpoint 130.17.29.18:2066; NM 192.168.2.0/24 via tunnel; onlime 192.168.3.0/24 DIRECT untouched.  \n  - claim_id: `claim.d1c7486578fe`  \n  - provenance: imported_reference / origin-aw1000-hardening / C:\\projects\\aw1000-audit\\STATUS.md + MIGRATION-STATUS.md  \n\n- Agent SSH management path when PC is on onlime: root@192.168.3.1 using RSA key %USERPROFILE%\\.ssh\\id_rsa_aw1000 (dropbear requires ssh-rsa). Helper: C:\\projects\\aw1000-audit\\ssh-aw1000.cmd  \n  - claim_id: `claim.f3e244b00b87`  \n  - provenance: imported_reference / origin-aw1000-hardening / C:\\projects\\aw1000-audit\\SSH-HANDOFF.md  \n\n- Historical diagnostic mapping: upstream Ethernet corresponded to Linux eth4; logical OpenWrt interface WAN_ETH was created as DHCP client on eth4. Names wan/wanb/WAN_ETH are not reliable role labels without live map.  \n  - claim_id: `claim.4384b8bba2ff`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1... �3  \n\n- USB modem identified as Quectel ID 2c7c:0800; mobile Linux interface wwan0; control path /dev/cdc-wdm0; mmcli not present.  \n  - claim_id: `claim.2f697980c5d1`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1... �2  \n\n- On 2026-08-30 live read: OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18; OPENWRT_BOARD=ipq807x/generic; OPENWRT_ARCH=aarch64_cortex-a53. Treat as historical unless revalidated.  \n  - claim_id: `claim.2bd4952d98b2`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1... �1 os-release  \n\n- Device is Arcadyan AW1000; web UI brand is QWRT (OpenWrt-based).  \n  - claim_id: `claim.c3eb0e10d195`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1vecgVlWbtN1K14acgzS0nEjn_vZceaQSiLyQ �1  \n\n- Secret reference recorded: secret://router.aw1000.home.admin (AW1000 admin)  \n  - claim_id: `claim.7f5c15b2e7ef`  \n  - provenance: imported_reference / origin-pilot  \n\n\n- Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).  \n  - claim_id: `claim.197c538b75e5`  \n  - provenance: imported_reference / origin-pilot / C:\\projects\\.cursor\\rules\\aw1000-network.mdc + aw1000-audit workspace constraints  \n\n## Notes\n\nRich prose may live here; structured claims live in `claims.jsonl`.\n",
+  "local_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home",
+  "note": "VIEW/index separate; this mount reads carrier source truth"
+}
+{
+  "schema": "proteus.entity.v0.1",
+  "entity_id": "entity.router.aw1000.home",
+  "identity": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "display_name": "Arcadian AW1000 router",
+    "aliases": [
+      "AW1000",
+      "our router",
+      "Arcadian AW1000",
+      "Arcadyan AW1000",
+      "QWRT",
+      "home router",
+      "��� ������"
+    ],
+    "relations": [],
+    "created_utc": "2026-09-10T18:58:50.018659+00:00",
+    "note": "identity card is address/catalog, not ontology of the living object",
+    "aliases_updated_utc": "2026-09-11T10:00:43.373747+00:00"
+  },
+  "carriers": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "carriers": [
+      {
+        "role": "HOME",
+        "kind": "local_fs",
+        "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home",
+        "authority": "local_semantic",
+        "currentness": "active"
+      },
+      {
+        "role": "BACKUP",
+        "kind": "google_drive",
+        "provider_id": "1IYbaIRyC3ScnppX1iNdlVgo688jwE48r",
+        "title": "proteus-entity-router-aw1000-home-carrier-v0.1.zip",
+        "authority": "cloud_carrier",
+        "currentness": "synced_snapshot",
+        "recorded_utc": "2026-09-11T10:05:31.182202+00:00"
+      }
+    ]
+  },
+  "projects": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "projects": [
+      {
+        "project_path": "C:\\projects\\aw1000-audit",
+        "relation": "primary_workspace",
+        "linked_utc": "2026-09-11T10:00:44.952246+00:00"
+      },
+      {
+        "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R1",
+        "relation": "fixture_recall",
+        "linked_utc": "2026-09-11T10:05:31.241210+00:00"
+      },
+      {
+        "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R2",
+        "relation": "fixture_recall",
+        "linked_utc": "2026-09-11T10:05:31.249058+00:00"
+      }
+    ]
+  },
+  "secret_refs": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "secret_refs": [
+      {
+        "secret_uri": "secret://router.aw1000.home.admin",
+        "label": "AW1000 root/admin password",
+        "auth_method": "external_askpass_pointer_unread",
+        "scope": "entity",
+        "recorded_utc": "2026-09-10T18:58:55.544228+00:00",
+        "plaintext": null,
+        "note": "askpass.cmd exists but was not read; plaintext never loaded into broker or entity memory this episode",
+        "updated_utc": "2026-09-11T10:00:45.100634+00:00",
+        "AW1000_REAL_SECRET": "UNAVAILABLE",
+        "external_pointer": "C:\\projects\\aw1000-audit\\askpass.cmd",
+        "external_pointer_read": false
+      },
+      {
+        "secret_uri": "secret://router.aw1000.home.ssh_key",
+        "label": "AW1000 agent SSH private key path",
+        "auth_method": "filesystem_key_path",
+        "scope": "entity",
+        "recorded_utc": "2026-09-11T10:00:45.108166+00:00",
+        "plaintext": null,
+        "note": "path/capability only; key material not copied into entity memory",
+        "key_path": "C:\\Users\\Timur Shchukin\\.ssh\\id_rsa_aw1000",
+        "key_exists": true
+      }
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "claim.197c538b75e5",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "lan_topology",
+      "text": "Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-pilot",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-10T18:58:53.325369+00:00",
+        "source": "C:\\projects\\.cursor\\rules\\aw1000-network.mdc + aw1000-audit workspace constraints",
+        "kind": "imported_reference",
+        "confidence": "documented_constraint"
+      },
+      "recorded_utc": "2026-09-10T18:58:53.327150+00:00"
+    },
+    {
+      "claim_id": "claim.7f5c15b2e7ef",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "SECRET_REFERENCE",
+      "topic": "secret_ref:secret://router.aw1000.home.admin",
+      "text": "Secret reference recorded: secret://router.aw1000.home.admin (AW1000 admin)",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-pilot",
+        "observed_at": "2026-09-10T18:58:55.534204+00:00",
+        "kind": "imported_reference"
+      },
+      "recorded_utc": "2026-09-10T18:58:55.555346+00:00"
+    },
+    {
+      "claim_id": "claim.c3eb0e10d195",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "device_identity",
+      "text": "Device is Arcadyan AW1000; web UI brand is QWRT (OpenWrt-based).",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.541828+00:00",
+        "source": "Drive handoff 1lM9BTn1vecgVlWbtN1K14acgzS0nEjn_vZceaQSiLyQ �1",
+        "kind": "imported_reference",
+        "confidence": "drive_handoff_2026-08-30"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.542434+00:00"
+    },
+    {
+      "claim_id": "claim.2bd4952d98b2",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "firmware_os_release",
+      "text": "On 2026-08-30 live read: OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18; OPENWRT_BOARD=ipq807x/generic; OPENWRT_ARCH=aarch64_cortex-a53. Treat as historical unless revalidated.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.696774+00:00",
+        "source": "Drive handoff 1lM9BTn1... �1 os-release",
+        "kind": "imported_reference",
+        "confidence": "historical_live_read"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.703539+00:00"
+    },
+    {
+      "claim_id": "claim.2f697980c5d1",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "modem_quectel",
+      "text": "USB modem identified as Quectel ID 2c7c:0800; mobile Linux interface wwan0; control path /dev/cdc-wdm0; mmcli not present.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.859611+00:00",
+        "source": "Drive handoff 1lM9BTn1... �2",
+        "kind": "imported_reference",
+        "confidence": "drive_handoff_2026-08-30"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.866130+00:00"
+    },
+    {
+      "claim_id": "claim.4384b8bba2ff",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "ethernet_wan_device",
+      "text": "Historical diagnostic mapping: upstream Ethernet corresponded to Linux eth4; logical OpenWrt interface WAN_ETH was created as DHCP client on eth4. Names wan/wanb/WAN_ETH are not reliable role labels without live map.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.022611+00:00",
+        "source": "Drive handoff 1lM9BTn1... �3",
+        "kind": "imported_reference",
+        "confidence": "historical"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.029740+00:00"
+    },
+    {
+      "claim_id": "claim.f3e244b00b87",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "mgmt_ssh",
+      "text": "Agent SSH management path when PC is on onlime: root@192.168.3.1 using RSA key %USERPROFILE%\\.ssh\\id_rsa_aw1000 (dropbear requires ssh-rsa). Helper: C:\\projects\\aw1000-audit\\ssh-aw1000.cmd",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.181858+00:00",
+        "source": "C:\\projects\\aw1000-audit\\SSH-HANDOFF.md",
+        "kind": "imported_reference",
+        "confidence": "documented"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.188754+00:00"
+    },
+    {
+      "claim_id": "claim.d1c7486578fe",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "amneziawg_migration",
+      "text": "As of 2026-09-10 STATUS: Clash/OpenClash removed; AmneziaWG awg0 peer 10.8.1.4 endpoint 130.17.29.18:2066; NM 192.168.2.0/24 via tunnel; onlime 192.168.3.0/24 DIRECT untouched.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.343534+00:00",
+        "source": "C:\\projects\\aw1000-audit\\STATUS.md + MIGRATION-STATUS.md",
+        "kind": "imported_reference",
+        "confidence": "project_status_2026-09-10"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.351208+00:00"
+    },
+    {
+      "claim_id": "claim.d7d01282f4ef",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "lan_mgmt_address_history",
+      "text": "During Aug 2026 handoff session Arcadyan LAN was often 192.168.2.1/24; later STATUS/SSH handoff use management on 192.168.3.1 (onlime). Do not collapse to one eternal LAN address without live measure.",
+      "status": "conflict",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.505326+00:00",
+        "source": "Drive handoff �4 vs SSH-HANDOFF.md",
+        "kind": "imported_reference",
+        "confidence": "conflict_retained"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.512645+00:00"
+    },
+    {
+      "claim_id": "claim.a1a3b5d7da4a",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "failover_logical_upstream",
+      "text": "Drive handoff acceptance still required: automatic failover when Ethernet carrier stays UP but upstream Internet is dead (mwan3 health). Closure of that acceptance is UNKNOWN from available docs as of this episode.",
+      "status": "unknown",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.659784+00:00",
+        "source": "Drive handoff �7/�16",
+        "kind": "imported_reference",
+        "confidence": "open_acceptance"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.667397+00:00"
+    },
+    {
+      "claim_id": "claim.951e9924ae0e",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "mobile_led_green",
+      "text": "User observed front mobile LED stays green even when traffic is on cable; whether LED means standby registration vs active default path is unresolved without measurement.",
+      "status": "unknown",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.817300+00:00",
+        "source": "Drive handoff �12",
+        "kind": "imported_reference"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.825267+00:00"
+    },
+    {
+      "claim_id": "claim.05e1a5296c9f",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "ssh_reachability_20260911",
+      "text": "2026-09-11T10:00Z approx: SSH root@192.168.3.1 reachable via id_rsa_aw1000; hostname QWRT; OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18 confirmed live.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.722410+00:00"
+    },
+    {
+      "claim_id": "claim.e3b4d633a175",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "live_interfaces_20260911",
+      "text": "Live 2026-09-11: eth4 UP with IPv4 188.32.115.18/19; wwan0 UP; br-lan 192.168.2.1/24; br-iot 192.168.3.1/24; awg0 10.8.1.4/32 present.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.730550+00:00"
+    },
+    {
+      "claim_id": "claim.23cdcb47eb88",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "live_default_routes_20260911",
+      "text": "Live 2026-09-11 main table shows default via eth4 metric 10 and via wwan0 metric 20 (plus an additional default via wwan0 without metric in snapshot). Dual-default/mwan state needs ongoing care; do not treat as eternal.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.745805+00:00"
+    },
+    {
+      "claim_id": "claim.9ffe9145edc7",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "firmware_os_release_live",
+      "text": "Live 2026-09-11 revalidated firmware identity: OpenWrt 21.02-SNAPSHOT BUILD_ID=r47273-b4df38cf18 board=ipq807x/generic arch=aarch64_cortex-a53; ubus hostname=QWRT.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.761366+00:00"
+    },
+    {
+      "claim_id": "claim.e9d2c3b0a9d1",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "cloud_marker_20260911",
+      "text": "PROTEUS-AW1000-CLOUD-MARKER-20260911 non-sensitive reconciliation marker.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.923108+00:00",
+        "source": "aw1000_real_entity_episode",
+        "kind": "observation"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.923802+00:00"
+    },
+    {
+      "claim_id": "claim.f2e90089d2ca",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "local_only_delta_20260911",
+      "text": "PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:05:31.139021+00:00",
+        "source": "post_cloud_delta",
+        "kind": "observation"
+      },
+      "recorded_utc": "2026-09-11T10:05:31.140326+00:00"
+    }
+  ],
+  "current_claims": [
+    {
+      "claim_id": "claim.197c538b75e5",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "lan_topology",
+      "text": "Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-pilot",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-10T18:58:53.325369+00:00",
+        "source": "C:\\projects\\.cursor\\rules\\aw1000-network.mdc + aw1000-audit workspace constraints",
+        "kind": "imported_reference",
+        "confidence": "documented_constraint"
+      },
+      "recorded_utc": "2026-09-10T18:58:53.327150+00:00"
+    },
+    {
+      "claim_id": "claim.7f5c15b2e7ef",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "SECRET_REFERENCE",
+      "topic": "secret_ref:secret://router.aw1000.home.admin",
+      "text": "Secret reference recorded: secret://router.aw1000.home.admin (AW1000 admin)",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-pilot",
+        "observed_at": "2026-09-10T18:58:55.534204+00:00",
+        "kind": "imported_reference"
+      },
+      "recorded_utc": "2026-09-10T18:58:55.555346+00:00"
+    },
+    {
+      "claim_id": "claim.c3eb0e10d195",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "device_identity",
+      "text": "Device is Arcadyan AW1000; web UI brand is QWRT (OpenWrt-based).",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.541828+00:00",
+        "source": "Drive handoff 1lM9BTn1vecgVlWbtN1K14acgzS0nEjn_vZceaQSiLyQ �1",
+        "kind": "imported_reference",
+        "confidence": "drive_handoff_2026-08-30"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.542434+00:00"
+    },
+    {
+      "claim_id": "claim.2bd4952d98b2",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "firmware_os_release",
+      "text": "On 2026-08-30 live read: OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18; OPENWRT_BOARD=ipq807x/generic; OPENWRT_ARCH=aarch64_cortex-a53. Treat as historical unless revalidated.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.696774+00:00",
+        "source": "Drive handoff 1lM9BTn1... �1 os-release",
+        "kind": "imported_reference",
+        "confidence": "historical_live_read"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.703539+00:00"
+    },
+    {
+      "claim_id": "claim.2f697980c5d1",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "modem_quectel",
+      "text": "USB modem identified as Quectel ID 2c7c:0800; mobile Linux interface wwan0; control path /dev/cdc-wdm0; mmcli not present.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:43.859611+00:00",
+        "source": "Drive handoff 1lM9BTn1... �2",
+        "kind": "imported_reference",
+        "confidence": "drive_handoff_2026-08-30"
+      },
+      "recorded_utc": "2026-09-11T10:00:43.866130+00:00"
+    },
+    {
+      "claim_id": "claim.4384b8bba2ff",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "ethernet_wan_device",
+      "text": "Historical diagnostic mapping: upstream Ethernet corresponded to Linux eth4; logical OpenWrt interface WAN_ETH was created as DHCP client on eth4. Names wan/wanb/WAN_ETH are not reliable role labels without live map.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.022611+00:00",
+        "source": "Drive handoff 1lM9BTn1... �3",
+        "kind": "imported_reference",
+        "confidence": "historical"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.029740+00:00"
+    },
+    {
+      "claim_id": "claim.f3e244b00b87",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "mgmt_ssh",
+      "text": "Agent SSH management path when PC is on onlime: root@192.168.3.1 using RSA key %USERPROFILE%\\.ssh\\id_rsa_aw1000 (dropbear requires ssh-rsa). Helper: C:\\projects\\aw1000-audit\\ssh-aw1000.cmd",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.181858+00:00",
+        "source": "C:\\projects\\aw1000-audit\\SSH-HANDOFF.md",
+        "kind": "imported_reference",
+        "confidence": "documented"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.188754+00:00"
+    },
+    {
+      "claim_id": "claim.d1c7486578fe",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "amneziawg_migration",
+      "text": "As of 2026-09-10 STATUS: Clash/OpenClash removed; AmneziaWG awg0 peer 10.8.1.4 endpoint 130.17.29.18:2066; NM 192.168.2.0/24 via tunnel; onlime 192.168.3.0/24 DIRECT untouched.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.343534+00:00",
+        "source": "C:\\projects\\aw1000-audit\\STATUS.md + MIGRATION-STATUS.md",
+        "kind": "imported_reference",
+        "confidence": "project_status_2026-09-10"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.351208+00:00"
+    },
+    {
+      "claim_id": "claim.05e1a5296c9f",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "ssh_reachability_20260911",
+      "text": "2026-09-11T10:00Z approx: SSH root@192.168.3.1 reachable via id_rsa_aw1000; hostname QWRT; OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18 confirmed live.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.722410+00:00"
+    },
+    {
+      "claim_id": "claim.e3b4d633a175",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "live_interfaces_20260911",
+      "text": "Live 2026-09-11: eth4 UP with IPv4 188.32.115.18/19; wwan0 UP; br-lan 192.168.2.1/24; br-iot 192.168.3.1/24; awg0 10.8.1.4/32 present.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.730550+00:00"
+    },
+    {
+      "claim_id": "claim.23cdcb47eb88",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "live_default_routes_20260911",
+      "text": "Live 2026-09-11 main table shows default via eth4 metric 10 and via wwan0 metric 20 (plus an additional default via wwan0 without metric in snapshot). Dual-default/mwan state needs ongoing care; do not treat as eternal.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.745805+00:00"
+    },
+    {
+      "claim_id": "claim.9ffe9145edc7",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "firmware_os_release_live",
+      "text": "Live 2026-09-11 revalidated firmware identity: OpenWrt 21.02-SNAPSHOT BUILD_ID=r47273-b4df38cf18 board=ipq807x/generic arch=aarch64_cortex-a53; ubus hostname=QWRT.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.721043+00:00",
+        "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+        "kind": "observation",
+        "confidence": "live_ssh_2026-09-11"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.761366+00:00"
+    },
+    {
+      "claim_id": "claim.e9d2c3b0a9d1",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "cloud_marker_20260911",
+      "text": "PROTEUS-AW1000-CLOUD-MARKER-20260911 non-sensitive reconciliation marker.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:01:26.923108+00:00",
+        "source": "aw1000_real_entity_episode",
+        "kind": "observation"
+      },
+      "recorded_utc": "2026-09-11T10:01:26.923802+00:00"
+    },
+    {
+      "claim_id": "claim.f2e90089d2ca",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "EPISODE",
+      "topic": "local_only_delta_20260911",
+      "text": "PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.",
+      "status": "current",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:05:31.139021+00:00",
+        "source": "post_cloud_delta",
+        "kind": "observation"
+      },
+      "recorded_utc": "2026-09-11T10:05:31.140326+00:00"
+    }
+  ],
+  "conflicts": [
+    {
+      "claim_id": "claim.d7d01282f4ef",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "lan_mgmt_address_history",
+      "text": "During Aug 2026 handoff session Arcadyan LAN was often 192.168.2.1/24; later STATUS/SSH handoff use management on 192.168.3.1 (onlime). Do not collapse to one eternal LAN address without live measure.",
+      "status": "conflict",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.505326+00:00",
+        "source": "Drive handoff �4 vs SSH-HANDOFF.md",
+        "kind": "imported_reference",
+        "confidence": "conflict_retained"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.512645+00:00"
+    }
+  ],
+  "unknowns": [
+    {
+      "claim_id": "claim.a1a3b5d7da4a",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "failover_logical_upstream",
+      "text": "Drive handoff acceptance still required: automatic failover when Ethernet carrier stays UP but upstream Internet is dead (mwan3 health). Closure of that acceptance is UNKNOWN from available docs as of this episode.",
+      "status": "unknown",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.659784+00:00",
+        "source": "Drive handoff �7/�16",
+        "kind": "imported_reference",
+        "confidence": "open_acceptance"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.667397+00:00"
+    },
+    {
+      "claim_id": "claim.951e9924ae0e",
+      "entity_id": "entity.router.aw1000.home",
+      "scope": "ENTITY",
+      "topic": "mobile_led_green",
+      "text": "User observed front mobile LED stays green even when traffic is on cable; whether LED means standby registration vs active default path is unresolved without measurement.",
+      "status": "unknown",
+      "conflicts_with": [],
+      "provenance": {
+        "observer": "origin-aw1000-hardening",
+        "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+        "observed_at": "2026-09-11T10:00:44.817300+00:00",
+        "source": "Drive handoff �12",
+        "kind": "imported_reference"
+      },
+      "recorded_utc": "2026-09-11T10:00:44.825267+00:00"
+    }
+  ],
+  "unresolved_md": "# Unresolved � Arcadian AW1000 router\n\nUNKNOWN and CONFLICT survive here. Do not collapse by last-write-wins.\n\n- 2026-09-11T10:00:44.668252+00:00: UNKNOWN: Drive handoff acceptance still required: automatic failover when Ethernet carrier stays UP but upstream Internet is dead (mwan3 health). Closure of that acceptance is UNKNOWN from available docs as of this episode. (claim.a1a3b5d7da4a)\n\n- 2026-09-11T10:00:44.826216+00:00: UNKNOWN: User observed front mobile LED stays green even when traffic is on cable; whether LED means standby registration vs active default path is unresolved without measurement. (claim.951e9924ae0e)\n",
+  "entity_md": "# Arcadian AW1000 router\n\n- entity_id: `entity.router.aw1000.home`\n- aliases: AW1000, our router, Arcadian AW1000, Arcadyan AW1000, QWRT, home router, ��� ������\n\n## Current facts\n\n- PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.  \n  - claim_id: `claim.f2e90089d2ca`  \n  - provenance: observation / origin-aw1000-hardening / post_cloud_delta  \n\n- PROTEUS-AW1000-CLOUD-MARKER-20260911 non-sensitive reconciliation marker.  \n  - claim_id: `claim.e9d2c3b0a9d1`  \n  - provenance: observation / origin-aw1000-hardening / aw1000_real_entity_episode  \n\n- Live 2026-09-11 revalidated firmware identity: OpenWrt 21.02-SNAPSHOT BUILD_ID=r47273-b4df38cf18 board=ipq807x/generic arch=aarch64_cortex-a53; ubus hostname=QWRT.  \n  - claim_id: `claim.9ffe9145edc7`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- Live 2026-09-11 main table shows default via eth4 metric 10 and via wwan0 metric 20 (plus an additional default via wwan0 without metric in snapshot). Dual-default/mwan state needs ongoing care; do not treat as eternal.  \n  - claim_id: `claim.23cdcb47eb88`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- Live 2026-09-11: eth4 UP with IPv4 188.32.115.18/19; wwan0 UP; br-lan 192.168.2.1/24; br-iot 192.168.3.1/24; awg0 10.8.1.4/32 present.  \n  - claim_id: `claim.e3b4d633a175`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- 2026-09-11T10:00Z approx: SSH root@192.168.3.1 reachable via id_rsa_aw1000; hostname QWRT; OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18 confirmed live.  \n  - claim_id: `claim.05e1a5296c9f`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- As of 2026-09-10 STATUS: Clash/OpenClash removed; AmneziaWG awg0 peer 10.8.1.4 endpoint 130.17.29.18:2066; NM 192.168.2.0/24 via tunnel; onlime 192.168.3.0/24 DIRECT untouched.  \n  - claim_id: `claim.d1c7486578fe`  \n  - provenance: imported_reference / origin-aw1000-hardening / C:\\projects\\aw1000-audit\\STATUS.md + MIGRATION-STATUS.md  \n\n- Agent SSH management path when PC is on onlime: root@192.168.3.1 using RSA key %USERPROFILE%\\.ssh\\id_rsa_aw1000 (dropbear requires ssh-rsa). Helper: C:\\projects\\aw1000-audit\\ssh-aw1000.cmd  \n  - claim_id: `claim.f3e244b00b87`  \n  - provenance: imported_reference / origin-aw1000-hardening / C:\\projects\\aw1000-audit\\SSH-HANDOFF.md  \n\n- Historical diagnostic mapping: upstream Ethernet corresponded to Linux eth4; logical OpenWrt interface WAN_ETH was created as DHCP client on eth4. Names wan/wanb/WAN_ETH are not reliable role labels without live map.  \n  - claim_id: `claim.4384b8bba2ff`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1... �3  \n\n- USB modem identified as Quectel ID 2c7c:0800; mobile Linux interface wwan0; control path /dev/cdc-wdm0; mmcli not present.  \n  - claim_id: `claim.2f697980c5d1`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1... �2  \n\n- On 2026-08-30 live read: OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18; OPENWRT_BOARD=ipq807x/generic; OPENWRT_ARCH=aarch64_cortex-a53. Treat as historical unless revalidated.  \n  - claim_id: `claim.2bd4952d98b2`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1... �1 os-release  \n\n- Device is Arcadyan AW1000; web UI brand is QWRT (OpenWrt-based).  \n  - claim_id: `claim.c3eb0e10d195`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1vecgVlWbtN1K14acgzS0nEjn_vZceaQSiLyQ �1  \n\n- Secret reference recorded: secret://router.aw1000.home.admin (AW1000 admin)  \n  - claim_id: `claim.7f5c15b2e7ef`  \n  - provenance: imported_reference / origin-pilot  \n\n\n- Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).  \n  - claim_id: `claim.197c538b75e5`  \n  - provenance: imported_reference / origin-pilot / C:\\projects\\.cursor\\rules\\aw1000-network.mdc + aw1000-audit workspace constraints  \n\n## Notes\n\nRich prose may live here; structured claims live in `claims.jsonl`.\n",
+  "local_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home",
+  "note": "VIEW/index separate; this mount reads carrier source truth"
+}
+{
+  "schema": "proteus.archivarius_bridge.v0.1",
+  "query": "router",
+  "mount": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "identity": {
+      "schema": "proteus.entity.v0.1",
+      "entity_id": "entity.router.aw1000.home",
+      "display_name": "Arcadian AW1000 router",
+      "aliases": [
+        "AW1000",
+        "our router",
+        "Arcadian AW1000",
+        "Arcadyan AW1000",
+        "QWRT",
+        "home router",
+        "��� ������"
+      ],
+      "relations": [],
+      "created_utc": "2026-09-10T18:58:50.018659+00:00",
+      "note": "identity card is address/catalog, not ontology of the living object",
+      "aliases_updated_utc": "2026-09-11T10:00:43.373747+00:00"
+    },
+    "carriers": {
+      "schema": "proteus.entity.v0.1",
+      "entity_id": "entity.router.aw1000.home",
+      "carriers": [
+        {
+          "role": "HOME",
+          "kind": "local_fs",
+          "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home",
+          "authority": "local_semantic",
+          "currentness": "active"
+        },
+        {
+          "role": "BACKUP",
+          "kind": "google_drive",
+          "provider_id": "1IYbaIRyC3ScnppX1iNdlVgo688jwE48r",
+          "title": "proteus-entity-router-aw1000-home-carrier-v0.1.zip",
+          "authority": "cloud_carrier",
+          "currentness": "synced_snapshot",
+          "recorded_utc": "2026-09-11T10:05:31.182202+00:00"
+        }
+      ]
+    },
+    "projects": {
+      "schema": "proteus.entity.v0.1",
+      "entity_id": "entity.router.aw1000.home",
+      "projects": [
+        {
+          "project_path": "C:\\projects\\aw1000-audit",
+          "relation": "primary_workspace",
+          "linked_utc": "2026-09-11T10:00:44.952246+00:00"
+        },
+        {
+          "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R1",
+          "relation": "fixture_recall",
+          "linked_utc": "2026-09-11T10:05:31.241210+00:00"
+        },
+        {
+          "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R2",
+          "relation": "fixture_recall",
+          "linked_utc": "2026-09-11T10:05:31.249058+00:00"
+        }
+      ]
+    },
+    "secret_refs": {
+      "schema": "proteus.entity.v0.1",
+      "entity_id": "entity.router.aw1000.home",
+      "secret_refs": [
+        {
+          "secret_uri": "secret://router.aw1000.home.admin",
+          "label": "AW1000 root/admin password",
+          "auth_method": "external_askpass_pointer_unread",
+          "scope": "entity",
+          "recorded_utc": "2026-09-10T18:58:55.544228+00:00",
+          "plaintext": null,
+          "note": "askpass.cmd exists but was not read; plaintext never loaded into broker or entity memory this episode",
+          "updated_utc": "2026-09-11T10:00:45.100634+00:00",
+          "AW1000_REAL_SECRET": "UNAVAILABLE",
+          "external_pointer": "C:\\projects\\aw1000-audit\\askpass.cmd",
+          "external_pointer_read": false
+        },
+        {
+          "secret_uri": "secret://router.aw1000.home.ssh_key",
+          "label": "AW1000 agent SSH private key path",
+          "auth_method": "filesystem_key_path",
+          "scope": "entity",
+          "recorded_utc": "2026-09-11T10:00:45.108166+00:00",
+          "plaintext": null,
+          "note": "path/capability only; key material not copied into entity memory",
+          "key_path": "C:\\Users\\Timur Shchukin\\.ssh\\id_rsa_aw1000",
+          "key_exists": true
+        }
+      ]
+    },
+    "claims": [
+      {
+        "claim_id": "claim.197c538b75e5",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "lan_topology",
+        "text": "Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-pilot",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-10T18:58:53.325369+00:00",
+          "source": "C:\\projects\\.cursor\\rules\\aw1000-network.mdc + aw1000-audit workspace constraints",
+          "kind": "imported_reference",
+          "confidence": "documented_constraint"
+        },
+        "recorded_utc": "2026-09-10T18:58:53.327150+00:00"
+      },
+      {
+        "claim_id": "claim.7f5c15b2e7ef",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "SECRET_REFERENCE",
+        "topic": "secret_ref:secret://router.aw1000.home.admin",
+        "text": "Secret reference recorded: secret://router.aw1000.home.admin (AW1000 admin)",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-pilot",
+          "observed_at": "2026-09-10T18:58:55.534204+00:00",
+          "kind": "imported_reference"
+        },
+        "recorded_utc": "2026-09-10T18:58:55.555346+00:00"
+      },
+      {
+        "claim_id": "claim.c3eb0e10d195",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "device_identity",
+        "text": "Device is Arcadyan AW1000; web UI brand is QWRT (OpenWrt-based).",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:43.541828+00:00",
+          "source": "Drive handoff 1lM9BTn1vecgVlWbtN1K14acgzS0nEjn_vZceaQSiLyQ �1",
+          "kind": "imported_reference",
+          "confidence": "drive_handoff_2026-08-30"
+        },
+        "recorded_utc": "2026-09-11T10:00:43.542434+00:00"
+      },
+      {
+        "claim_id": "claim.2bd4952d98b2",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "firmware_os_release",
+        "text": "On 2026-08-30 live read: OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18; OPENWRT_BOARD=ipq807x/generic; OPENWRT_ARCH=aarch64_cortex-a53. Treat as historical unless revalidated.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:43.696774+00:00",
+          "source": "Drive handoff 1lM9BTn1... �1 os-release",
+          "kind": "imported_reference",
+          "confidence": "historical_live_read"
+        },
+        "recorded_utc": "2026-09-11T10:00:43.703539+00:00"
+      },
+      {
+        "claim_id": "claim.2f697980c5d1",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "modem_quectel",
+        "text": "USB modem identified as Quectel ID 2c7c:0800; mobile Linux interface wwan0; control path /dev/cdc-wdm0; mmcli not present.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:43.859611+00:00",
+          "source": "Drive handoff 1lM9BTn1... �2",
+          "kind": "imported_reference",
+          "confidence": "drive_handoff_2026-08-30"
+        },
+        "recorded_utc": "2026-09-11T10:00:43.866130+00:00"
+      },
+      {
+        "claim_id": "claim.4384b8bba2ff",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "ethernet_wan_device",
+        "text": "Historical diagnostic mapping: upstream Ethernet corresponded to Linux eth4; logical OpenWrt interface WAN_ETH was created as DHCP client on eth4. Names wan/wanb/WAN_ETH are not reliable role labels without live map.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.022611+00:00",
+          "source": "Drive handoff 1lM9BTn1... �3",
+          "kind": "imported_reference",
+          "confidence": "historical"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.029740+00:00"
+      },
+      {
+        "claim_id": "claim.f3e244b00b87",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "mgmt_ssh",
+        "text": "Agent SSH management path when PC is on onlime: root@192.168.3.1 using RSA key %USERPROFILE%\\.ssh\\id_rsa_aw1000 (dropbear requires ssh-rsa). Helper: C:\\projects\\aw1000-audit\\ssh-aw1000.cmd",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.181858+00:00",
+          "source": "C:\\projects\\aw1000-audit\\SSH-HANDOFF.md",
+          "kind": "imported_reference",
+          "confidence": "documented"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.188754+00:00"
+      },
+      {
+        "claim_id": "claim.d1c7486578fe",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "amneziawg_migration",
+        "text": "As of 2026-09-10 STATUS: Clash/OpenClash removed; AmneziaWG awg0 peer 10.8.1.4 endpoint 130.17.29.18:2066; NM 192.168.2.0/24 via tunnel; onlime 192.168.3.0/24 DIRECT untouched.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.343534+00:00",
+          "source": "C:\\projects\\aw1000-audit\\STATUS.md + MIGRATION-STATUS.md",
+          "kind": "imported_reference",
+          "confidence": "project_status_2026-09-10"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.351208+00:00"
+      },
+      {
+        "claim_id": "claim.d7d01282f4ef",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "lan_mgmt_address_history",
+        "text": "During Aug 2026 handoff session Arcadyan LAN was often 192.168.2.1/24; later STATUS/SSH handoff use management on 192.168.3.1 (onlime). Do not collapse to one eternal LAN address without live measure.",
+        "status": "conflict",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.505326+00:00",
+          "source": "Drive handoff �4 vs SSH-HANDOFF.md",
+          "kind": "imported_reference",
+          "confidence": "conflict_retained"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.512645+00:00"
+      },
+      {
+        "claim_id": "claim.a1a3b5d7da4a",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "failover_logical_upstream",
+        "text": "Drive handoff acceptance still required: automatic failover when Ethernet carrier stays UP but upstream Internet is dead (mwan3 health). Closure of that acceptance is UNKNOWN from available docs as of this episode.",
+        "status": "unknown",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.659784+00:00",
+          "source": "Drive handoff �7/�16",
+          "kind": "imported_reference",
+          "confidence": "open_acceptance"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.667397+00:00"
+      },
+      {
+        "claim_id": "claim.951e9924ae0e",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "mobile_led_green",
+        "text": "User observed front mobile LED stays green even when traffic is on cable; whether LED means standby registration vs active default path is unresolved without measurement.",
+        "status": "unknown",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.817300+00:00",
+          "source": "Drive handoff �12",
+          "kind": "imported_reference"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.825267+00:00"
+      },
+      {
+        "claim_id": "claim.05e1a5296c9f",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "EPISODE",
+        "topic": "ssh_reachability_20260911",
+        "text": "2026-09-11T10:00Z approx: SSH root@192.168.3.1 reachable via id_rsa_aw1000; hostname QWRT; OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18 confirmed live.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.721043+00:00",
+          "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+          "kind": "observation",
+          "confidence": "live_ssh_2026-09-11"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.722410+00:00"
+      },
+      {
+        "claim_id": "claim.e3b4d633a175",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "live_interfaces_20260911",
+        "text": "Live 2026-09-11: eth4 UP with IPv4 188.32.115.18/19; wwan0 UP; br-lan 192.168.2.1/24; br-iot 192.168.3.1/24; awg0 10.8.1.4/32 present.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.721043+00:00",
+          "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+          "kind": "observation",
+          "confidence": "live_ssh_2026-09-11"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.730550+00:00"
+      },
+      {
+        "claim_id": "claim.23cdcb47eb88",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "live_default_routes_20260911",
+        "text": "Live 2026-09-11 main table shows default via eth4 metric 10 and via wwan0 metric 20 (plus an additional default via wwan0 without metric in snapshot). Dual-default/mwan state needs ongoing care; do not treat as eternal.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.721043+00:00",
+          "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+          "kind": "observation",
+          "confidence": "live_ssh_2026-09-11"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.745805+00:00"
+      },
+      {
+        "claim_id": "claim.9ffe9145edc7",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "firmware_os_release_live",
+        "text": "Live 2026-09-11 revalidated firmware identity: OpenWrt 21.02-SNAPSHOT BUILD_ID=r47273-b4df38cf18 board=ipq807x/generic arch=aarch64_cortex-a53; ubus hostname=QWRT.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.721043+00:00",
+          "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+          "kind": "observation",
+          "confidence": "live_ssh_2026-09-11"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.761366+00:00"
+      },
+      {
+        "claim_id": "claim.e9d2c3b0a9d1",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "EPISODE",
+        "topic": "cloud_marker_20260911",
+        "text": "PROTEUS-AW1000-CLOUD-MARKER-20260911 non-sensitive reconciliation marker.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.923108+00:00",
+          "source": "aw1000_real_entity_episode",
+          "kind": "observation"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.923802+00:00"
+      },
+      {
+        "claim_id": "claim.f2e90089d2ca",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "EPISODE",
+        "topic": "local_only_delta_20260911",
+        "text": "PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:05:31.139021+00:00",
+          "source": "post_cloud_delta",
+          "kind": "observation"
+        },
+        "recorded_utc": "2026-09-11T10:05:31.140326+00:00"
+      }
+    ],
+    "current_claims": [
+      {
+        "claim_id": "claim.197c538b75e5",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "lan_topology",
+        "text": "Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-pilot",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-10T18:58:53.325369+00:00",
+          "source": "C:\\projects\\.cursor\\rules\\aw1000-network.mdc + aw1000-audit workspace constraints",
+          "kind": "imported_reference",
+          "confidence": "documented_constraint"
+        },
+        "recorded_utc": "2026-09-10T18:58:53.327150+00:00"
+      },
+      {
+        "claim_id": "claim.7f5c15b2e7ef",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "SECRET_REFERENCE",
+        "topic": "secret_ref:secret://router.aw1000.home.admin",
+        "text": "Secret reference recorded: secret://router.aw1000.home.admin (AW1000 admin)",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-pilot",
+          "observed_at": "2026-09-10T18:58:55.534204+00:00",
+          "kind": "imported_reference"
+        },
+        "recorded_utc": "2026-09-10T18:58:55.555346+00:00"
+      },
+      {
+        "claim_id": "claim.c3eb0e10d195",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "device_identity",
+        "text": "Device is Arcadyan AW1000; web UI brand is QWRT (OpenWrt-based).",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:43.541828+00:00",
+          "source": "Drive handoff 1lM9BTn1vecgVlWbtN1K14acgzS0nEjn_vZceaQSiLyQ �1",
+          "kind": "imported_reference",
+          "confidence": "drive_handoff_2026-08-30"
+        },
+        "recorded_utc": "2026-09-11T10:00:43.542434+00:00"
+      },
+      {
+        "claim_id": "claim.2bd4952d98b2",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "firmware_os_release",
+        "text": "On 2026-08-30 live read: OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18; OPENWRT_BOARD=ipq807x/generic; OPENWRT_ARCH=aarch64_cortex-a53. Treat as historical unless revalidated.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:43.696774+00:00",
+          "source": "Drive handoff 1lM9BTn1... �1 os-release",
+          "kind": "imported_reference",
+          "confidence": "historical_live_read"
+        },
+        "recorded_utc": "2026-09-11T10:00:43.703539+00:00"
+      },
+      {
+        "claim_id": "claim.2f697980c5d1",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "modem_quectel",
+        "text": "USB modem identified as Quectel ID 2c7c:0800; mobile Linux interface wwan0; control path /dev/cdc-wdm0; mmcli not present.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:43.859611+00:00",
+          "source": "Drive handoff 1lM9BTn1... �2",
+          "kind": "imported_reference",
+          "confidence": "drive_handoff_2026-08-30"
+        },
+        "recorded_utc": "2026-09-11T10:00:43.866130+00:00"
+      },
+      {
+        "claim_id": "claim.4384b8bba2ff",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "ethernet_wan_device",
+        "text": "Historical diagnostic mapping: upstream Ethernet corresponded to Linux eth4; logical OpenWrt interface WAN_ETH was created as DHCP client on eth4. Names wan/wanb/WAN_ETH are not reliable role labels without live map.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.022611+00:00",
+          "source": "Drive handoff 1lM9BTn1... �3",
+          "kind": "imported_reference",
+          "confidence": "historical"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.029740+00:00"
+      },
+      {
+        "claim_id": "claim.f3e244b00b87",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "mgmt_ssh",
+        "text": "Agent SSH management path when PC is on onlime: root@192.168.3.1 using RSA key %USERPROFILE%\\.ssh\\id_rsa_aw1000 (dropbear requires ssh-rsa). Helper: C:\\projects\\aw1000-audit\\ssh-aw1000.cmd",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.181858+00:00",
+          "source": "C:\\projects\\aw1000-audit\\SSH-HANDOFF.md",
+          "kind": "imported_reference",
+          "confidence": "documented"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.188754+00:00"
+      },
+      {
+        "claim_id": "claim.d1c7486578fe",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "amneziawg_migration",
+        "text": "As of 2026-09-10 STATUS: Clash/OpenClash removed; AmneziaWG awg0 peer 10.8.1.4 endpoint 130.17.29.18:2066; NM 192.168.2.0/24 via tunnel; onlime 192.168.3.0/24 DIRECT untouched.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.343534+00:00",
+          "source": "C:\\projects\\aw1000-audit\\STATUS.md + MIGRATION-STATUS.md",
+          "kind": "imported_reference",
+          "confidence": "project_status_2026-09-10"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.351208+00:00"
+      },
+      {
+        "claim_id": "claim.05e1a5296c9f",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "EPISODE",
+        "topic": "ssh_reachability_20260911",
+        "text": "2026-09-11T10:00Z approx: SSH root@192.168.3.1 reachable via id_rsa_aw1000; hostname QWRT; OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18 confirmed live.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.721043+00:00",
+          "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+          "kind": "observation",
+          "confidence": "live_ssh_2026-09-11"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.722410+00:00"
+      },
+      {
+        "claim_id": "claim.e3b4d633a175",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "live_interfaces_20260911",
+        "text": "Live 2026-09-11: eth4 UP with IPv4 188.32.115.18/19; wwan0 UP; br-lan 192.168.2.1/24; br-iot 192.168.3.1/24; awg0 10.8.1.4/32 present.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.721043+00:00",
+          "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+          "kind": "observation",
+          "confidence": "live_ssh_2026-09-11"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.730550+00:00"
+      },
+      {
+        "claim_id": "claim.23cdcb47eb88",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "live_default_routes_20260911",
+        "text": "Live 2026-09-11 main table shows default via eth4 metric 10 and via wwan0 metric 20 (plus an additional default via wwan0 without metric in snapshot). Dual-default/mwan state needs ongoing care; do not treat as eternal.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.721043+00:00",
+          "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+          "kind": "observation",
+          "confidence": "live_ssh_2026-09-11"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.745805+00:00"
+      },
+      {
+        "claim_id": "claim.9ffe9145edc7",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "firmware_os_release_live",
+        "text": "Live 2026-09-11 revalidated firmware identity: OpenWrt 21.02-SNAPSHOT BUILD_ID=r47273-b4df38cf18 board=ipq807x/generic arch=aarch64_cortex-a53; ubus hostname=QWRT.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.721043+00:00",
+          "source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt",
+          "kind": "observation",
+          "confidence": "live_ssh_2026-09-11"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.761366+00:00"
+      },
+      {
+        "claim_id": "claim.e9d2c3b0a9d1",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "EPISODE",
+        "topic": "cloud_marker_20260911",
+        "text": "PROTEUS-AW1000-CLOUD-MARKER-20260911 non-sensitive reconciliation marker.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:01:26.923108+00:00",
+          "source": "aw1000_real_entity_episode",
+          "kind": "observation"
+        },
+        "recorded_utc": "2026-09-11T10:01:26.923802+00:00"
+      },
+      {
+        "claim_id": "claim.f2e90089d2ca",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "EPISODE",
+        "topic": "local_only_delta_20260911",
+        "text": "PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.",
+        "status": "current",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:05:31.139021+00:00",
+          "source": "post_cloud_delta",
+          "kind": "observation"
+        },
+        "recorded_utc": "2026-09-11T10:05:31.140326+00:00"
+      }
+    ],
+    "conflicts": [
+      {
+        "claim_id": "claim.d7d01282f4ef",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "lan_mgmt_address_history",
+        "text": "During Aug 2026 handoff session Arcadyan LAN was often 192.168.2.1/24; later STATUS/SSH handoff use management on 192.168.3.1 (onlime). Do not collapse to one eternal LAN address without live measure.",
+        "status": "conflict",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.505326+00:00",
+          "source": "Drive handoff �4 vs SSH-HANDOFF.md",
+          "kind": "imported_reference",
+          "confidence": "conflict_retained"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.512645+00:00"
+      }
+    ],
+    "unknowns": [
+      {
+        "claim_id": "claim.a1a3b5d7da4a",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "failover_logical_upstream",
+        "text": "Drive handoff acceptance still required: automatic failover when Ethernet carrier stays UP but upstream Internet is dead (mwan3 health). Closure of that acceptance is UNKNOWN from available docs as of this episode.",
+        "status": "unknown",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.659784+00:00",
+          "source": "Drive handoff �7/�16",
+          "kind": "imported_reference",
+          "confidence": "open_acceptance"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.667397+00:00"
+      },
+      {
+        "claim_id": "claim.951e9924ae0e",
+        "entity_id": "entity.router.aw1000.home",
+        "scope": "ENTITY",
+        "topic": "mobile_led_green",
+        "text": "User observed front mobile LED stays green even when traffic is on cable; whether LED means standby registration vs active default path is unresolved without measurement.",
+        "status": "unknown",
+        "conflicts_with": [],
+        "provenance": {
+          "observer": "origin-aw1000-hardening",
+          "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+          "observed_at": "2026-09-11T10:00:44.817300+00:00",
+          "source": "Drive handoff �12",
+          "kind": "imported_reference"
+        },
+        "recorded_utc": "2026-09-11T10:00:44.825267+00:00"
+      }
+    ],
+    "unresolved_md": "# Unresolved � Arcadian AW1000 router\n\nUNKNOWN and CONFLICT survive here. Do not collapse by last-write-wins.\n\n- 2026-09-11T10:00:44.668252+00:00: UNKNOWN: Drive handoff acceptance still required: automatic failover when Ethernet carrier stays UP but upstream Internet is dead (mwan3 health). Closure of that acceptance is UNKNOWN from available docs as of this episode. (claim.a1a3b5d7da4a)\n\n- 2026-09-11T10:00:44.826216+00:00: UNKNOWN: User observed front mobile LED stays green even when traffic is on cable; whether LED means standby registration vs active default path is unresolved without measurement. (claim.951e9924ae0e)\n",
+    "entity_md": "# Arcadian AW1000 router\n\n- entity_id: `entity.router.aw1000.home`\n- aliases: AW1000, our router, Arcadian AW1000, Arcadyan AW1000, QWRT, home router, ��� ������\n\n## Current facts\n\n- PROTEUS-AW1000-LOCAL-ONLY-DELTA-20260911 after cloud snapshot.  \n  - claim_id: `claim.f2e90089d2ca`  \n  - provenance: observation / origin-aw1000-hardening / post_cloud_delta  \n\n- PROTEUS-AW1000-CLOUD-MARKER-20260911 non-sensitive reconciliation marker.  \n  - claim_id: `claim.e9d2c3b0a9d1`  \n  - provenance: observation / origin-aw1000-hardening / aw1000_real_entity_episode  \n\n- Live 2026-09-11 revalidated firmware identity: OpenWrt 21.02-SNAPSHOT BUILD_ID=r47273-b4df38cf18 board=ipq807x/generic arch=aarch64_cortex-a53; ubus hostname=QWRT.  \n  - claim_id: `claim.9ffe9145edc7`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- Live 2026-09-11 main table shows default via eth4 metric 10 and via wwan0 metric 20 (plus an additional default via wwan0 without metric in snapshot). Dual-default/mwan state needs ongoing care; do not treat as eternal.  \n  - claim_id: `claim.23cdcb47eb88`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- Live 2026-09-11: eth4 UP with IPv4 188.32.115.18/19; wwan0 UP; br-lan 192.168.2.1/24; br-iot 192.168.3.1/24; awg0 10.8.1.4/32 present.  \n  - claim_id: `claim.e3b4d633a175`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- 2026-09-11T10:00Z approx: SSH root@192.168.3.1 reachable via id_rsa_aw1000; hostname QWRT; OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18 confirmed live.  \n  - claim_id: `claim.05e1a5296c9f`  \n  - provenance: observation / origin-aw1000-hardening / C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_READONLY_SSH.txt  \n\n- As of 2026-09-10 STATUS: Clash/OpenClash removed; AmneziaWG awg0 peer 10.8.1.4 endpoint 130.17.29.18:2066; NM 192.168.2.0/24 via tunnel; onlime 192.168.3.0/24 DIRECT untouched.  \n  - claim_id: `claim.d1c7486578fe`  \n  - provenance: imported_reference / origin-aw1000-hardening / C:\\projects\\aw1000-audit\\STATUS.md + MIGRATION-STATUS.md  \n\n- Agent SSH management path when PC is on onlime: root@192.168.3.1 using RSA key %USERPROFILE%\\.ssh\\id_rsa_aw1000 (dropbear requires ssh-rsa). Helper: C:\\projects\\aw1000-audit\\ssh-aw1000.cmd  \n  - claim_id: `claim.f3e244b00b87`  \n  - provenance: imported_reference / origin-aw1000-hardening / C:\\projects\\aw1000-audit\\SSH-HANDOFF.md  \n\n- Historical diagnostic mapping: upstream Ethernet corresponded to Linux eth4; logical OpenWrt interface WAN_ETH was created as DHCP client on eth4. Names wan/wanb/WAN_ETH are not reliable role labels without live map.  \n  - claim_id: `claim.4384b8bba2ff`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1... �3  \n\n- USB modem identified as Quectel ID 2c7c:0800; mobile Linux interface wwan0; control path /dev/cdc-wdm0; mmcli not present.  \n  - claim_id: `claim.2f697980c5d1`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1... �2  \n\n- On 2026-08-30 live read: OpenWrt 21.02-SNAPSHOT r47273-b4df38cf18; OPENWRT_BOARD=ipq807x/generic; OPENWRT_ARCH=aarch64_cortex-a53. Treat as historical unless revalidated.  \n  - claim_id: `claim.2bd4952d98b2`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1... �1 os-release  \n\n- Device is Arcadyan AW1000; web UI brand is QWRT (OpenWrt-based).  \n  - claim_id: `claim.c3eb0e10d195`  \n  - provenance: imported_reference / origin-aw1000-hardening / Drive handoff 1lM9BTn1vecgVlWbtN1K14acgzS0nEjn_vZceaQSiLyQ �1  \n\n- Secret reference recorded: secret://router.aw1000.home.admin (AW1000 admin)  \n  - claim_id: `claim.7f5c15b2e7ef`  \n  - provenance: imported_reference / origin-pilot  \n\n\n- Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).  \n  - claim_id: `claim.197c538b75e5`  \n  - provenance: imported_reference / origin-pilot / C:\\projects\\.cursor\\rules\\aw1000-network.mdc + aw1000-audit workspace constraints  \n\n## Notes\n\nRich prose may live here; structured claims live in `claims.jsonl`.\n",
+    "local_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home",
+    "note": "VIEW/index separate; this mount reads carrier source truth"
+  },
+  "reconciliation": {
+    "schema": "proteus.archivarius_bridge.v0.1",
+    "reconciled_utc": "2026-09-11T13:06:47.879561+00:00",
+    "entity_id": "entity.router.aw1000.home",
+    "identity": {
+      "schema": "proteus.entity.v0.1",
+      "entity_id": "entity.router.aw1000.home",
+      "display_name": "Arcadian AW1000 router",
+      "aliases": [
+        "AW1000",
+        "our router",
+        "Arcadian AW1000",
+        "Arcadyan AW1000",
+        "QWRT",
+        "home router",
+        "��� ������"
+      ],
+      "relations": [],
+      "created_utc": "2026-09-10T18:58:50.018659+00:00",
+      "note": "identity card is address/catalog, not ontology of the living object",
+      "aliases_updated_utc": "2026-09-11T10:00:43.373747+00:00"
+    },
+    "carriers": [
+      {
+        "role": "HOME",
+        "kind": "local_fs",
+        "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home",
+        "authority": "local_semantic",
+        "currentness": "active"
+      },
+      {
+        "role": "BACKUP",
+        "kind": "google_drive",
+        "provider_id": "1IYbaIRyC3ScnppX1iNdlVgo688jwE48r",
+        "title": "proteus-entity-router-aw1000-home-carrier-v0.1.zip",
+        "authority": "cloud_carrier",
+        "currentness": "synced_snapshot",
+        "recorded_utc": "2026-09-11T10:05:31.182202+00:00"
+      }
+    ],
+    "current_claim_count": 14,
+    "conflict_count": 1,
+    "unknown_count": 2,
+    "project_links": [
+      {
+        "project_path": "C:\\projects\\aw1000-audit",
+        "relation": "primary_workspace",
+        "linked_utc": "2026-09-11T10:00:44.952246+00:00"
+      },
+      {
+        "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R1",
+        "relation": "fixture_recall",
+        "linked_utc": "2026-09-11T10:05:31.241210+00:00"
+      },
+      {
+        "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R2",
+        "relation": "fixture_recall",
+        "linked_utc": "2026-09-11T10:05:31.249058+00:00"
+      }
+    ],
+    "index_digest16": "4ffd6f032c4e32b2",
+    "invariants": {
+      "ENTITY_NE_CARRIER": true,
+      "VIEW_NE_SOURCE_TRUTH": true,
+      "NO_LAST_WRITE_WINS": true,
+      "UNKNOWN_AND_CONFLICT_SURVIVE": true
+    },
+    "runtime_boundary": "No live Archivarius process invoked; this adapter emits Archivarius-compatible reconciliation evidence against the local entity substrate.",
+    "alias_collisions_in_view": [],
+    "receipt_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home\\ARCHIVARIUS_RECONCILE.json"
+  }
+}
+
+codex
+Контекст найден: речь об Arcadyan AW1000 / QWRT. Последнее живое наблюдение было сегодня около 10:00 UTC; сейчас перепроверяю SSH по документированному прямому адресу `192.168.3.1`, с ключом и одной read-only командой идентификации.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$sshKey = Join-Path $env:USERPROFILE '"'.ssh\\id_rsa_aw1000'; if (-not (Test-Path -LiteralPath "'$sshKey)) { Write-Error '"'Documented SSH key is absent'; exit 2 }; ssh -i "'$sshKey -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=10 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa root@192.168.3.1 "ubus call system board"' in C:\projects\Proteus-CODEX-001
+ succeeded in 249ms:
+{
+	"kernel": "5.4.164",
+	"hostname": "QWRT",
+	"system": "ARMv8 Processor rev 4",
+	"model": "Arcadyan AW1000",
+	"board_name": "arcadyan,aw1000",
+	"release": {
+		"distribution": "OpenWrt",
+		"version": "21.02-SNAPSHOT",
+		"revision": " ",
+		"codename": "",
+		"target": "ipq807x/generic",
+		"description": "GoldenOrb-Version-1 ( OpenWrt 21.02-SNAPSHOT )"
+	}
+}
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$observedAt = (Get-Date).ToUniversalTime().ToString('"'o'); "'$note = "$observedAt: Read-only SSH verification from C:'"\\projects\\Proteus-CODEX-001 to root@192.168.3.1 succeeded using the documented key with StrictHostKeyChecking=yes; "'`ubus call system board` identified hostname QWRT, model Arcadyan AW1000, OpenWrt 21.02-SNAPSHOT / ipq807x/generic. No configuration changes made."; cmd /c "call .proteus'"\\world_env.cmd && python -m proteus world route --scope EPISODE --entity router --text "'`"$note`" --project ."' in C:\projects\Proteus-CODEX-001
+ exited 1 in 93ms:
+At line:2 char:68
++ ... -Date).ToUniversalTime().ToString('o'); $note = "$observedAt: Read-on ...
++                                                      ~~~~~~~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit
+ the name.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidVariableReferenceWithDrive
+ 
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$observedAt = (Get-Date).ToUniversalTime().ToString('"'o'); "'$note = "${observedAt}: Read-only SSH verification from C:'"\\projects\\Proteus-CODEX-001 to root@192.168.3.1 succeeded using the documented key with StrictHostKeyChecking=yes; ubus call system board identified hostname QWRT, model Arcadyan AW1000, OpenWrt 21.02-SNAPSHOT / ipq807x/generic. No configuration changes made.\"; cmd /c \"call .proteus\\world_env.cmd && python -m proteus world route --scope EPISODE --entity router --text \"\""'$note"" --project ."' in C:\projects\Proteus-CODEX-001
+ succeeded in 313ms:
+{
+  "scope": "EPISODE",
+  "text": "2026-09-11T13:07:12.8583725Z: Read-only SSH verification from C:\\projects\\Proteus-CODEX-001 to root@192.168.3.1 succeeded using the documented key with StrictHostKeyChecking=yes; ubus call system board identified hostname QWRT, model Arcadyan AW1000, OpenWrt 21.02-SNAPSHOT / ipq807x/generic. No configuration changes made.",
+  "routed_utc": "2026-09-11T13:07:13.031246+00:00",
+  "entity_id": "entity.router.aw1000.home",
+  "claim": {
+    "claim_id": "claim.d992454666c9",
+    "entity_id": "entity.router.aw1000.home",
+    "scope": "EPISODE",
+    "topic": null,
+    "text": "2026-09-11T13:07:12.8583725Z: Read-only SSH verification from C:\\projects\\Proteus-CODEX-001 to root@192.168.3.1 succeeded using the documented key with StrictHostKeyChecking=yes; ubus call system board identified hostname QWRT, model Arcadyan AW1000, OpenWrt 21.02-SNAPSHOT / ipq807x/generic. No configuration changes made.",
+    "status": "current",
+    "conflicts_with": [],
+    "provenance": {
+      "observer": "proteus.cli",
+      "project": ".",
+      "observed_at": "2026-09-11T13:07:13.031246+00:00",
+      "kind": "observation"
+    },
+    "recorded_utc": "2026-09-11T13:07:13.034415+00:00"
+  }
+}
+
+codex
+Роутер доступен сейчас: в 13:07 UTC успешно подключился по SSH к `192.168.3.1` и выполнил только read-only запрос `ubus call system board`.
+
+Достоверно известно:
+
+- Это Arcadyan AW1000, hostname `QWRT`.
+- ОС: OpenWrt 21.02-SNAPSHOT, платформа `ipq807x/generic`.
+- Прямой сегмент управления — `192.168.3.1`; на нём SSH работает с этой машины.
+- По сегодняшнему более раннему измерению также существуют `br-lan` `192.168.2.1/24`, `br-iot` `192.168.3.1/24`, Ethernet `eth4` и мобильный `wwan0`; AmneziaWG `awg0` присутствовал.
+- Наблюдение сохранено в общем хранилище сущности как EPISODE (`claim.d992454666c9`). Конфигурацию не менял.
+
+Неясно / противоречиво:
+
+- В старых данных адрес управления фигурирует и как `192.168.2.1`, и как `192.168.3.1`. Сейчас это не выглядит взаимоисключающим: оба адреса были на разных bridge-интерфейсах, но SSH именно на `192.168.3.1` подтверждён.
+- Не подтверждено автоматическое переключение на мобильный канал при «живом» Ethernet-линке без внешнего Интернета.
+- Не определено, означает ли зелёный мобильный LED активный маршрут или только регистрацию модема.
+- Состояние маршрутизации/failover на момент этой проверки не измерялось, поэтому нельзя утверждать, какой uplink фактически несёт трафик сейчас.
+
+Дальше разумно выполнить расширенный, но всё ещё read-only снимок: состояния интерфейсов, default routes, `mwan3`, AmneziaWG и доступности Интернета с самого роутера. Это даст ответ о текущем активном канале и подготовит безопасный план проверки failover — без изменения настроек.
+tokens used
+30 511

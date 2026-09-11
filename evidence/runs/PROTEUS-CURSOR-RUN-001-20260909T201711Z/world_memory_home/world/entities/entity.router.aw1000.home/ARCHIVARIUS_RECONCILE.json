@@ -1,6 +1,6 @@
 {
   "schema": "proteus.archivarius_bridge.v0.1",
-  "reconciled_utc": "2026-09-11T10:07:34.011788+00:00",
+  "reconciled_utc": "2026-09-11T13:10:52.012246+00:00",
   "entity_id": "entity.router.aw1000.home",
   "identity": {
     "schema": "proteus.entity.v0.1",
@@ -38,7 +38,7 @@
       "recorded_utc": "2026-09-11T10:05:31.182202+00:00"
     }
   ],
-  "current_claim_count": 14,
+  "current_claim_count": 15,
   "conflict_count": 1,
   "unknown_count": 2,
   "project_links": [
@@ -58,7 +58,7 @@
       "linked_utc": "2026-09-11T10:05:31.249058+00:00"
     }
   ],
-  "index_digest16": "b0a948104b8da928",
+  "index_digest16": "443ecf169c3e73b2",
   "invariants": {
     "ENTITY_NE_CARRIER": true,
     "VIEW_NE_SOURCE_TRUTH": true,

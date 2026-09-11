@@ -1,0 +1,31 @@
+{
+  "started_utc": "2026-09-11T13:08:51.062299+00:00",
+  "ended_utc": "2026-09-11T13:11:30.741279+00:00",
+  "elapsed_sec": 159.688,
+  "exit_code": 0,
+  "timed_out": false,
+  "pid": 3684,
+  "node": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.10-fd3934a\\node.exe",
+  "index": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.10-fd3934a\\index.js",
+  "workspace": "C:\\Projects\\Proteus-CURSOR-F04-READBACK",
+  "argv_without_prompt": [
+    "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.10-fd3934a\\node.exe",
+    "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.10-fd3934a\\index.js",
+    "-p",
+    "--output-format",
+    "text",
+    "--trust",
+    "--workspace",
+    "C:\\Projects\\Proteus-CURSOR-F04-READBACK",
+    "--force"
+  ],
+  "prompt_len": 131,
+  "prompt_sha256": "b377749fadde76551b333e1c5034c3083825b294b90200b708bf8f1772d028d9",
+  "prompt_sha256_prefix": "b377749fadde7655",
+  "prompt_source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\F04_CURSOR_READBACK_PROMPT.txt",
+  "used_continue": false,
+  "used_resume": false,
+  "auth": "CURSOR_AUTH_TOKEN from IDE cursorAuth/accessToken (value not recorded)",
+  "stdout_bytes": 1973,
+  "stderr_bytes": 0
+}

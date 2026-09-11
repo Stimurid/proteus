@@ -25,4 +25,5 @@
 - BOUNDARY (Archivarius): no live Archivarius process on this host; Proteus uses local adapter (`proteus.archivarius_bridge.v0.1`) only. `LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED`.
 - DONE (AW1000 harden v0): real entity enrichment + Drive carrier + R1/R2 recall + cloud recovery + Windows secret broker (D-008). `AW1000_REAL_SECRET = UNAVAILABLE` (askpass unread).
 - OPEN (AW1000): logical upstream-failure failover acceptance; LED meaning; whether dual-default routes remain intended.
-- OPEN (world memory): multi-machine reconciliation; foreign-carrier (Codex/Claude) exercise of `proteus.world.api`; Tyumen University still BLOCKED_BY_SOURCE_ACCESS for a clean university-entity slice.
+- DONE (F04 / D-009): Codex foreign-carrier morphology + independent session loop PASS (`F04_CODEX_FOREIGN_CARRIER.md`). NATURAL_RECRUITMENT still NOT_PROVED. Host transport residue: stale `~/.codex/.env` proxy `127.0.0.1:10809` can block CLI unless stashed; prefer nested Codex CLI ≥0.153.4 over 0.130 alpha shim for `gpt-5.6-terra`.
+- OPEN (world memory): multi-machine reconciliation; Claude/OpenClaw foreign carriers; Tyumen University still BLOCKED_BY_SOURCE_ACCESS for a clean university-entity slice.

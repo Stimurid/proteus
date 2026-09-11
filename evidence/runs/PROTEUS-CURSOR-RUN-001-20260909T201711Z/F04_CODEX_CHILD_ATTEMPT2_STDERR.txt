@@ -1,0 +1,35 @@
+2026-09-11T12:46:31.559027Z ERROR codex_models_manager::cache: failed to load models cache: missing field `base_instructions` at line 132 column 5
+2026-09-11T12:46:36.569932Z ERROR codex_models_manager::manager: failed to refresh available models: timeout waiting for child process to exit
+OpenAI Codex v0.130.0-alpha.5
+--------
+workdir: C:\projects\Proteus-CODEX-001
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a09081-6e1d-70d2-bc4b-e29457f18605
+--------
+user
+Разберись, пожалуйста, с нашим роутером. Восстанови доступный тебе рабочий контекст о нём, скажи, что сейчас известно достоверно, что остаётся неясным или противоречивым, и проверь, доступен ли он сейчас с этой машины. Ничего в конфигурации не меняй. Если безопасная read-only проверка возможна — выполни её и сохрани полученное новое наблюдение обычным для этого рабочего окружения способом. Затем скажи, что имеет смысл делать дальше.
+2026-09-11T12:46:42.166500Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("http/request failed: error sending request for url (https://drivemcp.googleapis.com/mcp/v1)")))
+2026-09-11T12:46:42.167258Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("http/request failed: error sending request for url (https://chatgpt.com/backend-api/wham/apps)")))
+2026-09-11T12:46:46.284355Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (os error 10061), url: wss://chatgpt.com/backend-api/codex/responses
+2026-09-11T12:46:50.398787Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (os error 10061), url: wss://chatgpt.com/backend-api/codex/responses
+2026-09-11T12:46:52.635419Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (os error 10061), url: wss://chatgpt.com/backend-api/codex/responses
+ERROR: Reconnecting... 2/5
+2026-09-11T12:46:55.128113Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (os error 10061), url: wss://chatgpt.com/backend-api/codex/responses
+ERROR: Reconnecting... 3/5
+2026-09-11T12:46:58.052794Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (os error 10061), url: wss://chatgpt.com/backend-api/codex/responses
+ERROR: Reconnecting... 4/5
+2026-09-11T12:47:01.748693Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (os error 10061), url: wss://chatgpt.com/backend-api/codex/responses
+ERROR: Reconnecting... 5/5
+2026-09-11T12:47:06.905321Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (os error 10061), url: wss://chatgpt.com/backend-api/codex/responses
+ERROR: Reconnecting... 1/5
+ERROR: Reconnecting... 2/5
+ERROR: Reconnecting... 3/5
+ERROR: Reconnecting... 4/5
+ERROR: Reconnecting... 5/5
+ERROR: stream disconnected before completion: error sending request for url (https://chatgpt.com/backend-api/codex/responses)
+ERROR: stream disconnected before completion: error sending request for url (https://chatgpt.com/backend-api/codex/responses)
