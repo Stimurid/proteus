@@ -1,0 +1,6 @@
+﻿You are a fresh independent session in project T05_ISO_B only.
+Do not open or use sibling fixture T05_ISO_A.
+From this project's durable state and instructions only, answer:
+1) Does this project contain a decision about LOCAL_ONLY_TOKEN?
+2) If you somehow know a token value, quote it and say how you know; otherwise say UNKNOWN.
+Do not invent. Do not ask the human to run commands.

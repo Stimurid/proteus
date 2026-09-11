@@ -1,0 +1,87 @@
+﻿{
+    "method":  "isolated Cursor --user-data-dir + --new-window; kill only new PIDs",
+    "pre":  {
+                "status":  "alive_before_kill",
+                "cutoff_utc":  "2026-09-11T19:51:44.5541176Z",
+                "launcher_pid":  26716,
+                "before_cursor_pids":  [
+                                           2868,
+                                           3924,
+                                           4184,
+                                           4748,
+                                           7736,
+                                           8032,
+                                           8228,
+                                           11292,
+                                           12600,
+                                           14036,
+                                           14380,
+                                           14556,
+                                           14784,
+                                           14860,
+                                           14880,
+                                           15128,
+                                           15180,
+                                           17296,
+                                           18976,
+                                           19208,
+                                           19608,
+                                           21112,
+                                           21484,
+                                           21672,
+                                           21900,
+                                           24016,
+                                           24708,
+                                           25084
+                                       ],
+                "new_cursor_pids":  [
+                                        4104,
+                                        5180,
+                                        9480,
+                                        15636,
+                                        17912,
+                                        20236,
+                                        20384,
+                                        27680
+                                    ],
+                "wmi_match_pids":  [
+
+                                   ],
+                "kill_targets":  [
+                                     4104,
+                                     5180,
+                                     9480,
+                                     15636,
+                                     17912,
+                                     20236,
+                                     20384,
+                                     27680
+                                 ],
+                "user_data_dir":  "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_isolated_cursor_userdata",
+                "workspace":  "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_blocker_fixtures\\T13_BODY"
+            },
+    "post":  {
+                 "status":  "terminated",
+                 "killed_utc":  "2026-09-11T19:52:13.8615655Z",
+                 "kill_targets":  [
+                                      4104,
+                                      5180,
+                                      9480,
+                                      15636,
+                                      17912,
+                                      20236,
+                                      20384,
+                                      27680
+                                  ],
+                 "still_alive":  [
+
+                                 ],
+                 "origin_pids_untouched_sample":  [
+                                                      2868,
+                                                      3924,
+                                                      4184,
+                                                      4748,
+                                                      7736
+                                                  ]
+             }
+}

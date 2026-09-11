@@ -1,0 +1,11 @@
+﻿Work only in this activated Proteus project mount (not the Proteus ideal body).
+
+Using installed continuity/checkpoint guidance (state/*, .proteus/ENTRY.md, proteus-checkpoint skill if present):
+
+1. Create a small module `tools/reentry_ping.py` that reads state/CURRENT.md and state/FRONTIER.md and prints a one-line ping summary.
+2. Add `tests/test_reentry_ping.py` that runs it and asserts FRONTIER content is non-empty.
+3. Update state/FRONTIER.md to record that cycle-1 bounded improvement completed and the next action is cycle-2 verification of reentry_ping output.
+4. Write evidence/CYCLE1_CHECKPOINT.md with: done, changed, next.
+5. Commit the changes.
+
+Do not ask the human to run commands. Do not mention Gate tests or L6.

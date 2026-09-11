@@ -1,0 +1,31 @@
+---
+description: Anti-reduction / organ preservation for LLM-native work
+alwaysApply: true
+---
+
+# Anti-reduction
+
+Formalization is an intervention. Architecture, state contracts, graphs, enums, durable state files, test statuses, and code are not the living process.
+
+Proteus (candidate organ) is not identical to BUILDER-01, to this repository, or to `state/*`. When a working object changes form and the stakes warrant it, ask what changed — what was preserved, transformed, lost, newly emerged, and left as residue. Do not append that audit to every task. Do not replace the question with a status vocabulary, gate, schema, or checklist.
+
+When implementing an LLM-native organ (judgment, dialogue, uncertainty, exploratory search):
+
+- Keep the transformer/LLM function in the loop.
+- If you add a formal boundary, name what it does *not* capture.
+- Do not replace the organ with keyword routing, switch/case, or a fixed graph merely to make tests green.
+- Record losses in `state/UNRESOLVED.md` or a run receipt.
+
+When this incarnation’s own carriers (rules, state files, receipts, hook events, tests) start dictating what the object is allowed to become, name that loss in `state/UNRESOLVED.md` or a run receipt rather than treating the carrier as the object.
+
+## Consequential derived representations
+
+When ordinary work creates a durable artifact that later action will treat as standing in for richer source material, keep that artifact distinct from its source. Retain enough explicit relation that omitted, ambiguous, or conflicting material can be reopened from the source rather than invented to satisfy the derived form. Do not treat the derived artifact as the full object by default. This is not a per-task audit checklist and not required for trivial copies; it applies when the representation will govern later work.
+
+Optional host-neutral recorder (when a durable derived artifact warrants an explicit reopen link):
+
+```
+python -m proteus derived record --derived <path> --source <path> [--source <path> ...] --note "..."
+```
+
+Historical primary extract (14 Aug 2026, project «плагин»): living process is not exhausted by architecture/OOP/state-contract rhetoric.

@@ -1,0 +1,5 @@
+urgency: UNKNOWN
+
+Rationale: The report indicates intermittent login slowness but provides insufficient impact or policy evidence to assign a defined urgency.
+
+Durable files relied on: `state/DECISIONS.md`, `state/corrections/20260911T220000Z_urgency_unknown.md`.

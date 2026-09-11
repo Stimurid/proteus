@@ -493,7 +493,17 @@ def verify_reconstructed(dest: Path, *, isolated: bool, origin_workspace: str | 
     unresolved = _text(dest / "state" / "UNRESOLVED.md")
     decisions = _text(dest / "state" / "DECISIONS.md")
     ok("t02_remains_partial", "T02 PARTIAL" in current or "T02" in unresolved and "PARTIAL" in unresolved)
-    ok("gate1_not_yet", "Gate 1 NOT_YET" in current or "GATE_1 = NOT_YET" in current)
+    # Gate may be NOT_YET (pre-audit) or NOT_ACCEPTED (post-audit rejection).
+    # Neither is an acceptance; do not treat ACCEPTED* as satisfying this check.
+    gate_unaccepted = (
+        "Gate 1 NOT_YET" in current
+        or "GATE_1 = NOT_YET" in current
+        or "Gate 1 = NOT_ACCEPTED" in current
+        or "GATE_1 = NOT_ACCEPTED" in current
+        or "Gate 1 audit **NOT_ACCEPTED**" in current
+        or ("NOT_ACCEPTED" in current and "Gate 1" in current)
+    ) and ("Gate 1 = ACCEPTED" not in current) and ("GATE_1 = ACCEPTED" not in current)
+    ok("gate1_not_accepted", gate_unaccepted)
     ok("unknown_survives", "UNKNOWN" in unresolved)
     ok("conflict_survives", "CONFLICT" in unresolved)
     ok("d001_present", "D-001" in decisions)

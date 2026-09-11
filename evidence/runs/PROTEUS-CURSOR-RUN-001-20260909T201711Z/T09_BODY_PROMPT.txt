@@ -1,0 +1,4 @@
+﻿Work only in this project. Read state/FRONTIER.md.
+Append one durable checkpoint note under evidence/local_run_note.md stating your body id from FRONTIER and the exact frontier marker line you saw.
+Do not modify the other body project. Do not ask the human to run commands.
+Then print the frontier marker you preserved.

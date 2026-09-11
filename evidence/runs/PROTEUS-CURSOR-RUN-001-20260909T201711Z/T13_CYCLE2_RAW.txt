@@ -1,0 +1,9 @@
+Completed and committed cycle 2.
+
+- Recovered frontier and checkpoint solely from durable `state/` and `evidence/`.
+- Captured the pre-extension ping in [CYCLE2_REENTRY_PING.txt](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\evidence\CYCLE2_REENTRY_PING.txt).
+- Extended [reentry_ping.py](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tools\reentry_ping.py) to write [CYCLE2_PING_RECEIPT.json](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\evidence\CYCLE2_PING_RECEIPT.json).
+- Updated the focused test and confirmed `1 passed`.
+- Updated [FRONTIER.md](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\state\FRONTIER.md) and added [CYCLE2_CHECKPOINT.md](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\evidence\CYCLE2_CHECKPOINT.md).
+
+Commit: `f1a7d97 Complete cycle-2 reentry receipt`

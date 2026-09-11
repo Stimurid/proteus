@@ -1,0 +1,12 @@
+﻿Fresh independent session. Do not resume any prior session.
+
+Work only in this project from durable state and installed Proteus mount instructions.
+
+1. From state/* and evidence/* only, recover what the previous cycle left as current frontier and last checkpoint.
+2. Run the existing reentry_ping tool if present; capture its output into evidence/CYCLE2_REENTRY_PING.txt.
+3. Perform a second bounded improvement: extend tools/reentry_ping.py to also write evidence/CYCLE2_PING_RECEIPT.json with keys {frontier_sha16, current_nonempty, cycle:"2"} and add/adjust a test.
+4. Update state/FRONTIER.md for post-cycle-2 next action.
+5. Write evidence/CYCLE2_CHECKPOINT.md.
+6. Commit.
+
+Do not ask the human to run commands. Do not invent prior-cycle details that are not in durable files.

@@ -1,0 +1,3 @@
+﻿Write evidence/PRE_DEATH.json with fields: status="alive", pid=<your shell/os process id if available>, note="process-death probe waiting", utc timestamp.
+Then run a shell sleep for 180 seconds so an external observer can terminate this process.
+Do not ask the human for help.

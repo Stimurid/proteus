@@ -1,0 +1,43 @@
+{
+  "schema": "proteus.codex_launch.v0.1",
+  "started_utc": "2026-09-11T19:53:12.508645+00:00",
+  "finished_utc": "2026-09-11T19:55:14.345355+00:00",
+  "elapsed_sec": 121.83189344406128,
+  "timed_out": false,
+  "exit_code": 0,
+  "pid": 24456,
+  "codex_path": "C:\\Users\\Timur Shchukin\\AppData\\Local\\OpenAI\\Codex\\bin\\27d6a192e9c98618\\codex.exe",
+  "codex_version": "codex-cli 0.153.4",
+  "workspace": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_blocker_fixtures\\T13_BODY",
+  "invocation": [
+    "C:\\Users\\Timur Shchukin\\AppData\\Local\\OpenAI\\Codex\\bin\\27d6a192e9c98618\\codex.exe",
+    "exec",
+    "-C",
+    "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_blocker_fixtures\\T13_BODY",
+    "--skip-git-repo-check",
+    "-s",
+    "danger-full-access",
+    "--dangerously-bypass-approvals-and-sandbox",
+    "-c",
+    "shell_environment_policy.inherit=all",
+    "-o",
+    "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\T13_CYCLE2_RAW.txt",
+    "--ephemeral",
+    "<stdin-prompt>"
+  ],
+  "used_resume": false,
+  "used_fork": false,
+  "used_continue": false,
+  "ephemeral": true,
+  "sandbox": "danger-full-access",
+  "prompt_sha256": "58f22a03048f864cf4a65437176a2f3d52fce64ab1b083a1a9cf35342eff7d6b",
+  "prompt_char_count": 783,
+  "stdout_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\T13_CYCLE2_STDOUT.txt",
+  "stderr_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\T13_CYCLE2_STDERR.txt",
+  "last_message_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\T13_CYCLE2_RAW.txt",
+  "env_keys_set_for_world": [
+    "AIYE_HOME",
+    "PROTEUS_SOURCE_ROOT",
+    "PYTHONPATH"
+  ]
+}

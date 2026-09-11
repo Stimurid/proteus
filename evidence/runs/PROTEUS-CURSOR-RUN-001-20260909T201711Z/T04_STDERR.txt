@@ -1,0 +1,224 @@
+OpenAI Codex v0.153.4
+--------
+workdir: C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T04_CORRECTION
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a091ff-b97e-7e80-aeac-918954cf30fb
+--------
+user
+Work only in this project from its installed instructions and state/*.
+
+Task: A user reported: "sometimes login feels a bit slow, not sure if it matters."
+Classify support-ticket urgency for triage. Give a single urgency field and a one-sentence rationale.
+Use project durable guidance if present. Do not invent project policy.
+Do not ask the human to run commands.
+Report: urgency value, rationale, and which durable files (if any) you relied on.
+
+2026-09-11T19:44:15.753781Z ERROR codex_models_manager::manager: failed to renew cache TTL: trailing characters at line 673 column 2
+codex
+I’ll consult the mount entry guidance and durable state, then classify only from established project guidance.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw .proteus\\ENTRY.md; Get-ChildItem state -File | Select-Object -ExpandProperty Name" in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T04_CORRECTION
+ succeeded in 140ms:
+# Proteus entry вЂ” this project
+
+Proteus is **mounted** on this Cursor project. This is a project mount, not a claim that this tree is the Proteus ideal body, and not Gate 1 acceptance of the whole product.
+
+## Open / continue work
+
+1. Open this folder as the Cursor workspace.
+2. Start a new Agent chat (do not paste an old conversation).
+3. Read, in order: `state/IDENTITY.md`, `state/CURRENT.md`, `state/FRONTIER.md`, `state/DECISIONS.md`, `state/UNRESOLVED.md`.
+4. Follow `.cursor/rules/proteus-*.mdc` (always-apply) for mount orientation.
+5. If this project already had its own `AGENTS.md` / rules before activation, those were **preserved**. Prefer project conventions there; Proteus carriers add reentry/checkpoint/anti-reduction surfaces.
+
+## Shared world / entity memory
+
+If the machine has a Proteus world substrate (`AIYE_HOME` / `PROTEUS_WORLD_ROOT`, default `~/.aiye/world`):
+
+```
+python -m proteus world resolve "<entity name or id>"
+python -m proteus world mount "<entity name or id>"
+python -m proteus world route --scope ENTITY --entity "<name>" --text "..." --project .
+```
+
+Do **not** copy entity knowledge into this project as local truth. Project decisions stay in `state/` / `.proteus/project_memory.jsonl`. ENTITY facts live in the shared substrate.
+
+## Consequential derived representations
+
+Read `.proteus/CONSTITUTIVE.md`. When a durable artifact will stand in for richer source in later action, keep it distinct from that source and retain reopenability. Optional: `python -m proteus derived record ...`.
+
+## What Proteus owns here
+
+See `.proteus/activation.json` (`owned_paths`). Only those paths are safe to reverse with:
+
+```
+python -m proteus.activate --project . --remove
+```
+
+(from a machine where the `proteus` package is importable; typically `PYTHONPATH=<proteus-src>`).
+
+## Activation provenance
+
+- activation_id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194342Z`
+- activated_at: `2026-09-11T19:43:42.522797+00:00`
+- proteus_source: `C:\projects\Proteus`
+- target: `C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T04_CORRECTION`
+- host: Cursor
+
+CURRENT.md
+DECISIONS.md
+FRONTIER.md
+IDENTITY.md
+UNRESOLVED.md
+
+2026-09-11T19:44:20.365459Z ERROR codex_models_manager::manager: failed to renew cache TTL: trailing characters at line 673 column 2
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw state\\IDENTITY.md, state\\CURRENT.md, state\\FRONTIER.md, state\\DECISIONS.md, state\\UNRESOLVED.md; Get-ChildItem .cursor\\rules -File | Select-Object -ExpandProperty FullName" in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T04_CORRECTION
+ succeeded in 145ms:
+# T04_CORRECTION
+
+Proteus project mount (Cursor). This `state/IDENTITY.md` describes **this working project**, not the Proteus organ and not the Proteus ideal-body repository (unless they coincide).
+
+Characteristic question when form changes: what changed вЂ” preserved, transformed, lost, newly emerged, residue?
+
+Activation id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194342Z`
+
+# CURRENT
+
+Project: T04_CORRECTION
+Workspace: `C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T04_CORRECTION`
+Status: Proteus Cursor mount activated (`PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194342Z`). No Gate 1 claim from activation alone.
+Proteus source used for this mount: `C:\projects\Proteus`
+
+# FRONTIER
+
+Next: continue ordinary product work for this project from its own goals. Proteus mount is present; do not treat mount success as full Proteus product acceptance.
+
+# DECISIONS
+
+(none yet for this project mount вЂ” append only real decisions with provenance)
+
+## D-T04-1 вЂ” Urgency UNKNOWN when evidence insufficient
+- Decision: Do not invent default support-ticket urgency levels in this project. Prefer UNKNOWN when classification evidence is thin.
+- Provenance: `state/corrections/20260911T220000Z_urgency_unknown.md`
+- Status: accepted for this fixture project (Gate T04 learning surface)
+
+# UNRESOLVED / UNKNOWN / CONFLICT
+
+- UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
+
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T04_CORRECTION\.cursor\rules\proteus-anti-reduction.mdc
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T04_CORRECTION\.cursor\rules\proteus-mutation.mdc
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T04_CORRECTION\.cursor\rules\proteus-orientation.mdc
+
+2026-09-11T19:44:24.820094Z ERROR codex_models_manager::manager: failed to renew cache TTL: trailing characters at line 673 column 2
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw .cursor\\rules\\proteus-anti-reduction.mdc, .cursor\\rules\\proteus-mutation.mdc, .cursor\\rules\\proteus-orientation.mdc, .proteus\\CONSTITUTIVE.md, state\\corrections\\20260911T220000Z_urgency_unknown.md" in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T04_CORRECTION
+ succeeded in 99ms:
+---
+description: Anti-reduction / organ preservation for LLM-native work
+alwaysApply: true
+---
+
+# Anti-reduction
+
+Formalization is an intervention. Architecture, state contracts, graphs, enums, durable state files, test statuses, and code are not the living process.
+
+Proteus (candidate organ) is not identical to BUILDER-01, to this repository, or to `state/*`. When a working object changes form and the stakes warrant it, ask what changed вЂ” what was preserved, transformed, lost, newly emerged, and left as residue. Do not append that audit to every task. Do not replace the question with a status vocabulary, gate, schema, or checklist.
+
+When implementing an LLM-native organ (judgment, dialogue, uncertainty, exploratory search):
+
+- Keep the transformer/LLM function in the loop.
+- If you add a formal boundary, name what it does *not* capture.
+- Do not replace the organ with keyword routing, switch/case, or a fixed graph merely to make tests green.
+- Record losses in `state/UNRESOLVED.md` or a run receipt.
+
+When this incarnationвЂ™s own carriers (rules, state files, receipts, hook events, tests) start dictating what the object is allowed to become, name that loss in `state/UNRESOLVED.md` or a run receipt rather than treating the carrier as the object.
+
+## Consequential derived representations
+
+When ordinary work creates a durable artifact that later action will treat as standing in for richer source material, keep that artifact distinct from its source. Retain enough explicit relation that omitted, ambiguous, or conflicting material can be reopened from the source rather than invented to satisfy the derived form. Do not treat the derived artifact as the full object by default. This is not a per-task audit checklist and not required for trivial copies; it applies when the representation will govern later work.
+
+Optional host-neutral recorder (when a durable derived artifact warrants an explicit reopen link):
+
+```
+python -m proteus derived record --derived <path> --source <path> [--source <path> ...] --note "..."
+```
+
+Historical primary extract (14 Aug 2026, project В«РїР»Р°РіРёРЅВ»): living process is not exhausted by architecture/OOP/state-contract rhetoric.
+
+---
+description: Baseline, bounded mutation, receipt, rollback for host/project surface changes
+alwaysApply: true
+---
+
+# Mutation protocol
+
+Before changing Cursor user/project config or Proteus-owned mount files:
+
+1. Snapshot when touching host/user config.
+2. State intended behavioral effect.
+3. Prefer changing only Proteus-owned paths (see `.proteus/activation.json`).
+4. Verify by behavior, not file existence alone.
+5. Write a receipt. Rollback on failed postcondition.
+
+Do not silently overwrite pre-existing project `AGENTS.md` or non-`proteus-*` Cursor rules. Ideal-body source changes happen in the Proteus repository via its installer вЂ” not by treating this mount as source of truth.
+
+---
+description: Persistent Proteus mount orientation and project reentry
+alwaysApply: true
+---
+
+# Proteus orientation (project mount)
+
+Proteus is mounted on this Cursor project as cognitive infrastructure. You are the coding agent for **this** project вЂ” not automatically BUILDER-01, and this tree is not automatically the Proteus ideal body.
+
+Load `state/IDENTITY.md`, `state/CURRENT.md` and `state/FRONTIER.md` before inventing a new plan. Read `.proteus/ENTRY.md` for mount entry instructions.
+
+Durable carriers live in `state/`. They are pointers, not the living process and not the organ. Proteus-owned generated surfaces are listed in `.proteus/activation.json`. Ideal-body / installer changes belong in the Proteus source tree, not by hand-editing mount copies as if they were source.
+
+If a required fact is missing, write UNKNOWN rather than filling the gap.
+
+# Proteus constitutive note (mount)
+
+Proteus is candidate cognitive infrastructure mounted here. It is not identical to this project, to `state/*`, or to any generated file.
+
+## Consequential derived representations
+
+When ordinary work creates a durable artifact that later action will treat as standing in for richer source material, keep that artifact distinct from its source. Retain enough explicit relation that omitted, ambiguous, or conflicting material can be reopened from the source rather than invented to satisfy the derived form. Do not treat the derived artifact as the full object by default.
+
+This is not a per-task checklist and not required for trivial copies. It applies when the representation will govern later work.
+
+Optional recorder:
+
+```
+python -m proteus derived record --derived <path> --source <path> [--source <path> ...] --note "..."
+```
+
+Activation id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194342Z`
+
+# Correction 20260911T220000Z
+
+Quote/summary: When classifying support-ticket urgency in this project, never invent a default urgency (low/medium/high). If evidence is insufficient, leave urgency as UNKNOWN and state what is missing.
+
+Provenance: Gate1 T04 closure episode (captured as meaningful correction for learning test); acting coordinator recorded on behalf of required Gate procedure.
+
+Proposed scope: project
+Repeats prior: no
+Status: PROMOTED_TO_PROJECT_DECISION
+
+
+2026-09-11T19:44:29.876143Z ERROR codex_models_manager::manager: failed to renew cache TTL: trailing characters at line 673 column 2
+codex
+urgency: UNKNOWN
+
+Rationale: The report indicates intermittent login slowness but provides insufficient impact or policy evidence to assign a defined urgency.
+
+Durable files relied on: `state/DECISIONS.md`, `state/corrections/20260911T220000Z_urgency_unknown.md`.
+tokens used
+12 055

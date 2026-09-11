@@ -1,0 +1,8 @@
+Completed and committed cycle 1.
+
+- Added [reentry_ping.py](C:/projects/Proteus/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/gate1_blocker_fixtures/T13_BODY/tools/reentry_ping.py), which prints a one-line CURRENT/FRONTIER summary.
+- Added its focused test; `pytest` passes (1 test).
+- Updated [FRONTIER.md](C:/projects/Proteus/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/gate1_blocker_fixtures/T13_BODY/state/FRONTIER.md) with the cycle-2 verification next action.
+- Added [CYCLE1_CHECKPOINT.md](C:/projects/Proteus/evidence/runs/PROTEUS-CURSOR-RUN-001-20260909T201711Z/gate1_blocker_fixtures/T13_BODY/evidence/CYCLE1_CHECKPOINT.md).
+
+Commit: `0c32d22 Add cycle-1 reentry ping checkpoint`

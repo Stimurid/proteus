@@ -1,0 +1,1044 @@
+OpenAI Codex v0.153.4
+--------
+workdir: C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a09207-fff0-7b03-ad03-09fbb86d2742
+--------
+user
+Fresh independent session. Do not resume any prior session.
+
+Work only in this project from durable state and installed Proteus mount instructions.
+
+1. From state/* and evidence/* only, recover what the previous cycle left as current frontier and last checkpoint.
+2. Run the existing reentry_ping tool if present; capture its output into evidence/CYCLE2_REENTRY_PING.txt.
+3. Perform a second bounded improvement: extend tools/reentry_ping.py to also write evidence/CYCLE2_PING_RECEIPT.json with keys {frontier_sha16, current_nonempty, cycle:"2"} and add/adjust a test.
+4. Update state/FRONTIER.md for post-cycle-2 next action.
+5. Write evidence/CYCLE2_CHECKPOINT.md.
+6. Commit.
+
+Do not ask the human to run commands. Do not invent prior-cycle details that are not in durable files.
+
+codex
+I’ll inspect the mount instructions and the durable `state/` and `evidence/` records only, then make the bounded tool/test/state/evidence updates and commit them.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-Content -Raw .proteus/ENTRY.md; Get-ChildItem state,evidence -Force | Select-Object FullName,Length,LastWriteTime' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY
+ succeeded in 201ms:
+# Proteus entry вЂ” this project
+
+Proteus is **mounted** on this Cursor project. This is a project mount, not a claim that this tree is the Proteus ideal body, and not Gate 1 acceptance of the whole product.
+
+## Open / continue work
+
+1. Open this folder as the Cursor workspace.
+2. Start a new Agent chat (do not paste an old conversation).
+3. Read, in order: `state/IDENTITY.md`, `state/CURRENT.md`, `state/FRONTIER.md`, `state/DECISIONS.md`, `state/UNRESOLVED.md`.
+4. Follow `.cursor/rules/proteus-*.mdc` (always-apply) for mount orientation.
+5. If this project already had its own `AGENTS.md` / rules before activation, those were **preserved**. Prefer project conventions there; Proteus carriers add reentry/checkpoint/anti-reduction surfaces.
+
+## Shared world / entity memory
+
+If the machine has a Proteus world substrate (`AIYE_HOME` / `PROTEUS_WORLD_ROOT`, default `~/.aiye/world`):
+
+```
+python -m proteus world resolve "<entity name or id>"
+python -m proteus world mount "<entity name or id>"
+python -m proteus world route --scope ENTITY --entity "<name>" --text "..." --project .
+```
+
+Do **not** copy entity knowledge into this project as local truth. Project decisions stay in `state/` / `.proteus/project_memory.jsonl`. ENTITY facts live in the shared substrate.
+
+## Consequential derived representations
+
+Read `.proteus/CONSTITUTIVE.md`. When a durable artifact will stand in for richer source in later action, keep it distinct from that source and retain reopenability. Optional: `python -m proteus derived record ...`.
+
+## What Proteus owns here
+
+See `.proteus/activation.json` (`owned_paths`). Only those paths are safe to reverse with:
+
+```
+python -m proteus.activate --project . --remove
+```
+
+(from a machine where the `proteus` package is importable; typically `PYTHONPATH=<proteus-src>`).
+
+## Activation provenance
+
+- activation_id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194343Z`
+- activated_at: `2026-09-11T19:43:43.517584+00:00`
+- proteus_source: `C:\projects\Proteus`
+- target: `C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY`
+- host: Cursor
+
+
+FullName                                                                                                               
+--------                                                                                                               
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\state\CURR...
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\state\DECI...
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\state\FRON...
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\state\IDEN...
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\state\UNRE...
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\evidence\C...
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw state/IDENTITY.md,state/CURRENT.md,state/FRONTIER.md,state/DECISIONS.md,state/UNRESOLVED.md; Get-ChildItem evidence -File -Recurse | Select-Object -ExpandProperty FullName; Get-Content -Raw .proteus/CONSTITUTIVE.md; Get-ChildItem .cursor/rules -Filter 'proteus-*.mdc' | ForEach-Object { Get-Content -Raw "'$_.FullName }' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY
+ succeeded in 175ms:
+# T13_BODY
+
+Proteus project mount (Cursor). This `state/IDENTITY.md` describes **this working project**, not the Proteus organ and not the Proteus ideal-body repository (unless they coincide).
+
+Characteristic question when form changes: what changed вЂ” preserved, transformed, lost, newly emerged, residue?
+
+Activation id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194343Z`
+
+# CURRENT
+
+Fixture body for T13/L6 Gate closure. Activated Proteus mount. Not the ideal body.
+
+
+# FRONTIER
+
+Cycle: cycle-1 bounded improvement completed.
+Next: cycle-2 verification of `reentry_ping.py` output.
+
+# DECISIONS
+
+(none yet for this project mount вЂ” append only real decisions with provenance)
+
+# UNRESOLVED / UNKNOWN / CONFLICT
+
+- UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
+
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\evidence\CYCLE1_CHECKPOINT.md
+# Proteus constitutive note (mount)
+
+Proteus is candidate cognitive infrastructure mounted here. It is not identical to this project, to `state/*`, or to any generated file.
+
+## Consequential derived representations
+
+When ordinary work creates a durable artifact that later action will treat as standing in for richer source material, keep that artifact distinct from its source. Retain enough explicit relation that omitted, ambiguous, or conflicting material can be reopened from the source rather than invented to satisfy the derived form. Do not treat the derived artifact as the full object by default.
+
+This is not a per-task checklist and not required for trivial copies. It applies when the representation will govern later work.
+
+Optional recorder:
+
+```
+python -m proteus derived record --derived <path> --source <path> [--source <path> ...] --note "..."
+```
+
+Activation id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194343Z`
+
+---
+description: Anti-reduction / organ preservation for LLM-native work
+alwaysApply: true
+---
+
+# Anti-reduction
+
+Formalization is an intervention. Architecture, state contracts, graphs, enums, durable state files, test statuses, and code are not the living process.
+
+Proteus (candidate organ) is not identical to BUILDER-01, to this repository, or to `state/*`. When a working object changes form and the stakes warrant it, ask what changed вЂ” what was preserved, transformed, lost, newly emerged, and left as residue. Do not append that audit to every task. Do not replace the question with a status vocabulary, gate, schema, or checklist.
+
+When implementing an LLM-native organ (judgment, dialogue, uncertainty, exploratory search):
+
+- Keep the transformer/LLM function in the loop.
+- If you add a formal boundary, name what it does *not* capture.
+- Do not replace the organ with keyword routing, switch/case, or a fixed graph merely to make tests green.
+- Record losses in `state/UNRESOLVED.md` or a run receipt.
+
+When this incarnationвЂ™s own carriers (rules, state files, receipts, hook events, tests) start dictating what the object is allowed to become, name that loss in `state/UNRESOLVED.md` or a run receipt rather than treating the carrier as the object.
+
+## Consequential derived representations
+
+When ordinary work creates a durable artifact that later action will treat as standing in for richer source material, keep that artifact distinct from its source. Retain enough explicit relation that omitted, ambiguous, or conflicting material can be reopened from the source rather than invented to satisfy the derived form. Do not treat the derived artifact as the full object by default. This is not a per-task audit checklist and not required for trivial copies; it applies when the representation will govern later work.
+
+Optional host-neutral recorder (when a durable derived artifact warrants an explicit reopen link):
+
+```
+python -m proteus derived record --derived <path> --source <path> [--source <path> ...] --note "..."
+```
+
+Historical primary extract (14 Aug 2026, project В«РїР»Р°РіРёРЅВ»): living process is not exhausted by architecture/OOP/state-contract rhetoric.
+
+---
+description: Baseline, bounded mutation, receipt, rollback for host/project surface changes
+alwaysApply: true
+---
+
+# Mutation protocol
+
+Before changing Cursor user/project config or Proteus-owned mount files:
+
+1. Snapshot when touching host/user config.
+2. State intended behavioral effect.
+3. Prefer changing only Proteus-owned paths (see `.proteus/activation.json`).
+4. Verify by behavior, not file existence alone.
+5. Write a receipt. Rollback on failed postcondition.
+
+Do not silently overwrite pre-existing project `AGENTS.md` or non-`proteus-*` Cursor rules. Ideal-body source changes happen in the Proteus repository via its installer вЂ” not by treating this mount as source of truth.
+
+---
+description: Persistent Proteus mount orientation and project reentry
+alwaysApply: true
+---
+
+# Proteus orientation (project mount)
+
+Proteus is mounted on this Cursor project as cognitive infrastructure. You are the coding agent for **this** project вЂ” not automatically BUILDER-01, and this tree is not automatically the Proteus ideal body.
+
+Load `state/IDENTITY.md`, `state/CURRENT.md` and `state/FRONTIER.md` before inventing a new plan. Read `.proteus/ENTRY.md` for mount entry instructions.
+
+Durable carriers live in `state/`. They are pointers, not the living process and not the organ. Proteus-owned generated surfaces are listed in `.proteus/activation.json`. Ideal-body / installer changes belong in the Proteus source tree, not by hand-editing mount copies as if they were source.
+
+If a required fact is missing, write UNKNOWN rather than filling the gap.
+
+
+codex
+The durable frontier is “cycle-2 verification of `reentry_ping.py` output”; the only retained checkpoint is `evidence/CYCLE1_CHECKPOINT.md`. I’m now preserving the current tool output before extending it, then I’ll verify the new receipt contract with the project’s existing tests.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw evidence/CYCLE1_CHECKPOINT.md; Get-ChildItem tools,tests -Force -ErrorAction SilentlyContinue | Select-Object FullName,Name,Length; Get-Content -Raw tools/reentry_ping.py; rg -n \"reentry_ping|CYCLE1|FRONTIER\" . -g '"'!evidence/CYCLE2_REENTRY_PING.txt'"' -g '"'!evidence/CYCLE2_PING_RECEIPT.json'"'" in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY
+ succeeded in 184ms:
+# Cycle 1 checkpoint
+
+Done: Completed the bounded cycle-1 improvement.
+
+Changed: Added `tools/reentry_ping.py`, its focused test, and updated the reentry frontier.
+
+Next: Verify `reentry_ping.py` output in cycle 2.
+
+
+.\tests\test_reentry_ping.py:9:def test_reentry_ping_reports_non_empty_frontier() -> None:
+.\tests\test_reentry_ping.py:10:    frontier = (PROJECT_ROOT / "state" / "FRONTIER.md").read_text(encoding="utf-8").strip()
+.\tests\test_reentry_ping.py:12:        [sys.executable, "tools/reentry_ping.py"],
+.\AGENTS.md:8:2. Read `state/IDENTITY.md`, `state/CURRENT.md`, `state/FRONTIER.md`, `state/DECISIONS.md`, `state/UNRESOLVED.md` when present.
+.\AGENTS.md:10:4. Continue from `state/FRONTIER.md`.
+.\state\FRONTIER.md:1:# FRONTIER
+.\state\FRONTIER.md:4:Next: cycle-2 verification of `reentry_ping.py` output.
+.\tools\reentry_ping.py:20:    frontier = first_content_line(PROJECT_ROOT / "state" / "FRONTIER.md")
+.\evidence\CYCLE1_CHECKPOINT.md:5:Changed: Added `tools/reentry_ping.py`, its focused test, and updated the reentry frontier.
+.\evidence\CYCLE1_CHECKPOINT.md:7:Next: Verify `reentry_ping.py` output in cycle 2.
+FullName                                                                                                               
+--------                                                                                                               
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tools\reen...
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tests\__py...
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tests\test...
+"""Print a compact reentry summary from the project's continuity files."""
+
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+
+def first_content_line(path: Path) -> str:
+    """Return the first non-heading, non-empty line in a Markdown file."""
+    for line in path.read_text(encoding="utf-8-sig").splitlines():
+        content = line.strip()
+        if content and not content.startswith("#"):
+            return content
+    return "(no content)"
+
+
+def main() -> None:
+    current = first_content_line(PROJECT_ROOT / "state" / "CURRENT.md")
+    frontier = first_content_line(PROJECT_ROOT / "state" / "FRONTIER.md")
+    print(f"reentry ping | current: {current} | frontier: {frontier}")
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'python tools/reentry_ping.py | Set-Content -Encoding utf8 evidence/CYCLE2_REENTRY_PING.txt; Get-Content -Raw evidence/CYCLE2_REENTRY_PING.txt; Get-Content -Raw tests/test_reentry_ping.py; git status --short; git log -1 --oneline' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY
+ succeeded in 276ms:
+reentry ping | current: Fixture body for T13/L6 Gate closure. Activated Proteus mount. Not the ideal body. | frontier: Cycle: cycle-1 bounded improvement completed.
+
+import subprocess
+import sys
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_reentry_ping_reports_non_empty_frontier() -> None:
+    frontier = (PROJECT_ROOT / "state" / "FRONTIER.md").read_text(encoding="utf-8").strip()
+    result = subprocess.run(
+        [sys.executable, "tools/reentry_ping.py"],
+        cwd=PROJECT_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    assert frontier
+    assert "frontier:" in result.stdout
+
+?? .cursor/
+?? .proteus/
+?? AGENTS.md
+?? CLAUDE.md
+?? evidence/CYCLE2_REENTRY_PING.txt
+?? state/CURRENT.md
+?? state/DECISIONS.md
+?? state/IDENTITY.md
+?? state/UNRESOLVED.md
+?? tests/__pycache__/
+0c32d22 Add cycle-1 reentry ping checkpoint
+
+2026-09-11T19:54:05.004288Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tools\reentry_ping.py:
+\"\"\"Print a compact reentry summary from the project's continuity files.\"\"\"
+
+from pathlib import Path
+codex
+The first edit attempt did not apply because the patch utility could not match the file’s exact text. No files were changed by that attempt; I’m reapplying it with narrower context.
+2026-09-11T19:54:10.763637Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tools\reentry_ping.py:
+import hashlib
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content tools/reentry_ping.py | ForEach-Object { '[' + "'$_ + '"']' }; Format-Hex -Path tools/reentry_ping.py -Count 96; Get-Content state/FRONTIER.md | ForEach-Object { '[' + "'$_ + '"']' }" in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY
+ succeeded in 294ms:
+["""Print a compact reentry summary from the project's continuity files."""]
+[]
+[from pathlib import Path]
+[]
+[]
+[PROJECT_ROOT = Path(__file__).resolve().parents[1]]
+[]
+[]
+[def first_content_line(path: Path) -> str:]
+[    """Return the first non-heading, non-empty line in a Markdown file."""]
+[    for line in path.read_text(encoding="utf-8-sig").splitlines():]
+[        content = line.strip()]
+[        if content and not content.startswith("#"):]
+[            return content]
+[    return "(no content)"]
+[]
+[]
+[def main() -> None:]
+[    current = first_content_line(PROJECT_ROOT / "state" / "CURRENT.md")]
+[    frontier = first_content_line(PROJECT_ROOT / "state" / "FRONTIER.md")]
+[    print(f"reentry ping | current: {current} | frontier: {frontier}")]
+[]
+[]
+[if __name__ == "__main__":]
+[    main()]
+Format-Hex : A parameter cannot be found that matches parameter name 'Count'.
+At line:2 char:111
++ ... ' + $_ + ']' }; Format-Hex -Path tools/reentry_ping.py -Count 96; Get ...
++                                                            ~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Format-Hex], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Format-Hex
+ 
+[# FRONTIER]
+[]
+[Cycle: cycle-1 bounded improvement completed.]
+[Next: cycle-2 verification of `reentry_ping.py` output.]
+
+apply patch
+patch: completed
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tools\reentry_ping.py
+diff --git a/tools/reentry_ping.py b/tools/reentry_ping.py
+index 8b0cbdd7089e02b0e42620d935fb958faf228678..5730c7745cc6a0f09c9d919da817acc6c45a8c7f
+--- a/tools/reentry_ping.py
++++ b/tools/reentry_ping.py
+@@ -1,5 +1,7 @@
+ """Print a compact reentry summary from the project's continuity files."""
+ 
++import hashlib
++import json
+ from pathlib import Path
+ 
+ 
+
+diff --git a/tools/reentry_ping.py b/tools/reentry_ping.py
+index 8b0cbdd7089e02b0e42620d935fb958faf228678..5730c7745cc6a0f09c9d919da817acc6c45a8c7f
+--- a/tools/reentry_ping.py
++++ b/tools/reentry_ping.py
+@@ -1,5 +1,7 @@
+ """Print a compact reentry summary from the project's continuity files."""
+ 
++import hashlib
++import json
+ from pathlib import Path
+ 
+ 
+
+apply patch
+patch: completed
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\evidence\CYCLE2_CHECKPOINT.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\state\FRONTIER.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tests\test_reentry_ping.py
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tools\reentry_ping.py
+diff --git a/evidence/CYCLE2_CHECKPOINT.md b/evidence/CYCLE2_CHECKPOINT.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..b9f7d5e8c311a2a104a3ba340cdbdb6effcf9847
+--- /dev/null
++++ b/evidence/CYCLE2_CHECKPOINT.md
+@@ -0,0 +1,9 @@
++# Cycle 2 checkpoint
++
++Recovered frontier: cycle-2 verification of `reentry_ping.py` output.
++
++Recovered last checkpoint: `evidence/CYCLE1_CHECKPOINT.md`, which records the cycle-1 tool and focused test addition.
++
++Done: Captured the pre-extension ping output in `evidence/CYCLE2_REENTRY_PING.txt`. Extended `tools/reentry_ping.py` to write `evidence/CYCLE2_PING_RECEIPT.json` with the observed frontier digest, current-content status, and cycle identifier; expanded its focused test.
++
++Next: On reentry, run the ping and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/state/FRONTIER.md b/state/FRONTIER.md
+index 32477e0c7b39027228de2980203478c63cce294c..acb12f142d279aa426ba057984bdfb6011227281
+--- a/state/FRONTIER.md
++++ b/state/FRONTIER.md
+@@ -1,4 +1,4 @@
+ ﻿# FRONTIER
+ 
+-Cycle: cycle-1 bounded improvement completed.
+-Next: cycle-2 verification of `reentry_ping.py` output.
++Cycle: cycle-2 bounded improvement completed.
++Next: On reentry, run `tools/reentry_ping.py` and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/tests/test_reentry_ping.py b/tests/test_reentry_ping.py
+index 1e46c566831e6fadb9d2ad059e740f14945d5836..5838c8c91ceaee6f4677411d9b8af2977dc6e99f
+--- a/tests/test_reentry_ping.py
++++ b/tests/test_reentry_ping.py
+@@ -1,3 +1,5 @@
++import hashlib
++import json
+ import subprocess
+ import sys
+ from pathlib import Path
+@@ -7,7 +9,8 @@
+ 
+ 
+ def test_reentry_ping_reports_non_empty_frontier() -> None:
+-    frontier = (PROJECT_ROOT / "state" / "FRONTIER.md").read_text(encoding="utf-8").strip()
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = frontier_path.read_text(encoding="utf-8").strip()
+     result = subprocess.run(
+         [sys.executable, "tools/reentry_ping.py"],
+         cwd=PROJECT_ROOT,
+@@ -18,3 +21,14 @@
+ 
+     assert frontier
+     assert "frontier:" in result.stdout
++
++    receipt = json.loads(
++        (PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json").read_text(encoding="utf-8")
++    )
++    assert receipt == {
++        "frontier_sha16": hashlib.sha256(
++            frontier_path.read_text(encoding="utf-8-sig").encode("utf-8")
++        ).hexdigest()[:16],
++        "current_nonempty": True,
++        "cycle": "2",
++    }
+diff --git a/tools/reentry_ping.py b/tools/reentry_ping.py
+index 8b0cbdd7089e02b0e42620d935fb958faf228678..d0ef9849a2deb18d73822dbb132da329c1a10d62
+--- a/tools/reentry_ping.py
++++ b/tools/reentry_ping.py
+@@ -1,5 +1,7 @@
+-"""Print a compact reentry summary from the project's continuity files."""
++"""Print a compact reentry summary and persist its cycle-2 receipt."""
+ 
++import hashlib
++import json
+ from pathlib import Path
+ 
+ 
+@@ -15,9 +17,23 @@
+     return "(no content)"
+ 
+ 
++def write_cycle2_receipt(frontier_path: Path, current: str) -> None:
++    """Record the continuity inputs observed by this ping."""
++    frontier_text = frontier_path.read_text(encoding="utf-8-sig")
++    receipt = {
++        "frontier_sha16": hashlib.sha256(frontier_text.encode("utf-8")).hexdigest()[:16],
++        "current_nonempty": current != "(no content)",
++        "cycle": "2",
++    }
++    receipt_path = PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json"
++    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
++
++
+ def main() -> None:
+     current = first_content_line(PROJECT_ROOT / "state" / "CURRENT.md")
+-    frontier = first_content_line(PROJECT_ROOT / "state" / "FRONTIER.md")
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = first_content_line(frontier_path)
++    write_cycle2_receipt(frontier_path, current)
+     print(f"reentry ping | current: {current} | frontier: {frontier}")
+ 
+ 
+
+diff --git a/evidence/CYCLE2_CHECKPOINT.md b/evidence/CYCLE2_CHECKPOINT.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..b9f7d5e8c311a2a104a3ba340cdbdb6effcf9847
+--- /dev/null
++++ b/evidence/CYCLE2_CHECKPOINT.md
+@@ -0,0 +1,9 @@
++# Cycle 2 checkpoint
++
++Recovered frontier: cycle-2 verification of `reentry_ping.py` output.
++
++Recovered last checkpoint: `evidence/CYCLE1_CHECKPOINT.md`, which records the cycle-1 tool and focused test addition.
++
++Done: Captured the pre-extension ping output in `evidence/CYCLE2_REENTRY_PING.txt`. Extended `tools/reentry_ping.py` to write `evidence/CYCLE2_PING_RECEIPT.json` with the observed frontier digest, current-content status, and cycle identifier; expanded its focused test.
++
++Next: On reentry, run the ping and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/state/FRONTIER.md b/state/FRONTIER.md
+index 32477e0c7b39027228de2980203478c63cce294c..acb12f142d279aa426ba057984bdfb6011227281
+--- a/state/FRONTIER.md
++++ b/state/FRONTIER.md
+@@ -1,4 +1,4 @@
+ ﻿# FRONTIER
+ 
+-Cycle: cycle-1 bounded improvement completed.
+-Next: cycle-2 verification of `reentry_ping.py` output.
++Cycle: cycle-2 bounded improvement completed.
++Next: On reentry, run `tools/reentry_ping.py` and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/tests/test_reentry_ping.py b/tests/test_reentry_ping.py
+index 1e46c566831e6fadb9d2ad059e740f14945d5836..5838c8c91ceaee6f4677411d9b8af2977dc6e99f
+--- a/tests/test_reentry_ping.py
++++ b/tests/test_reentry_ping.py
+@@ -1,3 +1,5 @@
++import hashlib
++import json
+ import subprocess
+ import sys
+ from pathlib import Path
+@@ -7,7 +9,8 @@
+ 
+ 
+ def test_reentry_ping_reports_non_empty_frontier() -> None:
+-    frontier = (PROJECT_ROOT / "state" / "FRONTIER.md").read_text(encoding="utf-8").strip()
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = frontier_path.read_text(encoding="utf-8").strip()
+     result = subprocess.run(
+         [sys.executable, "tools/reentry_ping.py"],
+         cwd=PROJECT_ROOT,
+@@ -18,3 +21,14 @@
+ 
+     assert frontier
+     assert "frontier:" in result.stdout
++
++    receipt = json.loads(
++        (PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json").read_text(encoding="utf-8")
++    )
++    assert receipt == {
++        "frontier_sha16": hashlib.sha256(
++            frontier_path.read_text(encoding="utf-8-sig").encode("utf-8")
++        ).hexdigest()[:16],
++        "current_nonempty": True,
++        "cycle": "2",
++    }
+diff --git a/tools/reentry_ping.py b/tools/reentry_ping.py
+index 8b0cbdd7089e02b0e42620d935fb958faf228678..d0ef9849a2deb18d73822dbb132da329c1a10d62
+--- a/tools/reentry_ping.py
++++ b/tools/reentry_ping.py
+@@ -1,5 +1,7 @@
+-"""Print a compact reentry summary from the project's continuity files."""
++"""Print a compact reentry summary and persist its cycle-2 receipt."""
+ 
++import hashlib
++import json
+ from pathlib import Path
+ 
+ 
+@@ -15,9 +17,23 @@
+     return "(no content)"
+ 
+ 
++def write_cycle2_receipt(frontier_path: Path, current: str) -> None:
++    """Record the continuity inputs observed by this ping."""
++    frontier_text = frontier_path.read_text(encoding="utf-8-sig")
++    receipt = {
++        "frontier_sha16": hashlib.sha256(frontier_text.encode("utf-8")).hexdigest()[:16],
++        "current_nonempty": current != "(no content)",
++        "cycle": "2",
++    }
++    receipt_path = PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json"
++    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
++
++
+ def main() -> None:
+     current = first_content_line(PROJECT_ROOT / "state" / "CURRENT.md")
+-    frontier = first_content_line(PROJECT_ROOT / "state" / "FRONTIER.md")
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = first_content_line(frontier_path)
++    write_cycle2_receipt(frontier_path, current)
+     print(f"reentry ping | current: {current} | frontier: {frontier}")
+ 
+ 
+
+codex
+The extension and focused test are in place. I updated the frontier first so the receipt will attest to the post-cycle-2 continuity state, and I’m running the test plus the tool to produce the durable receipt.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'python -m pytest tests/test_reentry_ping.py; python tools/reentry_ping.py; Get-Content -Raw evidence/CYCLE2_PING_RECEIPT.json; git diff -- tools/reentry_ping.py tests/test_reentry_ping.py state/FRONTIER.md evidence/CYCLE2_CHECKPOINT.md; git status --short' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY
+ succeeded in 1339ms:
+============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.0.3, pluggy-1.6.0
+rootdir: C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY
+plugins: anyio-4.13.0, cov-7.1.0
+collected 1 item
+
+tests\test_reentry_ping.py .                                             [100%]
+
+============================== 1 passed in 0.14s ==============================
+reentry ping | current: Fixture body for T13/L6 Gate closure. Activated Proteus mount. Not the ideal body. | frontier: Cycle: cycle-2 bounded improvement completed.
+{
+  "frontier_sha16": "3228991a6213f9c3",
+  "current_nonempty": true,
+  "cycle": "2"
+}
+
+warning: in the working copy of 'state/FRONTIER.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_reentry_ping.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/reentry_ping.py', LF will be replaced by CRLF the next time Git touches it
+diff --git a/state/FRONTIER.md b/state/FRONTIER.md
+index 32477e0..acb12f1 100644
+--- a/state/FRONTIER.md
++++ b/state/FRONTIER.md
+@@ -1,4 +1,4 @@
+ ﻿# FRONTIER
+ 
+-Cycle: cycle-1 bounded improvement completed.
+-Next: cycle-2 verification of `reentry_ping.py` output.
++Cycle: cycle-2 bounded improvement completed.
++Next: On reentry, run `tools/reentry_ping.py` and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/tests/test_reentry_ping.py b/tests/test_reentry_ping.py
+index 1e46c56..5838c8c 100644
+--- a/tests/test_reentry_ping.py
++++ b/tests/test_reentry_ping.py
+@@ -1,3 +1,5 @@
++import hashlib
++import json
+ import subprocess
+ import sys
+ from pathlib import Path
+@@ -7,7 +9,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
+ 
+ 
+ def test_reentry_ping_reports_non_empty_frontier() -> None:
+-    frontier = (PROJECT_ROOT / "state" / "FRONTIER.md").read_text(encoding="utf-8").strip()
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = frontier_path.read_text(encoding="utf-8").strip()
+     result = subprocess.run(
+         [sys.executable, "tools/reentry_ping.py"],
+         cwd=PROJECT_ROOT,
+@@ -18,3 +21,14 @@ def test_reentry_ping_reports_non_empty_frontier() -> None:
+ 
+     assert frontier
+     assert "frontier:" in result.stdout
++
++    receipt = json.loads(
++        (PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json").read_text(encoding="utf-8")
++    )
++    assert receipt == {
++        "frontier_sha16": hashlib.sha256(
++            frontier_path.read_text(encoding="utf-8-sig").encode("utf-8")
++        ).hexdigest()[:16],
++        "current_nonempty": True,
++        "cycle": "2",
++    }
+diff --git a/tools/reentry_ping.py b/tools/reentry_ping.py
+index 8b0cbdd..d0ef984 100644
+--- a/tools/reentry_ping.py
++++ b/tools/reentry_ping.py
+@@ -1,5 +1,7 @@
+-"""Print a compact reentry summary from the project's continuity files."""
++"""Print a compact reentry summary and persist its cycle-2 receipt."""
+ 
++import hashlib
++import json
+ from pathlib import Path
+ 
+ 
+@@ -15,9 +17,23 @@ def first_content_line(path: Path) -> str:
+     return "(no content)"
+ 
+ 
++def write_cycle2_receipt(frontier_path: Path, current: str) -> None:
++    """Record the continuity inputs observed by this ping."""
++    frontier_text = frontier_path.read_text(encoding="utf-8-sig")
++    receipt = {
++        "frontier_sha16": hashlib.sha256(frontier_text.encode("utf-8")).hexdigest()[:16],
++        "current_nonempty": current != "(no content)",
++        "cycle": "2",
++    }
++    receipt_path = PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json"
++    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
++
++
+ def main() -> None:
+     current = first_content_line(PROJECT_ROOT / "state" / "CURRENT.md")
+-    frontier = first_content_line(PROJECT_ROOT / "state" / "FRONTIER.md")
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = first_content_line(frontier_path)
++    write_cycle2_receipt(frontier_path, current)
+     print(f"reentry ping | current: {current} | frontier: {frontier}")
+ 
+ 
+ M state/FRONTIER.md
+ M tests/test_reentry_ping.py
+ M tools/reentry_ping.py
+?? .cursor/
+?? .proteus/
+?? AGENTS.md
+?? CLAUDE.md
+?? evidence/CYCLE2_CHECKPOINT.md
+?? evidence/CYCLE2_PING_RECEIPT.json
+?? evidence/CYCLE2_REENTRY_PING.txt
+?? state/CURRENT.md
+?? state/DECISIONS.md
+?? state/IDENTITY.md
+?? state/UNRESOLVED.md
+?? tests/__pycache__/
+
+diff --git a/evidence/CYCLE2_CHECKPOINT.md b/evidence/CYCLE2_CHECKPOINT.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..b9f7d5e8c311a2a104a3ba340cdbdb6effcf9847
+--- /dev/null
++++ b/evidence/CYCLE2_CHECKPOINT.md
+@@ -0,0 +1,9 @@
++# Cycle 2 checkpoint
++
++Recovered frontier: cycle-2 verification of `reentry_ping.py` output.
++
++Recovered last checkpoint: `evidence/CYCLE1_CHECKPOINT.md`, which records the cycle-1 tool and focused test addition.
++
++Done: Captured the pre-extension ping output in `evidence/CYCLE2_REENTRY_PING.txt`. Extended `tools/reentry_ping.py` to write `evidence/CYCLE2_PING_RECEIPT.json` with the observed frontier digest, current-content status, and cycle identifier; expanded its focused test.
++
++Next: On reentry, run the ping and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/state/FRONTIER.md b/state/FRONTIER.md
+index 32477e0c7b39027228de2980203478c63cce294c..acb12f142d279aa426ba057984bdfb6011227281
+--- a/state/FRONTIER.md
++++ b/state/FRONTIER.md
+@@ -1,4 +1,4 @@
+ ﻿# FRONTIER
+ 
+-Cycle: cycle-1 bounded improvement completed.
+-Next: cycle-2 verification of `reentry_ping.py` output.
++Cycle: cycle-2 bounded improvement completed.
++Next: On reentry, run `tools/reentry_ping.py` and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/tests/test_reentry_ping.py b/tests/test_reentry_ping.py
+index 1e46c566831e6fadb9d2ad059e740f14945d5836..5838c8c91ceaee6f4677411d9b8af2977dc6e99f
+--- a/tests/test_reentry_ping.py
++++ b/tests/test_reentry_ping.py
+@@ -1,3 +1,5 @@
++import hashlib
++import json
+ import subprocess
+ import sys
+ from pathlib import Path
+@@ -7,7 +9,8 @@
+ 
+ 
+ def test_reentry_ping_reports_non_empty_frontier() -> None:
+-    frontier = (PROJECT_ROOT / "state" / "FRONTIER.md").read_text(encoding="utf-8").strip()
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = frontier_path.read_text(encoding="utf-8").strip()
+     result = subprocess.run(
+         [sys.executable, "tools/reentry_ping.py"],
+         cwd=PROJECT_ROOT,
+@@ -18,3 +21,14 @@
+ 
+     assert frontier
+     assert "frontier:" in result.stdout
++
++    receipt = json.loads(
++        (PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json").read_text(encoding="utf-8")
++    )
++    assert receipt == {
++        "frontier_sha16": hashlib.sha256(
++            frontier_path.read_text(encoding="utf-8-sig").encode("utf-8")
++        ).hexdigest()[:16],
++        "current_nonempty": True,
++        "cycle": "2",
++    }
+diff --git a/tools/reentry_ping.py b/tools/reentry_ping.py
+index 8b0cbdd7089e02b0e42620d935fb958faf228678..d0ef9849a2deb18d73822dbb132da329c1a10d62
+--- a/tools/reentry_ping.py
++++ b/tools/reentry_ping.py
+@@ -1,5 +1,7 @@
+-"""Print a compact reentry summary from the project's continuity files."""
++"""Print a compact reentry summary and persist its cycle-2 receipt."""
+ 
++import hashlib
++import json
+ from pathlib import Path
+ 
+ 
+@@ -15,9 +17,23 @@
+     return "(no content)"
+ 
+ 
++def write_cycle2_receipt(frontier_path: Path, current: str) -> None:
++    """Record the continuity inputs observed by this ping."""
++    frontier_text = frontier_path.read_text(encoding="utf-8-sig")
++    receipt = {
++        "frontier_sha16": hashlib.sha256(frontier_text.encode("utf-8")).hexdigest()[:16],
++        "current_nonempty": current != "(no content)",
++        "cycle": "2",
++    }
++    receipt_path = PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json"
++    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
++
++
+ def main() -> None:
+     current = first_content_line(PROJECT_ROOT / "state" / "CURRENT.md")
+-    frontier = first_content_line(PROJECT_ROOT / "state" / "FRONTIER.md")
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = first_content_line(frontier_path)
++    write_cycle2_receipt(frontier_path, current)
+     print(f"reentry ping | current: {current} | frontier: {frontier}")
+ 
+ 
+
+codex
+Verification passed. The receipt now records `frontier_sha16: 3228991a6213f9c3`, `current_nonempty: true`, and cycle 2. I’ll commit only the cycle-2 files, leaving the pre-existing untracked mount surfaces untouched.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'git diff --check; git add state/FRONTIER.md tools/reentry_ping.py tests/test_reentry_ping.py evidence/CYCLE2_REENTRY_PING.txt evidence/CYCLE2_PING_RECEIPT.json evidence/CYCLE2_CHECKPOINT.md; git commit -m "Complete cycle-2 reentry receipt"; git status --short; git log -1 --oneline' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY
+ succeeded in 326ms:
+warning: in the working copy of 'state/FRONTIER.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_reentry_ping.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/reentry_ping.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'state/FRONTIER.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_reentry_ping.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tools/reentry_ping.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'evidence/CYCLE2_CHECKPOINT.md', LF will be replaced by CRLF the next time Git touches it
+[main f1a7d97] Complete cycle-2 reentry receipt
+ 6 files changed, 50 insertions(+), 5 deletions(-)
+ create mode 100644 evidence/CYCLE2_CHECKPOINT.md
+ create mode 100644 evidence/CYCLE2_PING_RECEIPT.json
+ create mode 100644 evidence/CYCLE2_REENTRY_PING.txt
+?? .cursor/
+?? .proteus/
+?? AGENTS.md
+?? CLAUDE.md
+?? state/CURRENT.md
+?? state/DECISIONS.md
+?? state/IDENTITY.md
+?? state/UNRESOLVED.md
+?? tests/__pycache__/
+f1a7d97 Complete cycle-2 reentry receipt
+
+diff --git a/evidence/CYCLE2_CHECKPOINT.md b/evidence/CYCLE2_CHECKPOINT.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..b9f7d5e8c311a2a104a3ba340cdbdb6effcf9847
+--- /dev/null
++++ b/evidence/CYCLE2_CHECKPOINT.md
+@@ -0,0 +1,9 @@
++# Cycle 2 checkpoint
++
++Recovered frontier: cycle-2 verification of `reentry_ping.py` output.
++
++Recovered last checkpoint: `evidence/CYCLE1_CHECKPOINT.md`, which records the cycle-1 tool and focused test addition.
++
++Done: Captured the pre-extension ping output in `evidence/CYCLE2_REENTRY_PING.txt`. Extended `tools/reentry_ping.py` to write `evidence/CYCLE2_PING_RECEIPT.json` with the observed frontier digest, current-content status, and cycle identifier; expanded its focused test.
++
++Next: On reentry, run the ping and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/state/FRONTIER.md b/state/FRONTIER.md
+index 32477e0c7b39027228de2980203478c63cce294c..acb12f142d279aa426ba057984bdfb6011227281
+--- a/state/FRONTIER.md
++++ b/state/FRONTIER.md
+@@ -1,4 +1,4 @@
+ ﻿# FRONTIER
+ 
+-Cycle: cycle-1 bounded improvement completed.
+-Next: cycle-2 verification of `reentry_ping.py` output.
++Cycle: cycle-2 bounded improvement completed.
++Next: On reentry, run `tools/reentry_ping.py` and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/tests/test_reentry_ping.py b/tests/test_reentry_ping.py
+index 1e46c566831e6fadb9d2ad059e740f14945d5836..5838c8c91ceaee6f4677411d9b8af2977dc6e99f
+--- a/tests/test_reentry_ping.py
++++ b/tests/test_reentry_ping.py
+@@ -1,3 +1,5 @@
++import hashlib
++import json
+ import subprocess
+ import sys
+ from pathlib import Path
+@@ -7,7 +9,8 @@
+ 
+ 
+ def test_reentry_ping_reports_non_empty_frontier() -> None:
+-    frontier = (PROJECT_ROOT / "state" / "FRONTIER.md").read_text(encoding="utf-8").strip()
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = frontier_path.read_text(encoding="utf-8").strip()
+     result = subprocess.run(
+         [sys.executable, "tools/reentry_ping.py"],
+         cwd=PROJECT_ROOT,
+@@ -18,3 +21,14 @@
+ 
+     assert frontier
+     assert "frontier:" in result.stdout
++
++    receipt = json.loads(
++        (PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json").read_text(encoding="utf-8")
++    )
++    assert receipt == {
++        "frontier_sha16": hashlib.sha256(
++            frontier_path.read_text(encoding="utf-8-sig").encode("utf-8")
++        ).hexdigest()[:16],
++        "current_nonempty": True,
++        "cycle": "2",
++    }
+diff --git a/tools/reentry_ping.py b/tools/reentry_ping.py
+index 8b0cbdd7089e02b0e42620d935fb958faf228678..d0ef9849a2deb18d73822dbb132da329c1a10d62
+--- a/tools/reentry_ping.py
++++ b/tools/reentry_ping.py
+@@ -1,5 +1,7 @@
+-"""Print a compact reentry summary from the project's continuity files."""
++"""Print a compact reentry summary and persist its cycle-2 receipt."""
+ 
++import hashlib
++import json
+ from pathlib import Path
+ 
+ 
+@@ -15,9 +17,23 @@
+     return "(no content)"
+ 
+ 
++def write_cycle2_receipt(frontier_path: Path, current: str) -> None:
++    """Record the continuity inputs observed by this ping."""
++    frontier_text = frontier_path.read_text(encoding="utf-8-sig")
++    receipt = {
++        "frontier_sha16": hashlib.sha256(frontier_text.encode("utf-8")).hexdigest()[:16],
++        "current_nonempty": current != "(no content)",
++        "cycle": "2",
++    }
++    receipt_path = PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json"
++    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
++
++
+ def main() -> None:
+     current = first_content_line(PROJECT_ROOT / "state" / "CURRENT.md")
+-    frontier = first_content_line(PROJECT_ROOT / "state" / "FRONTIER.md")
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = first_content_line(frontier_path)
++    write_cycle2_receipt(frontier_path, current)
+     print(f"reentry ping | current: {current} | frontier: {frontier}")
+ 
+ 
+
+codex
+Completed and committed cycle 2.
+
+- Recovered frontier and checkpoint solely from durable `state/` and `evidence/`.
+- Captured the pre-extension ping in [CYCLE2_REENTRY_PING.txt](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\evidence\CYCLE2_REENTRY_PING.txt).
+- Extended [reentry_ping.py](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\tools\reentry_ping.py) to write [CYCLE2_PING_RECEIPT.json](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\evidence\CYCLE2_PING_RECEIPT.json).
+- Updated the focused test and confirmed `1 passed`.
+- Updated [FRONTIER.md](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\state\FRONTIER.md) and added [CYCLE2_CHECKPOINT.md](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T13_BODY\evidence\CYCLE2_CHECKPOINT.md).
+
+Commit: `f1a7d97 Complete cycle-2 reentry receipt`
+diff --git a/evidence/CYCLE2_CHECKPOINT.md b/evidence/CYCLE2_CHECKPOINT.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..b9f7d5e8c311a2a104a3ba340cdbdb6effcf9847
+--- /dev/null
++++ b/evidence/CYCLE2_CHECKPOINT.md
+@@ -0,0 +1,9 @@
++# Cycle 2 checkpoint
++
++Recovered frontier: cycle-2 verification of `reentry_ping.py` output.
++
++Recovered last checkpoint: `evidence/CYCLE1_CHECKPOINT.md`, which records the cycle-1 tool and focused test addition.
++
++Done: Captured the pre-extension ping output in `evidence/CYCLE2_REENTRY_PING.txt`. Extended `tools/reentry_ping.py` to write `evidence/CYCLE2_PING_RECEIPT.json` with the observed frontier digest, current-content status, and cycle identifier; expanded its focused test.
++
++Next: On reentry, run the ping and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/state/FRONTIER.md b/state/FRONTIER.md
+index 32477e0c7b39027228de2980203478c63cce294c..acb12f142d279aa426ba057984bdfb6011227281
+--- a/state/FRONTIER.md
++++ b/state/FRONTIER.md
+@@ -1,4 +1,4 @@
+ ﻿# FRONTIER
+ 
+-Cycle: cycle-1 bounded improvement completed.
+-Next: cycle-2 verification of `reentry_ping.py` output.
++Cycle: cycle-2 bounded improvement completed.
++Next: On reentry, run `tools/reentry_ping.py` and compare its receipt with the current continuity files before selecting a further bounded improvement.
+diff --git a/tests/test_reentry_ping.py b/tests/test_reentry_ping.py
+index 1e46c566831e6fadb9d2ad059e740f14945d5836..5838c8c91ceaee6f4677411d9b8af2977dc6e99f
+--- a/tests/test_reentry_ping.py
++++ b/tests/test_reentry_ping.py
+@@ -1,3 +1,5 @@
++import hashlib
++import json
+ import subprocess
+ import sys
+ from pathlib import Path
+@@ -7,7 +9,8 @@
+ 
+ 
+ def test_reentry_ping_reports_non_empty_frontier() -> None:
+-    frontier = (PROJECT_ROOT / "state" / "FRONTIER.md").read_text(encoding="utf-8").strip()
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = frontier_path.read_text(encoding="utf-8").strip()
+     result = subprocess.run(
+         [sys.executable, "tools/reentry_ping.py"],
+         cwd=PROJECT_ROOT,
+@@ -18,3 +21,14 @@
+ 
+     assert frontier
+     assert "frontier:" in result.stdout
++
++    receipt = json.loads(
++        (PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json").read_text(encoding="utf-8")
++    )
++    assert receipt == {
++        "frontier_sha16": hashlib.sha256(
++            frontier_path.read_text(encoding="utf-8-sig").encode("utf-8")
++        ).hexdigest()[:16],
++        "current_nonempty": True,
++        "cycle": "2",
++    }
+diff --git a/tools/reentry_ping.py b/tools/reentry_ping.py
+index 8b0cbdd7089e02b0e42620d935fb958faf228678..d0ef9849a2deb18d73822dbb132da329c1a10d62
+--- a/tools/reentry_ping.py
++++ b/tools/reentry_ping.py
+@@ -1,5 +1,7 @@
+-"""Print a compact reentry summary from the project's continuity files."""
++"""Print a compact reentry summary and persist its cycle-2 receipt."""
+ 
++import hashlib
++import json
+ from pathlib import Path
+ 
+ 
+@@ -15,9 +17,23 @@
+     return "(no content)"
+ 
+ 
++def write_cycle2_receipt(frontier_path: Path, current: str) -> None:
++    """Record the continuity inputs observed by this ping."""
++    frontier_text = frontier_path.read_text(encoding="utf-8-sig")
++    receipt = {
++        "frontier_sha16": hashlib.sha256(frontier_text.encode("utf-8")).hexdigest()[:16],
++        "current_nonempty": current != "(no content)",
++        "cycle": "2",
++    }
++    receipt_path = PROJECT_ROOT / "evidence" / "CYCLE2_PING_RECEIPT.json"
++    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
++
++
+ def main() -> None:
+     current = first_content_line(PROJECT_ROOT / "state" / "CURRENT.md")
+-    frontier = first_content_line(PROJECT_ROOT / "state" / "FRONTIER.md")
++    frontier_path = PROJECT_ROOT / "state" / "FRONTIER.md"
++    frontier = first_content_line(frontier_path)
++    write_cycle2_receipt(frontier_path, current)
+     print(f"reentry ping | current: {current} | frontier: {frontier}")
+ 
+ 
+
+tokens used
+27 904

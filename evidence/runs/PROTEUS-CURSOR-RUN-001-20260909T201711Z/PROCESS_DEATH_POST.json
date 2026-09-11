@@ -1,0 +1,28 @@
+﻿{
+    "killed_utc":  "2026-09-11T19:53:11.5754956Z",
+    "kill_targets":  [
+                         23120,
+                         13460,
+                         22968,
+                         16344,
+                         19000,
+                         20404,
+                         27956,
+                         28176,
+                         15780,
+                         28248,
+                         3864,
+                         6628,
+                         6856,
+                         26920,
+                         4888,
+                         2112,
+                         14616
+                     ],
+    "still_alive":  [
+
+                    ],
+    "terminated":  true,
+    "origin_cursor_count_before":  25,
+    "origin_cursor_count_after":  28
+}

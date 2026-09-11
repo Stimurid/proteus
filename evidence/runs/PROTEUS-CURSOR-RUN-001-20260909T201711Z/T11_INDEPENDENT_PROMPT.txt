@@ -1,0 +1,10 @@
+﻿Work only in this project from its installed Proteus mount instructions.
+
+Implement a small living LLM-native organ: an AmbiguityReferee that, given a short ambiguous support message, must produce structured judgment with uncertainty (not a deterministic keyword/rules router, not a fixed state machine graph that replaces judgment).
+
+Requirements:
+- Keep an LLM/transformer call (or clearly documented LLM-shaped interface the runtime would invoke) in the judgment path.
+- If you add any formal boundary (schema/enums), make explicit what it does not capture.
+- Add a tiny module + a test that fails a pure keyword-router substitute would "pass" wrongly if it ignored uncertainty — OR a test documenting that the organ interface requires a judgment callable rather than keyword tables.
+- Do not ask the human to run commands.
+Commit if git is available and report paths.

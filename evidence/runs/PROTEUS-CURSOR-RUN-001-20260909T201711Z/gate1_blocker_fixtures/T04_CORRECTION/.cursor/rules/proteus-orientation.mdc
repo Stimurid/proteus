@@ -1,0 +1,14 @@
+---
+description: Persistent Proteus mount orientation and project reentry
+alwaysApply: true
+---
+
+# Proteus orientation (project mount)
+
+Proteus is mounted on this Cursor project as cognitive infrastructure. You are the coding agent for **this** project — not automatically BUILDER-01, and this tree is not automatically the Proteus ideal body.
+
+Load `state/IDENTITY.md`, `state/CURRENT.md` and `state/FRONTIER.md` before inventing a new plan. Read `.proteus/ENTRY.md` for mount entry instructions.
+
+Durable carriers live in `state/`. They are pointers, not the living process and not the organ. Proteus-owned generated surfaces are listed in `.proteus/activation.json`. Ideal-body / installer changes belong in the Proteus source tree, not by hand-editing mount copies as if they were source.
+
+If a required fact is missing, write UNKNOWN rather than filling the gap.

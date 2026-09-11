@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "meta": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\T09_R2_META.json",
+  "prompt_sha256": "4f132e9d07a4e015cce1b07e5144192346499d9fdc7ee07190d834e79a70297c"
+}

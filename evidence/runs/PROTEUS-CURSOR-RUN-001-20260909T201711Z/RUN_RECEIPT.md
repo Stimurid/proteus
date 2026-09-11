@@ -173,8 +173,18 @@ Auditor verdict: **NOT_ACCEPTED**. Origin did not alter verdict; no repairs in t
 GATE_1 = NOT_ACCEPTED.
 Next frontier: auditor Gate-critical gaps (T04; T11; T02/process-death; T05/T09; L6/T13).
 
+## 22. GATE1 BLOCKER CLOSURE (post-audit; not a re-audit)
+
+Contract map: `GATE1_BLOCKER_CONTRACT_MAP.md`.
+Closure matrix: `GATE1_BLOCKER_CLOSURE_MATRIX.md`.
+Current PASS evidence: T04, T05, T09, T11-current, PROCESS_DEATH_BOUNDARY, T13/L6 (`PROTEUS_L4_L5_L6_EVIDENCE.md`).
+Historical preserved: T02 PARTIAL; T11 PARTIAL; F05 NR PARTIAL; auditor Gate **NOT_ACCEPTED**.
+Causal repair: portable handoff verify accepts Gate `NOT_ACCEPTED` as unaccepted (`src/proteus/handoff.py`).
+Regression: pytest activate/codex/world/secret/capsule/smoke/recruitment/portable → **46 passed**.
+Next frontier: `INDEPENDENT_GATE_1_REAUDIT` (not performed here).
+
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (…; D-006–D-011 accepted; F04–F06 recorded; Gate 1 audited NOT_ACCEPTED)
+FIRST_INCARNATION = PARTIAL (…; D-006–D-011 accepted; F04–F06 recorded; Gate audited NOT_ACCEPTED; blockers closed pending re-audit)
 OBSERVABILITY = PARTIAL (local PASS; Drive observatory FAIL; entity carriers MCP PARTIAL)
 PRODUCT_ACTIVATION = PASS
 WORLD_ENTITY_MEMORY = PASS (vertical slice)
@@ -186,6 +196,15 @@ RECRUITMENT_REPAIR = PASS
 BLIND_FORM_TRANSITION_RETEST = PASS
 NATURAL_TRANSDUCTION_RETEST = PASS
 NATURAL_RECRUITMENT = PASS
+T04 = PASS
+T05 = PASS
+T09 = PASS
+T11_CURRENT = PASS (historical PARTIAL preserved)
+PROCESS_DEATH_BOUNDARY = PASS
+T13 = PASS
+L4 = PASS
+L5 = PASS
+L6 = PASS
 LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED
 GATE_1 = NOT_ACCEPTED
-NEXT_FRONTIER = GATE1_BLOCKERS (T04; T11; T02/PROCESS_DEATH; T05/T09; L6/T13)
+NEXT_FRONTIER = INDEPENDENT_GATE_1_REAUDIT

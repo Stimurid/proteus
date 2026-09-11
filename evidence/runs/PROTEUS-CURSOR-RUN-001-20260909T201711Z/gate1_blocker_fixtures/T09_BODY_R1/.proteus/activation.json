@@ -1,0 +1,169 @@
+{
+  "schema": "proteus.activation.v0.1",
+  "activation_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194343Z",
+  "host": "cursor",
+  "activated_at": "2026-09-11T19:43:43.042350+00:00",
+  "updated_at": "2026-09-11T19:43:43.042350+00:00",
+  "target_root": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\gate1_blocker_fixtures\\T09_BODY_R1",
+  "proteus_source": "C:\\projects\\Proteus",
+  "runtime_pythonpath": "C:\\Users\\Timur Shchukin\\.proteus\\host\\cursor\\src",
+  "python": "C:\\Users\\Timur Shchukin\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "run_id": "PROTEUS-CURSOR-RUN-001-20260909T201711Z",
+  "owned_paths": [
+    ".cursor/commands/proteus-checkpoint.md",
+    ".cursor/hooks.json",
+    ".cursor/hooks/proteus_hook.cmd",
+    ".cursor/rules/proteus-anti-reduction.mdc",
+    ".cursor/rules/proteus-mutation.mdc",
+    ".cursor/rules/proteus-orientation.mdc",
+    ".cursor/skills/proteus-checkpoint/SKILL.md",
+    ".cursor/skills/proteus-correction/SKILL.md",
+    ".cursor/skills/proteus-reentry/SKILL.md",
+    ".cursor/skills/proteus-world/SKILL.md",
+    ".proteus/CONSTITUTIVE.md",
+    ".proteus/ENTRY.md",
+    ".proteus/activation.json",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "state/CURRENT.md",
+    "state/DECISIONS.md",
+    "state/FRONTIER.md",
+    "state/IDENTITY.md",
+    "state/UNRESOLVED.md"
+  ],
+  "content_sha256_16": {
+    ".proteus/ENTRY.md": "3ee5d9a8c1ddee6c",
+    ".proteus/CONSTITUTIVE.md": "0a3f6eaff07a74c9",
+    "state/IDENTITY.md": "4b633f2f5231d0ba",
+    "state/CURRENT.md": "1b83e3ad532cad96",
+    "state/FRONTIER.md": "1ee86bd6fd7c24b3",
+    "state/DECISIONS.md": "c10a75c5c920e101",
+    "state/UNRESOLVED.md": "6bac9bfc04c05ddc",
+    "AGENTS.md": "c19f7efff1358518",
+    "CLAUDE.md": "e9ed14883db9e9f6",
+    ".cursor/rules/proteus-orientation.mdc": "d5fa7e28117c8a91",
+    ".cursor/rules/proteus-mutation.mdc": "0c306f6d6bd0edd8",
+    ".cursor/rules/proteus-anti-reduction.mdc": "6173aecbe444bc8e",
+    ".cursor/skills/proteus-checkpoint/SKILL.md": "976ef314ef5f36cf",
+    ".cursor/skills/proteus-correction/SKILL.md": "b17c0225f6742687",
+    ".cursor/skills/proteus-reentry/SKILL.md": "54e7759cbb6898ee",
+    ".cursor/skills/proteus-world/SKILL.md": "3c878cc89f0a6ada",
+    ".cursor/commands/proteus-checkpoint.md": "1ee1d05569515b0f",
+    ".cursor/hooks/proteus_hook.cmd": "dd84786a52542fa0",
+    ".cursor/hooks.json": "2e18de901114c3f4",
+    ".proteus/activation.json": "7d874d54216cbc70"
+  },
+  "preserved_paths": [],
+  "policy": {
+    "AGENTS.md": "create_if_absent_else_preserve",
+    "CLAUDE.md": "create_if_absent_else_preserve",
+    "state/*": "create_if_absent_else_preserve",
+    ".cursor/rules": "only proteus-*.mdc owned",
+    "hooks.json": "merge proteus_hook only",
+    "removal": "only owned_paths from this manifest"
+  },
+  "actions": [
+    {
+      "path": ".proteus/ENTRY.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".proteus/CONSTITUTIVE.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": "state/IDENTITY.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": "state/CURRENT.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": "state/FRONTIER.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": "state/DECISIONS.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": "state/UNRESOLVED.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": "AGENTS.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": "CLAUDE.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/rules/proteus-orientation.mdc",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/rules/proteus-mutation.mdc",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/rules/proteus-anti-reduction.mdc",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/skills/proteus-checkpoint/SKILL.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/skills/proteus-correction/SKILL.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/skills/proteus-reentry/SKILL.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/skills/proteus-world/SKILL.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/commands/proteus-checkpoint.md",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/hooks/proteus_hook.cmd",
+      "action": "create",
+      "reason": "Proteus-owned"
+    },
+    {
+      "path": ".cursor/hooks.json",
+      "action": "create",
+      "reason": "proteus_hook merge"
+    }
+  ],
+  "entry": ".proteus/ENTRY.md",
+  "not_claimed": [
+    "Gate 1",
+    "full Proteus product acceptance",
+    "PROCESS_DEATH continuity",
+    "universal multi-host activation"
+  ]
+}

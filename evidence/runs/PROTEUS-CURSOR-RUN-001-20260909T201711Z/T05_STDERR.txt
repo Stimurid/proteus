@@ -1,0 +1,117 @@
+2026-09-11T19:44:37.907927Z ERROR codex_models_manager::manager: failed to load models cache: trailing characters at line 673 column 2
+OpenAI Codex v0.153.4
+--------
+workdir: C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a09200-2a18-7bf3-b504-c77446c98de1
+--------
+user
+You are a fresh independent session in project T05_ISO_B only.
+Do not open or use sibling fixture T05_ISO_A.
+From this project's durable state and instructions only, answer:
+1) Does this project contain a decision about LOCAL_ONLY_TOKEN?
+2) If you somehow know a token value, quote it and say how you know; otherwise say UNKNOWN.
+Do not invent. Do not ask the human to run commands.
+
+2026-09-11T19:44:42.967763Z ERROR codex_models_manager::manager: failed to renew cache TTL: trailing characters at line 673 column 2
+codex
+I’ll inspect only this fixture’s entry instructions and durable state, then report the evidence without accessing any sibling fixture.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw .proteus\\ENTRY.md; Get-ChildItem -File state | Select-Object -ExpandProperty FullName" in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B
+ succeeded in 169ms:
+# Proteus entry вЂ” this project
+
+Proteus is **mounted** on this Cursor project. This is a project mount, not a claim that this tree is the Proteus ideal body, and not Gate 1 acceptance of the whole product.
+
+## Open / continue work
+
+1. Open this folder as the Cursor workspace.
+2. Start a new Agent chat (do not paste an old conversation).
+3. Read, in order: `state/IDENTITY.md`, `state/CURRENT.md`, `state/FRONTIER.md`, `state/DECISIONS.md`, `state/UNRESOLVED.md`.
+4. Follow `.cursor/rules/proteus-*.mdc` (always-apply) for mount orientation.
+5. If this project already had its own `AGENTS.md` / rules before activation, those were **preserved**. Prefer project conventions there; Proteus carriers add reentry/checkpoint/anti-reduction surfaces.
+
+## Shared world / entity memory
+
+If the machine has a Proteus world substrate (`AIYE_HOME` / `PROTEUS_WORLD_ROOT`, default `~/.aiye/world`):
+
+```
+python -m proteus world resolve "<entity name or id>"
+python -m proteus world mount "<entity name or id>"
+python -m proteus world route --scope ENTITY --entity "<name>" --text "..." --project .
+```
+
+Do **not** copy entity knowledge into this project as local truth. Project decisions stay in `state/` / `.proteus/project_memory.jsonl`. ENTITY facts live in the shared substrate.
+
+## Consequential derived representations
+
+Read `.proteus/CONSTITUTIVE.md`. When a durable artifact will stand in for richer source in later action, keep it distinct from that source and retain reopenability. Optional: `python -m proteus derived record ...`.
+
+## What Proteus owns here
+
+See `.proteus/activation.json` (`owned_paths`). Only those paths are safe to reverse with:
+
+```
+python -m proteus.activate --project . --remove
+```
+
+(from a machine where the `proteus` package is importable; typically `PYTHONPATH=<proteus-src>`).
+
+## Activation provenance
+
+- activation_id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194342Z`
+- activated_at: `2026-09-11T19:43:42.890205+00:00`
+- proteus_source: `C:\projects\Proteus`
+- target: `C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B`
+- host: Cursor
+
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B\state\CURRENT.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B\state\DECISIONS.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B\state\FRONTIER.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B\state\IDENTITY.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B\state\UNRESOLVED.md
+
+2026-09-11T19:44:47.424510Z ERROR codex_models_manager::manager: failed to renew cache TTL: trailing characters at line 673 column 2
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw state\\IDENTITY.md, state\\CURRENT.md, state\\FRONTIER.md, state\\DECISIONS.md, state\\UNRESOLVED.md" in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B
+ succeeded in 111ms:
+# T05_ISO_B
+
+Proteus project mount (Cursor). This `state/IDENTITY.md` describes **this working project**, not the Proteus organ and not the Proteus ideal-body repository (unless they coincide).
+
+Characteristic question when form changes: what changed вЂ” preserved, transformed, lost, newly emerged, residue?
+
+Activation id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194342Z`
+
+# CURRENT
+
+Project: T05_ISO_B
+Workspace: `C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T05_ISO_B`
+Status: Proteus Cursor mount activated (`PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194342Z`). No Gate 1 claim from activation alone.
+Proteus source used for this mount: `C:\projects\Proteus`
+
+# FRONTIER
+
+Next: continue ordinary product work for this project from its own goals. Proteus mount is present; do not treat mount success as full Proteus product acceptance.
+
+# DECISIONS
+
+(none yet for this project mount вЂ” append only real decisions with provenance)
+
+# UNRESOLVED / UNKNOWN / CONFLICT
+
+- UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
+
+
+2026-09-11T19:44:51.157133Z ERROR codex_models_manager::manager: failed to renew cache TTL: trailing characters at line 673 column 2
+codex
+1. No. This project’s `state/DECISIONS.md` says “(none yet for this project mount…)”; it contains no decision about `LOCAL_ONLY_TOKEN`.
+
+2. `LOCAL_ONLY_TOKEN` value: **UNKNOWN**. No token value appears in this project’s durable state or instructions.
+tokens used
+12 889

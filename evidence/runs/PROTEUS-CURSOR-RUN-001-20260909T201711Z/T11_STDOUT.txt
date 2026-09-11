@@ -1,0 +1,11 @@
+Implemented and committed the LLM-native ambiguity organ.
+
+- [ambiguity_referee.py](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\ambiguity_referee.py) — injected LLM-shaped judgment callable, structured uncertainty, and explicit schema limits.
+- [test_ambiguity_referee.py](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\test_ambiguity_referee.py) — verifies a judgment callable is invoked and high uncertainty/alternatives are preserved.
+- [state/UNRESOLVED.md](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\state\UNRESOLVED.md) — records what the formal representation does not capture.
+
+Verified with `python -m unittest -v`.
+
+Commit: `d315850 Add LLM-native ambiguity referee`
+
+The mount files were already untracked; the test also left an untracked `__pycache__/` directory.

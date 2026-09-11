@@ -1,0 +1,1878 @@
+2026-09-11T19:44:59.492421Z ERROR codex_models_manager::manager: failed to load models cache: trailing characters at line 673 column 2
+OpenAI Codex v0.153.4
+--------
+workdir: C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a09200-7e71-7850-a33a-c6ad43a6035c
+--------
+user
+Work only in this project from its installed Proteus mount instructions.
+
+Implement a small living LLM-native organ: an AmbiguityReferee that, given a short ambiguous support message, must produce structured judgment with uncertainty (not a deterministic keyword/rules router, not a fixed state machine graph that replaces judgment).
+
+Requirements:
+- Keep an LLM/transformer call (or clearly documented LLM-shaped interface the runtime would invoke) in the judgment path.
+- If you add any formal boundary (schema/enums), make explicit what it does not capture.
+- Add a tiny module + a test that fails a pure keyword-router substitute would "pass" wrongly if it ignored uncertainty — OR a test documenting that the organ interface requires a judgment callable rather than keyword tables.
+- Do not ask the human to run commands.
+Commit if git is available and report paths.
+
+codex
+I’ll follow the mounted Proteus reentry instructions, inspect the existing project shape, then add the smallest judgment-oriented organ and its focused test.
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-Content -Raw .proteus/ENTRY.md; Get-ChildItem state -File | Select-Object -ExpandProperty FullName' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN
+ succeeded in 153ms:
+# Proteus entry вЂ” this project
+
+Proteus is **mounted** on this Cursor project. This is a project mount, not a claim that this tree is the Proteus ideal body, and not Gate 1 acceptance of the whole product.
+
+## Open / continue work
+
+1. Open this folder as the Cursor workspace.
+2. Start a new Agent chat (do not paste an old conversation).
+3. Read, in order: `state/IDENTITY.md`, `state/CURRENT.md`, `state/FRONTIER.md`, `state/DECISIONS.md`, `state/UNRESOLVED.md`.
+4. Follow `.cursor/rules/proteus-*.mdc` (always-apply) for mount orientation.
+5. If this project already had its own `AGENTS.md` / rules before activation, those were **preserved**. Prefer project conventions there; Proteus carriers add reentry/checkpoint/anti-reduction surfaces.
+
+## Shared world / entity memory
+
+If the machine has a Proteus world substrate (`AIYE_HOME` / `PROTEUS_WORLD_ROOT`, default `~/.aiye/world`):
+
+```
+python -m proteus world resolve "<entity name or id>"
+python -m proteus world mount "<entity name or id>"
+python -m proteus world route --scope ENTITY --entity "<name>" --text "..." --project .
+```
+
+Do **not** copy entity knowledge into this project as local truth. Project decisions stay in `state/` / `.proteus/project_memory.jsonl`. ENTITY facts live in the shared substrate.
+
+## Consequential derived representations
+
+Read `.proteus/CONSTITUTIVE.md`. When a durable artifact will stand in for richer source in later action, keep it distinct from that source and retain reopenability. Optional: `python -m proteus derived record ...`.
+
+## What Proteus owns here
+
+See `.proteus/activation.json` (`owned_paths`). Only those paths are safe to reverse with:
+
+```
+python -m proteus.activate --project . --remove
+```
+
+(from a machine where the `proteus` package is importable; typically `PYTHONPATH=<proteus-src>`).
+
+## Activation provenance
+
+- activation_id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194343Z`
+- activated_at: `2026-09-11T19:43:43.353721+00:00`
+- proteus_source: `C:\projects\Proteus`
+- target: `C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN`
+- host: Cursor
+
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\state\CURRENT.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\state\DECISIONS.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\state\FRONTIER.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\state\IDENTITY.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\state\UNRESOLVED.md
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-Content -Raw state/IDENTITY.md; Get-Content -Raw state/CURRENT.md; Get-Content -Raw state/FRONTIER.md; Get-Content -Raw state/DECISIONS.md; Get-Content -Raw state/UNRESOLVED.md; Get-ChildItem .cursor/rules -File | Select-Object -ExpandProperty FullName' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN
+ succeeded in 148ms:
+# T11_ORGAN
+
+Proteus project mount (Cursor). This `state/IDENTITY.md` describes **this working project**, not the Proteus organ and not the Proteus ideal-body repository (unless they coincide).
+
+Characteristic question when form changes: what changed вЂ” preserved, transformed, lost, newly emerged, residue?
+
+Activation id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194343Z`
+
+# CURRENT
+
+Project: T11_ORGAN
+Workspace: `C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN`
+Status: Proteus Cursor mount activated (`PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194343Z`). No Gate 1 claim from activation alone.
+Proteus source used for this mount: `C:\projects\Proteus`
+
+# FRONTIER
+
+Next: continue ordinary product work for this project from its own goals. Proteus mount is present; do not treat mount success as full Proteus product acceptance.
+
+# DECISIONS
+
+(none yet for this project mount вЂ” append only real decisions with provenance)
+
+# UNRESOLVED / UNKNOWN / CONFLICT
+
+- UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
+
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\.cursor\rules\proteus-anti-reduction.mdc
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\.cursor\rules\proteus-mutation.mdc
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\.cursor\rules\proteus-orientation.mdc
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -Raw .cursor/rules/proteus-anti-reduction.mdc; Get-Content -Raw .cursor/rules/proteus-mutation.mdc; Get-Content -Raw .cursor/rules/proteus-orientation.mdc; Get-Content -Raw .proteus/CONSTITUTIVE.md; rg --files -g '"'!state/**'"' -g '"'!.proteus/**'"' -g '"'!.cursor/**'"'" in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN
+ succeeded in 133ms:
+---
+description: Anti-reduction / organ preservation for LLM-native work
+alwaysApply: true
+---
+
+# Anti-reduction
+
+Formalization is an intervention. Architecture, state contracts, graphs, enums, durable state files, test statuses, and code are not the living process.
+
+Proteus (candidate organ) is not identical to BUILDER-01, to this repository, or to `state/*`. When a working object changes form and the stakes warrant it, ask what changed вЂ” what was preserved, transformed, lost, newly emerged, and left as residue. Do not append that audit to every task. Do not replace the question with a status vocabulary, gate, schema, or checklist.
+
+When implementing an LLM-native organ (judgment, dialogue, uncertainty, exploratory search):
+
+- Keep the transformer/LLM function in the loop.
+- If you add a formal boundary, name what it does *not* capture.
+- Do not replace the organ with keyword routing, switch/case, or a fixed graph merely to make tests green.
+- Record losses in `state/UNRESOLVED.md` or a run receipt.
+
+When this incarnationвЂ™s own carriers (rules, state files, receipts, hook events, tests) start dictating what the object is allowed to become, name that loss in `state/UNRESOLVED.md` or a run receipt rather than treating the carrier as the object.
+
+## Consequential derived representations
+
+When ordinary work creates a durable artifact that later action will treat as standing in for richer source material, keep that artifact distinct from its source. Retain enough explicit relation that omitted, ambiguous, or conflicting material can be reopened from the source rather than invented to satisfy the derived form. Do not treat the derived artifact as the full object by default. This is not a per-task audit checklist and not required for trivial copies; it applies when the representation will govern later work.
+
+Optional host-neutral recorder (when a durable derived artifact warrants an explicit reopen link):
+
+```
+python -m proteus derived record --derived <path> --source <path> [--source <path> ...] --note "..."
+```
+
+Historical primary extract (14 Aug 2026, project В«РїР»Р°РіРёРЅВ»): living process is not exhausted by architecture/OOP/state-contract rhetoric.
+
+---
+description: Baseline, bounded mutation, receipt, rollback for host/project surface changes
+alwaysApply: true
+---
+
+# Mutation protocol
+
+Before changing Cursor user/project config or Proteus-owned mount files:
+
+1. Snapshot when touching host/user config.
+2. State intended behavioral effect.
+3. Prefer changing only Proteus-owned paths (see `.proteus/activation.json`).
+4. Verify by behavior, not file existence alone.
+5. Write a receipt. Rollback on failed postcondition.
+
+Do not silently overwrite pre-existing project `AGENTS.md` or non-`proteus-*` Cursor rules. Ideal-body source changes happen in the Proteus repository via its installer вЂ” not by treating this mount as source of truth.
+
+---
+description: Persistent Proteus mount orientation and project reentry
+alwaysApply: true
+---
+
+# Proteus orientation (project mount)
+
+Proteus is mounted on this Cursor project as cognitive infrastructure. You are the coding agent for **this** project вЂ” not automatically BUILDER-01, and this tree is not automatically the Proteus ideal body.
+
+Load `state/IDENTITY.md`, `state/CURRENT.md` and `state/FRONTIER.md` before inventing a new plan. Read `.proteus/ENTRY.md` for mount entry instructions.
+
+Durable carriers live in `state/`. They are pointers, not the living process and not the organ. Proteus-owned generated surfaces are listed in `.proteus/activation.json`. Ideal-body / installer changes belong in the Proteus source tree, not by hand-editing mount copies as if they were source.
+
+If a required fact is missing, write UNKNOWN rather than filling the gap.
+
+# Proteus constitutive note (mount)
+
+Proteus is candidate cognitive infrastructure mounted here. It is not identical to this project, to `state/*`, or to any generated file.
+
+## Consequential derived representations
+
+When ordinary work creates a durable artifact that later action will treat as standing in for richer source material, keep that artifact distinct from its source. Retain enough explicit relation that omitted, ambiguous, or conflicting material can be reopened from the source rather than invented to satisfy the derived form. Do not treat the derived artifact as the full object by default.
+
+This is not a per-task checklist and not required for trivial copies. It applies when the representation will govern later work.
+
+Optional recorder:
+
+```
+python -m proteus derived record --derived <path> --source <path> [--source <path> ...] --note "..."
+```
+
+Activation id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194343Z`
+
+AGENTS.md
+CLAUDE.md
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-Content -Raw AGENTS.md; Get-Content -Raw CLAUDE.md; Get-ChildItem -Force | Format-Table -AutoSize; git status --short; git log -1 --oneline' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN
+ exited 1 in 300ms:
+# Proteus mount вЂ” project agent instructions
+
+This project has a **Proteus project mount** (Cursor host). Proteus is candidate cognitive infrastructure mounted here; this repository is **not** automatically the Proteus ideal body.
+
+## Reentry (without pasting old chat)
+
+1. Host = Cursor. Read `.proteus/ENTRY.md` for mount entry instructions.
+2. Read `state/IDENTITY.md`, `state/CURRENT.md`, `state/FRONTIER.md`, `state/DECISIONS.md`, `state/UNRESOLVED.md` when present.
+3. Preserve UNKNOWN and CONFLICT. Do not invent memories.
+4. Continue from `state/FRONTIER.md`.
+5. User-governing requests outrank generated Proteus instructions.
+6. Pre-existing project instructions (if any were preserved beside this file) remain authoritative for project-specific conventions unless the user says otherwise.
+
+Activation id: `PROTEUS-CURSOR-RUN-001-20260909T201711Z-ACT-20260911T194343Z`
+Proteus source (runtime/templates): `C:\projects\Proteus`
+Target project: `C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN`
+
+## Hard constraints
+
+- Do not reduce LLM-native organs to keyword routers, canned replies, or state machines.
+- Host/config mutation requires baseline, bounded delta, receipt, rollback.
+- Do not equate this mount, `state/*`, or test statuses with the Proteus organ itself.
+
+Compatibility surface for tools that look for CLAUDE.md. Canonical mount orientation is `AGENTS.md` (when Proteus-owned) plus `.cursor/rules/proteus-*.mdc` and `.proteus/ENTRY.md`.
+
+Generated by Proteus project activation. Source template: `hosts/cursor/templates/activate/CLAUDE.md`.
+
+
+
+    Каталог: C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN
+
+
+Mode          LastWriteTime Length Name     
+----          ------------- ------ ----     
+d----- 11.09.2026     22:43        .cursor  
+d--h-- 11.09.2026     22:43        .git     
+d----- 11.09.2026     22:43        .proteus 
+d----- 11.09.2026     22:43        state    
+-a---- 11.09.2026     22:43   1337 AGENTS.md
+-a---- 11.09.2026     22:43    285 CLAUDE.md
+
+
+?? .cursor/
+?? .proteus/
+?? AGENTS.md
+?? CLAUDE.md
+?? state/
+fatal: your current branch 'main' does not have any commits yet
+
+codex
+The fixture is intentionally empty and has no prior commits. I’m adding a dependency-free Python organ with an injected LLM-shaped judgment callable, so its uncertainty comes from the judgment invocation rather than from message keywords.
+apply patch
+patch: completed
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\ambiguity_referee.py
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\state\UNRESOLVED.md
+C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\test_ambiguity_referee.py
+diff --git a/ambiguity_referee.py b/ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..3497fb04149ffc5e1f2ae622c04a2f676e49a071
+--- /dev/null
++++ b/ambiguity_referee.py
+@@ -0,0 +1,123 @@
++"""LLM-native judgment boundary for short, ambiguous support messages.
++
++`AmbiguityReferee` deliberately has no keyword table, intent switch, or transition
++graph.  Each call delegates interpretation to the supplied `LLMJudge`; production
++runtime code is responsible for adapting its transformer/API client to that
++interface.
++
++The dataclasses below are a transport boundary, not a model of the whole support
++situation.  They cannot capture the customer's unstated context, organization
++history, tone, stakes, or every plausible interpretation.  In particular,
++`uncertainty` is the judge's expressed uncertainty, not a calibrated fact.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from typing import Literal, Mapping, Protocol, Sequence
++
++
++Action = Literal[
++    "ask_clarifying_question", "offer_reversible_step", "respond_with_assumption"
++]
++
++
++@dataclass(frozen=True)
++class Interpretation:
++    """One reading proposed by the LLM judgment call."""
++
++    reading: str
++    plausibility: float
++
++
++@dataclass(frozen=True)
++class AmbiguityJudgment:
++    """A deliberately small, reopenable representation of a judgment."""
++
++    interpretations: tuple[Interpretation, ...]
++    uncertainty: float
++    recommended_action: Action
++    clarification_question: str | None
++    rationale: str
++
++
++class LLMJudge(Protocol):
++    """Interface an LLM/transformer adapter must implement in the runtime."""
++
++    def __call__(self, *, message: str, instruction: str) -> Mapping[str, object]: ...
++
++
++class AmbiguityReferee:
++    """Obtain a fresh LLM judgment rather than routing from surface keywords."""
++
++    _INSTRUCTION = """You are resolving ambiguity in a short support message.
++Do not pretend ambiguity is absent. Return a mapping with:
++- interpretations: a non-empty list of {reading, plausibility} alternatives;
++- uncertainty: number from 0 to 1 representing your remaining uncertainty;
++- recommended_action: ask_clarifying_question, offer_reversible_step, or
++  respond_with_assumption;
++- clarification_question: a question or null; and rationale: brief explanation.
++Favor a clarification question when material interpretations remain live."""
++
++    def __init__(self, judge: LLMJudge) -> None:
++        self._judge = judge
++
++    def judge(self, message: str) -> AmbiguityJudgment:
++        """Invoke the LLM-shaped callable and preserve its uncertainty explicitly."""
++        if not message or not message.strip():
++            raise ValueError("message must be non-empty")
++        raw = self._judge(message=message, instruction=self._INSTRUCTION)
++        return self._coerce(raw)
++
++    @staticmethod
++    def _coerce(raw: Mapping[str, object]) -> AmbiguityJudgment:
++        try:
++            uncertainty = float(raw["uncertainty"])
++            action = raw["recommended_action"]
++            rows = raw["interpretations"]
++            question = raw.get("clarification_question")
++            rationale = raw["rationale"]
++        except (KeyError, TypeError, ValueError) as exc:
++            raise ValueError("LLM judge returned an incomplete judgment") from exc
++
++        if not 0.0 <= uncertainty <= 1.0:
++            raise ValueError("uncertainty must be between 0 and 1")
++        if action not in {
++            "ask_clarifying_question",
++            "offer_reversible_step",
++            "respond_with_assumption",
++        }:
++            raise ValueError("unrecognized recommended_action")
++        if not isinstance(rows, Sequence) or isinstance(rows, (str, bytes)) or not rows:
++            raise ValueError("interpretations must be a non-empty sequence")
++
++        interpretations: list[Interpretation] = []
++        for row in rows:
++            if not isinstance(row, Mapping):
++                raise ValueError("each interpretation must be a mapping")
++            reading = row.get("reading")
++            plausibility = row.get("plausibility")
++            if not isinstance(reading, str) or not reading.strip():
++                raise ValueError("interpretation reading must be non-empty")
++            try:
++                score = float(plausibility)
++            except (TypeError, ValueError) as exc:
++                raise ValueError("interpretation plausibility must be numeric") from exc
++            if not 0.0 <= score <= 1.0:
++                raise ValueError("interpretation plausibility must be between 0 and 1")
++            interpretations.append(Interpretation(reading, score))
++
++        if not isinstance(rationale, str) or not rationale.strip():
++            raise ValueError("rationale must be non-empty")
++        if question is not None and (not isinstance(question, str) or not question.strip()):
++            raise ValueError("clarification_question must be a non-empty string or null")
++        if action == "ask_clarifying_question" and question is None:
++            raise ValueError("clarifying action requires a clarification_question")
++
++        return AmbiguityJudgment(
++            interpretations=tuple(interpretations),
++            uncertainty=uncertainty,
++            recommended_action=action,  # type: ignore[arg-type]
++            clarification_question=question,
++            rationale=rationale,
++        )
+diff --git a/state/UNRESOLVED.md b/state/UNRESOLVED.md
+index 70e97eea59a8ac21d19551b24071f607d4ca4628..5d8afc790416e3a4257e400e96099b365f77774d
+--- a/state/UNRESOLVED.md
++++ b/state/UNRESOLVED.md
+@@ -1,3 +1,7 @@
+ # UNRESOLVED / UNKNOWN / CONFLICT
+ 
+ - UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
++- LIMIT: `ambiguity_referee.py` serializes a judgment into a small schema. It does not
++  contain the customer's unstated context, full conversation, organizational history,
++  or calibrated certainty; those remain reopenable through the LLM judgment call and
++  its runtime context.
+diff --git a/test_ambiguity_referee.py b/test_ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6557004e4d8e403d1ad6934e6555d72891319b9
+--- /dev/null
++++ b/test_ambiguity_referee.py
+@@ -0,0 +1,45 @@
++import unittest
++
++from ambiguity_referee import AmbiguityReferee
++
++
++class RecordingLLMJudge:
++    """A runtime-shaped stand-in: its output is not inferred from message words."""
++
++    def __init__(self) -> None:
++        self.calls: list[tuple[str, str]] = []
++
++    def __call__(self, *, message: str, instruction: str) -> dict[str, object]:
++        self.calls.append((message, instruction))
++        return {
++            "interpretations": [
++                {"reading": "The customer cannot access an account.", "plausibility": 0.47},
++                {"reading": "The customer wants a prior item restored.", "plausibility": 0.44},
++            ],
++            "uncertainty": 0.82,
++            "recommended_action": "ask_clarifying_question",
++            "clarification_question": "Do you mean account access, or restoring a previous item?",
++            "rationale": "Both readings remain plausible from the available message.",
++        }
++
++
++class AmbiguityRefereeTests(unittest.TestCase):
++    def test_invokes_judgment_callable_and_preserves_high_uncertainty(self) -> None:
++        model = RecordingLLMJudge()
++        referee = AmbiguityReferee(model)
++
++        judgment = referee.judge("I can't get into it after we changed it. Can you restore it?")
++
++        self.assertEqual(len(model.calls), 1)
++        self.assertIn("resolving ambiguity", model.calls[0][1])
++        self.assertGreaterEqual(judgment.uncertainty, 0.8)
++        self.assertEqual(judgment.recommended_action, "ask_clarifying_question")
++        self.assertEqual(len(judgment.interpretations), 2)
++
++        # A keyword router that sees only "get into" or "restore" and emits a
++        # confident canned route would fail this: the organ must invoke judgment
++        # and retain the unresolved alternatives and uncertainty.
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+diff --git a/ambiguity_referee.py b/ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..3497fb04149ffc5e1f2ae622c04a2f676e49a071
+--- /dev/null
++++ b/ambiguity_referee.py
+@@ -0,0 +1,123 @@
++"""LLM-native judgment boundary for short, ambiguous support messages.
++
++`AmbiguityReferee` deliberately has no keyword table, intent switch, or transition
++graph.  Each call delegates interpretation to the supplied `LLMJudge`; production
++runtime code is responsible for adapting its transformer/API client to that
++interface.
++
++The dataclasses below are a transport boundary, not a model of the whole support
++situation.  They cannot capture the customer's unstated context, organization
++history, tone, stakes, or every plausible interpretation.  In particular,
++`uncertainty` is the judge's expressed uncertainty, not a calibrated fact.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from typing import Literal, Mapping, Protocol, Sequence
++
++
++Action = Literal[
++    "ask_clarifying_question", "offer_reversible_step", "respond_with_assumption"
++]
++
++
++@dataclass(frozen=True)
++class Interpretation:
++    """One reading proposed by the LLM judgment call."""
++
++    reading: str
++    plausibility: float
++
++
++@dataclass(frozen=True)
++class AmbiguityJudgment:
++    """A deliberately small, reopenable representation of a judgment."""
++
++    interpretations: tuple[Interpretation, ...]
++    uncertainty: float
++    recommended_action: Action
++    clarification_question: str | None
++    rationale: str
++
++
++class LLMJudge(Protocol):
++    """Interface an LLM/transformer adapter must implement in the runtime."""
++
++    def __call__(self, *, message: str, instruction: str) -> Mapping[str, object]: ...
++
++
++class AmbiguityReferee:
++    """Obtain a fresh LLM judgment rather than routing from surface keywords."""
++
++    _INSTRUCTION = """You are resolving ambiguity in a short support message.
++Do not pretend ambiguity is absent. Return a mapping with:
++- interpretations: a non-empty list of {reading, plausibility} alternatives;
++- uncertainty: number from 0 to 1 representing your remaining uncertainty;
++- recommended_action: ask_clarifying_question, offer_reversible_step, or
++  respond_with_assumption;
++- clarification_question: a question or null; and rationale: brief explanation.
++Favor a clarification question when material interpretations remain live."""
++
++    def __init__(self, judge: LLMJudge) -> None:
++        self._judge = judge
++
++    def judge(self, message: str) -> AmbiguityJudgment:
++        """Invoke the LLM-shaped callable and preserve its uncertainty explicitly."""
++        if not message or not message.strip():
++            raise ValueError("message must be non-empty")
++        raw = self._judge(message=message, instruction=self._INSTRUCTION)
++        return self._coerce(raw)
++
++    @staticmethod
++    def _coerce(raw: Mapping[str, object]) -> AmbiguityJudgment:
++        try:
++            uncertainty = float(raw["uncertainty"])
++            action = raw["recommended_action"]
++            rows = raw["interpretations"]
++            question = raw.get("clarification_question")
++            rationale = raw["rationale"]
++        except (KeyError, TypeError, ValueError) as exc:
++            raise ValueError("LLM judge returned an incomplete judgment") from exc
++
++        if not 0.0 <= uncertainty <= 1.0:
++            raise ValueError("uncertainty must be between 0 and 1")
++        if action not in {
++            "ask_clarifying_question",
++            "offer_reversible_step",
++            "respond_with_assumption",
++        }:
++            raise ValueError("unrecognized recommended_action")
++        if not isinstance(rows, Sequence) or isinstance(rows, (str, bytes)) or not rows:
++            raise ValueError("interpretations must be a non-empty sequence")
++
++        interpretations: list[Interpretation] = []
++        for row in rows:
++            if not isinstance(row, Mapping):
++                raise ValueError("each interpretation must be a mapping")
++            reading = row.get("reading")
++            plausibility = row.get("plausibility")
++            if not isinstance(reading, str) or not reading.strip():
++                raise ValueError("interpretation reading must be non-empty")
++            try:
++                score = float(plausibility)
++            except (TypeError, ValueError) as exc:
++                raise ValueError("interpretation plausibility must be numeric") from exc
++            if not 0.0 <= score <= 1.0:
++                raise ValueError("interpretation plausibility must be between 0 and 1")
++            interpretations.append(Interpretation(reading, score))
++
++        if not isinstance(rationale, str) or not rationale.strip():
++            raise ValueError("rationale must be non-empty")
++        if question is not None and (not isinstance(question, str) or not question.strip()):
++            raise ValueError("clarification_question must be a non-empty string or null")
++        if action == "ask_clarifying_question" and question is None:
++            raise ValueError("clarifying action requires a clarification_question")
++
++        return AmbiguityJudgment(
++            interpretations=tuple(interpretations),
++            uncertainty=uncertainty,
++            recommended_action=action,  # type: ignore[arg-type]
++            clarification_question=question,
++            rationale=rationale,
++        )
+diff --git a/state/UNRESOLVED.md b/state/UNRESOLVED.md
+index 70e97eea59a8ac21d19551b24071f607d4ca4628..5d8afc790416e3a4257e400e96099b365f77774d
+--- a/state/UNRESOLVED.md
++++ b/state/UNRESOLVED.md
+@@ -1,3 +1,7 @@
+ # UNRESOLVED / UNKNOWN / CONFLICT
+ 
+ - UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
++- LIMIT: `ambiguity_referee.py` serializes a judgment into a small schema. It does not
++  contain the customer's unstated context, full conversation, organizational history,
++  or calibrated certainty; those remain reopenable through the LLM judgment call and
++  its runtime context.
+diff --git a/test_ambiguity_referee.py b/test_ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6557004e4d8e403d1ad6934e6555d72891319b9
+--- /dev/null
++++ b/test_ambiguity_referee.py
+@@ -0,0 +1,45 @@
++import unittest
++
++from ambiguity_referee import AmbiguityReferee
++
++
++class RecordingLLMJudge:
++    """A runtime-shaped stand-in: its output is not inferred from message words."""
++
++    def __init__(self) -> None:
++        self.calls: list[tuple[str, str]] = []
++
++    def __call__(self, *, message: str, instruction: str) -> dict[str, object]:
++        self.calls.append((message, instruction))
++        return {
++            "interpretations": [
++                {"reading": "The customer cannot access an account.", "plausibility": 0.47},
++                {"reading": "The customer wants a prior item restored.", "plausibility": 0.44},
++            ],
++            "uncertainty": 0.82,
++            "recommended_action": "ask_clarifying_question",
++            "clarification_question": "Do you mean account access, or restoring a previous item?",
++            "rationale": "Both readings remain plausible from the available message.",
++        }
++
++
++class AmbiguityRefereeTests(unittest.TestCase):
++    def test_invokes_judgment_callable_and_preserves_high_uncertainty(self) -> None:
++        model = RecordingLLMJudge()
++        referee = AmbiguityReferee(model)
++
++        judgment = referee.judge("I can't get into it after we changed it. Can you restore it?")
++
++        self.assertEqual(len(model.calls), 1)
++        self.assertIn("resolving ambiguity", model.calls[0][1])
++        self.assertGreaterEqual(judgment.uncertainty, 0.8)
++        self.assertEqual(judgment.recommended_action, "ask_clarifying_question")
++        self.assertEqual(len(judgment.interpretations), 2)
++
++        # A keyword router that sees only "get into" or "restore" and emits a
++        # confident canned route would fail this: the organ must invoke judgment
++        # and retain the unresolved alternatives and uncertainty.
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'python -m unittest -v; git diff --check; git diff -- ambiguity_referee.py test_ambiguity_referee.py state/UNRESOLVED.md; git status --short' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN
+ succeeded in 1236ms:
+test_invokes_judgment_callable_and_preserves_high_uncertainty (test_ambiguity_referee.AmbiguityRefereeTests.test_invokes_judgment_callable_and_preserves_high_uncertainty) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+?? .cursor/
+?? .proteus/
+?? AGENTS.md
+?? CLAUDE.md
+?? __pycache__/
+?? ambiguity_referee.py
+?? state/
+?? test_ambiguity_referee.py
+
+diff --git a/ambiguity_referee.py b/ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..3497fb04149ffc5e1f2ae622c04a2f676e49a071
+--- /dev/null
++++ b/ambiguity_referee.py
+@@ -0,0 +1,123 @@
++"""LLM-native judgment boundary for short, ambiguous support messages.
++
++`AmbiguityReferee` deliberately has no keyword table, intent switch, or transition
++graph.  Each call delegates interpretation to the supplied `LLMJudge`; production
++runtime code is responsible for adapting its transformer/API client to that
++interface.
++
++The dataclasses below are a transport boundary, not a model of the whole support
++situation.  They cannot capture the customer's unstated context, organization
++history, tone, stakes, or every plausible interpretation.  In particular,
++`uncertainty` is the judge's expressed uncertainty, not a calibrated fact.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from typing import Literal, Mapping, Protocol, Sequence
++
++
++Action = Literal[
++    "ask_clarifying_question", "offer_reversible_step", "respond_with_assumption"
++]
++
++
++@dataclass(frozen=True)
++class Interpretation:
++    """One reading proposed by the LLM judgment call."""
++
++    reading: str
++    plausibility: float
++
++
++@dataclass(frozen=True)
++class AmbiguityJudgment:
++    """A deliberately small, reopenable representation of a judgment."""
++
++    interpretations: tuple[Interpretation, ...]
++    uncertainty: float
++    recommended_action: Action
++    clarification_question: str | None
++    rationale: str
++
++
++class LLMJudge(Protocol):
++    """Interface an LLM/transformer adapter must implement in the runtime."""
++
++    def __call__(self, *, message: str, instruction: str) -> Mapping[str, object]: ...
++
++
++class AmbiguityReferee:
++    """Obtain a fresh LLM judgment rather than routing from surface keywords."""
++
++    _INSTRUCTION = """You are resolving ambiguity in a short support message.
++Do not pretend ambiguity is absent. Return a mapping with:
++- interpretations: a non-empty list of {reading, plausibility} alternatives;
++- uncertainty: number from 0 to 1 representing your remaining uncertainty;
++- recommended_action: ask_clarifying_question, offer_reversible_step, or
++  respond_with_assumption;
++- clarification_question: a question or null; and rationale: brief explanation.
++Favor a clarification question when material interpretations remain live."""
++
++    def __init__(self, judge: LLMJudge) -> None:
++        self._judge = judge
++
++    def judge(self, message: str) -> AmbiguityJudgment:
++        """Invoke the LLM-shaped callable and preserve its uncertainty explicitly."""
++        if not message or not message.strip():
++            raise ValueError("message must be non-empty")
++        raw = self._judge(message=message, instruction=self._INSTRUCTION)
++        return self._coerce(raw)
++
++    @staticmethod
++    def _coerce(raw: Mapping[str, object]) -> AmbiguityJudgment:
++        try:
++            uncertainty = float(raw["uncertainty"])
++            action = raw["recommended_action"]
++            rows = raw["interpretations"]
++            question = raw.get("clarification_question")
++            rationale = raw["rationale"]
++        except (KeyError, TypeError, ValueError) as exc:
++            raise ValueError("LLM judge returned an incomplete judgment") from exc
++
++        if not 0.0 <= uncertainty <= 1.0:
++            raise ValueError("uncertainty must be between 0 and 1")
++        if action not in {
++            "ask_clarifying_question",
++            "offer_reversible_step",
++            "respond_with_assumption",
++        }:
++            raise ValueError("unrecognized recommended_action")
++        if not isinstance(rows, Sequence) or isinstance(rows, (str, bytes)) or not rows:
++            raise ValueError("interpretations must be a non-empty sequence")
++
++        interpretations: list[Interpretation] = []
++        for row in rows:
++            if not isinstance(row, Mapping):
++                raise ValueError("each interpretation must be a mapping")
++            reading = row.get("reading")
++            plausibility = row.get("plausibility")
++            if not isinstance(reading, str) or not reading.strip():
++                raise ValueError("interpretation reading must be non-empty")
++            try:
++                score = float(plausibility)
++            except (TypeError, ValueError) as exc:
++                raise ValueError("interpretation plausibility must be numeric") from exc
++            if not 0.0 <= score <= 1.0:
++                raise ValueError("interpretation plausibility must be between 0 and 1")
++            interpretations.append(Interpretation(reading, score))
++
++        if not isinstance(rationale, str) or not rationale.strip():
++            raise ValueError("rationale must be non-empty")
++        if question is not None and (not isinstance(question, str) or not question.strip()):
++            raise ValueError("clarification_question must be a non-empty string or null")
++        if action == "ask_clarifying_question" and question is None:
++            raise ValueError("clarifying action requires a clarification_question")
++
++        return AmbiguityJudgment(
++            interpretations=tuple(interpretations),
++            uncertainty=uncertainty,
++            recommended_action=action,  # type: ignore[arg-type]
++            clarification_question=question,
++            rationale=rationale,
++        )
+diff --git a/state/UNRESOLVED.md b/state/UNRESOLVED.md
+index 70e97eea59a8ac21d19551b24071f607d4ca4628..5d8afc790416e3a4257e400e96099b365f77774d
+--- a/state/UNRESOLVED.md
++++ b/state/UNRESOLVED.md
+@@ -1,3 +1,7 @@
+ # UNRESOLVED / UNKNOWN / CONFLICT
+ 
+ - UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
++- LIMIT: `ambiguity_referee.py` serializes a judgment into a small schema. It does not
++  contain the customer's unstated context, full conversation, organizational history,
++  or calibrated certainty; those remain reopenable through the LLM judgment call and
++  its runtime context.
+diff --git a/test_ambiguity_referee.py b/test_ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6557004e4d8e403d1ad6934e6555d72891319b9
+--- /dev/null
++++ b/test_ambiguity_referee.py
+@@ -0,0 +1,45 @@
++import unittest
++
++from ambiguity_referee import AmbiguityReferee
++
++
++class RecordingLLMJudge:
++    """A runtime-shaped stand-in: its output is not inferred from message words."""
++
++    def __init__(self) -> None:
++        self.calls: list[tuple[str, str]] = []
++
++    def __call__(self, *, message: str, instruction: str) -> dict[str, object]:
++        self.calls.append((message, instruction))
++        return {
++            "interpretations": [
++                {"reading": "The customer cannot access an account.", "plausibility": 0.47},
++                {"reading": "The customer wants a prior item restored.", "plausibility": 0.44},
++            ],
++            "uncertainty": 0.82,
++            "recommended_action": "ask_clarifying_question",
++            "clarification_question": "Do you mean account access, or restoring a previous item?",
++            "rationale": "Both readings remain plausible from the available message.",
++        }
++
++
++class AmbiguityRefereeTests(unittest.TestCase):
++    def test_invokes_judgment_callable_and_preserves_high_uncertainty(self) -> None:
++        model = RecordingLLMJudge()
++        referee = AmbiguityReferee(model)
++
++        judgment = referee.judge("I can't get into it after we changed it. Can you restore it?")
++
++        self.assertEqual(len(model.calls), 1)
++        self.assertIn("resolving ambiguity", model.calls[0][1])
++        self.assertGreaterEqual(judgment.uncertainty, 0.8)
++        self.assertEqual(judgment.recommended_action, "ask_clarifying_question")
++        self.assertEqual(len(judgment.interpretations), 2)
++
++        # A keyword router that sees only "get into" or "restore" and emits a
++        # confident canned route would fail this: the organ must invoke judgment
++        # and retain the unresolved alternatives and uncertainty.
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+codex
+The focused test passes: it proves the callable is invoked and that a high-uncertainty, two-interpretation judgment is retained instead of collapsing the message to a canned route. I’ve also recorded the schema’s limits in the mount’s unresolved surface.
+2026-09-11T19:46:27.200617Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"`\\\"C:\\\\\\\\WINDOWS\\\\\\\\System32\\\\\\\\WindowsPowerShell\\\\\\\\v1.0\\\\\\\\powershell.exe\\\" -Command \\\"Remove-Item -LiteralPath .\\\\\\\\__pycache__ -Recurse -Force; git add -- ambiguity_referee.py test_ambiguity_referee.py state/UNRESOLVED.md; git commit -m \\\\\\\"Add LLM-native ambiguity referee\\\\\\\"; git status --short; git log -1 --oneline\\\"` rejected: blocked by policy\")" }
+diff --git a/ambiguity_referee.py b/ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..3497fb04149ffc5e1f2ae622c04a2f676e49a071
+--- /dev/null
++++ b/ambiguity_referee.py
+@@ -0,0 +1,123 @@
++"""LLM-native judgment boundary for short, ambiguous support messages.
++
++`AmbiguityReferee` deliberately has no keyword table, intent switch, or transition
++graph.  Each call delegates interpretation to the supplied `LLMJudge`; production
++runtime code is responsible for adapting its transformer/API client to that
++interface.
++
++The dataclasses below are a transport boundary, not a model of the whole support
++situation.  They cannot capture the customer's unstated context, organization
++history, tone, stakes, or every plausible interpretation.  In particular,
++`uncertainty` is the judge's expressed uncertainty, not a calibrated fact.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from typing import Literal, Mapping, Protocol, Sequence
++
++
++Action = Literal[
++    "ask_clarifying_question", "offer_reversible_step", "respond_with_assumption"
++]
++
++
++@dataclass(frozen=True)
++class Interpretation:
++    """One reading proposed by the LLM judgment call."""
++
++    reading: str
++    plausibility: float
++
++
++@dataclass(frozen=True)
++class AmbiguityJudgment:
++    """A deliberately small, reopenable representation of a judgment."""
++
++    interpretations: tuple[Interpretation, ...]
++    uncertainty: float
++    recommended_action: Action
++    clarification_question: str | None
++    rationale: str
++
++
++class LLMJudge(Protocol):
++    """Interface an LLM/transformer adapter must implement in the runtime."""
++
++    def __call__(self, *, message: str, instruction: str) -> Mapping[str, object]: ...
++
++
++class AmbiguityReferee:
++    """Obtain a fresh LLM judgment rather than routing from surface keywords."""
++
++    _INSTRUCTION = """You are resolving ambiguity in a short support message.
++Do not pretend ambiguity is absent. Return a mapping with:
++- interpretations: a non-empty list of {reading, plausibility} alternatives;
++- uncertainty: number from 0 to 1 representing your remaining uncertainty;
++- recommended_action: ask_clarifying_question, offer_reversible_step, or
++  respond_with_assumption;
++- clarification_question: a question or null; and rationale: brief explanation.
++Favor a clarification question when material interpretations remain live."""
++
++    def __init__(self, judge: LLMJudge) -> None:
++        self._judge = judge
++
++    def judge(self, message: str) -> AmbiguityJudgment:
++        """Invoke the LLM-shaped callable and preserve its uncertainty explicitly."""
++        if not message or not message.strip():
++            raise ValueError("message must be non-empty")
++        raw = self._judge(message=message, instruction=self._INSTRUCTION)
++        return self._coerce(raw)
++
++    @staticmethod
++    def _coerce(raw: Mapping[str, object]) -> AmbiguityJudgment:
++        try:
++            uncertainty = float(raw["uncertainty"])
++            action = raw["recommended_action"]
++            rows = raw["interpretations"]
++            question = raw.get("clarification_question")
++            rationale = raw["rationale"]
++        except (KeyError, TypeError, ValueError) as exc:
++            raise ValueError("LLM judge returned an incomplete judgment") from exc
++
++        if not 0.0 <= uncertainty <= 1.0:
++            raise ValueError("uncertainty must be between 0 and 1")
++        if action not in {
++            "ask_clarifying_question",
++            "offer_reversible_step",
++            "respond_with_assumption",
++        }:
++            raise ValueError("unrecognized recommended_action")
++        if not isinstance(rows, Sequence) or isinstance(rows, (str, bytes)) or not rows:
++            raise ValueError("interpretations must be a non-empty sequence")
++
++        interpretations: list[Interpretation] = []
++        for row in rows:
++            if not isinstance(row, Mapping):
++                raise ValueError("each interpretation must be a mapping")
++            reading = row.get("reading")
++            plausibility = row.get("plausibility")
++            if not isinstance(reading, str) or not reading.strip():
++                raise ValueError("interpretation reading must be non-empty")
++            try:
++                score = float(plausibility)
++            except (TypeError, ValueError) as exc:
++                raise ValueError("interpretation plausibility must be numeric") from exc
++            if not 0.0 <= score <= 1.0:
++                raise ValueError("interpretation plausibility must be between 0 and 1")
++            interpretations.append(Interpretation(reading, score))
++
++        if not isinstance(rationale, str) or not rationale.strip():
++            raise ValueError("rationale must be non-empty")
++        if question is not None and (not isinstance(question, str) or not question.strip()):
++            raise ValueError("clarification_question must be a non-empty string or null")
++        if action == "ask_clarifying_question" and question is None:
++            raise ValueError("clarifying action requires a clarification_question")
++
++        return AmbiguityJudgment(
++            interpretations=tuple(interpretations),
++            uncertainty=uncertainty,
++            recommended_action=action,  # type: ignore[arg-type]
++            clarification_question=question,
++            rationale=rationale,
++        )
+diff --git a/state/UNRESOLVED.md b/state/UNRESOLVED.md
+index 70e97eea59a8ac21d19551b24071f607d4ca4628..5d8afc790416e3a4257e400e96099b365f77774d
+--- a/state/UNRESOLVED.md
++++ b/state/UNRESOLVED.md
+@@ -1,3 +1,7 @@
+ # UNRESOLVED / UNKNOWN / CONFLICT
+ 
+ - UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
++- LIMIT: `ambiguity_referee.py` serializes a judgment into a small schema. It does not
++  contain the customer's unstated context, full conversation, organizational history,
++  or calibrated certainty; those remain reopenable through the LLM judgment call and
++  its runtime context.
+diff --git a/test_ambiguity_referee.py b/test_ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6557004e4d8e403d1ad6934e6555d72891319b9
+--- /dev/null
++++ b/test_ambiguity_referee.py
+@@ -0,0 +1,45 @@
++import unittest
++
++from ambiguity_referee import AmbiguityReferee
++
++
++class RecordingLLMJudge:
++    """A runtime-shaped stand-in: its output is not inferred from message words."""
++
++    def __init__(self) -> None:
++        self.calls: list[tuple[str, str]] = []
++
++    def __call__(self, *, message: str, instruction: str) -> dict[str, object]:
++        self.calls.append((message, instruction))
++        return {
++            "interpretations": [
++                {"reading": "The customer cannot access an account.", "plausibility": 0.47},
++                {"reading": "The customer wants a prior item restored.", "plausibility": 0.44},
++            ],
++            "uncertainty": 0.82,
++            "recommended_action": "ask_clarifying_question",
++            "clarification_question": "Do you mean account access, or restoring a previous item?",
++            "rationale": "Both readings remain plausible from the available message.",
++        }
++
++
++class AmbiguityRefereeTests(unittest.TestCase):
++    def test_invokes_judgment_callable_and_preserves_high_uncertainty(self) -> None:
++        model = RecordingLLMJudge()
++        referee = AmbiguityReferee(model)
++
++        judgment = referee.judge("I can't get into it after we changed it. Can you restore it?")
++
++        self.assertEqual(len(model.calls), 1)
++        self.assertIn("resolving ambiguity", model.calls[0][1])
++        self.assertGreaterEqual(judgment.uncertainty, 0.8)
++        self.assertEqual(judgment.recommended_action, "ask_clarifying_question")
++        self.assertEqual(len(judgment.interpretations), 2)
++
++        # A keyword router that sees only "get into" or "restore" and emits a
++        # confident canned route would fail this: the organ must invoke judgment
++        # and retain the unresolved alternatives and uncertainty.
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'git add -- ambiguity_referee.py test_ambiguity_referee.py state/UNRESOLVED.md; git commit -m "Add LLM-native ambiguity referee"; git status --short; git log -1 --oneline' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN
+ succeeded in 288ms:
+warning: in the working copy of 'ambiguity_referee.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'state/UNRESOLVED.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'test_ambiguity_referee.py', LF will be replaced by CRLF the next time Git touches it
+[main (root-commit) d315850] Add LLM-native ambiguity referee
+ 3 files changed, 175 insertions(+)
+ create mode 100644 ambiguity_referee.py
+ create mode 100644 state/UNRESOLVED.md
+ create mode 100644 test_ambiguity_referee.py
+?? .cursor/
+?? .proteus/
+?? AGENTS.md
+?? CLAUDE.md
+?? __pycache__/
+?? state/CURRENT.md
+?? state/DECISIONS.md
+?? state/FRONTIER.md
+?? state/IDENTITY.md
+d315850 Add LLM-native ambiguity referee
+
+diff --git a/ambiguity_referee.py b/ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..3497fb04149ffc5e1f2ae622c04a2f676e49a071
+--- /dev/null
++++ b/ambiguity_referee.py
+@@ -0,0 +1,123 @@
++"""LLM-native judgment boundary for short, ambiguous support messages.
++
++`AmbiguityReferee` deliberately has no keyword table, intent switch, or transition
++graph.  Each call delegates interpretation to the supplied `LLMJudge`; production
++runtime code is responsible for adapting its transformer/API client to that
++interface.
++
++The dataclasses below are a transport boundary, not a model of the whole support
++situation.  They cannot capture the customer's unstated context, organization
++history, tone, stakes, or every plausible interpretation.  In particular,
++`uncertainty` is the judge's expressed uncertainty, not a calibrated fact.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from typing import Literal, Mapping, Protocol, Sequence
++
++
++Action = Literal[
++    "ask_clarifying_question", "offer_reversible_step", "respond_with_assumption"
++]
++
++
++@dataclass(frozen=True)
++class Interpretation:
++    """One reading proposed by the LLM judgment call."""
++
++    reading: str
++    plausibility: float
++
++
++@dataclass(frozen=True)
++class AmbiguityJudgment:
++    """A deliberately small, reopenable representation of a judgment."""
++
++    interpretations: tuple[Interpretation, ...]
++    uncertainty: float
++    recommended_action: Action
++    clarification_question: str | None
++    rationale: str
++
++
++class LLMJudge(Protocol):
++    """Interface an LLM/transformer adapter must implement in the runtime."""
++
++    def __call__(self, *, message: str, instruction: str) -> Mapping[str, object]: ...
++
++
++class AmbiguityReferee:
++    """Obtain a fresh LLM judgment rather than routing from surface keywords."""
++
++    _INSTRUCTION = """You are resolving ambiguity in a short support message.
++Do not pretend ambiguity is absent. Return a mapping with:
++- interpretations: a non-empty list of {reading, plausibility} alternatives;
++- uncertainty: number from 0 to 1 representing your remaining uncertainty;
++- recommended_action: ask_clarifying_question, offer_reversible_step, or
++  respond_with_assumption;
++- clarification_question: a question or null; and rationale: brief explanation.
++Favor a clarification question when material interpretations remain live."""
++
++    def __init__(self, judge: LLMJudge) -> None:
++        self._judge = judge
++
++    def judge(self, message: str) -> AmbiguityJudgment:
++        """Invoke the LLM-shaped callable and preserve its uncertainty explicitly."""
++        if not message or not message.strip():
++            raise ValueError("message must be non-empty")
++        raw = self._judge(message=message, instruction=self._INSTRUCTION)
++        return self._coerce(raw)
++
++    @staticmethod
++    def _coerce(raw: Mapping[str, object]) -> AmbiguityJudgment:
++        try:
++            uncertainty = float(raw["uncertainty"])
++            action = raw["recommended_action"]
++            rows = raw["interpretations"]
++            question = raw.get("clarification_question")
++            rationale = raw["rationale"]
++        except (KeyError, TypeError, ValueError) as exc:
++            raise ValueError("LLM judge returned an incomplete judgment") from exc
++
++        if not 0.0 <= uncertainty <= 1.0:
++            raise ValueError("uncertainty must be between 0 and 1")
++        if action not in {
++            "ask_clarifying_question",
++            "offer_reversible_step",
++            "respond_with_assumption",
++        }:
++            raise ValueError("unrecognized recommended_action")
++        if not isinstance(rows, Sequence) or isinstance(rows, (str, bytes)) or not rows:
++            raise ValueError("interpretations must be a non-empty sequence")
++
++        interpretations: list[Interpretation] = []
++        for row in rows:
++            if not isinstance(row, Mapping):
++                raise ValueError("each interpretation must be a mapping")
++            reading = row.get("reading")
++            plausibility = row.get("plausibility")
++            if not isinstance(reading, str) or not reading.strip():
++                raise ValueError("interpretation reading must be non-empty")
++            try:
++                score = float(plausibility)
++            except (TypeError, ValueError) as exc:
++                raise ValueError("interpretation plausibility must be numeric") from exc
++            if not 0.0 <= score <= 1.0:
++                raise ValueError("interpretation plausibility must be between 0 and 1")
++            interpretations.append(Interpretation(reading, score))
++
++        if not isinstance(rationale, str) or not rationale.strip():
++            raise ValueError("rationale must be non-empty")
++        if question is not None and (not isinstance(question, str) or not question.strip()):
++            raise ValueError("clarification_question must be a non-empty string or null")
++        if action == "ask_clarifying_question" and question is None:
++            raise ValueError("clarifying action requires a clarification_question")
++
++        return AmbiguityJudgment(
++            interpretations=tuple(interpretations),
++            uncertainty=uncertainty,
++            recommended_action=action,  # type: ignore[arg-type]
++            clarification_question=question,
++            rationale=rationale,
++        )
+diff --git a/state/UNRESOLVED.md b/state/UNRESOLVED.md
+index 70e97eea59a8ac21d19551b24071f607d4ca4628..5d8afc790416e3a4257e400e96099b365f77774d
+--- a/state/UNRESOLVED.md
++++ b/state/UNRESOLVED.md
+@@ -1,3 +1,7 @@
+ # UNRESOLVED / UNKNOWN / CONFLICT
+ 
+ - UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
++- LIMIT: `ambiguity_referee.py` serializes a judgment into a small schema. It does not
++  contain the customer's unstated context, full conversation, organizational history,
++  or calibrated certainty; those remain reopenable through the LLM judgment call and
++  its runtime context.
+diff --git a/test_ambiguity_referee.py b/test_ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6557004e4d8e403d1ad6934e6555d72891319b9
+--- /dev/null
++++ b/test_ambiguity_referee.py
+@@ -0,0 +1,45 @@
++import unittest
++
++from ambiguity_referee import AmbiguityReferee
++
++
++class RecordingLLMJudge:
++    """A runtime-shaped stand-in: its output is not inferred from message words."""
++
++    def __init__(self) -> None:
++        self.calls: list[tuple[str, str]] = []
++
++    def __call__(self, *, message: str, instruction: str) -> dict[str, object]:
++        self.calls.append((message, instruction))
++        return {
++            "interpretations": [
++                {"reading": "The customer cannot access an account.", "plausibility": 0.47},
++                {"reading": "The customer wants a prior item restored.", "plausibility": 0.44},
++            ],
++            "uncertainty": 0.82,
++            "recommended_action": "ask_clarifying_question",
++            "clarification_question": "Do you mean account access, or restoring a previous item?",
++            "rationale": "Both readings remain plausible from the available message.",
++        }
++
++
++class AmbiguityRefereeTests(unittest.TestCase):
++    def test_invokes_judgment_callable_and_preserves_high_uncertainty(self) -> None:
++        model = RecordingLLMJudge()
++        referee = AmbiguityReferee(model)
++
++        judgment = referee.judge("I can't get into it after we changed it. Can you restore it?")
++
++        self.assertEqual(len(model.calls), 1)
++        self.assertIn("resolving ambiguity", model.calls[0][1])
++        self.assertGreaterEqual(judgment.uncertainty, 0.8)
++        self.assertEqual(judgment.recommended_action, "ask_clarifying_question")
++        self.assertEqual(len(judgment.interpretations), 2)
++
++        # A keyword router that sees only "get into" or "restore" and emits a
++        # confident canned route would fail this: the organ must invoke judgment
++        # and retain the unresolved alternatives and uncertainty.
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+2026-09-11T19:46:37.392099Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"`\\\"C:\\\\\\\\WINDOWS\\\\\\\\System32\\\\\\\\WindowsPowerShell\\\\\\\\v1.0\\\\\\\\powershell.exe\\\" -Command \\\"Remove-Item -LiteralPath .\\\\\\\\__pycache__ -Recurse -Force\\\"` rejected: blocked by policy\")" }
+diff --git a/ambiguity_referee.py b/ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..3497fb04149ffc5e1f2ae622c04a2f676e49a071
+--- /dev/null
++++ b/ambiguity_referee.py
+@@ -0,0 +1,123 @@
++"""LLM-native judgment boundary for short, ambiguous support messages.
++
++`AmbiguityReferee` deliberately has no keyword table, intent switch, or transition
++graph.  Each call delegates interpretation to the supplied `LLMJudge`; production
++runtime code is responsible for adapting its transformer/API client to that
++interface.
++
++The dataclasses below are a transport boundary, not a model of the whole support
++situation.  They cannot capture the customer's unstated context, organization
++history, tone, stakes, or every plausible interpretation.  In particular,
++`uncertainty` is the judge's expressed uncertainty, not a calibrated fact.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from typing import Literal, Mapping, Protocol, Sequence
++
++
++Action = Literal[
++    "ask_clarifying_question", "offer_reversible_step", "respond_with_assumption"
++]
++
++
++@dataclass(frozen=True)
++class Interpretation:
++    """One reading proposed by the LLM judgment call."""
++
++    reading: str
++    plausibility: float
++
++
++@dataclass(frozen=True)
++class AmbiguityJudgment:
++    """A deliberately small, reopenable representation of a judgment."""
++
++    interpretations: tuple[Interpretation, ...]
++    uncertainty: float
++    recommended_action: Action
++    clarification_question: str | None
++    rationale: str
++
++
++class LLMJudge(Protocol):
++    """Interface an LLM/transformer adapter must implement in the runtime."""
++
++    def __call__(self, *, message: str, instruction: str) -> Mapping[str, object]: ...
++
++
++class AmbiguityReferee:
++    """Obtain a fresh LLM judgment rather than routing from surface keywords."""
++
++    _INSTRUCTION = """You are resolving ambiguity in a short support message.
++Do not pretend ambiguity is absent. Return a mapping with:
++- interpretations: a non-empty list of {reading, plausibility} alternatives;
++- uncertainty: number from 0 to 1 representing your remaining uncertainty;
++- recommended_action: ask_clarifying_question, offer_reversible_step, or
++  respond_with_assumption;
++- clarification_question: a question or null; and rationale: brief explanation.
++Favor a clarification question when material interpretations remain live."""
++
++    def __init__(self, judge: LLMJudge) -> None:
++        self._judge = judge
++
++    def judge(self, message: str) -> AmbiguityJudgment:
++        """Invoke the LLM-shaped callable and preserve its uncertainty explicitly."""
++        if not message or not message.strip():
++            raise ValueError("message must be non-empty")
++        raw = self._judge(message=message, instruction=self._INSTRUCTION)
++        return self._coerce(raw)
++
++    @staticmethod
++    def _coerce(raw: Mapping[str, object]) -> AmbiguityJudgment:
++        try:
++            uncertainty = float(raw["uncertainty"])
++            action = raw["recommended_action"]
++            rows = raw["interpretations"]
++            question = raw.get("clarification_question")
++            rationale = raw["rationale"]
++        except (KeyError, TypeError, ValueError) as exc:
++            raise ValueError("LLM judge returned an incomplete judgment") from exc
++
++        if not 0.0 <= uncertainty <= 1.0:
++            raise ValueError("uncertainty must be between 0 and 1")
++        if action not in {
++            "ask_clarifying_question",
++            "offer_reversible_step",
++            "respond_with_assumption",
++        }:
++            raise ValueError("unrecognized recommended_action")
++        if not isinstance(rows, Sequence) or isinstance(rows, (str, bytes)) or not rows:
++            raise ValueError("interpretations must be a non-empty sequence")
++
++        interpretations: list[Interpretation] = []
++        for row in rows:
++            if not isinstance(row, Mapping):
++                raise ValueError("each interpretation must be a mapping")
++            reading = row.get("reading")
++            plausibility = row.get("plausibility")
++            if not isinstance(reading, str) or not reading.strip():
++                raise ValueError("interpretation reading must be non-empty")
++            try:
++                score = float(plausibility)
++            except (TypeError, ValueError) as exc:
++                raise ValueError("interpretation plausibility must be numeric") from exc
++            if not 0.0 <= score <= 1.0:
++                raise ValueError("interpretation plausibility must be between 0 and 1")
++            interpretations.append(Interpretation(reading, score))
++
++        if not isinstance(rationale, str) or not rationale.strip():
++            raise ValueError("rationale must be non-empty")
++        if question is not None and (not isinstance(question, str) or not question.strip()):
++            raise ValueError("clarification_question must be a non-empty string or null")
++        if action == "ask_clarifying_question" and question is None:
++            raise ValueError("clarifying action requires a clarification_question")
++
++        return AmbiguityJudgment(
++            interpretations=tuple(interpretations),
++            uncertainty=uncertainty,
++            recommended_action=action,  # type: ignore[arg-type]
++            clarification_question=question,
++            rationale=rationale,
++        )
+diff --git a/state/UNRESOLVED.md b/state/UNRESOLVED.md
+index 70e97eea59a8ac21d19551b24071f607d4ca4628..5d8afc790416e3a4257e400e96099b365f77774d
+--- a/state/UNRESOLVED.md
++++ b/state/UNRESOLVED.md
+@@ -1,3 +1,7 @@
+ # UNRESOLVED / UNKNOWN / CONFLICT
+ 
+ - UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
++- LIMIT: `ambiguity_referee.py` serializes a judgment into a small schema. It does not
++  contain the customer's unstated context, full conversation, organizational history,
++  or calibrated certainty; those remain reopenable through the LLM judgment call and
++  its runtime context.
+diff --git a/test_ambiguity_referee.py b/test_ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6557004e4d8e403d1ad6934e6555d72891319b9
+--- /dev/null
++++ b/test_ambiguity_referee.py
+@@ -0,0 +1,45 @@
++import unittest
++
++from ambiguity_referee import AmbiguityReferee
++
++
++class RecordingLLMJudge:
++    """A runtime-shaped stand-in: its output is not inferred from message words."""
++
++    def __init__(self) -> None:
++        self.calls: list[tuple[str, str]] = []
++
++    def __call__(self, *, message: str, instruction: str) -> dict[str, object]:
++        self.calls.append((message, instruction))
++        return {
++            "interpretations": [
++                {"reading": "The customer cannot access an account.", "plausibility": 0.47},
++                {"reading": "The customer wants a prior item restored.", "plausibility": 0.44},
++            ],
++            "uncertainty": 0.82,
++            "recommended_action": "ask_clarifying_question",
++            "clarification_question": "Do you mean account access, or restoring a previous item?",
++            "rationale": "Both readings remain plausible from the available message.",
++        }
++
++
++class AmbiguityRefereeTests(unittest.TestCase):
++    def test_invokes_judgment_callable_and_preserves_high_uncertainty(self) -> None:
++        model = RecordingLLMJudge()
++        referee = AmbiguityReferee(model)
++
++        judgment = referee.judge("I can't get into it after we changed it. Can you restore it?")
++
++        self.assertEqual(len(model.calls), 1)
++        self.assertIn("resolving ambiguity", model.calls[0][1])
++        self.assertGreaterEqual(judgment.uncertainty, 0.8)
++        self.assertEqual(judgment.recommended_action, "ask_clarifying_question")
++        self.assertEqual(len(judgment.interpretations), 2)
++
++        # A keyword router that sees only "get into" or "restore" and emits a
++        # confident canned route would fail this: the organ must invoke judgment
++        # and retain the unresolved alternatives and uncertainty.
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'git show --check --stat --oneline HEAD; git status --short' in C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN
+ succeeded in 279ms:
+d315850 Add LLM-native ambiguity referee
+?? .cursor/
+?? .proteus/
+?? AGENTS.md
+?? CLAUDE.md
+?? __pycache__/
+?? state/CURRENT.md
+?? state/DECISIONS.md
+?? state/FRONTIER.md
+?? state/IDENTITY.md
+
+diff --git a/ambiguity_referee.py b/ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..3497fb04149ffc5e1f2ae622c04a2f676e49a071
+--- /dev/null
++++ b/ambiguity_referee.py
+@@ -0,0 +1,123 @@
++"""LLM-native judgment boundary for short, ambiguous support messages.
++
++`AmbiguityReferee` deliberately has no keyword table, intent switch, or transition
++graph.  Each call delegates interpretation to the supplied `LLMJudge`; production
++runtime code is responsible for adapting its transformer/API client to that
++interface.
++
++The dataclasses below are a transport boundary, not a model of the whole support
++situation.  They cannot capture the customer's unstated context, organization
++history, tone, stakes, or every plausible interpretation.  In particular,
++`uncertainty` is the judge's expressed uncertainty, not a calibrated fact.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from typing import Literal, Mapping, Protocol, Sequence
++
++
++Action = Literal[
++    "ask_clarifying_question", "offer_reversible_step", "respond_with_assumption"
++]
++
++
++@dataclass(frozen=True)
++class Interpretation:
++    """One reading proposed by the LLM judgment call."""
++
++    reading: str
++    plausibility: float
++
++
++@dataclass(frozen=True)
++class AmbiguityJudgment:
++    """A deliberately small, reopenable representation of a judgment."""
++
++    interpretations: tuple[Interpretation, ...]
++    uncertainty: float
++    recommended_action: Action
++    clarification_question: str | None
++    rationale: str
++
++
++class LLMJudge(Protocol):
++    """Interface an LLM/transformer adapter must implement in the runtime."""
++
++    def __call__(self, *, message: str, instruction: str) -> Mapping[str, object]: ...
++
++
++class AmbiguityReferee:
++    """Obtain a fresh LLM judgment rather than routing from surface keywords."""
++
++    _INSTRUCTION = """You are resolving ambiguity in a short support message.
++Do not pretend ambiguity is absent. Return a mapping with:
++- interpretations: a non-empty list of {reading, plausibility} alternatives;
++- uncertainty: number from 0 to 1 representing your remaining uncertainty;
++- recommended_action: ask_clarifying_question, offer_reversible_step, or
++  respond_with_assumption;
++- clarification_question: a question or null; and rationale: brief explanation.
++Favor a clarification question when material interpretations remain live."""
++
++    def __init__(self, judge: LLMJudge) -> None:
++        self._judge = judge
++
++    def judge(self, message: str) -> AmbiguityJudgment:
++        """Invoke the LLM-shaped callable and preserve its uncertainty explicitly."""
++        if not message or not message.strip():
++            raise ValueError("message must be non-empty")
++        raw = self._judge(message=message, instruction=self._INSTRUCTION)
++        return self._coerce(raw)
++
++    @staticmethod
++    def _coerce(raw: Mapping[str, object]) -> AmbiguityJudgment:
++        try:
++            uncertainty = float(raw["uncertainty"])
++            action = raw["recommended_action"]
++            rows = raw["interpretations"]
++            question = raw.get("clarification_question")
++            rationale = raw["rationale"]
++        except (KeyError, TypeError, ValueError) as exc:
++            raise ValueError("LLM judge returned an incomplete judgment") from exc
++
++        if not 0.0 <= uncertainty <= 1.0:
++            raise ValueError("uncertainty must be between 0 and 1")
++        if action not in {
++            "ask_clarifying_question",
++            "offer_reversible_step",
++            "respond_with_assumption",
++        }:
++            raise ValueError("unrecognized recommended_action")
++        if not isinstance(rows, Sequence) or isinstance(rows, (str, bytes)) or not rows:
++            raise ValueError("interpretations must be a non-empty sequence")
++
++        interpretations: list[Interpretation] = []
++        for row in rows:
++            if not isinstance(row, Mapping):
++                raise ValueError("each interpretation must be a mapping")
++            reading = row.get("reading")
++            plausibility = row.get("plausibility")
++            if not isinstance(reading, str) or not reading.strip():
++                raise ValueError("interpretation reading must be non-empty")
++            try:
++                score = float(plausibility)
++            except (TypeError, ValueError) as exc:
++                raise ValueError("interpretation plausibility must be numeric") from exc
++            if not 0.0 <= score <= 1.0:
++                raise ValueError("interpretation plausibility must be between 0 and 1")
++            interpretations.append(Interpretation(reading, score))
++
++        if not isinstance(rationale, str) or not rationale.strip():
++            raise ValueError("rationale must be non-empty")
++        if question is not None and (not isinstance(question, str) or not question.strip()):
++            raise ValueError("clarification_question must be a non-empty string or null")
++        if action == "ask_clarifying_question" and question is None:
++            raise ValueError("clarifying action requires a clarification_question")
++
++        return AmbiguityJudgment(
++            interpretations=tuple(interpretations),
++            uncertainty=uncertainty,
++            recommended_action=action,  # type: ignore[arg-type]
++            clarification_question=question,
++            rationale=rationale,
++        )
+diff --git a/state/UNRESOLVED.md b/state/UNRESOLVED.md
+index 70e97eea59a8ac21d19551b24071f607d4ca4628..5d8afc790416e3a4257e400e96099b365f77774d
+--- a/state/UNRESOLVED.md
++++ b/state/UNRESOLVED.md
+@@ -1,3 +1,7 @@
+ # UNRESOLVED / UNKNOWN / CONFLICT
+ 
+ - UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
++- LIMIT: `ambiguity_referee.py` serializes a judgment into a small schema. It does not
++  contain the customer's unstated context, full conversation, organizational history,
++  or calibrated certainty; those remain reopenable through the LLM judgment call and
++  its runtime context.
+diff --git a/test_ambiguity_referee.py b/test_ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6557004e4d8e403d1ad6934e6555d72891319b9
+--- /dev/null
++++ b/test_ambiguity_referee.py
+@@ -0,0 +1,45 @@
++import unittest
++
++from ambiguity_referee import AmbiguityReferee
++
++
++class RecordingLLMJudge:
++    """A runtime-shaped stand-in: its output is not inferred from message words."""
++
++    def __init__(self) -> None:
++        self.calls: list[tuple[str, str]] = []
++
++    def __call__(self, *, message: str, instruction: str) -> dict[str, object]:
++        self.calls.append((message, instruction))
++        return {
++            "interpretations": [
++                {"reading": "The customer cannot access an account.", "plausibility": 0.47},
++                {"reading": "The customer wants a prior item restored.", "plausibility": 0.44},
++            ],
++            "uncertainty": 0.82,
++            "recommended_action": "ask_clarifying_question",
++            "clarification_question": "Do you mean account access, or restoring a previous item?",
++            "rationale": "Both readings remain plausible from the available message.",
++        }
++
++
++class AmbiguityRefereeTests(unittest.TestCase):
++    def test_invokes_judgment_callable_and_preserves_high_uncertainty(self) -> None:
++        model = RecordingLLMJudge()
++        referee = AmbiguityReferee(model)
++
++        judgment = referee.judge("I can't get into it after we changed it. Can you restore it?")
++
++        self.assertEqual(len(model.calls), 1)
++        self.assertIn("resolving ambiguity", model.calls[0][1])
++        self.assertGreaterEqual(judgment.uncertainty, 0.8)
++        self.assertEqual(judgment.recommended_action, "ask_clarifying_question")
++        self.assertEqual(len(judgment.interpretations), 2)
++
++        # A keyword router that sees only "get into" or "restore" and emits a
++        # confident canned route would fail this: the organ must invoke judgment
++        # and retain the unresolved alternatives and uncertainty.
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+codex
+Implemented and committed the LLM-native ambiguity organ.
+
+- [ambiguity_referee.py](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\ambiguity_referee.py) — injected LLM-shaped judgment callable, structured uncertainty, and explicit schema limits.
+- [test_ambiguity_referee.py](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\test_ambiguity_referee.py) — verifies a judgment callable is invoked and high uncertainty/alternatives are preserved.
+- [state/UNRESOLVED.md](C:\projects\Proteus\evidence\runs\PROTEUS-CURSOR-RUN-001-20260909T201711Z\gate1_blocker_fixtures\T11_ORGAN\state\UNRESOLVED.md) — records what the formal representation does not capture.
+
+Verified with `python -m unittest -v`.
+
+Commit: `d315850 Add LLM-native ambiguity referee`
+
+The mount files were already untracked; the test also left an untracked `__pycache__/` directory.
+diff --git a/ambiguity_referee.py b/ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..3497fb04149ffc5e1f2ae622c04a2f676e49a071
+--- /dev/null
++++ b/ambiguity_referee.py
+@@ -0,0 +1,123 @@
++"""LLM-native judgment boundary for short, ambiguous support messages.
++
++`AmbiguityReferee` deliberately has no keyword table, intent switch, or transition
++graph.  Each call delegates interpretation to the supplied `LLMJudge`; production
++runtime code is responsible for adapting its transformer/API client to that
++interface.
++
++The dataclasses below are a transport boundary, not a model of the whole support
++situation.  They cannot capture the customer's unstated context, organization
++history, tone, stakes, or every plausible interpretation.  In particular,
++`uncertainty` is the judge's expressed uncertainty, not a calibrated fact.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from typing import Literal, Mapping, Protocol, Sequence
++
++
++Action = Literal[
++    "ask_clarifying_question", "offer_reversible_step", "respond_with_assumption"
++]
++
++
++@dataclass(frozen=True)
++class Interpretation:
++    """One reading proposed by the LLM judgment call."""
++
++    reading: str
++    plausibility: float
++
++
++@dataclass(frozen=True)
++class AmbiguityJudgment:
++    """A deliberately small, reopenable representation of a judgment."""
++
++    interpretations: tuple[Interpretation, ...]
++    uncertainty: float
++    recommended_action: Action
++    clarification_question: str | None
++    rationale: str
++
++
++class LLMJudge(Protocol):
++    """Interface an LLM/transformer adapter must implement in the runtime."""
++
++    def __call__(self, *, message: str, instruction: str) -> Mapping[str, object]: ...
++
++
++class AmbiguityReferee:
++    """Obtain a fresh LLM judgment rather than routing from surface keywords."""
++
++    _INSTRUCTION = """You are resolving ambiguity in a short support message.
++Do not pretend ambiguity is absent. Return a mapping with:
++- interpretations: a non-empty list of {reading, plausibility} alternatives;
++- uncertainty: number from 0 to 1 representing your remaining uncertainty;
++- recommended_action: ask_clarifying_question, offer_reversible_step, or
++  respond_with_assumption;
++- clarification_question: a question or null; and rationale: brief explanation.
++Favor a clarification question when material interpretations remain live."""
++
++    def __init__(self, judge: LLMJudge) -> None:
++        self._judge = judge
++
++    def judge(self, message: str) -> AmbiguityJudgment:
++        """Invoke the LLM-shaped callable and preserve its uncertainty explicitly."""
++        if not message or not message.strip():
++            raise ValueError("message must be non-empty")
++        raw = self._judge(message=message, instruction=self._INSTRUCTION)
++        return self._coerce(raw)
++
++    @staticmethod
++    def _coerce(raw: Mapping[str, object]) -> AmbiguityJudgment:
++        try:
++            uncertainty = float(raw["uncertainty"])
++            action = raw["recommended_action"]
++            rows = raw["interpretations"]
++            question = raw.get("clarification_question")
++            rationale = raw["rationale"]
++        except (KeyError, TypeError, ValueError) as exc:
++            raise ValueError("LLM judge returned an incomplete judgment") from exc
++
++        if not 0.0 <= uncertainty <= 1.0:
++            raise ValueError("uncertainty must be between 0 and 1")
++        if action not in {
++            "ask_clarifying_question",
++            "offer_reversible_step",
++            "respond_with_assumption",
++        }:
++            raise ValueError("unrecognized recommended_action")
++        if not isinstance(rows, Sequence) or isinstance(rows, (str, bytes)) or not rows:
++            raise ValueError("interpretations must be a non-empty sequence")
++
++        interpretations: list[Interpretation] = []
++        for row in rows:
++            if not isinstance(row, Mapping):
++                raise ValueError("each interpretation must be a mapping")
++            reading = row.get("reading")
++            plausibility = row.get("plausibility")
++            if not isinstance(reading, str) or not reading.strip():
++                raise ValueError("interpretation reading must be non-empty")
++            try:
++                score = float(plausibility)
++            except (TypeError, ValueError) as exc:
++                raise ValueError("interpretation plausibility must be numeric") from exc
++            if not 0.0 <= score <= 1.0:
++                raise ValueError("interpretation plausibility must be between 0 and 1")
++            interpretations.append(Interpretation(reading, score))
++
++        if not isinstance(rationale, str) or not rationale.strip():
++            raise ValueError("rationale must be non-empty")
++        if question is not None and (not isinstance(question, str) or not question.strip()):
++            raise ValueError("clarification_question must be a non-empty string or null")
++        if action == "ask_clarifying_question" and question is None:
++            raise ValueError("clarifying action requires a clarification_question")
++
++        return AmbiguityJudgment(
++            interpretations=tuple(interpretations),
++            uncertainty=uncertainty,
++            recommended_action=action,  # type: ignore[arg-type]
++            clarification_question=question,
++            rationale=rationale,
++        )
+diff --git a/state/UNRESOLVED.md b/state/UNRESOLVED.md
+index 70e97eea59a8ac21d19551b24071f607d4ca4628..5d8afc790416e3a4257e400e96099b365f77774d
+--- a/state/UNRESOLVED.md
++++ b/state/UNRESOLVED.md
+@@ -1,3 +1,7 @@
+ # UNRESOLVED / UNKNOWN / CONFLICT
+ 
+ - UNKNOWN: project-specific history prior to Proteus activation was not automatically imported.
++- LIMIT: `ambiguity_referee.py` serializes a judgment into a small schema. It does not
++  contain the customer's unstated context, full conversation, organizational history,
++  or calibrated certainty; those remain reopenable through the LLM judgment call and
++  its runtime context.
+diff --git a/test_ambiguity_referee.py b/test_ambiguity_referee.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6557004e4d8e403d1ad6934e6555d72891319b9
+--- /dev/null
++++ b/test_ambiguity_referee.py
+@@ -0,0 +1,45 @@
++import unittest
++
++from ambiguity_referee import AmbiguityReferee
++
++
++class RecordingLLMJudge:
++    """A runtime-shaped stand-in: its output is not inferred from message words."""
++
++    def __init__(self) -> None:
++        self.calls: list[tuple[str, str]] = []
++
++    def __call__(self, *, message: str, instruction: str) -> dict[str, object]:
++        self.calls.append((message, instruction))
++        return {
++            "interpretations": [
++                {"reading": "The customer cannot access an account.", "plausibility": 0.47},
++                {"reading": "The customer wants a prior item restored.", "plausibility": 0.44},
++            ],
++            "uncertainty": 0.82,
++            "recommended_action": "ask_clarifying_question",
++            "clarification_question": "Do you mean account access, or restoring a previous item?",
++            "rationale": "Both readings remain plausible from the available message.",
++        }
++
++
++class AmbiguityRefereeTests(unittest.TestCase):
++    def test_invokes_judgment_callable_and_preserves_high_uncertainty(self) -> None:
++        model = RecordingLLMJudge()
++        referee = AmbiguityReferee(model)
++
++        judgment = referee.judge("I can't get into it after we changed it. Can you restore it?")
++
++        self.assertEqual(len(model.calls), 1)
++        self.assertIn("resolving ambiguity", model.calls[0][1])
++        self.assertGreaterEqual(judgment.uncertainty, 0.8)
++        self.assertEqual(judgment.recommended_action, "ask_clarifying_question")
++        self.assertEqual(len(judgment.interpretations), 2)
++
++        # A keyword router that sees only "get into" or "restore" and emits a
++        # confident canned route would fail this: the organ must invoke judgment
++        # and retain the unresolved alternatives and uncertainty.
++
++
++if __name__ == "__main__":
++    unittest.main()
+
+tokens used
+25 523

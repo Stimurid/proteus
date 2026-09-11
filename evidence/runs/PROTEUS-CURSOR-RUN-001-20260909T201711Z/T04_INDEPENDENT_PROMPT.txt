@@ -1,0 +1,7 @@
+﻿Work only in this project from its installed instructions and state/*.
+
+Task: A user reported: "sometimes login feels a bit slow, not sure if it matters."
+Classify support-ticket urgency for triage. Give a single urgency field and a one-sentence rationale.
+Use project durable guidance if present. Do not invent project policy.
+Do not ask the human to run commands.
+Report: urgency value, rationale, and which durable files (if any) you relied on.
