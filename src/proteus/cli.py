@@ -29,6 +29,13 @@ from .secrets import delete_secret, describe_secret, put_secret, redact
 from .secrets.broker import SecretNotFoundError, get_secret
 from .capsule import DEFAULT_MAX_CHARS, build_capsule
 from .derived import read_relation, record_relation
+from .frontier_reconcile import (
+    list_branches,
+    reconcile as reconcile_frontier,
+    show_reconciled,
+    write_base as write_frontier_base,
+    write_branch as write_frontier_branch,
+)
 
 
 def cmd_enqueue(ns: argparse.Namespace) -> None:
@@ -211,6 +218,43 @@ def cmd_world(ns: argparse.Namespace) -> None:
     raise SystemExit(f"Unknown world command: {ns.world_cmd}")
 
 
+def cmd_frontier(ns: argparse.Namespace) -> None:
+    project = Path(ns.project)
+    if ns.frontier_cmd == "write-base":
+        items = json.loads(ns.items_json)
+        print(json.dumps(write_frontier_base(project, items=items, note=ns.note), indent=2))
+        return
+    if ns.frontier_cmd == "write-branch":
+        items = json.loads(ns.items_json)
+        print(
+            json.dumps(
+                write_frontier_branch(
+                    project,
+                    branch_id=ns.branch_id,
+                    actor=ns.actor,
+                    items=items,
+                    base_digest=ns.base_digest,
+                    note=ns.note,
+                ),
+                indent=2,
+            )
+        )
+        return
+    if ns.frontier_cmd == "list-branches":
+        print(json.dumps(list_branches(project), indent=2))
+        return
+    if ns.frontier_cmd == "reconcile":
+        print(json.dumps(reconcile_frontier(project, observer=ns.observer), indent=2))
+        return
+    if ns.frontier_cmd == "show":
+        shown = show_reconciled(project)
+        if shown is None:
+            raise SystemExit("no FRONTIER_RECONCILED.json yet")
+        print(json.dumps(shown, indent=2))
+        return
+    raise SystemExit(f"Unknown frontier command: {ns.frontier_cmd}")
+
+
 def cmd_secret(ns: argparse.Namespace) -> None:
     if ns.secret_cmd == "put":
         # plaintext only via env or file — never echoed back
@@ -358,6 +402,35 @@ def main() -> None:
     wal.add_argument("--entity-id", required=True)
     wal.add_argument("--alias", action="append", default=[])
     wal.set_defaults(func=cmd_world)
+
+    fr = sub.add_parser(
+        "frontier",
+        help="Shared project-frontier branch write + reconcile (no last-write-wins)",
+    )
+    frsub = fr.add_subparsers(dest="frontier_cmd", required=True)
+    frb = frsub.add_parser("write-base")
+    frb.add_argument("--project", required=True)
+    frb.add_argument("--items-json", required=True, help='JSON object of frontier fields')
+    frb.add_argument("--note", default=None)
+    frb.set_defaults(func=cmd_frontier)
+    frw = frsub.add_parser("write-branch")
+    frw.add_argument("--project", required=True)
+    frw.add_argument("--branch-id", required=True)
+    frw.add_argument("--actor", required=True)
+    frw.add_argument("--items-json", required=True)
+    frw.add_argument("--base-digest", default=None)
+    frw.add_argument("--note", default=None)
+    frw.set_defaults(func=cmd_frontier)
+    frl = frsub.add_parser("list-branches")
+    frl.add_argument("--project", required=True)
+    frl.set_defaults(func=cmd_frontier)
+    frr = frsub.add_parser("reconcile")
+    frr.add_argument("--project", required=True)
+    frr.add_argument("--observer", default="proteus.cli")
+    frr.set_defaults(func=cmd_frontier)
+    frs = frsub.add_parser("show")
+    frs.add_argument("--project", required=True)
+    frs.set_defaults(func=cmd_frontier)
 
     s = sub.add_parser("secret", help="Protected secret broker (no plaintext in stdout for put)")
     ssub = s.add_subparsers(dest="secret_cmd", required=True)

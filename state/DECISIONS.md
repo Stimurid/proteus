@@ -63,3 +63,9 @@
 - Not claimed: Gate 1; NATURAL_RECRUITMENT PASS; that the principle alone guarantees recruitment; mandatory relation files for every write.
 - Provenance: F06 causal diagnosis of F05 PARTIAL (`F06_F05_CAUSAL_DIAGNOSIS.md`); task-entanglement + missing general recruitment mechanism.
 - Status: accepted for this incarnation; reversible by removing constitutive template sections and `src/proteus/derived.py`.
+
+## D-012 — Shared project-frontier reconciliation (no LWW)
+- Decision: Gate T09 requires an actual shared-frontier reconciliation operation, not merely concurrent isolated bodies. Proteus provides host-neutral `proteus.frontier_reconcile` + `python -m proteus frontier` (`write-base`, `write-branch`, `reconcile`, `show`). Concurrent branches write under `.proteus/frontier_branches/`; reconcile emits `.proteus/FRONTIER_RECONCILED.json` (+ `state/FRONTIER_RECONCILED.md` VIEW) preserving branch provenance, merging identical fields, and leaving incompatible fields as explicit CONFLICT/UNKNOWN. Timestamp / last-write-wins is rejected as semantic resolution.
+- Not claimed: Gate 1; that all conflicts are mechanically resolvable; live Archivarius; multi-machine sync; identity with entity-claim conflict marking.
+- Provenance: Gate 1 independent re-audit (`GATE1_INDEPENDENT_REAUDIT.md`) T09 PARTIALLY_CLOSED — concurrent markers without shared frontier reconcile.
+- Status: accepted for this incarnation; reversible by removing `src/proteus/frontier_reconcile.py` and CLI wiring.
