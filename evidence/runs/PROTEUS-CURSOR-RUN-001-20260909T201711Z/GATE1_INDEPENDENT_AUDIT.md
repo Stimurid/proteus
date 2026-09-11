@@ -73,3 +73,9 @@ F05 historical `NATURAL_RECRUITMENT = PARTIAL` remains historical. Durable globa
 ## Drive / recovery
 
 See origin checkpoint attempt after commit. If Drive transport unavailable, record as transport boundary — not a reason to invent Gate acceptance.
+
+## Drive / recovery result
+
+- Local observatory flush: drive_sync=FAILED_TRANSPORT (Desktop mirror empty); local fallback written.
+- Local recovery: evidence/checkpoints/CHECKPOINT-GATE1-20260911T184005Z.md and %USERPROFILE%\.proteus\observatory\90_SUMMARIES_AND_ANALYSIS\GATE1_AUDIT_STATUS.md.
+- Drive MCP status note uploaded to observatory folder 1Cg0X2__jRf-LtMstPfLTDTPTKK33-bhx: file id 1y3FWLoROjfZ4HHIZdX4h3c7n8mr7OqRZ (GATE1_AUDIT_STATUS_PROTEUS-CURSOR-RUN-001.md).
