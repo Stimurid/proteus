@@ -1,0 +1,30 @@
+{
+  "schema": "proteus.gate1_reaudit2_freeze.v0.1",
+  "audited_commit": "94e6f09d29c9c58bfaf01fac2917a0263cf54311",
+  "origin_head_at_freeze": "94e6f09d29c9c58bfaf01fac2917a0263cf54311",
+  "created_utc": "2026-09-11T22:03:56.901701+00:00",
+  "method": "git archive --format=zip -o ZIP <commit>; Expand into isolated AUDIT dir",
+  "bundle_root": "C:\\Projects\\Proteus-GATE1-REAUDIT-002",
+  "archive_zip": "C:\\Projects\\_proteus_gate1_reaudit2_94e6f09.zip",
+  "working_tree_note": "origin tree clean for tracked files; untracked isolated Cursor userdata dirs excluded by git archive (not part of subject)",
+  "excluded_untracked": [
+    "evidence/runs/.../gate1_final3_isolated_cursor_userdata/",
+    "evidence/runs/.../gate1_isolated_cursor_userdata/",
+    "evidence/runs/.../gate1_isolated_cursor_userdata2/"
+  ],
+  "first_audit_subject_commit": "94e3d60c9785789f1b7e812a865a325fcb23475f",
+  "second_reaudit_subject_commit": "4b1f8d39a6731a994dc67c66aa8f5c059bda78d8",
+  "prior_verdicts": {
+    "first_audit": "NOT_ACCEPTED",
+    "second_reaudit": "NOT_ACCEPTED"
+  },
+  "origin_claims_to_audit_not_accept": [
+    "Cursor-native T02 current PASS",
+    "T09 reconciliation PASS",
+    "Cursor-path T13 PASS",
+    "L6 PASS",
+    "D-012 accepted",
+    "no remaining Gate-critical blockers from second auditor minimum set"
+  ],
+  "note": "Isolated extract; auditor must not use live Proteus origin tree."
+}

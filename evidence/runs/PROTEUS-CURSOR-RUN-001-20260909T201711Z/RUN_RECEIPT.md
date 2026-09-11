@@ -206,8 +206,19 @@ Regression: pytest **55 passed**; FINAL3_BODY inventory **4 passed**.
 GATE_1 = NOT_ACCEPTED.
 NEXT_FRONTIER = INDEPENDENT_GATE_1_REAUDIT_2 (not performed here).
 
+## 25. INDEPENDENT GATE 1 RE-AUDIT-2
+
+Freeze: commit `94e6f09d29c9c58bfaf01fac2917a0263cf54311`; clean tracked subject; untracked isolated Cursor userdata excluded.
+Bundle: `C:\Projects\Proteus-GATE1-REAUDIT-002`; content-address `32873ef7bfc5bee6b9199f738b543d832b7c8bf44361da22ad613797cb2b0cd3`; zip `310a5e1843edee6e13ade58bdd202fd6f20653bac939ea58e4a951bc9b2f7bda`; manifest `e74727a92adcde057fdad4cefbf8708f24b6c76f4601d72411154fc63d441a96` (821 files).
+Re-auditor-2: Codex 0.153.4 ephemeral PID 21836; no Proteus activate; prompt sha `8e7d2b85e6d46e750c649ae2529f001a9e561335d34c9073466e706d02059e82`.
+Raw: `GATE1_REAUDITOR_2_RAW_RESULT.txt`. Origin record: `GATE1_INDEPENDENT_REAUDIT_2.md`.
+Prior audits NOT_ACCEPTED preserved. Re-auditor-2 verdict: **NOT_ACCEPTED**.
+Final-three recheck: T02 PARTIALLY_CLOSED; T09 PARTIALLY_CLOSED; T13 PARTIALLY_CLOSED; L6 PARTIAL; T11 NON_BLOCKING_QUALIFICATION.
+GATE_1 = NOT_ACCEPTED.
+Next frontier: re-auditor-2 Gate-critical blockers only (Cursor B–tied native session path; independent concurrent T09 writers + fresh reader).
+
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (…; D-006–D-012 accepted; F04–F06 recorded; Gate audited then re-audited NOT_ACCEPTED; final-three origin closure recorded)
+FIRST_INCARNATION = PARTIAL (…; D-006–D-012 accepted; F04–F06 recorded; Gate audited ×3 NOT_ACCEPTED)
 OBSERVABILITY = PARTIAL (local PASS; Drive observatory FAIL; entity carriers MCP PARTIAL)
 PRODUCT_ACTIVATION = PASS
 WORLD_ENTITY_MEMORY = PASS (vertical slice)
@@ -221,4 +232,4 @@ NATURAL_TRANSDUCTION_RETEST = PASS
 NATURAL_RECRUITMENT = PASS
 LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED
 GATE_1 = NOT_ACCEPTED
-NEXT_FRONTIER = INDEPENDENT_GATE_1_REAUDIT_2
+NEXT_FRONTIER = GATE1_REAUDIT2_BLOCKERS (Cursor B–tied native session; concurrent T09 writers + fresh reader)

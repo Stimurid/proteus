@@ -1,0 +1,116 @@
+## 1. Audited commit
+
+`94e6f09d29c9c58bfaf01fac2917a0263cf54311` — attested by the freeze manifest. The archive extract has no `.git`; Git ancestry is therefore not independently replayable.
+
+## 2. Audit bundle identity/hashes
+
+- Bundle: `C:\Projects\Proteus-GATE1-REAUDIT-002`
+- Declared content address: `32873ef7bfc5bee6b9199f738b543d832b7c8bf44361da22ad613797cb2b0cd3`
+- Declared archive SHA-256: `310a5e1843edee6e13ade58bdd202fd6f20653bac939ea58e4a951bc9b2f7bda`
+- Manifest SHA-256 (recalculated): `e74727a92adcde057fdad4cefbf8708f24b6c76f4601d72411154fc63d441a96`
+- Manifest verification: 821/821 listed files matched both SHA-256 and byte count; 0 mismatches.
+
+## 3. Auditor independence evidence
+
+I used only this bundle, did not access either live Proteus tree, did not install/activate Proteus, create a mount, use shared world-memory, or modify project code/evidence/tests. I ran only the existing frontier-reconciliation tests: 2 passed.
+
+## 4. Reconstructed Gate standard
+
+[50_GATE1_EVAL.md](/C:/projects/Proteus-GATE1-REAUDIT-002/_BOOTSTRAP/BLIND_START/50_GATE1_EVAL.md) requires Cursor continuity through restart, non-LWW parallel-frontier reconciliation, and an installed post-install second development cycle. Gate 1 is not accepted below L6.
+
+[60_CURRENT_PROTEUS_STATUS.md](/C:/projects/Proteus-GATE1-REAUDIT-002/_BOOTSTRAP/BLIND_START/60_CURRENT_PROTEUS_STATUS.md) additionally makes anti-reduction, uncertainty, provenance, and reversible/form-sensitive judgment constitutive constraints—not merely test labels.
+
+## 5. History of prior audits
+
+- `94e3d60…`: **NOT_ACCEPTED**.
+- `4b1f8d3…`: **NOT_ACCEPTED**.
+- The second audit’s minimum remaining blockers were Cursor-native T02, shared-frontier T09 reconciliation, and Cursor-path T13/L6.
+- Historical T02 `PARTIAL` and T11 `PARTIALLY_CLOSED` remain preserved.
+
+## 6. Final-three closure table
+
+| Item | Result | Basis |
+|---|---|---|
+| T02 Cursor-native | **PARTIALLY_CLOSED** | A distinct isolated Cursor A was terminated and B was launched; Cycle2 was a new Cursor Agent CLI invocation with no resume/continue and did recover durable project work. But the evidence does not establish that the Agent CLI reentry was a session of, launched by, or otherwise causally tied to Cursor B. It is an external `cursor-agent` Node process. |
+| T09 reconciliation | **PARTIALLY_CLOSED** | D-012 correctly produces an R1 receipt preserving provenance, compatible merges, explicit conflict/UNKNOWN, and rejects LWW. But the primary evidence does not establish concurrent A1/B1 writes: branch receipts are sequentially timestamped and lack independent writer/session provenance. “Fresh reader” is a duplicate receipt with no independent reader identity. |
+| T13 Cursor path | **PARTIALLY_CLOSED** | Cycle2’s prompt did not seed the inventory/sizes task; it recovered and extended Cycle1’s durable consequence. However, the required fresh Cursor session is not evidenced as such: it is another standalone Cursor Agent CLI process, with no demonstrated causal attachment to Cursor B. |
+| L6 | **PARTIAL** | The second-cycle product extension is credible, but installed Cursor continuity capabilities have not been shown operating through a fresh reopened Cursor session. Thus the Gate-level host-path attribution remains incomplete. |
+
+## 7. T11 classification
+
+**NON_BLOCKING_QUALIFICATION**
+
+T11 remains `PARTIALLY_CLOSED`; it is not upgraded. The Gate authority makes L6 the minimum acceptance level, and the second auditor explicitly did not retain T11 in the minimum remaining blocker set. Its qualification limits confidence and remains visible, but does not independently block Gate 1 once the decisive closures are actually proved.
+
+## 8. L4/L5/L6 reconstruction
+
+| Level | Status |
+|---|---|
+| L4 learning | **SUPPORTED** |
+| L5 organ preservation | **SUPPORTED_WITH_LIMIT** |
+| L6 second-cycle works | **PARTIAL** |
+
+## 9. Whole-Gate capability table
+
+| Capability | Status |
+|---|---|
+| T01 fresh reentry | SUPPORTED_WITH_LIMIT |
+| T02 restart continuity | PARTIAL |
+| T03 compaction survival | SUPPORTED_WITH_LIMIT |
+| T04 correction learning | SUPPORTED |
+| T05 project isolation | SUPPORTED |
+| T06 global continuity | SUPPORTED_WITH_LIMIT |
+| T07 provenance | SUPPORTED |
+| T08 UNKNOWN/CONFLICT preservation | SUPPORTED |
+| T09 parallel reconciliation | PARTIAL |
+| T10 bootstrap/activation | SUPPORTED_WITH_LIMIT |
+| T11 LLM-native organ preservation | SUPPORTED_WITH_LIMIT |
+| T12 usability | SUPPORTED_WITH_LIMIT |
+| T13 / L6 post-install second cycle | PARTIAL |
+
+## 10. Strongest positive evidence
+
+- All 821 frozen files match the manifest.
+- D-012’s implementation and its test exercise compatible merge, retained branch provenance, conflict preservation, UNKNOWN preservation, and rejection of timestamp-LWW.
+- Cycle2’s ordinary reentry prompt did not mention inventory or byte sizes, yet Cycle2 found Cycle1’s durable work and extended it.
+- Historical PARTIAL, UNKNOWN, CONFLICT, and NOT_ACCEPTED records remain candidly preserved.
+
+## 11. Strongest negative evidence
+
+- The purported reentry is a standalone Cursor Agent CLI process, not demonstrated as a fresh session inside/reached through reopened Cursor B.
+- The actual final-three runtime used a host runtime and source path outside the archive; that environment is unavailable for independent inspection.
+- T09 has no primary proof that the two shared-frontier writers were concurrent, and no independently identified fresh reader.
+
+## 12. Adversarial false-positive findings
+
+- “Cursor.exe + Cursor Agent CLI” is asserted as one successor host, but the preserved metadata shows separate process types and no parentage/attachment evidence.
+- Mere temporal coexistence of Cursor B and Agent CLI does not prove Cursor-native session reentry.
+- T09 actor strings (`session.A.worker`, `session.B.worker`) are data fields, not independent execution evidence.
+- D-012 does not validate that each branch’s `base_digest` equals the current base, and a repeated branch ID overwrites its own branch file. The demonstrated receipt is sound for the supplied inputs, but this weakens a broad concurrency-safety inference.
+- `activation.json` itself says activation does not claim `PROCESS_DEATH` continuity.
+
+## 13. Open-boundary classification
+
+| Classification | Boundaries |
+|---|---|
+| GATE_BLOCKER | Demonstrate T02/T13 through an actual fresh Cursor session after B, with durable-state recovery/use attributable to that Cursor session rather than an adjacent CLI invocation. |
+| GATE_BLOCKER | Demonstrate T09 with independently evidenced concurrent A1/B1 shared-base writes and an independently identified fresh reader of R1. |
+| ACCEPTED_OPEN_BOUNDARY | Live Archivarius reconciliation; AW1000 real secret; Drive transport; multi-machine sync; Claude/OpenClaw carriers; Tyumen source access; portable Python prerequisite. |
+| POST_GATE | Packaging, marketplace, UX, field deployment, and broader activation coverage. |
+
+## 14. Exact verdict
+
+**NOT_ACCEPTED**
+
+## 15. Concise rationale
+
+The final-three work materially improves the bundle: it supplies a real no-LWW reconciliation implementation and a persuasive durable Cycle1→Cycle2 product extension. But it does not meet the Gate’s exact host-boundary proof. The reopened Cursor process and the two external Cursor Agent CLI sessions are evidenced separately, not as one fresh Cursor-session causal path. T09 likewise lacks primary proof of concurrent shared-frontier writers and an independent fresh reader. L6 therefore remains PARTIAL.
+
+## 16. Carried-forward boundaries
+
+Not applicable.
+
+## 17. Minimum remaining Gate-critical blockers only
+
+- Native Cursor-session evidence connecting Cursor B to independent reentry/recovery/use of A’s durable state, also establishing the T13/L6 fresh Cursor-session path.
+- Independently evidenced concurrent shared-base A1/B1 writes, reconciliation to R1, and an independently identified fresh reader.

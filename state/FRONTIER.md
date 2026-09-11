@@ -1,13 +1,13 @@
 # FRONTIER
 
-D-006–D-012 remain complete. First Gate audit **NOT_ACCEPTED** and re-audit **NOT_ACCEPTED** are preserved; origin does not dispute them.
+D-006–D-012 remain complete. Gate audits **NOT_ACCEPTED** ×3 are preserved; origin does not dispute them.
 
-Preserve: LIVE_ARCHIVARIUS_RECONCILIATION BLOCKED; AW1000_REAL_SECRET UNAVAILABLE; F05 historical NATURAL_RECRUITMENT PARTIAL; T02 historical PARTIAL; T11 historical/inherited PARTIALLY_CLOSED.
+Preserve: LIVE_ARCHIVARIUS_RECONCILIATION BLOCKED; AW1000_REAL_SECRET UNAVAILABLE; F05 historical NATURAL_RECRUITMENT PARTIAL; T02 historical PARTIAL; T11 PARTIALLY_CLOSED (NON_BLOCKING_QUALIFICATION per re-audit-2).
 
-Do not open non-blocking/post-Gate productization in place of Gate re-audit.
+Do not open non-blocking/post-Gate productization in place of remaining Gate blockers.
+Do not repair blockers in the re-audit-2 recording episode.
 
-Origin current PASS evidence now exists for the re-auditor’s three remaining Gate-critical blockers + L6 (`GATE1_FINAL_THREE_CLOSURE_MATRIX.md`). This is **not** Gate acceptance.
+## Next (re-auditor-2 Gate-critical blockers only)
 
-## Next
-
-`INDEPENDENT_GATE_1_REAUDIT_2` — independent re-audit of the final-three closure tip (not performed in the closure episode).
+1. Native Cursor-session evidence connecting Cursor B to independent reentry/recovery/use of A’s durable state (also establishing T13/L6 fresh Cursor-session path)
+2. Independently evidenced concurrent shared-base A1/B1 writes, reconciliation to R1, and an independently identified fresh reader of R1
