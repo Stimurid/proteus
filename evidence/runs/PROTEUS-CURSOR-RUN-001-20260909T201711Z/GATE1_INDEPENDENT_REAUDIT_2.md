@@ -78,3 +78,8 @@ Do not repair in this episode:
 
 ACCEPTED_OPEN_BOUNDARY: live Archivarius; AW1000 real secret; Drive transport; multi-machine sync; Claude/OpenClaw; Tyumen source access; portable Python prerequisite.  
 POST_GATE: packaging, marketplace, UX, field deployment, broader activation coverage.
+
+## Drive / recovery result
+
+- Local recording commit: \e714ccf967cb254fc2b82e6b7020b162a878b5e\.
+- Drive MCP status note id: EGU3KLWGx5w_Nzxl8Oj4U3ZL3vrhdvYMltw8hQAAWtg\ (observatory folder).
