@@ -11,6 +11,7 @@ RUN_ID: `PROTEUS-CURSOR-RUN-001-20260909T201711Z`
 | Bundle | `C:\Projects\Proteus-GATE1-REAUDIT-002` |
 | Evidence | `GATE1_INDEPENDENT_REAUDIT_2.md`, `GATE1_REAUDITOR_2_RAW_RESULT.txt` |
 | NEXT_FRONTIER | GATE1_REAUDIT2_BLOCKERS (Cursor B–tied native session; concurrent T09 + fresh reader) |
-| Drive MCP status note | id `PLACEHOLDER` (filled after upload) |
+| Drive MCP status note | id `1EGU3KLWGx5w_Nzxl8Oj4U3ZL3vrhdvYMltw8hQAAWtg` (observatory folder) |
+| Tip after recovery notes | `9d354d25e32128b4536cc2f71eb09ef50437e0b5` |
 
 No secrets recorded.

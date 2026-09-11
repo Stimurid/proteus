@@ -81,5 +81,6 @@ POST_GATE: packaging, marketplace, UX, field deployment, broader activation cove
 
 ## Drive / recovery result
 
-- Local recording commit: \e714ccf967cb254fc2b82e6b7020b162a878b5e\.
-- Drive MCP status note id: EGU3KLWGx5w_Nzxl8Oj4U3ZL3vrhdvYMltw8hQAAWtg\ (observatory folder).
+- Local recording commit: `be714ccf967cb254fc2b82e6b7020b162a878b5e`.
+- Drive MCP status note id: `1EGU3KLWGx5w_Nzxl8Oj4U3ZL3vrhdvYMltw8hQAAWtg` (observatory folder).
+- Follow-up recovery tip: `9d354d25e32128b4536cc2f71eb09ef50437e0b5`.
