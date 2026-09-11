@@ -1,0 +1,70 @@
+{
+  "schema": "proteus.archivarius_bridge.v0.1",
+  "reconciled_utc": "2026-09-11T10:07:34.011788+00:00",
+  "entity_id": "entity.router.aw1000.home",
+  "identity": {
+    "schema": "proteus.entity.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "display_name": "Arcadian AW1000 router",
+    "aliases": [
+      "AW1000",
+      "our router",
+      "Arcadian AW1000",
+      "Arcadyan AW1000",
+      "QWRT",
+      "home router",
+      "\u043d\u0430\u0448 \u0440\u043e\u0443\u0442\u0435\u0440"
+    ],
+    "relations": [],
+    "created_utc": "2026-09-10T18:58:50.018659+00:00",
+    "note": "identity card is address/catalog, not ontology of the living object",
+    "aliases_updated_utc": "2026-09-11T10:00:43.373747+00:00"
+  },
+  "carriers": [
+    {
+      "role": "HOME",
+      "kind": "local_fs",
+      "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home",
+      "authority": "local_semantic",
+      "currentness": "active"
+    },
+    {
+      "role": "BACKUP",
+      "kind": "google_drive",
+      "provider_id": "1IYbaIRyC3ScnppX1iNdlVgo688jwE48r",
+      "title": "proteus-entity-router-aw1000-home-carrier-v0.1.zip",
+      "authority": "cloud_carrier",
+      "currentness": "synced_snapshot",
+      "recorded_utc": "2026-09-11T10:05:31.182202+00:00"
+    }
+  ],
+  "current_claim_count": 14,
+  "conflict_count": 1,
+  "unknown_count": 2,
+  "project_links": [
+    {
+      "project_path": "C:\\projects\\aw1000-audit",
+      "relation": "primary_workspace",
+      "linked_utc": "2026-09-11T10:00:44.952246+00:00"
+    },
+    {
+      "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R1",
+      "relation": "fixture_recall",
+      "linked_utc": "2026-09-11T10:05:31.241210+00:00"
+    },
+    {
+      "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R2",
+      "relation": "fixture_recall",
+      "linked_utc": "2026-09-11T10:05:31.249058+00:00"
+    }
+  ],
+  "index_digest16": "b0a948104b8da928",
+  "invariants": {
+    "ENTITY_NE_CARRIER": true,
+    "VIEW_NE_SOURCE_TRUTH": true,
+    "NO_LAST_WRITE_WINS": true,
+    "UNKNOWN_AND_CONFLICT_SURVIVE": true
+  },
+  "runtime_boundary": "No live Archivarius process invoked; this adapter emits Archivarius-compatible reconciliation evidence against the local entity substrate.",
+  "alias_collisions_in_view": []
+}

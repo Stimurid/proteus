@@ -39,3 +39,9 @@
 - Not claimed: universal ontology; full Archivarius product; full Drive bidirectional sync; multi-host sync; real secret broker; Gate 1; natural recruitment.
 - Provenance: user-consented `WORKING_ARCHITECTURE — AIYE × PROTEUS × ARCHIVARIUS × ENTITY SUBSTRATE v0.1` (Drive `1MIaOF2uyozecgePkkowfblwGtOBG7tQrjUdVyLav1fw`); episode `WORLD_MEMORY_EPISODE.md` / `WORLD_MEMORY_TWO_SESSION.md`.
 - Status: accepted for this incarnation; reversible by removing `src/proteus/world/` and related activate skill/ENTRY sections.
+
+## D-008 — Real entity hardening + Windows secret broker
+- Decision: The first real persistent trans-project entity for this incarnation is `entity.router.aw1000.home` (Arcadyan/Arcadian AW1000). Aliases may expand without creating a second entity. Durable Drive BACKUP carriers for real entities use the existing export/import/reconcile path (no last-write-wins; local authority preserved). Opaque `secret://` refs are resolved by a replaceable Secret Broker; on this Windows host the provider is Credential Manager (`proteus.secrets`). Real router passwords are not auto-migrated; if unavailable, mark `AW1000_REAL_SECRET=UNAVAILABLE` while synthetic broker tests may still PASS. Host-neutral access lives in `proteus.world.api` for later foreign carriers.
+- Not claimed: full local↔Drive sync; live Archivarius process; that all imported facts are eternally current; real secret availability when only synthetic broker tests pass; Gate 1; natural recruitment; Codex/Claude portability.
+- Provenance: AW1000 real-entity episode under RUN `PROTEUS-CURSOR-RUN-001-20260909T201711Z`; evidence `AW1000_REAL_ENTITY_EPISODE.md`.
+- Status: accepted for this incarnation; reversible by removing `src/proteus/secrets/` and reverting AW1000 carrier pointers.

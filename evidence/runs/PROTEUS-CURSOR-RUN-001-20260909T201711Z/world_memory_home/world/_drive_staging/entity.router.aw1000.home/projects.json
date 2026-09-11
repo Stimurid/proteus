@@ -1,0 +1,11 @@
+{
+  "schema": "proteus.entity.v0.1",
+  "entity_id": "entity.router.aw1000.home",
+  "projects": [
+    {
+      "project_path": "C:\\projects\\aw1000-audit",
+      "relation": "primary_workspace",
+      "linked_utc": "2026-09-11T10:00:44.952246+00:00"
+    }
+  ]
+}

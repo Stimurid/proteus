@@ -105,39 +105,34 @@ See `ROLLBACK.md`. Uninstall path exists. Rollback of user hooks **not destructi
 
 ## 14. NEXT FRONTIER
 
-F01 SELF-TRANSDUCTION recorded. D-004 identity de-equation installed. D-005 portable handoff accepted (`PORTABLE_HANDOFF.md`). Fresh incarnation experiment CLOSED (`FRESH_INCARNATION_CLOSURE.md`). D-006 product activation (Cursor project mount) implemented (`PRODUCT_ACTIVATION.md`); closure `NATURAL_RECRUITMENT=NOT_PROVED`. D-007 shared world/entity substrate vertical slice (`WORLD_MEMORY_EPISODE.md`). T02 remains PARTIAL. T02b PASS. T03 PASS. Do not start T04/T05/T02c as inherited next tests. Drive observatory flush remains FAILED_TRANSPORT (entity carrier MCP path is separate PARTIAL). PROCESS_DEATH_BOUNDARY remains UNKNOWN. Not a Gate 1 upgrade.
+F01 SELF-TRANSDUCTION recorded. D-004–D-008 accepted. D-006 PRODUCT_ACTIVATION PASS with NATURAL_RECRUITMENT NOT_PROVED. D-007 world-memory vertical slice PASS. D-008 AW1000 real-entity hardening recorded. T02 remains PARTIAL. Do not start T04/T05/T02c. Drive observatory flush remains FAILED_TRANSPORT. PROCESS_DEATH_BOUNDARY UNKNOWN. Gate 1 NOT_YET.
 
 ## 15. PRODUCT ACTIVATION (project mount)
 
 Source: `src/proteus/activate.py`, `hosts/cursor/templates/activate/**`, `tests/test_activate.py`, CLI `activate` subcommand.
-Tests: `python tests\test_activate.py` PASS (incl. BOM hooks + invalid-hooks preflight). Related smokes PASS.
-Live fixtures: `activation_fixtures/01_empty`, `02_existing_agents`, `03_existing_rules`, `05_remove`.
-Causal repair: UTF-8 BOM on existing `hooks.json` → `utf-8-sig` + preflight before writes.
 Decision: D-006. Evidence: `PRODUCT_ACTIVATION.md`, `PRODUCT_ACTIVATION_CLOSURE.md`. Not Gate 1. NATURAL_RECRUITMENT = NOT_PROVED.
 
 ## 16. WORLD / ENTITY MEMORY (vertical slice)
 
-Source: `src/proteus/world/**`, `src/proteus/paths.py`, CLI `world`, activate skill `proteus-world`.
-Local home: episode `world_memory_home` (convention `AIYE_HOME` / `PROTEUS_WORLD_ROOT`).
-Drive: MCP carrier round-trip for `entity.fixture.beacon` → provider `1Yg-q6O26lLaYoIC0mHk-twwRrP_LkId3`.
-Two-session: `WORLD_MEMORY_TWO_SESSION.md` PASS (PROJECT_A write / PROJECT_B independent recover).
-Real pilot: AW1000 PARTIAL; Tyumen University BLOCKED_BY_SOURCE_ACCESS.
-Archivarius: local bridge adapter only.
-Decision: D-007. Evidence: `WORLD_MEMORY_EPISODE.md`. Tests: `tests/test_world_memory.py` + full suite 37 PASS.
-Not claimed: universal knowledge, full Archivarius, full Drive sync, Gate 1, natural recruitment.
+Decision: D-007. Evidence: `WORLD_MEMORY_EPISODE.md` / `WORLD_MEMORY_TWO_SESSION.md`. Fixture beacon Drive `1Yg-q6O26lLaYoIC0mHk-twwRrP_LkId3`.
+
+## 17. AW1000 REAL ENTITY HARDENING
+
+Source: enriched `entity.router.aw1000.home`; `src/proteus/secrets/**`; `src/proteus/world/api.py`; Drive carrier `1IYbaIRyC3ScnppX1iNdlVgo688jwE48r`.
+Read-only SSH reachability PASS (`AW1000_READONLY_SSH.txt`).
+Secret broker: Windows Credential Manager; synthetic PASS; `AW1000_REAL_SECRET=UNAVAILABLE`.
+Recall: PROJECT_R1/R2 PASS (`AW1000_PROJECT_R*_STDOUT.txt`).
+Cloud recovery: `aw1000_cloud_recovery_world/` PASS (partial).
+Archivarius: adapter PASS; live BLOCKED.
+Decision: D-008. Evidence: `AW1000_REAL_ENTITY_EPISODE.md`.
+Tests: full suite 42 PASS.
+Not claimed: eternal currency of all facts; full Drive sync; real password availability; live Archivarius; Gate 1.
 
 FINAL STATUS:
-FIRST_INCARNATION = PARTIAL (installed + unit/install + T01; T02 hooks PARTIAL; T02b PASS; T03 PASS; F01 RECORDED; D-005 PORTABLE_HANDOFF PASS; D-006 PRODUCT_ACTIVATION PASS; D-007 WORLD_MEMORY PASS (vertical slice); T04 NOT_STARTED)
-OBSERVABILITY = PARTIAL (local PASS, Drive observatory FAIL; entity carrier MCP PARTIAL)
-EXTERNAL_CONTROL = PARTIAL (queue PASS, live stop/CLI FAIL or NOT_RUN)
-CLEAN_REENTRY = PASS (externally witnessed; see T01_CLEAN_REENTRY.md)
-T02_HOOKS_RESTART = PARTIAL
-T02B_NAMED_HOOK_RESTART = PASS
-T03_COMPACTION = PASS
-F01_SELF_TRANSDUCTION = RECORDED
-PORTABLE_HANDOFF = PASS (clean-room zip-only reconstruct; not a Gate 1 upgrade)
-FRESH_WORKSPACE_PREP = PASS (isolated reconstruct at Proteus-FRESH-001; not a Gate 1 upgrade)
-FRESH_INCARNATION = CLOSED (prep/CLI/brief PASS; process continuity NOT CLAIMED; organ behavior NOT TESTED)
-PRODUCT_ACTIVATION = PASS (Cursor mount command + fixtures; NATURAL_RECRUITMENT NOT_PROVED; not Gate 1)
-WORLD_ENTITY_MEMORY = PASS (vertical slice; two-session; not universal; not Gate 1)
+FIRST_INCARNATION = PARTIAL (…; D-006 PASS; D-007 PASS; D-008 AW1000 HARDEN PASS/PARTIAL; T04 NOT_STARTED)
+OBSERVABILITY = PARTIAL (local PASS; Drive observatory FAIL; entity carriers MCP PARTIAL)
+PRODUCT_ACTIVATION = PASS (NATURAL_RECRUITMENT NOT_PROVED)
+WORLD_ENTITY_MEMORY = PASS (vertical slice)
+AW1000_REAL_ENTITY = PASS (hardening episode; facts dated; real secret UNAVAILABLE)
+LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED
 GATE_1 = NOT_YET

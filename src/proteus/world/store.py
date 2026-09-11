@@ -185,6 +185,33 @@ class WorldStore:
         self.rebuild_index()
         return identity
 
+    def add_aliases(self, entity_id: str, aliases: list[str]) -> dict[str, Any]:
+        ident = self._load_identity(entity_id)
+        existing = list(ident.get("aliases") or [])
+        for a in aliases:
+            a = a.strip()
+            if a and a not in existing and a.lower() != str(ident.get("display_name", "")).lower():
+                existing.append(a)
+        ident["aliases"] = existing
+        ident["aliases_updated_utc"] = utc_now()
+        path = self.entity_dir(entity_id) / "identity.json"
+        path.write_text(json.dumps(ident, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        # keep ENTITY.md alias line loosely in sync
+        md_path = self.entity_dir(entity_id) / "ENTITY.md"
+        if md_path.is_file():
+            body = md_path.read_text(encoding="utf-8")
+            lines = body.splitlines()
+            for i, line in enumerate(lines):
+                if line.startswith("- aliases:"):
+                    lines[i] = f"- aliases: {', '.join(existing) or '(none)'}"
+                    md_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+                    break
+        self.rebuild_index()
+        return ident
+
+    def append_unresolved(self, entity_id: str, line: str) -> None:
+        self._append_unresolved(entity_id, line)
+
     def _load_identity(self, entity_id: str) -> dict[str, Any]:
         path = self.entity_dir(entity_id) / "identity.json"
         if not path.is_file():
@@ -297,6 +324,18 @@ class WorldStore:
             raise ValueError("secret_ref must use secret:// URI; plaintext secrets forbidden")
         path = self.entity_dir(entity_id) / "secret_refs.json"
         data = json.loads(path.read_text(encoding="utf-8"))
+        for existing in data.get("secret_refs", []):
+            if existing.get("secret_uri") == secret_uri:
+                # update metadata only; never store plaintext
+                existing["label"] = label
+                if auth_method is not None:
+                    existing["auth_method"] = auth_method
+                if scope is not None:
+                    existing["scope"] = scope
+                existing["plaintext"] = None
+                existing["updated_utc"] = utc_now()
+                path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+                return existing
         ref = {
             "secret_uri": secret_uri,
             "label": label,
@@ -313,7 +352,15 @@ class WorldStore:
     def add_carrier(self, entity_id: str, carrier: dict[str, Any]) -> dict[str, Any]:
         path = self.entity_dir(entity_id) / "carriers.json"
         data = json.loads(path.read_text(encoding="utf-8"))
-        data.setdefault("carriers", []).append(carrier)
+        carriers = data.setdefault("carriers", [])
+        pid = carrier.get("provider_id")
+        if pid:
+            for existing in carriers:
+                if existing.get("provider_id") == pid and existing.get("kind") == carrier.get("kind"):
+                    existing.update(carrier)
+                    path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+                    return data
+        carriers.append(carrier)
         path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         return data
 

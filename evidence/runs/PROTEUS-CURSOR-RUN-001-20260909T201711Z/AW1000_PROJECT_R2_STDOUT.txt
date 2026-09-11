@@ -1,0 +1,19 @@
+## Mount receipt — PROJECT_R2
+
+**Alias resolve:** `наш роутер` → OK  
+**entity_id:** `entity.router.aw1000.home`  
+**HOME:** `…\world_memory_home\world\entities\entity.router.aw1000.home`
+
+**Provenance-bearing fact**  
+- text: `Onlime LAN segment uses 192.168.3.0/24 (ath1 / br-iot) and is treated as DIRECT path; NM VPN path is 192.168.2.0/24 (ath0 / br-lan).`  
+- claim_id: `claim.197c538b75e5`  
+- provenance: source=`C:\projects\.cursor\rules\aw1000-network.mdc + aw1000-audit workspace constraints` · kind=`imported_reference`
+
+**Unresolved / conflict**  
+- CONFLICT `claim.d7d01282f4ef`: Aug 2026 LAN often `192.168.2.1/24` vs later mgmt on `192.168.3.1` (onlime) — do not collapse to one eternal address.
+
+**secret_ref URIs** (no plaintext)  
+- `secret://router.aw1000.home.admin`  
+- `secret://router.aw1000.home.ssh_key`
+
+**Local ENTITY.md authority copy:** none in PROJECT_R2

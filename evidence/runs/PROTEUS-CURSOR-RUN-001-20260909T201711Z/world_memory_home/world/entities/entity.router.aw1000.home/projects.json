@@ -1,5 +1,21 @@
 {
   "schema": "proteus.entity.v0.1",
   "entity_id": "entity.router.aw1000.home",
-  "projects": []
+  "projects": [
+    {
+      "project_path": "C:\\projects\\aw1000-audit",
+      "relation": "primary_workspace",
+      "linked_utc": "2026-09-11T10:00:44.952246+00:00"
+    },
+    {
+      "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R1",
+      "relation": "fixture_recall",
+      "linked_utc": "2026-09-11T10:05:31.241210+00:00"
+    },
+    {
+      "project_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R2",
+      "relation": "fixture_recall",
+      "linked_utc": "2026-09-11T10:05:31.249058+00:00"
+    }
+  ]
 }

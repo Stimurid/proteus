@@ -19,9 +19,12 @@ from .world import (
     import_entity_carrier_bundle,
     rebuild_index,
     reconcile_entity,
+    recover_entity_from_carrier,
 )
 from .world.archivarius import resolve_via_bridge
 from .world.store import Provenance
+from .secrets import delete_secret, describe_secret, put_secret, redact
+from .secrets.broker import SecretNotFoundError, get_secret
 
 
 def cmd_enqueue(ns: argparse.Namespace) -> None:
@@ -129,7 +132,63 @@ def cmd_world(ns: argparse.Namespace) -> None:
             )
         )
         return
+    if ns.world_cmd == "recover-carrier":
+        dest = WorldStore(root=Path(ns.dest_world)) if ns.dest_world else WorldStore()
+        print(
+            json.dumps(
+                recover_entity_from_carrier(
+                    Path(ns.path), dest_world=dest, expect_entity_id=ns.entity_id
+                ),
+                indent=2,
+            )
+        )
+        return
+    if ns.world_cmd == "add-alias":
+        print(
+            json.dumps(
+                store.add_aliases(ns.entity_id, ns.alias or []),
+                indent=2,
+                ensure_ascii=False,
+            )
+        )
+        return
     raise SystemExit(f"Unknown world command: {ns.world_cmd}")
+
+
+def cmd_secret(ns: argparse.Namespace) -> None:
+    if ns.secret_cmd == "put":
+        # plaintext only via env or file — never echoed back
+        if ns.from_env:
+            import os
+
+            plaintext = os.environ.get(ns.from_env)
+            if not plaintext:
+                raise SystemExit(f"env {ns.from_env} empty/missing")
+        elif ns.from_file:
+            plaintext = Path(ns.from_file).read_text(encoding="utf-8").rstrip("\n")
+        else:
+            raise SystemExit("provide --from-env or --from-file")
+        meta = put_secret(ns.uri, plaintext, label=ns.label)
+        print(json.dumps(meta, indent=2))
+        return
+    if ns.secret_cmd == "describe":
+        print(json.dumps(describe_secret(ns.uri), indent=2))
+        return
+    if ns.secret_cmd == "get":
+        # Explicit dangerous path: writes only to --out file, never stdout
+        if not ns.out:
+            raise SystemExit("secret get requires --out path (never prints value)")
+        try:
+            value = get_secret(ns.uri)
+        except SecretNotFoundError as e:
+            raise SystemExit(str(e)) from e
+        Path(ns.out).write_text(value, encoding="utf-8")
+        print(json.dumps({"ok": True, "uri": ns.uri, "out": ns.out, "bytes": len(value.encode("utf-8"))}))
+        return
+    if ns.secret_cmd == "delete":
+        print(json.dumps({"deleted": delete_secret(ns.uri), "uri": ns.uri}))
+        return
+    raise SystemExit(f"Unknown secret command: {ns.secret_cmd}")
 
 
 def main() -> None:
@@ -198,6 +257,34 @@ def main() -> None:
     wim.add_argument("--path", required=True)
     wim.add_argument("--entity-id")
     wim.set_defaults(func=cmd_world)
+    wrecov = wsub.add_parser("recover-carrier")
+    wrecov.add_argument("--path", required=True)
+    wrecov.add_argument("--dest-world", required=True)
+    wrecov.add_argument("--entity-id")
+    wrecov.set_defaults(func=cmd_world)
+    wal = wsub.add_parser("add-alias")
+    wal.add_argument("--entity-id", required=True)
+    wal.add_argument("--alias", action="append", default=[])
+    wal.set_defaults(func=cmd_world)
+
+    s = sub.add_parser("secret", help="Protected secret broker (no plaintext in stdout for put)")
+    ssub = s.add_subparsers(dest="secret_cmd", required=True)
+    sp = ssub.add_parser("put")
+    sp.add_argument("--uri", required=True)
+    sp.add_argument("--label")
+    sp.add_argument("--from-env")
+    sp.add_argument("--from-file")
+    sp.set_defaults(func=cmd_secret)
+    sd = ssub.add_parser("describe")
+    sd.add_argument("--uri", required=True)
+    sd.set_defaults(func=cmd_secret)
+    sg = ssub.add_parser("get")
+    sg.add_argument("--uri", required=True)
+    sg.add_argument("--out", required=True)
+    sg.set_defaults(func=cmd_secret)
+    sdel = ssub.add_parser("delete")
+    sdel.add_argument("--uri", required=True)
+    sdel.set_defaults(func=cmd_secret)
 
     ns = p.parse_args()
     ns.func(ns)

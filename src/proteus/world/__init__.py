@@ -6,7 +6,11 @@ ENTITY ≠ CARRIER; VIEW ≠ SOURCE TRUTH. Index under world/index is rebuildabl
 from __future__ import annotations
 
 from .archivarius import reconcile_entity, rebuild_index
-from .drive_carrier import export_entity_carrier_bundle, import_entity_carrier_bundle
+from .drive_carrier import (
+    export_entity_carrier_bundle,
+    import_entity_carrier_bundle,
+    recover_entity_from_carrier,
+)
 from .route import MemoryScope, classify_and_route, route_project_decision
 from .store import (
     EntityAmbiguousError,
@@ -27,4 +31,5 @@ __all__ = [
     "rebuild_index",
     "export_entity_carrier_bundle",
     "import_entity_carrier_bundle",
+    "recover_entity_from_carrier",
 ]

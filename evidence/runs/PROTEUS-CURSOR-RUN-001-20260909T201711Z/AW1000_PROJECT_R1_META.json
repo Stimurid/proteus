@@ -1,0 +1,31 @@
+{
+  "started_utc": "2026-09-11T10:05:41.089209+00:00",
+  "ended_utc": "2026-09-11T10:08:36.686225+00:00",
+  "elapsed_sec": 175.6,
+  "exit_code": 0,
+  "timed_out": false,
+  "pid": 12036,
+  "node": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\node.exe",
+  "index": "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\index.js",
+  "workspace": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R1",
+  "argv_without_prompt": [
+    "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\node.exe",
+    "C:\\Users\\Timur Shchukin\\AppData\\Local\\cursor-agent\\versions\\2026.09.08-6caf4ff\\index.js",
+    "-p",
+    "--output-format",
+    "text",
+    "--trust",
+    "--workspace",
+    "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\aw1000_real_fixtures\\PROJECT_R1",
+    "--force"
+  ],
+  "prompt_len": 790,
+  "prompt_sha256": "7b63ced31d527955fe087743dd5aa0871c0665295461a9481b348baad5e0639d",
+  "prompt_sha256_prefix": "7b63ced31d527955",
+  "prompt_source": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\AW1000_PROJECT_R1_TASK.md",
+  "used_continue": false,
+  "used_resume": false,
+  "auth": "CURSOR_AUTH_TOKEN from IDE cursorAuth/accessToken (value not recorded)",
+  "stdout_bytes": 923,
+  "stderr_bytes": 0
+}

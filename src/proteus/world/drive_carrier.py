@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import zipfile
 from datetime import datetime, timezone
 from io import BytesIO
@@ -146,3 +147,69 @@ def import_entity_carrier_bundle(
     recon_path.write_text(json.dumps({k: v for k, v in report.items()}, indent=2) + "\n", encoding="utf-8")
     report["receipt_path"] = str(recon_path)
     return report
+
+
+def recover_entity_from_carrier(
+    bundle_path: Path,
+    *,
+    dest_world: WorldStore,
+    expect_entity_id: str | None = None,
+) -> dict[str, Any]:
+    """Rebuild/mount an entity into ``dest_world`` from a cloud carrier zip.
+
+    Used for cloud-recovery tests. Does not delete the original local HOME.
+    Secret plaintext is never present in carrier bundles by design.
+    """
+    bundle_path = Path(bundle_path)
+    with zipfile.ZipFile(bundle_path, "r") as zf:
+        manifest = json.loads(zf.read("CARRIER_MANIFEST.json").decode("utf-8"))
+        eid = manifest["entity_id"]
+        if expect_entity_id and expect_entity_id != eid:
+            raise ValueError(f"Entity id mismatch: {expect_entity_id} vs {eid}")
+        target = dest_world.entity_dir(eid)
+        target.mkdir(parents=True, exist_ok=True)
+        recovered_files: list[str] = []
+        for name in zf.namelist():
+            if name == "CARRIER_MANIFEST.json" or name.endswith("/"):
+                continue
+            out = target / name
+            out.parent.mkdir(parents=True, exist_ok=True)
+            data = zf.read(name)
+            # Refuse accidental plaintext secret fields in JSON carriers
+            if name.endswith(".json") or name.endswith(".jsonl") or name.endswith(".md"):
+                text = data.decode("utf-8", errors="replace")
+                lowered = text.lower()
+                if '"plaintext":' in lowered and not re.search(
+                    r'"plaintext"\s*:\s*null', text, flags=re.I
+                ):
+                    raise ValueError(f"Carrier contains non-null plaintext field in {name}")
+            out.write_bytes(data)
+            recovered_files.append(name)
+        # Rewrite HOME carrier path to dest
+        carriers_path = target / "carriers.json"
+        if carriers_path.is_file():
+            carriers = json.loads(carriers_path.read_text(encoding="utf-8"))
+            for c in carriers.get("carriers", []):
+                if c.get("role") == "HOME" and c.get("kind") == "local_fs":
+                    c["path"] = str(target)
+                    c["currentness"] = "recovered_from_cloud"
+                    c["authority"] = "recovered_local_copy"
+            carriers_path.write_text(json.dumps(carriers, indent=2) + "\n", encoding="utf-8")
+    dest_world.rebuild_index()
+    mounted = dest_world.mount(eid)
+    return {
+        "schema": CARRIER_SCHEMA,
+        "mode": "cloud_recovery",
+        "entity_id": eid,
+        "recovered_files": recovered_files,
+        "manifest": manifest,
+        "dest_path": str(dest_world.entity_dir(eid)),
+        "current_claim_count": len(mounted["current_claims"]),
+        "conflict_count": len(mounted["conflicts"]),
+        "unknown_count": len(mounted["unknowns"]),
+        "secret_ref_count": len(mounted["secret_refs"].get("secret_refs", [])),
+        "note": (
+            "Recovery rebuilt inspectable carriers from cloud bundle; "
+            "not a claim that cloud equals full local authority."
+        ),
+    }

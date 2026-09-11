@@ -222,6 +222,24 @@ def test_idempotent_write_reread() -> None:
         assert_true(len(store.list_claims("entity.idem")) == 1, "single row")
 
 
+def test_aw1000_alias_and_api() -> None:
+    """Lightweight regression using episode world if present; else skip-like create."""
+    with tempfile.TemporaryDirectory() as td:
+        store = _iso(Path(td))
+        store.create_entity(
+            "Arcadian AW1000 router",
+            entity_id="entity.router.aw1000.home",
+            aliases=["AW1000", "наш роутер", "Arcadyan AW1000"],
+        )
+        assert_true(store.resolve("наш роутер")["entity_id"] == "entity.router.aw1000.home", "cyrillic")
+        assert_true(store.resolve("AW1000")["entity_id"] == "entity.router.aw1000.home", "aw")
+        from proteus.world.api import retrieve_facts, CONTRACT
+
+        facts = retrieve_facts("AW1000", world=store)
+        assert_true(facts["entity_id"] == "entity.router.aw1000.home", "api")
+        assert_true("resolve_entity" in CONTRACT["operations"], "contract")
+
+
 def test_missing_entity() -> None:
     with tempfile.TemporaryDirectory() as td:
         store = _iso(Path(td))

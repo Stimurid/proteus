@@ -4,7 +4,7 @@
   "RUN_ID": null,
   "conversation_id": null,
   "model": null,
-  "last_event": "4389fb63-1de8-46a9-9b9c-6c2e141946af",
+  "last_event": "cf1b9cf3-a3da-4166-9976-458a398a4835",
   "last_hook": "sessionEnd",
   "status": "SESSIONEND",
   "semantic_stage": {

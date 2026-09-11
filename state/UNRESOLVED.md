@@ -21,7 +21,8 @@
 - OPEN (activation): whether a real external (non-fixture) project mount is useful without further coexistence rules (e.g. dual AGENTS authority when foreign AGENTS.md is preserved). Not automatically imported: pre-activation project history.
 - OPEN (activation): activate does not install user-global hooks; projects rely on project-local hooks and/or a prior machine `install_cursor`. Portable zip not yet repacked with activate sources (source is in ideal body; next `handoff pack` will include it).
 - DONE (world memory v0): local entity substrate + scope routing + two independent Agent sessions PASS (`WORLD_MEMORY_EPISODE.md`). D-007 accepted. NATURAL_RECRUITMENT remains NOT_PROVED for activation episode.
-- PARTIAL (Drive): entity carrier round-trip via Drive MCP PASS for fixture beacon (file `1Yg-q6O26lLaYoIC0mHk-twwRrP_LkId3`); Desktop sync path unavailable; observatory flush still FAILED_TRANSPORT; not full bidirectional sync.
-- BOUNDARY (Archivarius): no live Archivarius process on this host; Proteus uses local adapter (`proteus.archivarius_bridge.v0.1`) only.
-- PARTIAL (real entity pilot): AW1000 entity mounted with small provenance slice + secret_ref; Tyumen University = BLOCKED_BY_SOURCE_ACCESS (no invented facts).
-- OPEN (world memory): default `~/.aiye` vs episode evidence home; multi-machine reconciliation; richer Aiye self-substrate; Secret Broker beyond `secret_ref`.
+- PARTIAL (Drive): entity carrier round-trip via Drive MCP PASS for fixture beacon and for real AW1000 (`1IYbaIRyC3ScnppX1iNdlVgo688jwE48r`); Desktop sync path unavailable; observatory flush still FAILED_TRANSPORT; not full bidirectional sync.
+- BOUNDARY (Archivarius): no live Archivarius process on this host; Proteus uses local adapter (`proteus.archivarius_bridge.v0.1`) only. `LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED`.
+- DONE (AW1000 harden v0): real entity enrichment + Drive carrier + R1/R2 recall + cloud recovery + Windows secret broker (D-008). `AW1000_REAL_SECRET = UNAVAILABLE` (askpass unread).
+- OPEN (AW1000): logical upstream-failure failover acceptance; LED meaning; whether dual-default routes remain intended.
+- OPEN (world memory): multi-machine reconciliation; foreign-carrier (Codex/Claude) exercise of `proteus.world.api`; Tyumen University still BLOCKED_BY_SOURCE_ACCESS for a clean university-entity slice.

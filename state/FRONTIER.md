@@ -1,13 +1,11 @@
 # FRONTIER
 
-Fresh-incarnation / operating-brief experiment remains **closed** (`FRESH_INCARNATION_CLOSURE.md`).
+D-007 world-memory vertical slice remains complete (`51e051e`). Do not rebuild it.
 
-Product activation (Cursor project mount) remains **PASS** (`PRODUCT_ACTIVATION.md`, D-006); closure records `NATURAL_RECRUITMENT = NOT_PROVED` (`PRODUCT_ACTIVATION_CLOSURE.md`). Do not downgrade activation capability.
+D-008 AW1000 real-entity hardening is **recorded** (`AW1000_REAL_ENTITY_EPISODE.md`): real Drive carrier `1IYbaIRyC3ScnppX1iNdlVgo688jwE48r`, Windows secret broker, read-only SSH reachability, PROJECT_R1/R2 independent recall PASS, cloud-recovery PASS (partial reconstruct), Archivarius adapter only (`LIVE_ARCHIVARIUS_RECONCILIATION = BLOCKED`).
 
-Shared world / entity substrate vertical slice is **implemented** for this run (D-007): local entity home, memory-scope routing, Archivarius-compatible bridge adapter, bounded Drive MCP carrier round-trip for fixture beacon, two-project/two-independent-session PASS (`WORLD_MEMORY_EPISODE.md`, `WORLD_MEMORY_TWO_SESSION.md`). Not Gate 1. Not universal world knowledge. Not full Archivarius. Not full Drive sync.
+Preserve: PRODUCT_ACTIVATION PASS; NATURAL_RECRUITMENT NOT_PROVED; Gate 1 NOT_YET.
 
-Do not start T04, T05, or T02c because they were previously planned.
+Do not start T04/T05/T02c as inherited next tests.
 
-Product statuses unchanged: T01 PASS; T02 PARTIAL; T02b PASS; T03 PASS; PROCESS_DEATH_BOUNDARY UNKNOWN; Gate 1 NOT_YET; Drive observatory flush still FAILED_TRANSPORT (entity carrier MCP path is separate and PARTIAL); T11 PARTIAL.
-
-Next: deepen entity substrate against one real multi-project workflow (AW1000 already PARTIAL; Tyumen University remains BLOCKED_BY_SOURCE_ACCESS until a small provenance-bearing slice is available) — or wire a live Archivarius process if one appears — without claiming Gate 1.
+Next: use host-neutral `proteus.world.api` from a foreign carrier (Codex/Claude) against the same AW1000 entity — or deepen Tyumen only if a small provenance-bearing source appears — without claiming Gate 1 or full Drive sync.

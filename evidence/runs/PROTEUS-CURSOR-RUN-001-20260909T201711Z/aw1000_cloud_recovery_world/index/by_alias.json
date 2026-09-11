@@ -1,0 +1,32 @@
+{
+  "schema": "proteus.world.index.v0.1",
+  "rebuilt_utc": "2026-09-11T10:05:31.276250+00:00",
+  "view_note": "rebuildable VIEW; not source truth",
+  "entities": [
+    {
+      "entity_id": "entity.router.aw1000.home",
+      "display_name": "Arcadian AW1000 router",
+      "aliases": [
+        "AW1000",
+        "our router",
+        "Arcadian AW1000",
+        "Arcadyan AW1000",
+        "QWRT",
+        "home router",
+        "\u043d\u0430\u0448 \u0440\u043e\u0443\u0442\u0435\u0440"
+      ]
+    }
+  ],
+  "by_alias": {
+    "entity.router.aw1000.home": "entity.router.aw1000.home",
+    "arcadian aw1000 router": "entity.router.aw1000.home",
+    "aw1000": "entity.router.aw1000.home",
+    "our router": "entity.router.aw1000.home",
+    "arcadian aw1000": "entity.router.aw1000.home",
+    "arcadyan aw1000": "entity.router.aw1000.home",
+    "qwrt": "entity.router.aw1000.home",
+    "home router": "entity.router.aw1000.home",
+    "\u043d\u0430\u0448 \u0440\u043e\u0443\u0442\u0435\u0440": "entity.router.aw1000.home"
+  },
+  "alias_collisions": []
+}

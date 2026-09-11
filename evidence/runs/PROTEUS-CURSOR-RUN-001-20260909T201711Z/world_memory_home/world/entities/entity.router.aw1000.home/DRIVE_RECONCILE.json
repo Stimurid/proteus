@@ -1,0 +1,91 @@
+{
+  "schema": "proteus.drive_entity_carrier.v0.1",
+  "reconciled_utc": "2026-09-11T10:05:31.181907+00:00",
+  "entity_id": "entity.router.aw1000.home",
+  "provider_bundle": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\drive_carrier_entity.router.aw1000.home.READBACK.zip",
+  "local_claim_ids": [
+    "claim.05e1a5296c9f",
+    "claim.197c538b75e5",
+    "claim.23cdcb47eb88",
+    "claim.2bd4952d98b2",
+    "claim.2f697980c5d1",
+    "claim.4384b8bba2ff",
+    "claim.7f5c15b2e7ef",
+    "claim.951e9924ae0e",
+    "claim.9ffe9145edc7",
+    "claim.a1a3b5d7da4a",
+    "claim.c3eb0e10d195",
+    "claim.d1c7486578fe",
+    "claim.d7d01282f4ef",
+    "claim.e3b4d633a175",
+    "claim.e9d2c3b0a9d1",
+    "claim.f2e90089d2ca",
+    "claim.f3e244b00b87"
+  ],
+  "cloud_claim_ids": [
+    "claim.05e1a5296c9f",
+    "claim.197c538b75e5",
+    "claim.23cdcb47eb88",
+    "claim.2bd4952d98b2",
+    "claim.2f697980c5d1",
+    "claim.4384b8bba2ff",
+    "claim.7f5c15b2e7ef",
+    "claim.951e9924ae0e",
+    "claim.9ffe9145edc7",
+    "claim.a1a3b5d7da4a",
+    "claim.c3eb0e10d195",
+    "claim.d1c7486578fe",
+    "claim.d7d01282f4ef",
+    "claim.e3b4d633a175",
+    "claim.e9d2c3b0a9d1",
+    "claim.f3e244b00b87"
+  ],
+  "only_local": [
+    "claim.f2e90089d2ca"
+  ],
+  "only_cloud": [],
+  "shared": [
+    "claim.05e1a5296c9f",
+    "claim.197c538b75e5",
+    "claim.23cdcb47eb88",
+    "claim.2bd4952d98b2",
+    "claim.2f697980c5d1",
+    "claim.4384b8bba2ff",
+    "claim.7f5c15b2e7ef",
+    "claim.951e9924ae0e",
+    "claim.9ffe9145edc7",
+    "claim.a1a3b5d7da4a",
+    "claim.c3eb0e10d195",
+    "claim.d1c7486578fe",
+    "claim.d7d01282f4ef",
+    "claim.e3b4d633a175",
+    "claim.e9d2c3b0a9d1",
+    "claim.f3e244b00b87"
+  ],
+  "no_last_write_wins": true,
+  "local_authority_preserved": true,
+  "staged_path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\_drive_staging\\entity.router.aw1000.home",
+  "manifest": {
+    "schema": "proteus.drive_entity_carrier.v0.1",
+    "entity_id": "entity.router.aw1000.home",
+    "exported_utc": "2026-09-11T10:03:39.777975+00:00",
+    "files": [
+      "ENTITY.md",
+      "carriers.json",
+      "claims.jsonl",
+      "identity.json",
+      "projects.json",
+      "secret_refs.json",
+      "unresolved.md"
+    ],
+    "sha256": "976ca0ec3b2050e3d6de29adcb44a4ade33db6764af9623086b866f95afc3ed0",
+    "note": "Carrier bundle; ENTITY \u2260 this zip"
+  },
+  "provider": {
+    "file_id": "1IYbaIRyC3ScnppX1iNdlVgo688jwE48r",
+    "title": "proteus-entity-router-aw1000-home-carrier-v0.1.zip",
+    "parent_id": "18Bz8HiyOVsLfcEWJ1KKQ2Qvplh8LfJzt",
+    "retrieved_utc": "2026-09-11T10:05:31.106157+00:00",
+    "transport": "google_drive_mcp"
+  }
+}

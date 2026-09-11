@@ -1,0 +1,20 @@
+## PROJECT_R1 recall receipt
+
+**entity_id:** `entity.router.aw1000.home`
+
+**Key current facts**
+- `claim.c3eb0e10d195` — Arcadyan AW1000; web UI QWRT (OpenWrt-based)
+- `claim.197c538b75e5` — onlime `192.168.3.0/24` DIRECT; NM VPN `192.168.2.0/24`
+- `claim.d1c7486578fe` — Clash removed; AmneziaWG `awg0` peer `10.8.1.4`
+- `claim.e3b4d633a175` — live 2026-09-11: `br-iot 192.168.3.1/24`, `br-lan 192.168.2.1/24`, `eth4`/`wwan0`/`awg0` up
+
+**Unresolved**
+- CONFLICT `claim.d7d01282f4ef` — historical LAN mgmt `192.168.2.1` vs later `192.168.3.1`
+- UNKNOWN `claim.a1a3b5d7da4a` — mwan3 failover when Ethernet carrier UP but upstream dead
+- UNKNOWN `claim.951e9924ae0e` — mobile LED green meaning (standby vs active path)
+
+**secret_refs** (opaque only; `plaintext: null`)
+- `secret://router.aw1000.home.admin`
+- `secret://router.aw1000.home.ssh_key`
+
+No entity files copied into this project.

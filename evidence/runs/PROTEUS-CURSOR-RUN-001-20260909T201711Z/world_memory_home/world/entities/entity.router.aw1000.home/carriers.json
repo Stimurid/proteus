@@ -8,6 +8,15 @@
       "path": "C:\\projects\\Proteus\\evidence\\runs\\PROTEUS-CURSOR-RUN-001-20260909T201711Z\\world_memory_home\\world\\entities\\entity.router.aw1000.home",
       "authority": "local_semantic",
       "currentness": "active"
+    },
+    {
+      "role": "BACKUP",
+      "kind": "google_drive",
+      "provider_id": "1IYbaIRyC3ScnppX1iNdlVgo688jwE48r",
+      "title": "proteus-entity-router-aw1000-home-carrier-v0.1.zip",
+      "authority": "cloud_carrier",
+      "currentness": "synced_snapshot",
+      "recorded_utc": "2026-09-11T10:05:31.182202+00:00"
     }
   ]
 }
