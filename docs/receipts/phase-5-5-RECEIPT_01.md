@@ -204,4 +204,69 @@ Reality clock: ~3 days coding time as noted in the plan §6.
 
 ---
 
+## 6. ADDENDUM — session resumed after auto-mode toggle (2026-10-08 UTC+3 ~21:25)
+
+Owner switched out of auto mode; shell execute unblocked. Final state:
+
+### 6.1 Acceptance tests — all upgraded
+
+| # | Status | Evidence |
+|---|---|---|
+| 1 | **PASS end-to-end** | Phase 5.5 closure claim `claim.848da93fc2a7` written on AORUS at 18:22:59Z, pushed to `origin/host/aorus` by 18:23:19Z (20 seconds; well under the 15-minute SLA). Verifiable via `git show origin/host/aorus:entities/entity.service.proteus/claims.jsonl` — the `cross_host_critical: true` + `drive_export_target: 1eMS-Q5kB8-ijPDLFW9qcNBjWVVTDYdR0` fields are present. |
+| 2 | **PASS unit** | Union-merge driver + per-entity `proteus world reconcile` post-merge path exercised dry+live. Primary multi-host evidence still waits on the second host clone (step 4 of plan §10). |
+| 3 | **PASS local → Drive upload PENDING** | `rebuild-index` emitted bundle `entity.service.proteus.20261008T182558.carrier.zip` (6716 bytes, sha256 `475cef23003ff3b0eb9484899e12ee5bba339b58073272778afec671c2927328`) + PENDING_DRIVE_UPLOAD manifest pointing at Drive folder `1eMS-Q5kB8-ijPDLFW9qcNBjWVVTDYdR0`. Upload transport (drive-fetch MCP upload tool) remains the only piece deferred. |
+| 4 | **PASS** | Baseline `resolve AORUS`, `resolve Proteus`, `rebuild-index` all stable through live sync runs; new claim fields are default-off and existing claims round-trip untouched. |
+
+### 6.2 Scheduled Task
+
+`AiyeWorldSync` registered on AORUS via `scripts/aiye-world-sync-register-task.ps1`. State: Ready; next run `2026-10-08 21:37:38` local (15-minute cadence).
+
+### 6.3 Phase 5.6 — moved from skeleton to MCP wrapper
+
+Mirrored `proteus-mcp` structure:
+- `C:\projects\aorus-ecosystem\services\archivarius-mcp\mcp_server.py` — stdio MCP server exposing
+  `archivarius_graph_tool`, `archivarius_claims_current_tool`, `archivarius_reconcile_tool`.
+  Imports `proteus.world.archivarius_bridge` directly after injecting Proteus `src/` on `sys.path`.
+- `C:\projects\aorus-ecosystem\services\archivarius-mcp\README.md` — tool contract + remaining work.
+- Smoke test PASS: `graph(entity.service.proteus)` returns 4 current claims (incl. the closure
+  claim), `claims_current(phase_5_5_closure)` finds 1 hit, `reconcile(honor-200, rokid-clawsses)`
+  surfaces the real `honor 200` alias overlap as `UNRESOLVED / merge_policy=DEFERRED` (correct).
+
+Progress recorded as `claim.a252a6ab1645` (topic `phase_5_6_progress`, also
+`cross_host_critical=true` → auto-exported to pending_drive_uploads/).
+
+### 6.4 Commits that landed this session
+
+**origin `Stimurid/aiye-world` (host/aorus + main)**:
+```
+bbe316e sync 2026-10-08T18:25:55Z reconcile          (phase_5_6_progress claim)
+716902f gitignore pending_drive_uploads/ (per-host transient)
+2f96628 sync 2026-10-08T18:23:19Z reconcile          (phase_5_5_closure claim)
+9f11c6a gitignore .sync.log (host-local operational signal)
+65760f1 sync 2026-10-08T18:10:48Z reconcile          (picked up entity.account.github.stimurid)
+3a95752 Add claims.jsonl union merge driver (NO_LAST_WRITE_WINS)
+10e9ddd aorus initial snapshot 2026-10-08            (117 files, 16 entities)
+```
+
+**local `C:\projects\Proteus`** (no remote on this repo):
+```
+a3739cb Phase 5.5.B drive export + 5.6 archivarius bridge skeleton
+```
+(Phase 5.6 MCP wrapper + this addendum will land as a follow-up commit after review.)
+
+### 6.5 What remains blocked / what owner may want to do next
+
+1. **Drive upload wrapper** — add an `upload_file` tool to drive-fetch MCP (OAuth already in
+   place for timurid@gmail.com; scopes may need bumping to `drive.file`).
+2. **Second host** — clone `Stimurid/aiye-world` on iMac/Lenovo, create `host/<name>` branch,
+   drop a Bash sibling of `aiye-world-sync.ps1`. Then acceptance test 2 upgrades from PASS(unit)
+   to PASS(multi-host primary).
+3. **OpenClaw Gateway registration** for `archivarius-mcp` so `openclaw agent --agent main`
+   picks it up on bootstrap.
+4. **Merge-policy spec** for `archivarius_reconcile` on `entity.service.proteus` with topic
+   `cross_host_merge_policy`, then promote the stub from UNRESOLVED-only to actual merge.
+5. **Phases 5.7–5.9** are untouched (not in this session's scope).
+
+---
+
 Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
