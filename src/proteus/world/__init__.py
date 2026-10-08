@@ -11,6 +11,11 @@ from .drive_carrier import (
     import_entity_carrier_bundle,
     recover_entity_from_carrier,
 )
+from .drive_export import (
+    emit_pending_uploads_for_critical_claims,
+    export_entity_to_drive_folder,
+    scan_pending_exports,
+)
 from .route import MemoryScope, classify_and_route, route_project_decision
 from .store import (
     EntityAmbiguousError,
@@ -32,4 +37,7 @@ __all__ = [
     "export_entity_carrier_bundle",
     "import_entity_carrier_bundle",
     "recover_entity_from_carrier",
+    "emit_pending_uploads_for_critical_claims",
+    "export_entity_to_drive_folder",
+    "scan_pending_exports",
 ]

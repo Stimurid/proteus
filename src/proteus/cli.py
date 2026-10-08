@@ -16,12 +16,15 @@ from .world import (
     MemoryScope,
     WorldStore,
     classify_and_route,
+    emit_pending_uploads_for_critical_claims,
     ensure_world_home,
     export_entity_carrier_bundle,
+    export_entity_to_drive_folder,
     import_entity_carrier_bundle,
     rebuild_index,
     reconcile_entity,
     recover_entity_from_carrier,
+    scan_pending_exports,
 )
 from .world.archivarius import resolve_via_bridge
 from .world.store import Provenance
@@ -168,6 +171,8 @@ def cmd_world(ns: argparse.Namespace) -> None:
             project_path=ns.project,
             secret_uri=ns.secret_uri,
             secret_label=ns.secret_label,
+            cross_host_critical=getattr(ns, "cross_host_critical", False),
+            drive_export_target=getattr(ns, "drive_export_target", None),
             world=store,
         )
         print(json.dumps(result, indent=2, ensure_ascii=False))
@@ -210,6 +215,29 @@ def cmd_world(ns: argparse.Namespace) -> None:
         print(
             json.dumps(
                 store.add_aliases(ns.entity_id, ns.alias or []),
+                indent=2,
+                ensure_ascii=False,
+            )
+        )
+        return
+    if ns.world_cmd == "export-to-drive":
+        manifest = export_entity_to_drive_folder(
+            ns.entity_id,
+            folder_id=ns.folder,
+            out_dir=Path(ns.out_dir) if ns.out_dir else None,
+            world=store,
+        )
+        print(json.dumps(manifest, indent=2, ensure_ascii=False))
+        return
+    if ns.world_cmd == "scan-pending-exports":
+        print(json.dumps(scan_pending_exports(world=store), indent=2, ensure_ascii=False))
+        return
+    if ns.world_cmd == "emit-pending-exports":
+        print(
+            json.dumps(
+                emit_pending_uploads_for_critical_claims(
+                    world=store, default_folder_id=ns.default_folder
+                ),
                 indent=2,
                 ensure_ascii=False,
             )
@@ -379,6 +407,12 @@ def main() -> None:
     wrt.add_argument("--confidence")
     wrt.add_argument("--secret-uri")
     wrt.add_argument("--secret-label")
+    wrt.add_argument(
+        "--cross-host-critical",
+        action="store_true",
+        help="Mark the claim as cross-host-critical (hook will emit Drive upload bundle).",
+    )
+    wrt.add_argument("--drive-export-target", help="Target Google Drive folder id (optional).")
     wrt.set_defaults(func=cmd_world)
     wrec = wsub.add_parser("reconcile")
     wrec.add_argument("--entity-id", required=True)
@@ -402,6 +436,28 @@ def main() -> None:
     wal.add_argument("--entity-id", required=True)
     wal.add_argument("--alias", action="append", default=[])
     wal.set_defaults(func=cmd_world)
+
+    wetd = wsub.add_parser(
+        "export-to-drive",
+        help="Produce a SHA-sealed carrier bundle + PENDING_DRIVE_UPLOAD manifest for an entity.",
+    )
+    wetd.add_argument("--entity-id", required=True)
+    wetd.add_argument("--folder", help="Target Google Drive folder id (optional).")
+    wetd.add_argument("--out-dir", help="Local directory for the bundle (default: world/pending_drive_uploads/).")
+    wetd.set_defaults(func=cmd_world)
+
+    wspe = wsub.add_parser(
+        "scan-pending-exports",
+        help="List entities with at least one current cross_host_critical claim.",
+    )
+    wspe.set_defaults(func=cmd_world)
+
+    wepe = wsub.add_parser(
+        "emit-pending-exports",
+        help="Scan + produce PENDING_DRIVE_UPLOAD manifests for all cross_host_critical claims.",
+    )
+    wepe.add_argument("--default-folder", help="Fallback Drive folder id if claim-level target is missing.")
+    wepe.set_defaults(func=cmd_world)
 
     fr = sub.add_parser(
         "frontier",

@@ -41,6 +41,8 @@ def classify_and_route(
     project_path: str | None = None,
     secret_uri: str | None = None,
     secret_label: str | None = None,
+    cross_host_critical: bool = False,
+    drive_export_target: str | None = None,
     world: WorldStore | None = None,
 ) -> dict[str, Any]:
     """Route a durable observation to the correct substrate.
@@ -72,6 +74,8 @@ def classify_and_route(
             topic=topic,
             status=status,
             scope=MemoryScope.ENTITY,
+            cross_host_critical=cross_host_critical,
+            drive_export_target=drive_export_target,
         )
         if project_path:
             store.link_project(eid, project_path)

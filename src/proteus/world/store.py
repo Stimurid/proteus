@@ -374,6 +374,8 @@ class WorldStore:
         status: str = "current",
         conflicts_with: list[str] | None = None,
         scope: MemoryScope = MemoryScope.ENTITY,
+        cross_host_critical: bool = False,
+        drive_export_target: str | None = None,
     ) -> dict[str, Any]:
         if scope not in (MemoryScope.ENTITY, MemoryScope.EPISODE, MemoryScope.SECRET_REFERENCE):
             raise ValueError(
@@ -422,6 +424,10 @@ class WorldStore:
             "provenance": provenance.to_dict(),
             "recorded_utc": utc_now(),
         }
+        if cross_host_critical:
+            claim["cross_host_critical"] = True
+            if drive_export_target:
+                claim["drive_export_target"] = drive_export_target
         with claims_path.open("a", encoding="utf-8") as f:
             f.write(json.dumps(claim, ensure_ascii=False) + "\n")
 
