@@ -496,28 +496,40 @@ class WorldStore:
                         conflicts.append({"alias": key, "entities": [by_alias[key], eid]})
                     else:
                         by_alias[key] = eid
-        payload = {
+        # Semantic (stable) subset — hashed for a reproducible digest. Volatile
+        # operational metadata (rebuilt_utc, view_note) is kept separately and
+        # NEVER mixed into the digest, so identical world state across runs
+        # yields identical digest16 and zero Git churn in downstream snapshots.
+        # Addresses Stimurid/proteus#2.
+        semantic = {
             "schema": INDEX_SCHEMA,
-            "rebuilt_utc": utc_now(),
-            "view_note": "rebuildable VIEW; not source truth",
             "entities": entities,
             "by_alias": by_alias,
             "alias_collisions": conflicts,
         }
+        digest = hashlib.sha256(
+            json.dumps(semantic, sort_keys=True).encode()
+        ).hexdigest()[:16]
+        now = utc_now()
+        payload = {
+            **semantic,
+            "rebuilt_utc": now,
+            "view_note": "rebuildable VIEW; not source truth",
+            "digest16": digest,
+        }
         (self.index_dir / "entities.json").write_text(
-            json.dumps({"schema": INDEX_SCHEMA, "entities": entities, "rebuilt_utc": payload["rebuilt_utc"]}, indent=2)
+            json.dumps({"schema": INDEX_SCHEMA, "entities": entities, "rebuilt_utc": now}, indent=2)
             + "\n",
             encoding="utf-8",
         )
         (self.index_dir / "by_alias.json").write_text(
             json.dumps(payload, indent=2) + "\n", encoding="utf-8"
         )
-        digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()[:16]
         (self.index_dir / "INDEX_RECEIPT.json").write_text(
             json.dumps(
                 {
                     "schema": INDEX_SCHEMA,
-                    "rebuilt_utc": payload["rebuilt_utc"],
+                    "rebuilt_utc": now,
                     "entity_count": len(entities),
                     "digest16": digest,
                     "view_ne_source_truth": True,
