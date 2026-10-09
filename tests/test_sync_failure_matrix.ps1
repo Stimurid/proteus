@@ -87,7 +87,10 @@ try {
     Assert-Case "happy-path" 0 $r.Exit $r.LogTail "sync end OK"
 } finally { Remove-Item -Recurse -Force $base -ErrorAction SilentlyContinue }
 
-# --- CASE: DryRun must not commit or push ---
+# --- CASE: -DryRun is now a deprecated alias for -Preview (Issue #1 round 3).
+# It must still not commit or push, and it must announce the rename rather
+# than emitting the old DRY_RUN signature, because the old mode silently
+# ran fetch+merge+reconcile+rebuild against the real world before its gate. ---
 $base = New-TestWorld "dryrun"
 try {
     $claimLine = '{"claim_id":"claim.test.dry","entity_id":"entity.test","scope":"ENTITY","topic":"dry","text":"dry","status":"current","conflicts_with":[],"provenance":{"observer":"test","kind":"fact","confidence":"high"},"recorded_utc":"2026-10-10T00:00:00Z"}'
@@ -95,7 +98,7 @@ try {
     $headBefore = (git -C "$base\world" rev-parse HEAD).Trim()
     $r = Invoke-SyncOnWorld "$base\world" -DryRun
     $headAfter = (git -C "$base\world" rev-parse HEAD).Trim()
-    Assert-Case "dryrun-no-push" 0 $r.Exit $r.LogTail "DRY_RUN end"
+    Assert-Case "dryrun-no-push" 0 $r.Exit $r.LogTail "DRYRUN_DEPRECATED"
     if ($headBefore -ne $headAfter) {
         $script:results += [pscustomobject]@{ Case="dryrun-head-unchanged"; Expected="eq"; Actual="diff"; Pattern=""; Status="FAIL" }
         Write-Host "[FAIL] dryrun-head-unchanged: HEAD moved $headBefore -> $headAfter"

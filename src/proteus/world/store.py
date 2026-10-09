@@ -510,12 +510,44 @@ class WorldStore:
         digest = hashlib.sha256(
             json.dumps(semantic, sort_keys=True).encode()
         ).hexdigest()[:16]
+
+        # Stimurid/proteus#1 (e): digest16 above intentionally covers ONLY the
+        # ENTITY/ALIAS shape, so it stays stable across rebuilds and produces no
+        # Git churn. That stability has a cost: editing a claim's text, status or
+        # provenance leaves entity count and aliases untouched, so digest16 does
+        # NOT move and no consumer can tell the world changed.
+        #
+        # claims_version16 is the separate content version. It hashes the claim
+        # ledgers themselves, so any claim-level change invalidates it even when
+        # counts are equal. Two versions, two questions:
+        #   digest16        -> "is the entity/alias index shape the same?"
+        #   claims_version16 -> "is the claim content the same?"
+        claims_digest = hashlib.sha256()
+        claims_total = 0
+        for eid in self.list_entity_ids():
+            claims_path = self.entity_dir(eid) / "claims.jsonl"
+            claims_digest.update(eid.encode())
+            claims_digest.update(b"\x00")
+            if not claims_path.exists():
+                claims_digest.update(b"<absent>\x00")
+                continue
+            for line in claims_path.read_text(encoding="utf-8").splitlines():
+                line = line.strip()
+                if not line:
+                    continue
+                claims_total += 1
+                claims_digest.update(line.encode())
+                claims_digest.update(b"\n")
+        claims_version = claims_digest.hexdigest()[:16]
+
         now = utc_now()
         payload = {
             **semantic,
             "rebuilt_utc": now,
             "view_note": "rebuildable VIEW; not source truth",
             "digest16": digest,
+            "claims_version16": claims_version,
+            "claim_count": claims_total,
         }
         (self.index_dir / "entities.json").write_text(
             json.dumps({"schema": INDEX_SCHEMA, "entities": entities, "rebuilt_utc": now}, indent=2)
@@ -532,6 +564,8 @@ class WorldStore:
                     "rebuilt_utc": now,
                     "entity_count": len(entities),
                     "digest16": digest,
+                    "claims_version16": claims_version,
+                    "claim_count": claims_total,
                     "view_ne_source_truth": True,
                 },
                 indent=2,
