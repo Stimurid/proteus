@@ -48,14 +48,14 @@ function New-World {
     # trips the post-sync STRANDED_CHANGES assertion.
     Set-Content -Path "$base\world\.gitignore" -Value @(".sync.log", "index/", "_drive_staging/", "pending_drive_uploads/") -Encoding ascii
     '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","display_name":"Test Entity","aliases":["test"],"relations":[],"created_utc":"2026-10-10T00:00:00Z"}' |
-        Set-Content "$base\world\entities\entity.test\identity.json" -Encoding utf8
+        Set-Content "$base\world\entities\entity.test\identity.json" -Encoding ascii
     # Full entity file set, so `proteus world reconcile` succeeds and the run
     # is a clean 0 rather than DEGRADED 6 for an unrelated fixture reason.
-    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","carriers":[]}'    | Set-Content "$base\world\entities\entity.test\carriers.json"    -Encoding utf8
-    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","projects":[]}'    | Set-Content "$base\world\entities\entity.test\projects.json"    -Encoding utf8
-    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","secret_refs":[]}' | Set-Content "$base\world\entities\entity.test\secret_refs.json" -Encoding utf8
-    '# Test entity' | Set-Content "$base\world\entities\entity.test\ENTITY.md"     -Encoding utf8
-    '# Unresolved'  | Set-Content "$base\world\entities\entity.test\unresolved.md" -Encoding utf8
+    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","carriers":[]}'    | Set-Content "$base\world\entities\entity.test\carriers.json"    -Encoding ascii
+    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","projects":[]}'    | Set-Content "$base\world\entities\entity.test\projects.json"    -Encoding ascii
+    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","secret_refs":[]}' | Set-Content "$base\world\entities\entity.test\secret_refs.json" -Encoding ascii
+    '# Test entity' | Set-Content "$base\world\entities\entity.test\ENTITY.md"     -Encoding ascii
+    '# Unresolved'  | Set-Content "$base\world\entities\entity.test\unresolved.md" -Encoding ascii
     return $base
 }
 
@@ -67,7 +67,7 @@ function Add-Claim {
         if (Test-Path $Path) { $existing = [IO.File]::ReadAllText($Path) }
         [IO.File]::WriteAllText($Path, $existing + $line)
     } else {
-        Add-Content -Path $Path -Value $line -Encoding utf8
+        Add-Content -Path $Path -Value $line -Encoding ascii
     }
 }
 
@@ -141,7 +141,7 @@ Assert-Case "C3 union+no-trailing-newline corruption refused" 8 $LASTEXITCODE "(
 $b4 = New-World "markers"
 $cl4 = "$b4\world\entities\entity.test\claims.jsonl"
 Add-Claim $cl4 "claim.seed" "seed"
-Add-Content -Path $cl4 -Value "<<<<<<< HEAD" -Encoding utf8
+Add-Content -Path $cl4 -Value "<<<<<<< HEAD" -Encoding ascii
 git -C "$b4\world" add -A -f 2>&1 | Out-Null
 git -C "$b4\world" commit -q -m seed 2>&1 | Out-Null
 git -C "$b4\world" push -q origin host/aorus:main 2>&1 | Out-Null

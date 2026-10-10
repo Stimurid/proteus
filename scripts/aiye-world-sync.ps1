@@ -117,6 +117,27 @@ function Invoke-Native {
 
 $script:ClaimsTool = Join-Path $PSScriptRoot "claims_jsonl.py"
 
+# Write JSONL as UTF-8 with NO byte-order mark, and always end with a newline.
+#
+# Windows PowerShell 5.1 - which is what the Scheduled Task actually runs - emits
+# a BOM (EF BB BF) for `Set-Content -Encoding utf8`, and 5.1 has no utf8NoBOM
+# option. The three git merge-stage files below are fed straight to
+# claims_jsonl.py, and a BOM makes the first line unparseable JSON. The resolver
+# then returned 3, Invoke-MergeRef returned 8, and publication was refused.
+#
+# That meant the append-only claims merge path - the centrepiece of Issue #1 -
+# could never have completed under the real scheduler. It passed CI only because
+# the suites were run under pwsh 7, where `-Encoding utf8` is BOM-less. Verified
+# 2026-10-10: PS5.1 first bytes "EF BB BF 7B" vs pwsh7 "7B 22 61 22".
+#
+# ASCII would also dodge the BOM but would corrupt non-ASCII claim bodies (the
+# live world carries Russian text), so UTF8Encoding($false) is the correct fix.
+$script:Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+function Write-JsonlNoBom([string]$Path, $Lines) {
+    $arr = [string[]]@(@($Lines) | ForEach-Object { [string]$_ })
+    [System.IO.File]::WriteAllLines($Path, $arr, $script:Utf8NoBom)
+}
+
 # Validate every tracked claims ledger. Corruption (markers / invalid JSON /
 # missing trailing newline) returns 3 from the tool and blocks publication.
 # Divergent claim_ids are warnings and deliberately do NOT block: the live world
@@ -131,16 +152,25 @@ function Test-ClaimsIntegrity {
     return $exit
 }
 
-# Merge origin/main. claims.jsonl divergence is resolved from git's three merge
-# stages as records; anything else is left for the operator.
-function Invoke-MergeOrigin {
-    $exit = Invoke-Native "merge" { git merge --no-edit --no-ff origin/main }
+# Merge ONE named remote ref. claims.jsonl divergence is resolved from git's three
+# merge stages as records; anything else is left for the operator.
+#
+# Issue #3: this function used to be hard-wired to origin/main. That is the whole
+# bug. When another host published to origin/<branch> but NOT to origin/main,
+# `git merge origin/main` reported "Already up to date", the local tip stayed behind
+# origin/<branch>, and `git push` was rejected non-fast-forward. The retry loop then
+# re-ran the SAME main-only merge, so every retry was guaranteed to fail identically
+# (observed live 2026-10-10T07:37Z: 3x "Already up to date" between 3x rejected
+# pushes, Scheduled Task LastTaskResult=3).
+function Invoke-MergeRef {
+    param([Parameter(Mandatory = $true)][string]$Ref)
+    $exit = Invoke-Native "merge[$Ref]" { git merge --no-edit --no-ff $Ref }
     if ($exit -eq 0) { return 0 }
 
     $conflicted = @(& git diff --name-only --diff-filter=U 2>$null)
     $nonClaims = @($conflicted | Where-Object { $_ -notmatch 'claims\.jsonl$' })
     if ($nonClaims.Count -gt 0) {
-        Write-Log "NON_CLAIM_CONFLICT files=$($nonClaims -join ',')"
+        Write-Log "NON_CLAIM_CONFLICT ref=$Ref files=$($nonClaims -join ',')"
         Invoke-Native "abort" { git merge --abort } | Out-Null
         return 2
     }
@@ -157,15 +187,15 @@ function Invoke-MergeOrigin {
             # Stage 1 (common ancestor) is absent for add/add conflicts.
             $b = (& git show ":1:$f" 2>$null)
             if ($LASTEXITCODE -ne 0) { $b = @() }
-            Set-Content -Path $base -Value $b -Encoding utf8
+            Write-JsonlNoBom $base $b
 
             $o = (& git show ":2:$f" 2>$null)
             if ($LASTEXITCODE -ne 0) { Write-Log "STAGE2_MISSING file=$f"; return 2 }
-            Set-Content -Path $ours -Value $o -Encoding utf8
+            Write-JsonlNoBom $ours $o
 
             $t = (& git show ":3:$f" 2>$null)
             if ($LASTEXITCODE -ne 0) { Write-Log "STAGE3_MISSING file=$f"; return 2 }
-            Set-Content -Path $theirs -Value $t -Encoding utf8
+            Write-JsonlNoBom $theirs $t
 
             $e = Invoke-Native "claims_resolve" { & $PythonExe $script:ClaimsTool resolve --base $base --ours $ours --theirs $theirs --out $out }
             if ($e -ne 0) { Write-Log "CLAIMS_RESOLVE_FAIL file=$f exit=$e"; return 8 }
@@ -188,8 +218,34 @@ function Invoke-MergeOrigin {
         Write-Log "UNRESOLVED_AFTER_MERGE files=$($stillConflicted -join ',')"
         return 2
     }
-    $e = Invoke-Native "commit_merge" { git commit --no-edit -m "sync merge $(Now)" }
-    if ($e -ne 0) { Write-Log "COMMIT_MERGE_FAIL exit=$e"; return 2 }
+    $e = Invoke-Native "commit_merge" { git commit --no-edit -m "sync merge $Ref $(Now)" }
+    if ($e -ne 0) { Write-Log "COMMIT_MERGE_FAIL ref=$Ref exit=$e"; return 2 }
+    return 0
+}
+
+# Integrate EVERY remote ref this host is contractually bound to, not just main.
+#
+# Order matters: origin/$Branch FIRST. That is the ref we are about to push to, so
+# it is the one that can reject us; incorporating it is what turns the push into a
+# fast-forward. origin/main second, because the cross-host read contract also
+# requires main and another host may have advanced it independently.
+#
+# A ref absent on the remote (first publication of a host branch) is SKIPPED, not
+# an error. A ref already an ancestor costs one cheap "Already up to date".
+#
+# Returns 0 on success, else the first non-zero merge result (2 = operator review,
+# 8 = claims-ledger integrity). Never force-pushes, never drops a remote commit.
+function Invoke-MergeRemotes {
+    param([Parameter(Mandatory = $true)][string]$Branch)
+    foreach ($ref in @("origin/$Branch", "origin/main")) {
+        & git rev-parse --verify --quiet "$ref^{commit}" > $null 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Log "merge_skip ref=$ref (absent on remote)"
+            continue
+        }
+        $e = Invoke-MergeRef -Ref $ref
+        if ($e -ne 0) { Write-Log "MERGE_REF_FAIL ref=$ref exit=$e"; return $e }
+    }
     return 0
 }
 
@@ -259,8 +315,13 @@ try {
     $exit = Invoke-Native "fetch" { git fetch origin }
     if ($exit -ne 0) { Write-Log "FETCH_FAIL exit=$exit"; Exit-Sync 3 }
 
-    # --- merge origin/main (claims resolved as append-only records) ---
-    $exit = Invoke-MergeOrigin
+    # --- merge ALL remote refs (claims resolved as append-only records) ---
+    # Capture the pre-merge tip so the reconcile diff below covers every merge we
+    # just performed. The old code diffed HEAD@{1}..HEAD, which only ever saw the
+    # LAST merge commit and silently skipped entities whose claims arrived in an
+    # earlier merge of the same cycle.
+    $preMergeHead = (& git rev-parse HEAD 2>$null)
+    $exit = Invoke-MergeRemotes -Branch $Branch
     if ($exit -ne 0) { Write-Log "MERGE_STAGE_FAIL exit=$exit"; Exit-Sync $exit }
 
     # --- post-merge ledger integrity. This is the gate that catches the
@@ -270,7 +331,8 @@ try {
 
     # --- reconcile entities that received new claims from the merge ---
     $changedEntities = @()
-    $diff = @(& git diff --name-only "HEAD@{1}" HEAD 2>$null)
+    if (-not $preMergeHead) { $preMergeHead = "HEAD@{1}" }
+    $diff = @(& git diff --name-only $preMergeHead HEAD 2>$null)
     foreach ($p in $diff) {
         if ($p -match '^entities/([^/]+)/') { $changedEntities += $Matches[1] }
     }
@@ -321,7 +383,7 @@ try {
 
         $e = Invoke-Native "refetch" { git fetch origin }
         if ($e -ne 0) { Write-Log "REFETCH_FAIL exit=$e"; Exit-Sync 3 }
-        $e = Invoke-MergeOrigin
+        $e = Invoke-MergeRemotes -Branch $Branch
         if ($e -ne 0) { Write-Log "REMERGE_FAIL exit=$e"; Exit-Sync $e }
         $e = Test-ClaimsIntegrity "post_remerge"
         if ($e -ne 0) { Write-Log "CLAIMS_POSTREMERGE_FAIL exit=$e"; Exit-Sync 8 }

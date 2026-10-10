@@ -24,6 +24,40 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _read_entity_files(store: WorldStore, entity_id: str) -> dict[str, bytes]:
+    """Every file under the entity dir, keyed by posix-relative path."""
+    ed = store.entity_dir(entity_id)
+    if not ed.is_dir():
+        raise FileNotFoundError(entity_id)
+    files: dict[str, bytes] = {}
+    for p in ed.rglob("*"):
+        if p.is_file():
+            files[p.relative_to(ed).as_posix()] = p.read_bytes()
+    return files
+
+
+def _content_sha256(files: dict[str, bytes]) -> str:
+    return hashlib.sha256(b"".join(files[k] for k in sorted(files.keys()))).hexdigest()
+
+
+def entity_content_sha256(entity_id: str, *, world: WorldStore | None = None) -> str:
+    """STABLE semantic identity of an entity's carrier payload.
+
+    Hashes only source file CONTENTS, in sorted path order. It deliberately
+    excludes export time and zip container metadata, so two exports of an
+    unchanged entity yield the SAME value.
+
+    This - not the zip's own sha256 - is the deduplication key. The zip digest
+    cannot serve that purpose because ``CARRIER_MANIFEST.json`` embeds
+    ``exported_utc``, which makes every zip byte-unique even when nothing
+    changed. Measured against the live backlog on 2026-10-10: 209 bundles had
+    209 distinct zip digests but only 125 distinct content digests, and the most
+    recent 48 bundles (12 hours of cycles) were all the same content state.
+    """
+    store = world or WorldStore()
+    return _content_sha256(_read_entity_files(store, entity_id))
+
+
 def export_entity_carrier_bundle(
     entity_id: str,
     *,
@@ -32,22 +66,14 @@ def export_entity_carrier_bundle(
 ) -> dict[str, Any]:
     """Pack local entity carrier files into a zip bytes/path for cloud upload."""
     store = world or WorldStore()
-    ed = store.entity_dir(entity_id)
-    if not ed.is_dir():
-        raise FileNotFoundError(entity_id)
-    files = {}
-    for p in ed.rglob("*"):
-        if p.is_file():
-            rel = p.relative_to(ed).as_posix()
-            files[rel] = p.read_bytes()
+    files = _read_entity_files(store, entity_id)
+    content_sha = _content_sha256(files)
     manifest = {
         "schema": CARRIER_SCHEMA,
         "entity_id": entity_id,
         "exported_utc": utc_now(),
         "files": sorted(files.keys()),
-        "sha256": hashlib.sha256(
-            b"".join(files[k] for k in sorted(files.keys()))
-        ).hexdigest(),
+        "sha256": content_sha,
         "note": "Carrier bundle; ENTITY ≠ this zip",
     }
     buf = BytesIO()
@@ -60,7 +86,10 @@ def export_entity_carrier_bundle(
         "schema": CARRIER_SCHEMA,
         "entity_id": entity_id,
         "bytes": len(payload),
+        # sha256 of the CONTAINER. Changes on every export (exported_utc).
         "sha256": hashlib.sha256(payload).hexdigest(),
+        # sha256 of the CONTENT. Stable while the entity is unchanged -> dedup key.
+        "content_sha256": content_sha,
         "manifest": manifest,
         "transport": "bundle_ready",
     }

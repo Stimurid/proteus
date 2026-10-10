@@ -50,15 +50,15 @@ function New-TestWorld {
     New-Item -ItemType Directory -Force -Path "$base\world\entities\entity.test\" | Out-Null
     @'
 {"schema":"proteus.entity.v0.1","entity_id":"entity.test","display_name":"Test Entity","aliases":["test"],"relations":[],"created_utc":"2026-10-10T00:00:00Z","note":"fixture"}
-'@ | Out-File "$base\world\entities\entity.test\identity.json" -Encoding utf8
+'@ | Out-File "$base\world\entities\entity.test\identity.json" -Encoding ascii
     '{"claim_id":"claim.test.seed","entity_id":"entity.test","scope":"ENTITY","topic":"seed","text":"seed","status":"current","conflicts_with":[],"provenance":{"observer":"test","kind":"fact","confidence":"high"},"recorded_utc":"2026-10-10T00:00:00Z"}' |
-        Out-File "$base\world\entities\entity.test\claims.jsonl" -Encoding utf8
-    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","carriers":[]}' | Out-File "$base\world\entities\entity.test\carriers.json" -Encoding utf8
-    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","projects":[]}' | Out-File "$base\world\entities\entity.test\projects.json" -Encoding utf8
-    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","secret_refs":[]}' | Out-File "$base\world\entities\entity.test\secret_refs.json" -Encoding utf8
-    '# Test entity' | Out-File "$base\world\entities\entity.test\ENTITY.md" -Encoding utf8
-    '# Unresolved' | Out-File "$base\world\entities\entity.test\unresolved.md" -Encoding utf8
-    "*.log`nindex/`npending_drive_uploads/`n" | Out-File "$base\world\.gitignore" -Encoding utf8
+        Out-File "$base\world\entities\entity.test\claims.jsonl" -Encoding ascii
+    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","carriers":[]}' | Out-File "$base\world\entities\entity.test\carriers.json" -Encoding ascii
+    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","projects":[]}' | Out-File "$base\world\entities\entity.test\projects.json" -Encoding ascii
+    '{"schema":"proteus.entity.v0.1","entity_id":"entity.test","secret_refs":[]}' | Out-File "$base\world\entities\entity.test\secret_refs.json" -Encoding ascii
+    '# Test entity' | Out-File "$base\world\entities\entity.test\ENTITY.md" -Encoding ascii
+    '# Unresolved' | Out-File "$base\world\entities\entity.test\unresolved.md" -Encoding ascii
+    "*.log`nindex/`npending_drive_uploads/`n" | Out-File "$base\world\.gitignore" -Encoding ascii
     git -C "$base\world" add -A 2>&1 | Out-Null
     git -C "$base\world" commit -m "seed" 2>&1 | Out-Null
     git -C "$base\world" push -u origin host/aorus 2>&1 | Out-Null
