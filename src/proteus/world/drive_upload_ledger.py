@@ -174,6 +174,29 @@ def load_manifests(store: WorldStore) -> list[dict[str, Any]]:
     return out
 
 
+def _content_sha_from_bundle(bundle_path: str | None) -> str | None:
+    """Recover the stable content digest from a bundle written before
+    ``content_sha256`` was added to the manifest (schema v0.1).
+
+    Without this the ledger would be blind to the entire existing backlog - the
+    209 real bundles on AORUS all predate the field - and would only ever be
+    able to deduplicate future exports. The value has in fact always been
+    present inside the zip, as CARRIER_MANIFEST.json "sha256".
+    """
+    if not bundle_path:
+        return None
+    p = Path(bundle_path)
+    if not p.is_file():
+        return None
+    try:
+        import zipfile
+
+        with zipfile.ZipFile(p) as zf:
+            return json.loads(zf.read("CARRIER_MANIFEST.json"))["sha256"]
+    except Exception:  # noqa: BLE001 - a damaged bundle must not break planning
+        return None
+
+
 def plan_uploads(
     store: WorldStore,
     *,
@@ -191,9 +214,10 @@ def plan_uploads(
 
     newest_for: dict[str, dict[str, Any]] = {}
     for m in manifests:
-        cs = m.get("content_sha256")
+        cs = m.get("content_sha256") or _content_sha_from_bundle(m.get("bundle_path"))
         if not cs:
-            continue  # pre-v0.2 manifest, no stable identity available
+            continue  # neither the manifest nor the bundle can identify the state
+        m = {**m, "content_sha256": cs}
         prev = newest_for.get(cs)
         if prev is None or str(m.get("generated_utc", "")) >= str(prev.get("generated_utc", "")):
             newest_for[cs] = m
