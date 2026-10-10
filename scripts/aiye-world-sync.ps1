@@ -19,6 +19,8 @@
 #   8 - claims ledger integrity failure (conflict markers, invalid JSON, or a
 #        missing trailing newline that merge=union would corrupt). Publication
 #        is refused; the ledger is left for operator review.
+#   9 - NO DURABLE RECEIPT: not one log line reached disk, so the run left no
+#        evidence. Refuses to report any other code as success.
 #
 # Modes (Issue #1 round 3 - the old -DryRun was NOT read-only):
 #   (default)   full pipeline, commits and publishes.
@@ -59,10 +61,50 @@ $ErrorActionPreference = 'Continue'
 
 function Now { (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ") }
 $log = Join-Path $WorldRoot ".sync.log"
+
+# Durable-receipt accounting. The previous Write-Log swallowed every append
+# failure (-ErrorAction SilentlyContinue inside try{}catch{}), so if the log
+# was briefly unavailable - another process holding a handle, e.g. a `tail -F`
+# watcher, which is exactly how this was found - the whole run proceeded and
+# exited 0 while leaving NO durable record, and Task Scheduler recorded
+# LastTaskResult=0. Success with zero evidence is the same false-SUCCESS class
+# as the rest of Issue #1. A transient lock must not be fatal, but total
+# blindness must not be reported as success.
+$script:LogWritesOk = 0
+$script:LogWritesFailed = 0
+
 function Write-Log([string]$msg) {
     $line = "[$(Now)] $msg"
     Write-Host $line
-    try { Add-Content -Path $log -Value $line -Encoding utf8 -ErrorAction SilentlyContinue } catch {}
+    for ($i = 1; $i -le 3; $i++) {
+        try {
+            Add-Content -Path $log -Value $line -Encoding utf8 -ErrorAction Stop
+            $script:LogWritesOk++
+            return
+        } catch {
+            if ($i -eq 3) {
+                $script:LogWritesFailed++
+                # stderr, so a lost log line is still visible to the caller
+                # and to Task Scheduler's captured output.
+                [Console]::Error.WriteLine("LOG_WRITE_FAILED after $i attempts: $line")
+                return
+            }
+            Start-Sleep -Milliseconds (200 * $i)
+        }
+    }
+}
+
+# Exit wrapper: refuses to report success when nothing could be recorded.
+function Exit-Sync([int]$Code) {
+    if ($script:LogWritesFailed -gt 0) {
+        [Console]::Error.WriteLine("LOG_DEGRADED ok=$($script:LogWritesOk) failed=$($script:LogWritesFailed) log=$log")
+    }
+    if ($script:LogWritesOk -eq 0) {
+        # Not one line reached disk: there is no durable receipt for this run.
+        [Console]::Error.WriteLine("NO_DURABLE_RECEIPT: no log line could be written to $log; refusing to report exit=$Code as success")
+        exit 9
+    }
+    exit $Code
 }
 
 function Invoke-Native {
@@ -152,7 +194,7 @@ function Invoke-MergeOrigin {
 }
 
 try {
-    if (-not (Test-Path $WorldRoot)) { Write-Log "ABORT: $WorldRoot missing"; exit 1 }
+    if (-not (Test-Path $WorldRoot)) { Write-Log "ABORT: $WorldRoot missing"; Exit-Sync 1 }
 
     # --- -DryRun is a deprecated alias; -Preview is the honest name. ---
     if ($DryRun -and -not $Preview) {
@@ -165,13 +207,13 @@ try {
         $clone = Join-Path $env:TEMP "aiye-world-preview-$(Get-Random)"
         Write-Log "PREVIEW start clone=$clone source=$WorldRoot (source is READ-ONLY in this mode)"
         $e = Invoke-Native "preview_clone" { git clone --no-hardlinks --branch $Branch -- $WorldRoot $clone }
-        if ($e -ne 0) { Write-Log "PREVIEW_CLONE_FAIL exit=$e"; exit 3 }
+        if ($e -ne 0) { Write-Log "PREVIEW_CLONE_FAIL exit=$e"; Exit-Sync 3 }
 
         $realOrigin = (& git -C $WorldRoot remote get-url origin 2>$null)
         if ($LASTEXITCODE -ne 0 -or -not $realOrigin) {
             Write-Log "PREVIEW_ORIGIN_UNRESOLVED"
             Remove-Item -Recurse -Force $clone -ErrorAction SilentlyContinue
-            exit 3
+            Exit-Sync 3
         }
         Invoke-Native "preview_origin"    { git -C $clone remote set-url origin $realOrigin.Trim() } | Out-Null
         Invoke-Native "preview_identity"  { git -C $clone config user.email "preview@line-a.local" } | Out-Null
@@ -185,7 +227,7 @@ try {
         Write-Log "PREVIEW result exit=$code head_before=$before head_after=$after would_commit=[$shortlog]"
         Write-Log "PREVIEW end; real world at $WorldRoot untouched; clone discarded"
         Remove-Item -Recurse -Force $clone -ErrorAction SilentlyContinue
-        exit $code
+        Exit-Sync $code
     }
 
     Set-Location $WorldRoot
@@ -211,20 +253,20 @@ try {
 
     # --- pre-flight ledger integrity: never merge on top of an already-corrupt ledger ---
     $e = Test-ClaimsIntegrity "pre"
-    if ($e -ne 0) { Write-Log "CLAIMS_PREFLIGHT_FAIL exit=$e"; exit 8 }
+    if ($e -ne 0) { Write-Log "CLAIMS_PREFLIGHT_FAIL exit=$e"; Exit-Sync 8 }
 
     # --- fetch ---
     $exit = Invoke-Native "fetch" { git fetch origin }
-    if ($exit -ne 0) { Write-Log "FETCH_FAIL exit=$exit"; exit 3 }
+    if ($exit -ne 0) { Write-Log "FETCH_FAIL exit=$exit"; Exit-Sync 3 }
 
     # --- merge origin/main (claims resolved as append-only records) ---
     $exit = Invoke-MergeOrigin
-    if ($exit -ne 0) { Write-Log "MERGE_STAGE_FAIL exit=$exit"; exit $exit }
+    if ($exit -ne 0) { Write-Log "MERGE_STAGE_FAIL exit=$exit"; Exit-Sync $exit }
 
     # --- post-merge ledger integrity. This is the gate that catches the
     # merge=union trailing-newline corruption, which raises NO git conflict. ---
     $e = Test-ClaimsIntegrity "post_merge"
-    if ($e -ne 0) { Write-Log "CLAIMS_POSTMERGE_FAIL exit=$e (publication refused)"; exit 8 }
+    if ($e -ne 0) { Write-Log "CLAIMS_POSTMERGE_FAIL exit=$e (publication refused)"; Exit-Sync 8 }
 
     # --- reconcile entities that received new claims from the merge ---
     $changedEntities = @()
@@ -247,22 +289,22 @@ try {
 
     # --- rebuild local VIEW index (not pushed) ---
     $exit = Invoke-Native "rebuild" { & $PythonExe -m proteus world rebuild-index }
-    if ($exit -ne 0) { Write-Log "REBUILD_FAIL exit=$exit"; exit 4 }
+    if ($exit -ne 0) { Write-Log "REBUILD_FAIL exit=$exit"; Exit-Sync 4 }
 
     # --- commit local changes (reconcile may have rewritten claim statuses) ---
     $status = (& git status --porcelain) -join "`n"
     if ($status) {
         $e = Invoke-Native "add" { git add -A }
-        if ($e -ne 0) { Write-Log "ADD_FAIL exit=$e"; exit 3 }
+        if ($e -ne 0) { Write-Log "ADD_FAIL exit=$e"; Exit-Sync 3 }
         $e = Invoke-Native "commit" { git commit -m "sync $(Now) reconcile" }
-        if ($e -ne 0) { Write-Log "COMMIT_FAIL exit=$e"; exit 3 }
+        if ($e -ne 0) { Write-Log "COMMIT_FAIL exit=$e"; Exit-Sync 3 }
     }
 
     if ($NoPublish) {
         # LOCAL-MUTATING stop point. Local git state HAS changed above.
         Write-Log "NO_PUBLISH end; local state mutated (merge/reconcile/commit applied); no push performed"
-        if ($reconcileDegraded) { exit 6 }
-        exit 0
+        if ($reconcileDegraded) { Exit-Sync 6 }
+        Exit-Sync 0
     }
 
     # --- push host branch, with bounded retry against a concurrent remote writer.
@@ -278,21 +320,21 @@ try {
         if ($attempt -ge $maxAttempts) { break }
 
         $e = Invoke-Native "refetch" { git fetch origin }
-        if ($e -ne 0) { Write-Log "REFETCH_FAIL exit=$e"; exit 3 }
+        if ($e -ne 0) { Write-Log "REFETCH_FAIL exit=$e"; Exit-Sync 3 }
         $e = Invoke-MergeOrigin
-        if ($e -ne 0) { Write-Log "REMERGE_FAIL exit=$e"; exit $e }
+        if ($e -ne 0) { Write-Log "REMERGE_FAIL exit=$e"; Exit-Sync $e }
         $e = Test-ClaimsIntegrity "post_remerge"
-        if ($e -ne 0) { Write-Log "CLAIMS_POSTREMERGE_FAIL exit=$e"; exit 8 }
+        if ($e -ne 0) { Write-Log "CLAIMS_POSTREMERGE_FAIL exit=$e"; Exit-Sync 8 }
 
         $st = (& git status --porcelain) -join "`n"
         if ($st) {
             $e = Invoke-Native "readd_retry" { git add -A }
-            if ($e -ne 0) { Write-Log "ADD_FAIL exit=$e"; exit 3 }
+            if ($e -ne 0) { Write-Log "ADD_FAIL exit=$e"; Exit-Sync 3 }
             $e = Invoke-Native "commit_retry" { git commit -m "sync $(Now) remerge" }
-            if ($e -ne 0) { Write-Log "COMMIT_FAIL exit=$e"; exit 3 }
+            if ($e -ne 0) { Write-Log "COMMIT_FAIL exit=$e"; Exit-Sync 3 }
         }
     }
-    if (-not $pushed) { Write-Log "PUSH_FAIL exhausted attempts=$maxAttempts"; exit 3 }
+    if (-not $pushed) { Write-Log "PUSH_FAIL exhausted attempts=$maxAttempts"; Exit-Sync 3 }
 
     # --- publish main; main is REQUIRED by the cross-host read contract.
     # A failed push to main must surface as a non-zero exit so the Scheduler
@@ -304,35 +346,35 @@ try {
 
     # --- publication readback: strict equality on all three refs ---
     $localHead = (& git rev-parse $Branch 2>$null).Trim()
-    if (-not $localHead) { Write-Log "REV_PARSE_FAIL branch=$Branch"; exit 5 }
+    if (-not $localHead) { Write-Log "REV_PARSE_FAIL branch=$Branch"; Exit-Sync 5 }
     $remoteHostLine = (& git ls-remote --heads origin $Branch 2>$null)
-    if (-not $remoteHostLine) { Write-Log "LS_REMOTE_FAIL branch=$Branch"; exit 5 }
+    if (-not $remoteHostLine) { Write-Log "LS_REMOTE_FAIL branch=$Branch"; Exit-Sync 5 }
     $remoteHostHead = ($remoteHostLine -split "\s+")[0]
     $remoteMainLine = (& git ls-remote --heads origin main 2>$null)
-    if (-not $remoteMainLine) { Write-Log "LS_REMOTE_FAIL branch=main"; exit 5 }
+    if (-not $remoteMainLine) { Write-Log "LS_REMOTE_FAIL branch=main"; Exit-Sync 5 }
     $remoteMainHead = ($remoteMainLine -split "\s+")[0]
     Write-Log "readback local=$localHead remote_host=$remoteHostHead remote_main=$remoteMainHead"
     if ($localHead -ne $remoteHostHead) {
-        Write-Log "READBACK_FAIL remote $Branch not at local HEAD"; exit 5
+        Write-Log "READBACK_FAIL remote $Branch not at local HEAD"; Exit-Sync 5
     }
     if ($localHead -ne $remoteMainHead) {
-        Write-Log "READBACK_FAIL remote main ($remoteMainHead) != local HEAD ($localHead)"; exit 5
+        Write-Log "READBACK_FAIL remote main ($remoteMainHead) != local HEAD ($localHead)"; Exit-Sync 5
     }
 
     # Assert no stranded intended changes remain uncommitted.
     $postStatus = (& git status --porcelain 2>$null) -join "`n"
     if ($postStatus) {
-        Write-Log "STRANDED_CHANGES post-sync:`n$postStatus"; exit 5
+        Write-Log "STRANDED_CHANGES post-sync:`n$postStatus"; Exit-Sync 5
     }
 
     if ($reconcileDegraded) {
         Write-Log "sync end DEGRADED local=$localHead (reconcile warnings; publication contract satisfied)"
-        exit 6
+        Exit-Sync 6
     }
     Write-Log "sync end OK local=$localHead"
-    exit 0
+    Exit-Sync 0
 
 } catch {
     Write-Log "UNHANDLED_EXCEPTION: $($_ | Out-String)"
-    exit 7
+    Exit-Sync 7
 }

@@ -236,6 +236,18 @@ Assert-Case "C7a non-fast-forward resolved by bounded retry" 0 $nonffExit
 Assert-Case "C7b racer's claim survived"  $true ([bool]($finalLedger -match 'claim\.RACER'))
 Assert-Case "C7c our claim survived"      $true ([bool]($finalLedger -match 'claim\.MINE'))
 
+# ---------------------------------------------------------------- C8
+# No durable receipt: if not one log line can reach disk, the run must NOT
+# report success. Found in the field - a `tail -F` watcher intermittently held
+# .sync.log, Write-Log swallowed every append failure, and a scheduled run
+# completed with LastTaskResult=0 and zero evidence.
+# Simulated here by making the log path a directory so Add-Content always fails.
+$b8 = New-World "nodurable"
+Remove-Item -Force "$b8\world\.sync.log" -ErrorAction SilentlyContinue
+New-Item -ItemType Directory -Force -Path "$b8\world\.sync.log" | Out-Null
+& $script:Script -WorldRoot "$b8\world" -Branch "host/aorus" -PythonExe $script:PythonExe -ProteusSrc $script:ProteusSrc 2>&1 | Out-Null
+Assert-Case "C8 no durable receipt refuses to report success" 9 $LASTEXITCODE
+
 # ---------------------------------------------------------------- summary
 Write-Host "`n=== SUMMARY ==="
 $script:results | Format-Table -AutoSize | Out-String | Write-Host
