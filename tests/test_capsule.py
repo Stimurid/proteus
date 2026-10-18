@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import subprocess
 import sys
@@ -98,10 +99,73 @@ def test_capsule_summarizes_cache_shaped_dirty_paths() -> None:
         assert "Browser/cache-shaped paths are summarized" in text
 
 
+
+def test_capsule_preserves_mounted_frontier_and_redacts_mcp_values() -> None:
+    """Proteus mount + state, with names-only MCP inventory and no secrets."""
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        project = root / "hydra"
+        (project / ".proteus").mkdir(parents=True)
+        (project / "state").mkdir()
+        (project / "docs").mkdir()
+        (project / ".proteus" / "ENTRY.md").write_text(
+            "Actual Cursor project mount entry; resolve Proteus locally.\n",
+            encoding="utf-8",
+        )
+        (project / "state" / "CURRENT.md").write_text(
+            "Current workline: HYDRA continuity check.\n", encoding="utf-8"
+        )
+        (project / "state" / "FRONTIER.md").write_text(
+            "Next: verify B receives current project state.\n", encoding="utf-8"
+        )
+        (project / "state" / "UNRESOLVED.md").write_text(
+            "Unresolved: B did not prove full read.\n", encoding="utf-8"
+        )
+        (project / "docs" / "CURRENT.md").write_text(
+            "Project-local operational snapshot.\n", encoding="utf-8"
+        )
+        (project / ".mcp.json").write_text(
+            json.dumps({"mcpServers": {
+                "proteus": {"command": "DO_NOT_DISCLOSE_THIS_COMMAND",
+                            "env": {"TOKEN": "MCP_SECRET_CANARY"}},
+                "aiye-executor": {"url": "https://private.invalid/secret-path"}
+            }}),
+            encoding="utf-8",
+        )
+        result = build_capsule(project, root / "capsule.md", max_chars=16_000)
+        body = result.output.read_text(encoding="utf-8")
+        assert "Actual Cursor project mount entry" in body
+        assert "Current workline: HYDRA continuity check" in body
+        assert "Next: verify B receives current project state" in body
+        assert "Unresolved: B did not prove full read" in body
+        assert "Project-local operational snapshot" in body
+        assert "`proteus`" in body and "`aiye-executor`" in body
+        assert "configuration only; runtime unverified" in body
+        assert "MCP_SECRET_CANARY" not in body
+        assert "DO_NOT_DISCLOSE_THIS_COMMAND" not in body
+        assert "private.invalid" not in body
+        assert "state/FRONTIER.md" in result.included_documents
+        assert ".proteus/ENTRY.md" in result.included_documents
+
+
+def test_capsule_explicitly_marks_host_mcp_unknown() -> None:
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td)
+        project = root / "project"
+        project.mkdir()
+        (project / "README.md").write_text("# Project\n", encoding="utf-8")
+        out = root / "capsule.md"
+        build_capsule(project, out)
+        body = out.read_text(encoding="utf-8")
+        assert "host-level tools and current availability remain UNKNOWN" in body
+
+
 def main() -> None:
     test_capsule_contains_handoff_essentials_and_redacts()
     test_capsule_respects_global_bound_and_does_not_mutate_project()
     test_capsule_summarizes_cache_shaped_dirty_paths()
+    test_capsule_preserves_mounted_frontier_and_redacts_mcp_values()
+    test_capsule_explicitly_marks_host_mcp_unknown()
     print("test_capsule: PASS")
 
 
