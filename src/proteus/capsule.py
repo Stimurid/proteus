@@ -7,6 +7,7 @@ agent transcript.
 
 from __future__ import annotations
 
+import json
 import re
 import subprocess
 from dataclasses import dataclass
@@ -22,6 +23,17 @@ IGNORED_DIRS = {".git", ".next", "node_modules", ".venv", "__pycache__"}
 DOCUMENT_CANDIDATES = (
     ("Project instructions", "AGENTS.md", 3_000),
     ("Project instructions", "CLAUDE.md", 3_000),
+    # Proteus-generated mounts keep operational currentness under state/,
+    # not in repository-root CURRENT.md / FRONTIER.md.
+    ("Proteus project mount", ".proteus/ENTRY.md", 2_500),
+    ("Proteus project mount", ".proteus/CONSTITUTIVE.md", 1_400),
+    ("Project identity", "state/IDENTITY.md", 1_200),
+    ("Current-state carrier", "state/CURRENT.md", 2_800),
+    ("Roadmap / next work", "state/FRONTIER.md", 2_800),
+    ("Decisions", "state/DECISIONS.md", 1_600),
+    ("Unresolved", "state/UNRESOLVED.md", 1_600),
+    ("Current-state carrier", "docs/CURRENT.md", 1_600),
+    ("Roadmap / next work", "docs/ROADMAP.md", 1_200),
     ("Operations constraints", "docs/ops/PRODUCTION_TOPOLOGY_AND_GATES.md", 4_500),
     ("Product law", "docs/product/MODERATOR_COCKPIT_INTERFACE_LAW_v0_1.md", 5_000),
     ("Project overview", "README.md", 3_000),
@@ -43,6 +55,63 @@ MANIFEST_CANDIDATES = (
     "docker-compose.yaml",
     "Makefile",
 )
+
+# Names are only discoverable from project-local config. MCP transport URLs,
+# arguments, environment, authorization and secrets are NEVER copied.
+MCP_CONFIG_CANDIDATES = (".mcp.json", ".cursor/mcp.json", ".vscode/mcp.json")
+
+
+def _mcp_names_only(project: Path) -> list[str]:
+    """Declare MCP server names without leaking configuration payloads.
+
+    A config entry is not evidence that its tool is currently reachable,
+    authenticated, permitted for this agent, or used in a particular session.
+    Host-wide MCP registrations are deliberately outside the project capsule.
+    """
+    rows: list[str] = []
+    found = False
+    for rel in MCP_CONFIG_CANDIDATES:
+        path = project / rel
+        if path.is_symlink():
+            rows.append(f"- \x60{rel}\x60: symlink; not inspected")
+            found = True
+            continue
+        if not path.is_file():
+            continue
+        found = True
+        try:
+            if path.stat().st_size > 65_536:
+                rows.append(f"- \x60{rel}\x60: oversized; names unavailable")
+                continue
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(data, dict):
+                rows.append(f"- \x60{rel}\x60: unrecognized config shape")
+                continue
+            names: set[str] = set()
+            for key in ("mcpServers", "servers"):
+                val = data.get(key)
+                if isinstance(val, dict):
+                    names.update(
+                        name for name in val
+                        if isinstance(name, str)
+                        and re.fullmatch(r"[A-Za-z0-9_.-]{1,80}", name)
+                    )
+            if names:
+                rows.append(
+                    f"- \x60{rel}\x60 declares: " +
+                    ", ".join(f"\x60{name}\x60" for name in sorted(names)) +
+                    " (configuration only; runtime unverified)"
+                )
+            else:
+                rows.append(f"- \x60{rel}\x60: no recognized MCP server names")
+        except (OSError, ValueError, UnicodeError):
+            rows.append(f"- \x60{rel}\x60: cannot safely parse server names")
+    if not found:
+        rows.append(
+            "- No project-local MCP configuration discovered; "
+            "host-level tools and current availability remain UNKNOWN."
+        )
+    return rows
 
 
 def _run(project: Path, *args: str) -> tuple[int, str]:
@@ -208,6 +277,19 @@ def build_capsule(project: Path, output: Path, *, max_chars: int = DEFAULT_MAX_C
         path = project / rel
         if path.is_file():
             lines.extend((f"### `{rel}`", "", "```text", _excerpt(path, 3_000), "```", ""))
+
+    lines.extend((
+        "## Agent and MCP execution context — evidence boundaries",
+        "",
+        "- Assigned coding agents and actual model/carrier must come from "
+        "current Hub job/session receipts, not from installed executable names.",
+        "- A declared MCP server is not a verified usable tool; check the "
+        "host Gateway, identity, permissions, health and run-specific access.",
+        "- Never carry MCP config arguments, environment or credentials "
+        "in a context capsule. Resolve them only in an authorized host.",
+        *_mcp_names_only(project),
+        "",
+    ))
 
     included: list[str] = []
     # Reserve room for headings and the source map. Individual excerpts are
